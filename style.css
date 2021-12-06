@@ -1,0 +1,51 @@
+:root {
+    --color-paragraph: 212121;
+    --white: #FCF7F5;
+    --green: #BDD68A;
+    --pink: #F7C0B4;
+    --blue: #7EB4C7;
+    --yellow: #FED749;
+    --orange: #F08C67;
+    --turquoise: #8FCAAE;
+
+    --font-title: Indie Flower;
+    --font-paragraph: Rounded Mplus 1c;
+
+}
+
+
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color: var(--green);
+}
+
+.form {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-family: 'Indie Flower', cursive;;
+
+}
+
+input {
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+}
+
+button {
+    height: 40px;
+    width: 100px;
+    margin: 10px;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
