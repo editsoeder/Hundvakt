@@ -3,25 +3,22 @@
         "id_sitter": 1,
         "first_name": "Clara Marie",
         "last_name": "Lund",
-        "email": "claramarie@test.com",
+        "email": "clara@test.com",
         "password": "dogsrock1",
         "cost": 200,
-        "location": "Gamla Västern",
-        "areas": {
-           "area_one": "Gamla Västern",
-           "area_two":"Trianglen",
-           "area_three": "Centralen"
-        },
-        "days": {
-            "monday": "true",
-            "tuesday": "false",
-            "wednesday": "false",
-            "thursday": "true",
-            "friday": "false",
-            "saturday": "false",
-            "sunday":"true"
+        "location": "Södra Innerstaden",
 
-        },
+        "areas": [
+            "Malmö Centrum", 
+            "Södra Innerstaden", 
+            "Västra Innerstaden"
+        ], 
+
+        "days": [
+            "Måndag", 
+            "Tisdag", 
+            "Onsdag"
+        ],
         "extra_info": "I love big dogs"
     
     },
@@ -32,22 +29,19 @@
         "email": "bea@test.com",
         "password": "hundar1234",
         "cost": 210,
-        "location": "Trianglen",
-        "areas": {
-           "area_one": "Möllan",
-           "area_two":"Trianglen",
-           "area_three": "Centralen"
-        },
-        "days": {
-            "monday": "false",
-            "tuesday": "true",
-            "wednesday": "false",
-            "thursday": "true",
-            "friday": "true",
-            "saturday": "false",
-            "sunday":"true"
+        "location": "Fosie",
+        "areas": [
+            "Kirseberg", 
+            "Hyllie", 
+            "Fosie"
+        ], 
 
-        },
+        "days": [
+            "Torsdag", 
+            "Fredag", 
+            "Lördag", 
+            "Söndag"
+        ],
         "extra_info": "Dogs are the best"
     
     },
@@ -58,22 +52,17 @@
         "email": "edit@test.com",
         "password": "doglover123",
         "cost": 250,
-        "location": "Slottstaden",
-        "areas": {
-           "area_one": "Slottstaden",
-           "area_two":"Trianglen",
-           "area_three": "Ribban"
-        },
-        "days": {
-            "monday": "true",
-            "tuesday": "false",
-            "wednesday": "false",
-            "thursday": "true",
-            "friday": "true",
-            "saturday": "true",
-            "sunday":"true"
+        "location": "Oxie",
+        "areas": [
+            "Malmö Centrum", 
+            "Oxie", 
+            "Hyllie"
+        ], 
 
-        },
+        "days": [
+            "Lördag", 
+            "Söndag"
+        ],
         "extra_info": "I love to cook for my dogs"
     
     },
@@ -85,22 +74,18 @@
         "email": "erik@test.com",
         "password": "dogsarecool123",
         "cost": 180,
-        "location": "Värnhem",
-        "areas": {
-           "area_one": "Värnhem",
-           "area_two":"Slussen",
-           "area_three": "Centralen"
-        },
-        "days": {
-            "monday": "false",
-            "tuesday": "true",
-            "wednesday": "ture",
-            "thursday": "false",
-            "friday": "false",
-            "saturday": "true",
-            "sunday":"true"
+        "location": "Kirseberg",
+        "areas": [
+            "Kirseberg", 
+            "Södra Innerstaden", 
+            "Limhamn-Bunkeflo"
+        ], 
 
-        },
+        "days": [
+            "Måndag", 
+            "Torsdag", 
+            "Söndag"
+        ],
         "extra_info": "Big dogs are scary!"
     
     },
@@ -112,22 +97,18 @@
         "email": "sebastian@test.com",
         "password": "huskeylover2",
         "cost": 180,
-        "location": "Slottstaden",
-        "areas": {
-           "area_one": "Slottstaden",
-           "area_two":"Centralen",
-           "area_three": "Ribban"
-        },
-        "days": {
-            "monday": "false",
-            "tuesday": "false",
-            "wednesday": "false",
-            "thursday": "true",
-            "friday": "true",
-            "saturday": "true",
-            "sunday":"true"
+        "location": "Fosie",
+        "areas": [
+            "Fosie", 
+            "Rosengård", 
+            "Limhamn-Bunkeflo"
+        ], 
 
-        },
+        "days": [
+            "Tisdag", 
+            "Torsdag", 
+            "Fredag"
+        ],
         "extra_info": "My dream is to have 10 dogs"
     
     }

@@ -1,6 +1,38 @@
 <?php 
 error_reporting(-1);
 
+$locations = [
+    "Fosie", 
+    "Husie", 
+    "Hyllie", 
+    "Kirseberg", 
+    "Limhamn-Bunkeflo",
+    "Malmö Centrum", 
+    "Oxie", 
+    "Rosengård", 
+    "Södra Innerstaden", 
+    "Västra Innerstaden"
+];
+
+$days = [
+    "Måndag", 
+    "Tisdag", 
+    "Onsdag", 
+    "Torsdag", 
+    "Fredag", 
+    "Lördag", 
+    "Söndag"
+];
+
+$priceHour = [
+    "<50",
+    "70",
+    "90", 
+    "110", 
+    "130", 
+    ">150" 
+];
+
 //Hämta alla dogsitter från DB
 function getAllDogsDB(){
     $json = file_get_contents("dogsitter/dogsitter.json");
