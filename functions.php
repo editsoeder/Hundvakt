@@ -54,7 +54,7 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogsDB(){
-    $json = file_get_contents("dogsitter/dogsitter.json");
+    $json = file_get_contents("../dogsitter/dogsitter.json");
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
@@ -173,7 +173,55 @@ function createLocationList() {
     </datalist>
 <?php
 }
+
+function getJSON($filename){
+    return json_decode(file_get_contents($filename), true);
+}
+
+function saveToFile ($filename, $data) {
+    //Sparar ändringar till databasen
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents($filename, $json);
+}
+
+
+function addUser ($filename, $user) {
+    //takes the data the user submitted and makes them into
+    //a new user in the database
+    $data = getJSON($filename);
+    $userSentData = file_get_contents("php://input");
+    $user = json_decode($userSentData, true);
+
+    if($filename == "dogsitter.json") {
+        $newUser = [
+            "id" => getMaxID($data) + 1,
+            "firstName" => $user["firstName"],
+            "lastName" => $user["lastName"],
+            "email" => $user["email"],
+            "password" => $user["password"],
+            "location" => $user["location"],
+            "pricePerHour" => $user[""]
+        ];
+    }
+
+    if($filename == "tenants.json") {
+        $newEntry = [
+            "id" => getMaxID($data) + 1,
+            "first_name" => $entry["first_name"],
+            "last_name" => $entry["last_name"],
+            "email" => $entry["email"],
+            "gender" => $entry["gender"],
+        ];
+    }
+
+    array_push($data, $newEntry);
+
+    saveToFile($filename, $data);
+}
+
+
+
 ?> 
 
 
-?>
+
