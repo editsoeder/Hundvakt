@@ -7,7 +7,7 @@
         "password": "doggos123",
         "cost": ">150",
         "location": "Malmö Centrum",
-        "Dog": {
+        "dog": {
            "name": "Ernie",
            "breed":"Alaskan Malamute",
            "gender": "male",
@@ -34,7 +34,7 @@
             "Lördag", 
             "Söndag"
         ],
-        "Dog": {
+        "dog": {
            "name": "Alfons",
            "breed":"Leonberger",
            "gender": "male",
@@ -56,7 +56,7 @@
             "Torsdag", 
             "Söndag"
         ],
-        "Dog": {
+        "dog": {
            "name": "Fluffy",
            "breed":"Chihuahua",
            "gender": "female",
