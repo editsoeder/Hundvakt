@@ -6,19 +6,21 @@
         "email": "clara@test.com",
         "password": "dogsrock1",
         "cost": 200,
-        "location": "S\u00f6dra Innerstaden",
+        "location": "Södra Innerstaden",
+
         "areas": [
-            "Malm\u00f6 Centrum",
-            "S\u00f6dra Innerstaden",
-            "V\u00e4stra Innerstaden",
-            "test"
-        ],
+            "Malmö Centrum", 
+            "Södra Innerstaden", 
+            "Västra Innerstaden"
+        ], 
+
         "days": [
-            "M\u00e5ndag",
-            "Tisdag",
+            "Måndag", 
+            "Tisdag", 
             "Onsdag"
         ],
         "extra_info": "I love big dogs"
+    
     },
     {
         "id_sitter": 2,

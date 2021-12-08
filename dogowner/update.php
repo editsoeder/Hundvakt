@@ -1,9 +1,8 @@
 <?php 
-
 require_once "../functions.php";
 
 // Ladda in vår JSON data från vår fil
-$dogSitter = loadJson("dogsitter.json");
+$dogOwner = loadJson("dogowners.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -22,7 +21,7 @@ if ($method != "PATCH") {
 if ($method === "PATCH") {
 
     // Kontrollera att vi har den datan vi behöver
-    if (!isset($requestData["id_sitter"])) {
+    if (!isset($requestData["id_owner"])) {
         send(
             [
                 "code" => 3,
@@ -32,14 +31,14 @@ if ($method === "PATCH") {
         );
     }
 
-    $id = $requestData["id_sitter"];
+    $id = $requestData["id_owner"];
     $found = false;
     $foundUser = null;
 
-    foreach ($dogSitter as $index => $user) {
+    foreach ($dogOwner as $index => $user) {
 
         //Om ID som skickas med finns i users.json
-        if ($user["id_sitter"] == $id) {
+        if ($user["id_owner"] == $id) {
             $found = true;
 
             if (isset($requestData["first_name"])) {
@@ -156,52 +155,6 @@ if ($method === "PATCH") {
                 $user["location"] = $requestData["location"];
             }
 
-            if (isset($requestData["extra_info"])) {
-
-                //om extra_info är = 0 tecken
-                if (strlen($requestData["extra_info"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "extra_info",
-                                    "message" => "`extra_info` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["extra_info"] = $requestData["extra_info"];
-            }
-
-            if (isset($requestData["areas"])) {
-
-                //om areas är = 0 tecken
-                if (strlen($requestData["areas"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "areas",
-                                    "message" => "`areas` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                if (in_array($requestData["areas"], $user["areas"])) {
-                    $key = array_search($requestData["areas"], $user["areas"]);
-                    array_splice($user["areas"], $key);
-
-                } else {
-                    array_push($user["areas"], $requestData["areas"]);
-                    array_push($dogSitter, $user["areas"]);
-                } 
-
-            }
-
             if (isset($requestData["days"])) {
 
                 //om days är = 0 tecken
@@ -229,8 +182,103 @@ if ($method === "PATCH") {
 
             }
 
+            if (isset($requestData["name"])) {
+
+                //om name är = 0 tecken
+                if (strlen($requestData["name"]) == 0) {
+                    send([
+                        "code" => 401,
+                        "message" => "Bad request, invalid format",
+                        "errors" => [
+                                [
+                                    "field" => "name",
+                                    "message" => "`name` has to be more then 0 characters"
+                                ]
+                        ]
+                    ]); 
+                }
+
+                $user["dog"]["name"] = $requestData["name"];
+            }
+
+            if (isset($requestData["breed"])) {
+
+                //om breed är = 0 tecken
+                if (strlen($requestData["breed"]) == 0) {
+                    send([
+                        "code" => 401,
+                        "message" => "Bad request, invalid format",
+                        "errors" => [
+                                [
+                                    "field" => "breed",
+                                    "message" => "`breed` has to be more then 0 characters"
+                                ]
+                        ]
+                    ]); 
+                }
+
+                $user["dog"]["breed"] = $requestData["breed"];
+            }
+
+            if (isset($requestData["gender"])) {
+
+                //om gender är = 0 tecken
+                if (strlen($requestData["gender"]) == 0) {
+                    send([
+                        "code" => 401,
+                        "message" => "Bad request, invalid format",
+                        "errors" => [
+                                [
+                                    "field" => "gender",
+                                    "message" => "`gender` has to be more then 0 characters"
+                                ]
+                        ]
+                    ]); 
+                }
+
+                $user["dog"]["gender"] = $requestData["gender"];
+            }
+
+            if (isset($requestData["extra"])) {
+
+                //om extra är = 0 tecken
+                if (strlen($requestData["extra"]) == 0) {
+                    send([
+                        "code" => 401,
+                        "message" => "Bad request, invalid format",
+                        "errors" => [
+                                [
+                                    "field" => "extra",
+                                    "message" => "`extra` has to be more then 0 characters"
+                                ]
+                        ]
+                    ]); 
+                }
+
+                $user["dog"]["extra"] = $requestData["extra"];
+            }
+
+            if (isset($requestData["image"])) {
+
+                //om image är = 0 tecken
+                if (strlen($requestData["image"]) == 0) {
+                    send([
+                        "code" => 401,
+                        "message" => "Bad request, invalid format",
+                        "errors" => [
+                                [
+                                    "field" => "image",
+                                    "message" => "`image` has to be more then 0 characters"
+                                ]
+                        ]
+                    ]); 
+                }
+
+                $user["dog"]["image"] = $requestData["image"];
+            }
+
             // Uppdatera vår array
-            $dogSitter[$index] = $user;
+            $dogOwner[$index] = $user;
             $foundUser = $user;
             break;
         }
@@ -246,7 +294,7 @@ if ($method === "PATCH") {
         );
     }
 
-    saveJson("dogsitter.json", $dogSitter);
+    saveJson("dogowners.json", $dogOwner);
     send($foundUser);
 
 }

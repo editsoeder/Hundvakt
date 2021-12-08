@@ -2,8 +2,40 @@
 
 require_once "../functions.php";
 error_reporting(-1);
+
+//Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
+
+
+if (isset($_GET["id"])) {
+    $dogDeleteID = $_GET["id"];
+
+    deleteDog($dogDeleteID);
+}
+
+//Radera hund från db.json
+function deleteDog($dogID) {
+    $data = json_decode(file_get_contents("dogowners.json"), true);
+    $found = false;
+
+    foreach ($data as $key => $dogOwner) {
+        if ($dogID == $dogOwner["id_owner"]) {
+            $found = true;
+            $index = $key;
+            break;
+        }
+    }
+    if ($found) {
+        $data = json_decode(file_get_contents("dogowners.json"), true);
+        unset($data[$index]);
+        $json = json_encode($data, JSON_PRETTY_PRINT);
+        file_put_contents("dogowners.json", $json);
+    }
+    header("Location: index.php");
+}
+
+
 // Ladda in vår JSON data från vår fil, i detta fallet är det $users
-$dogSitter = loadJson("dogsitter.json");
+$dogOwner = loadJson("dogowners.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -34,7 +66,7 @@ if ($method != "DELETE") {
 if ($method === "DELETE") {
 
     // Kontrollera att vi har den datan vi behöver
-    if (!isset($requestData["id_sitter"])) {
+    if (!isset($requestData["id_owner"])) {
         send(
             [
                 "code" => 1,
@@ -45,14 +77,14 @@ if ($method === "DELETE") {
     }
 
     // Kontrollera att id är en siffra
-    $id = $requestData["id_sitter"];
+    $id = $requestData["id_owner"];
     $found = false;
 
    // Om id existerar
-   foreach ($dogSitter as $index => $user) {
-    if ($user["id_sitter"] == $id) {
+   foreach ($dogOwner as $index => $user) {
+    if ($user["id_owner"] == $id) {
         $found = true;
-        array_splice($dogSitter, $index, 1);
+        array_splice($dogOwner, $index, 1);
         break;
         }
     }
@@ -69,8 +101,8 @@ if ($method === "DELETE") {
     }
 
     // Uppdaterar filen
-    $dogSitterJson = "dogsitter.json";
-    saveJson($dogSitterJson, $dogSitter);
+    $dogOwnerJson = "dogowners.json";
+    saveJson($dogOwnerJson, $dogOwner);
     send(
         ["You have deleted the following user" => $user],
         200
