@@ -223,5 +223,3 @@ function addUser ($filename, $user) {
 
 ?> 
 
-
-
