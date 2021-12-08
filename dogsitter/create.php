@@ -15,15 +15,17 @@ include "../functions.php";
         <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="welcomemessage"> 
+            <h2> Vad kul att du vill bli hundvakt!</h2>  
+            <p> Vänligen fyll i fälten nedan. </p>
+        </div> 
         <div class="form">
             <h2>Skapa konto</h2>
-
             <form class="createAccount" action="../functions.php" method="POST">
                 <input type="text" name="firstName" placeholder="Förnamn"><br>
                 <input type="text" name="lastName" placeholder="Efternamn"><br>
                 <input type="email" name="email" placeholder="E-postadress"><br>
                 <input type="password" name="password" placeholder="Lösenord"><br>
-
 
                 <?php 
                 createLocationList();
@@ -31,13 +33,15 @@ include "../functions.php";
                 createAreaBoxes();
                 createDayBoxes();
                 ?> 
-
                 <button>Skapa konto</button> 
             </form>
         </div>
-
     </body>
 </html>
 
+<?php 
 
+$dogsitters = getJSON("dogsitter.json");
+
+?>
 <?php require_once "../section/footer.php"; ?>
