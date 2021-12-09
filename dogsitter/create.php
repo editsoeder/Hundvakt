@@ -1,7 +1,9 @@
-<?php 
+<?php
+
 session_start(); 
 require_once "../section/header.php";
 include "../functions.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@ include "../functions.php";
         </div> 
         <div class="form">
             <h2>Skapa konto</h2>
-            <form class="createAccount" action="../functions.php" method="POST">
+            <form class="createAccount" action="test1.php" method="POST">
                 <input type="text" name="firstName" placeholder="Förnamn"><br>
                 <input type="text" name="lastName" placeholder="Efternamn"><br>
                 <input type="email" name="email" placeholder="E-postadress"><br>
@@ -29,19 +31,24 @@ include "../functions.php";
 
                 <?php 
                 createLocationList();
-                createDayList();
+                createCostList();
                 createAreaBoxes();
+                ?> 
+                <h2> Kan hundvakta dessa dagar: </h2> 
+                <?php 
                 createDayBoxes();
                 ?> 
-                <button>Skapa konto</button> 
+                <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
+                
+                <button type="submit">Skapa konto</button> 
             </form>
         </div>
     </body>
 </html>
 
-<?php 
 
-$dogsitters = getJSON("dogsitter.json");
+<?php
 
-?>
-<?php require_once "../section/footer.php"; ?>
+require_once "../section/footer.php";
+
+?> 

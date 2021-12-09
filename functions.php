@@ -96,25 +96,25 @@ function validEmail($data, $email){
 function createAreaBoxes() {
 ?>  <div id="areaWrapper"> 
         <h2> Tillgänglig i områden </h2> 
-        <input type="checkbox" id="Fosie" name="Fosie" value="Fosie">
+        <input type="checkbox" id="Fosie" name="areas[]" value="Fosie">
         <label for="Fosie"> Fosie </label><br>
-        <input type="checkbox" id="Husie" name="Husie" value="Husie">
+        <input type="checkbox" id="Husie" name="areas[]" value="Husie">
         <label for="Husie"> Husie </label><br>
-        <input type="checkbox" id="Hyllie" name="Hyllie" value="Hyllie">
+        <input type="checkbox" id="Hyllie" name="areas[]" value="Hyllie">
         <label for="Hyllie"> Hyllie </label><br>
-        <input type="checkbox" id="Kirseberg" name="Kirseberg" value="Kirseberg">
+        <input type="checkbox" id="Kirseberg" name="areas[]" value="Kirseberg">
         <label for="Kirseberg"> Kirseberg </label><br>
-        <input type="checkbox" id="Limhamn-Bunkeflo" name="Limhamn-Bunkeflo" value="Limhamn-Bunkeflo">
+        <input type="checkbox" id="Limhamn-Bunkeflo" name="areas[]" value="Limhamn-Bunkeflo">
         <label for="Limhamn-Bunkeflo"> Limhamn-Bunkeflo </label><br>
-        <input type="checkbox" id="MalmoCentrum" name="MalmoCentrum" value="Malmö Centrum">
+        <input type="checkbox" id="MalmoCentrum" name="areas[]" value="Malmö Centrum">
         <label for="MalmoCentrum"> Malmö Centrum </label><br>
-        <input type="checkbox" id="Oxie" name="Oxie" value="Oxie">
+        <input type="checkbox" id="Oxie" name="areas[]" value="Oxie">
         <label for="Oxie"> Oxie </label><br>
-        <input type="checkbox" id="Rosengard" name="Rosengard" value="Rosengård">
+        <input type="checkbox" id="Rosengard" name="areas[]" value="Rosengård">
         <label for="Oxie"> Rosengård </label><br>
-        <input type="checkbox" id="SodraInnerstaden" name="SodraInnerstaden" value="Södra Innerstaden">
+        <input type="checkbox" id="SodraInnerstaden" name="areas[]" value="Södra Innerstaden">
         <label for="SodraInnerstaden"> Södra Innerstaden </label><br>
-        <input type="checkbox" id="VastraInnerstaden" name="VastraInnerstaden" value="Västra Innerstaden">
+        <input type="checkbox" id="VastraInnerstaden" name="areas[]" value="Västra Innerstaden">
         <label for="Oxie"> Västra Innerstaden </label><br>
     </div>
 <?php
@@ -123,29 +123,28 @@ function createAreaBoxes() {
 //Skapar checkboxarna som kan användas i formulären, denna gäller dagar i veckan
 function createDayBoxes() {
 ?> 
-    <div id="dayWrapper"> 
-        <h2> Tillgängliga dagar </h2> 
-        <input type="checkbox" id="Monday" name="Monday" value="Måndag">
+    <div id="dayWrapper">  
+        <input type="checkbox" id="Monday" name="days[]" value="Måndag">
         <label for="Monday"> Måndag </label><br>
-        <input type="checkbox" id="Tuesday" name="Tuesday" value="Tisdag">
+        <input type="checkbox" id="Tuesday" name="days[]" value="Tisdag">
         <label for="Tuesday"> Tisdag </label><br>
-        <input type="checkbox" id="Wednesday" name="Wednesday" value="Onsdag">
+        <input type="checkbox" id="Wednesday" name="days[]" value="Onsdag">
         <label for="Wednesday"> Onsdag </label><br>
-        <input type="checkbox" id="Thursday" name="Thursday" value="Torsdag">
+        <input type="checkbox" id="Thursday" name="days[]" value="Torsdag">
         <label for="Torsdag"> Torsdag </label><br>
-        <input type="checkbox" id="Friday" name="Friday" value="Fredag">
+        <input type="checkbox" id="Friday" name="days[]" value="Fredag">
         <label for="Friday"> Fredag </label><br>
-        <input type="checkbox" id="Saturday" name="Saturday" value="Lördag">
+        <input type="checkbox" id="Saturday" name="days[]" value="Lördag">
         <label for="Saturday"> Lördag </label><br>
-        <input type="checkbox" id="Sunday" name="Sunday" value="Söndag">
+        <input type="checkbox" id="Sunday" name="days[]" value="Söndag">
         <label for="Sunday"> Söndag </label><br>
     </div>  
 <?php
 }
 
 //Skapar listan där man kan välja vilken timkostnad man har, kan användas i formulären
-function createDayList() {
-?>  <input list="hourCost" name="Timkostnad" placeholder="Timkostnad i kr"><br>
+function createCostList() {
+?>  <input list="hourCost" name="Timkostnad" placeholder="Kr i timmen"><br>
     <datalist id="hourCost">
         <option value="<50">
         <option value="60">
@@ -183,42 +182,6 @@ function saveToFile ($filename, $data) {
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents($filename, $json);
 }
-
-
-function addUser ($filename, $user) {
-    //takes the data the user submitted and makes them into
-    //a new user in the database
-    $data = getJSON($filename);
-    $userSentData = file_get_contents("php://input");
-    $user = json_decode($userSentData, true);
-
-    if($filename == "dogsitter.json") {
-        $newUser = [
-            "id" => getMaxID($data) + 1,
-            "firstName" => $user["firstName"],
-            "lastName" => $user["lastName"],
-            "email" => $user["email"],
-            "password" => $user["password"],
-            "location" => $user["location"],
-            "pricePerHour" => $user[""]
-        ];
-    }
-
-    if($filename == "tenants.json") {
-        $newEntry = [
-            "id" => getMaxID($data) + 1,
-            "first_name" => $entry["first_name"],
-            "last_name" => $entry["last_name"],
-            "email" => $entry["email"],
-            "gender" => $entry["gender"],
-        ];
-    }
-
-    array_push($data, $newEntry);
-
-    saveToFile($filename, $data);
-}
-
 
 
 ?> 

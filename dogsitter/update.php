@@ -248,7 +248,6 @@ if ($method === "PATCH") {
 
     saveJson("dogsitter.json", $dogSitter);
     send($foundUser);
-
 }
 
 ?>
