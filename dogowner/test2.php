@@ -10,15 +10,14 @@ function sendJSON($message, $statusCode) {
     exit();
 }
 
-
 function addEntry ($filename, $entry) {
     $data = getJSON($filename);
     array_push($data, $entry);
     saveToFile($filename, $data);
 }
 
-
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = getJSON("dogowners.json");
     $newEntry = [ 
         "first_name" => $_POST["firstName"],
         "last_name" => $_POST["lastName"],
@@ -29,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "dog" => [
         "dogName" => $_POST["dogName"],
-        "race" => $_POST["race"],
+        "race" => $_POST["breed"],
         "gender" => $_POST["gender"],
         "extraInfo" => $_POST["extraInfo"]
         ]

@@ -153,5 +153,23 @@
             "Oxie"
         ],
         "extraInfo": "\u00c4ldre dam i mina b\u00e4sta \u00e5r, gillar att g\u00e5 p\u00e5 l\u00e5nga promenader i solskenet"
+    },
+    {
+        "first_name": "Oliver",
+        "last_name": "Twist",
+        "email": "oliven1337@gmail.com",
+        "password": "wazabi",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Jag kan hoppa in med kort varsel. "
     }
 ]

@@ -42,7 +42,7 @@ include "../functions.php";
                 <div id="dogDiv"> 
                     <h2> Hunden: </2> 
                     <input type="text" name="dogName" placeholder="Namn"><br>
-                    <input type="text" name="race" placeholder="Ras"><br>
+                    <input type="text" name="breed" placeholder="Ras"><br>
                     <input type="checkbox" id="Monday" name="gender" value="Hona">
                     <label for="Hona"> Hona </label><br>
                     <input type="checkbox" id="Hane" name="gender" value="Hane">
