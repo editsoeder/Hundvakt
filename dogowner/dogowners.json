@@ -10,9 +10,9 @@
         "dog": {
             "name": "Ernie",
             "breed": "Alaskan Malamute",
-            "gender": "male",
+            "gender": "hane",
             "image": "bild",
-            "extra": "Ernie has all the energy in the world"
+            "extraInfo": "Ernie has all the energy in the world"
         },
         "days": [
             "Tisdag",
@@ -38,7 +38,7 @@
             "breed": "Leonberger",
             "gender": "male",
             "image": "bild",
-            "extra": "I love carrots and appeles"
+            "extraInfo": "I love carrots and appeles"
         }
     },
     {
@@ -59,45 +59,26 @@
             "breed": "Chihuahua",
             "gender": "female",
             "image": "bild",
-            "extra": "She bites a lot and don't like pigions"
+            "extraInfo": "She bites a lot and don't like pigions"
         }
     },
     {
-        "first_name": "Klara",
-        "last_name": "Johansson",
-        "email": "klara@hotmail.com",
-        "password": "hejhopp123",
-        "location": "S\u00f6dra Innerstaden",
+        "first_name": "Knut",
+        "last_name": "Larsson",
+        "email": "knutteputte@gmail.com",
+        "password": "abc123",
+        "location": "Kirseberg",
         "cost": "80",
-        "days": [
-            "Tisdag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
-        ],
-        "areas": [
-            "Hyllie",
-            "Limhamn-Bunkeflo",
-            "Malm\u00f6 Centrum"
-        ],
-        "extraInfo": "Jag \u00e4lskar att jobba med hundar"
-    },
-    {
-        "first_name": "Emilia",
-        "last_name": "Abrahamsson",
-        "email": "emiliahej@gmail.com",
-        "password": "1234hej",
-        "location": "Oxie",
-        "cost": "70",
         "days": [
             "Tisdag",
             "Onsdag",
             "Torsdag"
         ],
         "dog": {
-            "dogName": "Elliot",
-            "race": "Tax",
+            "dogName": "Janne",
+            "race": "Husky",
             "gender": "Hane",
-            "extraInfo": "Han bits ibland."
+            "extraInfo": "Allergisk mot fisk"
         }
     }
 ]

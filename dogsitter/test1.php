@@ -13,7 +13,6 @@ function sendJSON($message, $statusCode) {
 
 
 function addEntry ($filename, $entry) {
-
     $data = getJSON($filename);
     array_push($data, $entry);
     saveToFile($filename, $data);
