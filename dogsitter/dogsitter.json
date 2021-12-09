@@ -6,21 +6,18 @@
         "email": "clara@test.com",
         "password": "dogsrock1",
         "cost": 200,
-        "location": "Södra Innerstaden",
-
+        "location": "S\u00f6dra Innerstaden",
         "areas": [
-            "Malmö Centrum", 
-            "Södra Innerstaden", 
-            "Västra Innerstaden"
-        ], 
-
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
         "days": [
-            "Måndag", 
-            "Tisdag", 
+            "M\u00e5ndag",
+            "Tisdag",
             "Onsdag"
         ],
         "extra_info": "I love big dogs"
-    
     },
     {
         "id_sitter": 2,
@@ -101,5 +98,60 @@
             "Fredag"
         ],
         "extra_info": "My dream is to have 10 dogs"
+    },
+    {
+        "first_name": "Jonna",
+        "last_name": "Klasson",
+        "email": "jonna@gmail.com",
+        "password": "hejhopp",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "70",
+        "days": [
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Husie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "first_name": "Jonna",
+        "last_name": "Klasson",
+        "email": "jonna@gmail.com",
+        "password": "qdfq",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "70",
+        "days": [
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Husie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "first_name": "Ulrika",
+        "last_name": "Svensson",
+        "email": "ullis@gmail.com",
+        "password": "svampbobfyrkant",
+        "location": "Oxie",
+        "cost": "90",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Limhamn-Bunkeflo",
+            "Oxie"
+        ],
+        "extraInfo": "\u00c4ldre dam i mina b\u00e4sta \u00e5r, gillar att g\u00e5 p\u00e5 l\u00e5nga promenader i solskenet"
     }
 ]

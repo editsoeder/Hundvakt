@@ -6,21 +6,20 @@
         "email": "george@test.com",
         "password": "doggos123",
         "cost": ">150",
-        "location": "Malmö Centrum",
+        "location": "Malm\u00f6 Centrum",
         "dog": {
-           "name": "Ernie",
-           "breed":"Alaskan Malamute",
-           "gender": "male",
-           "image": "bild",
-           "extra": "Ernie has all the energy in the world"
+            "name": "Ernie",
+            "breed": "Alaskan Malamute",
+            "gender": "male",
+            "image": "bild",
+            "extra": "Ernie has all the energy in the world"
         },
         "days": [
-            "Tisdag", 
-            "Torsdag", 
+            "Tisdag",
+            "Torsdag",
             "Fredag"
         ]
     },
-
     {
         "id_owner": 2,
         "first_name": "Clara",
@@ -28,21 +27,20 @@
         "email": "clara@test.com",
         "password": "dogs4ever",
         "cost": "70",
-        "location": "Malmö Centrum",
+        "location": "Malm\u00f6 Centrum",
         "days": [
-            "Fredag", 
-            "Lördag", 
-            "Söndag"
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-           "name": "Alfons",
-           "breed":"Leonberger",
-           "gender": "male",
-           "image": "bild",
-           "extra": "I love carrots and appeles"
+            "name": "Alfons",
+            "breed": "Leonberger",
+            "gender": "male",
+            "image": "bild",
+            "extra": "I love carrots and appeles"
         }
     },
-
     {
         "id_owner": 3,
         "first_name": "Harry",
@@ -52,16 +50,54 @@
         "cost": "100",
         "location": "Fosie",
         "days": [
-            "Måndag", 
-            "Torsdag", 
-            "Söndag"
+            "M\u00e5ndag",
+            "Torsdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-           "name": "Fluffy",
-           "breed":"Chihuahua",
-           "gender": "female",
-           "image": "bild",
-           "extra": "She bites a lot and don't like pigions"
+            "name": "Fluffy",
+            "breed": "Chihuahua",
+            "gender": "female",
+            "image": "bild",
+            "extra": "She bites a lot and don't like pigions"
+        }
+    },
+    {
+        "first_name": "Klara",
+        "last_name": "Johansson",
+        "email": "klara@hotmail.com",
+        "password": "hejhopp123",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "80",
+        "days": [
+            "Tisdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Hyllie",
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum"
+        ],
+        "extraInfo": "Jag \u00e4lskar att jobba med hundar"
+    },
+    {
+        "first_name": "Emilia",
+        "last_name": "Abrahamsson",
+        "email": "emiliahej@gmail.com",
+        "password": "1234hej",
+        "location": "Oxie",
+        "cost": "70",
+        "days": [
+            "Tisdag",
+            "Onsdag",
+            "Torsdag"
+        ],
+        "dog": {
+            "dogName": "Elliot",
+            "race": "Tax",
+            "gender": "Hane",
+            "extraInfo": "Han bits ibland."
         }
     }
 ]
