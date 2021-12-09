@@ -1,30 +1,48 @@
-<?php
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>List of all dogsitters</title>
+</head>
+
+<?php 
 error_reporting(-1);
 session_start();
 require_once "../section/header.php";
 require_once "../functions.php";
 require_once "../section/footer.php";
 
+$allDogSitter = getAllDogSitter();
+foreach ($allDogSitter as $dogSitter) {
+        $DS = $dogSitter;
+        
+}
 ?>
-
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <title>List of all dogsitters</title>
-</head>
 
 <body>
     <nav class="nav"></nav>
-</body>
-</html>
 
-<?php 
+    <!-- <script>
+        let array = '<?php  $allDogSitter; ?>';
+        const obj = JSON.parse(array);
+        console.log(obj);
 
-$allDogSitter = getAllDogSitter();
-foreach($allDogSitter as $dogSitter){
-        $DS = $dogSitter;
-    }
+
+    </script>  -->
+
+
+    <!-- <?php
+        $myVariable = 'a testing variable';
+    ?>
+    <script type='text/javascript'>
+        var fromTheServer = '<?php echo $myVariable; ?>';
+        console.log(fromTheServer);
+    </script>  -->
+
+
+
+<?php
+
 
 $days = implode(" ",$DS["days"]);
 $areas = implode(" ",$DS["areas"]);
@@ -71,28 +89,26 @@ if (isset($_GET["id"])) {
 
     $filter = '
     <form style="text-align:center;" method="get" action="read.php">
-        <select name="field">
+        <select name="days" id="days" >
         <option value="Måndag">Måndag</option>
         <option value="Tisdag">Tisdag</option>
         <option value="Onsdag">Onsdag</option>
+        <option value="Torsdag">Torsdag</option>
+        <option value="Fredag">Fredag</option>
         </select>
 
         <input type="submit" value="Filtrera"><br>
     </form>';
     echo $filter;
 
-    // if (  isset($_GET["field"])) {
+    if (isset($_GET["days"])) {
+        echo $_GET["days"];
+    }
 
-    //     $filter = $allDogSitter.filter(obj => obj.studentName == "David");
-    //     console.log(result);
-    //     $div = "
-    //         <div class='listCard'>
-    //             <p>{$days["måndag"]}</p>
-    //         </div>
-    //      ";
-    //      echo $div;
-    //      echo $_GET["field"]; 
+    // if (!isset($_GET["days"])) {
+        
     // }
+    
 
     $title = '
     <div class="dogSitter"> 
@@ -109,9 +125,9 @@ if (isset($_GET["id"])) {
     ';
     echo $title;
 
-    // foreach($allDogSitter as $dogSitter){
-    //     echo showOneDog($dogSitter);
-    // }
+    foreach($allDogSitter as $dogSitter){
+        echo showOneDog($dogSitter);
+    }
 }
 
 
@@ -126,3 +142,5 @@ if (isset($_GET["id"])) {
     // }
 
 ?>
+</body>
+</html>
