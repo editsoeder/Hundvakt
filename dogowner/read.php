@@ -13,9 +13,6 @@ require_once "../section/header.php";
 </head>
 
 <body>
-    <nav>
-        <a href="sign-out.php">Sign out</a> 
-    </nav>
 
 <h1>Min Profil</h1>
 <div id="wrapper-dog"></div>

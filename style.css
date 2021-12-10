@@ -51,14 +51,28 @@ footer {
 }
 
 #header-image{
-    background-image: url(".jpg");
+    background-image: url("/Images/banner-2.jpg");
 
     /* Set a specific height */
-    height: 50%;
-  
+    height: 200px;
+    width: 100vw;
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    
 }
+
+nav {
+    display: flex;
+    color: var(--white);
+    font-family: var(--font-paragraph);
+    height: 30px;
+    width: 100%;
+    background-color: var(--green);
+    text-decoration: none;
+  }
+  nav > a {
+    flex-grow: 1;
+    text-align: center;
+  }
