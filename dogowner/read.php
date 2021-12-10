@@ -27,12 +27,12 @@ require_once "../section/header.php";
 <script>
 document.querySelector(".change-settings").addEventlistner('click', function(){
     <?php
-    header("Location: profile.php");
+    header("Location: update.php");
     ?>
 })
 document.querySelector(".delete-account").addEventlistner('click', function(){
     <?php
-    header("Location: sign-out.php");
+    header("Location: delete.php");
     ?>
 })
 </script>
