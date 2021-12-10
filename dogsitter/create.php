@@ -23,23 +23,32 @@ include "../functions.php";
         </div> 
         <div class="form">
             <h2>Skapa konto</h2>
-            <form class="createAccount" action="test1.php" method="POST">
-                <input type="text" name="firstName" placeholder="Förnamn"><br>
-                <input type="text" name="lastName" placeholder="Efternamn"><br>
-                <input type="email" name="email" placeholder="E-postadress"><br>
-                <input type="password" name="password" placeholder="Lösenord"><br>
+            <form class="createAccount" action="create.php" method="POST">
+                <div id="dogsitter"> 
+                    <input type="text" name="firstName" placeholder="Förnamn"><br>
+                    <input type="text" name="lastName" placeholder="Efternamn"><br>
+                    <input type="email" name="email" placeholder="E-postadress"><br>
+                    <input type="password" name="password" placeholder="Lösenord"><br>
 
-                <?php 
-                createLocationList();
-                createCostList();
-                createAreaBoxes();
-                ?> 
-                <h2> Kan hundvakta dessa dagar: </h2> 
-                <?php 
-                createDayBoxes();
-                ?> 
-                <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
-                
+                    <?php 
+                    createLocationList();
+                    createCostList();
+                    ?>                 
+                    <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
+                </div> 
+
+                <div id="areaBox">
+                    <?php
+                    createAreaBoxes();
+                    ?> 
+                </div> 
+
+                <div id="dayBox"> 
+                    <h2> Kan hundvakta dessa dagar: </h2> 
+                    <?php 
+                    createDayBoxes();
+                    ?> 
+                </div> 
                 <button type="submit">Skapa konto</button> 
             </form>
         </div>
@@ -48,7 +57,35 @@ include "../functions.php";
 
 
 <?php
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON("dogsitter.json");
 
+    $newEntry = [ 
+        "id_sitter" => getMaxID($data, "id_sitter") + 1,
+        "first_name" => utf8_encode($_POST["firstName"]),
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "areas" => $_POST["areas"],
+        "extraInfo" => $_POST["extraInfo"]
+    ];    
+        if(is_null($newEntry) ){
+            send(["message" => "Bad Request"], 400);
+            exit();
+        }
+        
+        addEntry("dogsitter.json", $newEntry);
+        send(["Message" => "User created"], 200) ;
+        exit();
+
+} else{
+    send(["message"=>"Wrong Method"], 405);
+    exit();
+ 
+}
 require_once "../section/footer.php";
 
 ?> 

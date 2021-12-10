@@ -100,6 +100,7 @@
         "extra_info": "My dream is to have 10 dogs"
     },
     {
+        "id_sitter": 6,
         "first_name": "Jonna",
         "last_name": "Klasson",
         "email": "jonna@gmail.com",
@@ -118,6 +119,7 @@
         "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
     },
     {
+        "id_sitter": 7,
         "first_name": "Jonna",
         "last_name": "Klasson",
         "email": "jonna@gmail.com",
@@ -136,6 +138,7 @@
         "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
     },
     {
+        "id_sitter": 8,
         "first_name": "Ulrika",
         "last_name": "Svensson",
         "email": "ullis@gmail.com",
@@ -155,6 +158,7 @@
         "extraInfo": "\u00c4ldre dam i mina b\u00e4sta \u00e5r, gillar att g\u00e5 p\u00e5 l\u00e5nga promenader i solskenet"
     },
     {
+        "id_sitter": 9,
         "first_name": "Oliver",
         "last_name": "Twist",
         "email": "oliven1337@gmail.com",
@@ -171,5 +175,82 @@
             "Hyllie"
         ],
         "extraInfo": "Jag kan hoppa in med kort varsel. "
+    },
+    {
+        "id_sitter": 10,
+        "first_name": "Sandra",
+        "last_name": "Jonsson",
+        "email": "sonny123@gmail.com",
+        "password": "123abc",
+        "location": "Oxie",
+        "cost": "90",
+        "days": [
+            "Tisdag",
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Go o gla"
+    },
+    {
+        "id_sitter": 11,
+        "first_name": "Hanna",
+        "last_name": "Olasson",
+        "email": "hannapanna123@gmail.com",
+        "password": "Blabla",
+        "location": "Kirseberg",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Kan jobba under natten"
+    },
+    {
+        "id_sitter": 12,
+        "first_name": "Jenny",
+        "last_name": "Nilsson",
+        "email": "hej@hej.se",
+        "password": "123abc",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Gillar bara att hundvakta stora hundar"
+    },
+    {
+        "id_sitter": 13,
+        "first_name": "Anna",
+        "last_name": "Bengtsson",
+        "email": "annapanna@gmail.com",
+        "password": "ilovedogs",
+        "location": "Limhamn-Bunkeflo",
+        "cost": ">100",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Har stor erfarenhet av hundpassning"
     }
 ]

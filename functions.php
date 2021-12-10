@@ -173,16 +173,23 @@ function createLocationList() {
 <?php
 }
 
-function getJSON($filename){
-    return json_decode(file_get_contents($filename), true);
+// Letar igenom api:n och kollar vilket det högsta 
+// ID:et är, används sedan när man skapar konto
+function getMaxID($data, $id){
+    if( count($data) < 1 ) {
+        return 0;
+    }
+    $column = array_column($data, $id);
+    $maxID = max($column);
+    return $maxID;
 }
 
-function saveToFile ($filename, $data) {
-    //Sparar ändringar till databasen
-    $json = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents($filename, $json);
+// Lägger till en ny hundägare eller hundvakt med data från formuläret
+function addEntry ($filename, $entry) {
+    $data = loadJSON($filename);
+    array_push($data, $entry);
+    saveJson($filename, $data);
 }
-
 
 ?> 
 
