@@ -47,7 +47,7 @@ foreach ($allDogSitter as $dogSitter) {
 $days = implode(" ",$DS["days"]);
 $areas = implode(" ",$DS["areas"]);
 
-//Om inloggad!
+//Om inloggad! FIXA SEN
 // Om "id" finns i url
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
@@ -144,7 +144,7 @@ if (isset($_GET["id"])) {
     }
 }
 
-
+//FIXA SEN
     //Inloggad
     // if(isset($_SESSION["loggedInAsDogSitter"])) {
  
