@@ -63,6 +63,7 @@
         }
     },
     {
+        "id_owner": 4,
         "first_name": "Knut",
         "last_name": "Larsson",
         "email": "knutteputte@gmail.com",
@@ -79,6 +80,82 @@
             "race": "Husky",
             "gender": "Hane",
             "extraInfo": "Allergisk mot fisk"
+        }
+    },
+    {
+        "id_owner": 5,
+        "first_name": "Erik",
+        "last_name": "Hej",
+        "email": "aefoae@gmail.com",
+        "password": "jeiofaneo",
+        "location": "Oxie",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "dog": {
+            "dogName": "Hasse",
+            "race": "Terrier",
+            "gender": "Hane",
+            "extraInfo": "Bits"
+        }
+    },
+    {
+        "id_owner": 6,
+        "first_name": "Erika",
+        "last_name": "Eriksson",
+        "email": "erika@gmail.com",
+        "password": "hejhej123",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Fredag"
+        ],
+        "dog": {
+            "dogName": "Pelle",
+            "race": "Labradoodle",
+            "gender": "Hane",
+            "extraInfo": "Sover mycket"
+        }
+    },
+    {
+        "id_owner": 7,
+        "first_name": "Johnny",
+        "last_name": "Stark",
+        "email": "johnny@johnny.se",
+        "password": "gioeagnoieq",
+        "location": "Kirseberg",
+        "cost": "70",
+        "days": [
+            "Tisdag",
+            "Fredag"
+        ],
+        "dog": {
+            "dogName": "Milly",
+            "race": "Chihuahua",
+            "gender": "Hona",
+            "extraInfo": "Liten men stark"
+        }
+    },
+    {
+        "id_owner": 8,
+        "first_name": "Johan",
+        "last_name": "Klasson",
+        "email": "johan123@gmail.com",
+        "password": "hejhopp",
+        "location": "Kirseberg",
+        "cost": "80",
+        "days": [
+            "Tisdag",
+            "Fredag"
+        ],
+        "dog": {
+            "dogName": "Allie",
+            "race": "Husky",
+            "gender": "Hona",
+            "extraInfo": "Springer ofta bort"
         }
     }
 ]

@@ -23,7 +23,7 @@ include "../functions.php";
         </div> 
         <div class="form">
             <h2>Skapa konto</h2>
-            <form class="createAccount" action="test2.php" method="POST">
+            <form class="createAccount" action="create.php" method="POST">
                 <div id="dogowner"> 
                     <input type="text" name="firstName" placeholder="Förnamn"><br>
                     <input type="text" name="lastName" placeholder="Efternamn"><br>
@@ -57,6 +57,39 @@ include "../functions.php";
 
 
 <?php
+// //samlar användardatan från formuläret in i $newEntry och använder 
+// //funktionen "addEntry" för att spara datan i json-filen
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON("dogowners.json");
+    $newEntry = [ 
+        "id_owner" => getMaxID($data, "id_owner") + 1, 
+        "first_name" => $_POST["firstName"],
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "dog" => [
+        "dogName" => $_POST["dogName"],
+        "race" => $_POST["breed"],
+        "gender" => $_POST["gender"],
+        "extraInfo" => $_POST["extraInfo"]
+        ]
+    ];    
+        if(is_null($newEntry) ){
+            send(["message" => "Bad Request"], 400);
+            exit();
+        }
+
+        addEntry("dogowners.json", $newEntry);
+        send(["Message" => "User created"], 200) ;
+        exit();
+} else{ //Om metoden inte är POST
+    send(["message"=>"Wrong Method"], 405);
+    exit();
+}
+
 
 require_once "../section/footer.php";
 
