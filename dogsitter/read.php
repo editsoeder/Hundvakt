@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>List of all dogsitters</title>
 </head>
 
@@ -89,6 +89,18 @@ if (isset($_GET["id"])) {
 
     $filter = '
     <form style="text-align:center;" method="get" action="read.php">
+        <select name="days" multiple="multiple" id="days" >
+        <option value="Måndag">Måndag</option>
+        <option value="Tisdag">Tisdag</option>
+        <option value="Onsdag">Onsdag</option>
+        <option value="Torsdag">Torsdag</option>
+        <option value="Fredag">Fredag</option>
+        </select>
+
+        <input type="submit" value="Filtrera"><br>
+    </form>';
+    $f = '
+    <form style="text-align:center;" method="get" action="read.php">
         <select name="days" id="days" >
         <option value="Måndag">Måndag</option>
         <option value="Tisdag">Tisdag</option>
@@ -100,6 +112,8 @@ if (isset($_GET["id"])) {
         <input type="submit" value="Filtrera"><br>
     </form>';
     echo $filter;
+    echo $f;
+
 
     if (isset($_GET["days"])) {
         echo $_GET["days"];

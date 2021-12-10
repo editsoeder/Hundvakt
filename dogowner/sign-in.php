@@ -21,7 +21,7 @@ if (isset($_GET["error"])) {
 <html>
     <head>
         <meta charset="utf-8">
-    	<link rel="stylesheet" href="css/style.css">
+    	<link rel="stylesheet" href="../style.css">
 	    <title>Logga In</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@ if (isset($_GET["error"])) {
         <div class="form">
             <h2>Logga in</h2>
 
-            <form class="logIn" action="/profile.php" method="POST">
+            <form class="logIn" action="profile.php" method="POST">
                 <input type="email" name="email" placeholder="Email"><br>
                 <input type="password" name="password" placeholder="Lösenord"><br>
                 <button>Logga in</button> 

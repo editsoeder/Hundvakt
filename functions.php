@@ -106,7 +106,7 @@ function validUser($data, $email, $password) {
             if (isset($user["id_owner"])) {
                 // Spara user id i session
                  $_SESSION["loggedInAsDogOwner"] = $user["id_owner"];
-             } 
+            } 
 
             return true;
         } 
