@@ -10,14 +10,150 @@
 
     --font-title: Indie Flower;
     --font-paragraph: Rounded Mplus 1c;
-
+    --home-btn: 200px;
 }
 
 
 body {
     margin: 0px;
     height: 100vh;
-    background-color: var(--green);
+}
+
+.homePage {
+    background-color: var(--blue);
+    /* height: 100vh; */
+    font-family: var(--font-title);
+}
+
+.homePagebuttonOne {
+    height: var(--home-btn);
+    width: var(--home-btn);
+    border-radius: 100px;
+    background-color: var(--pink);
+    position: relative;
+    left: 66vw;
+    top: -140vh;
+    font-size: 30px;
+    font-family: var(--font-title);
+}
+
+.homePagebuttonTwo {
+    height: var(--home-btn);
+    width: var(--home-btn);
+    border-radius: 100px;
+    background-color: var(--white);
+    position: relative;
+    left: 65vw;
+    top: -130vh;
+    font-size: 30px;
+    font-family: var(--font-title);
+}
+
+.homePagebuttonThree {
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    background-color: var(--pink);
+    margin-left: 50px;
+    margin-top: 30px;
+    font-family: var(--font-title);
+}
+
+.homePagebuttonOne:hover {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.homePagebuttonTwo:hover {
+    background-color: var(--pink);
+    cursor: pointer;
+}
+
+.homePagebuttonThree:hover {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.homePageTitle {
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homePageImgOne {
+    background-image: url(Images/dog_banana.jpg);
+    height: 450px;
+    width: 450px;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: center;
+    border: 10px solid var(--green);
+    position: relative;
+    left: -3vw;
+    top: -10vh;
+}
+
+.homePageImgTwo {
+    height: 650px;
+    width: 650px;
+    background-image: url(Images/woman-with-dog.jpg);
+    background-size: cover;
+    background-position: left;
+    border-radius: 100%;
+    border: 10px solid var(--orange);
+    position: relative;
+    left: 21vw;
+    top: -38vh;
+}
+
+.homePageImgThree {
+    height: 400px;
+    width: 400px;
+    background-image: url(Images/puppy.jpg);
+    background-size: cover;
+    background-position: bottom;
+    border: 10px solid var(--yellow);
+    position: relative;
+    border-radius: 100%;
+}
+
+.partOne {
+    height: 145vh;
+}
+
+.partOne > div:nth-child(1) {
+    padding-top: 30px;
+}
+
+.partTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#first {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#first > div:nth-child(1) {
+    padding-left: 50px;
+    font-size: 60px;
+}
+
+#first> div:nth-child(2) {
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+#second {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .form {
@@ -25,7 +161,6 @@ body {
     align-content: center;
     justify-content: center;
     font-family: 'Indie Flower', cursive;;
-
 }
 
 input {
