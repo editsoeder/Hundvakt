@@ -53,13 +53,45 @@ function saveJson($filename, $data) {
 }
 
 //Hämta alla dogsitter från DB
-function getAllDogsDB(){
-    $json = file_get_contents("../dogsitter/dogsitter.json");
+function getAllDogSitter(){
+    $json = file_get_contents("dogsitter.json");
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
 
     return $allDogSitter;
+}
+
+//kollar efter särskild URL.
+function checkIfURL($stringInURL){
+    if (strpos($_SERVER['REQUEST_URI'], "$stringInURL") !== false){
+    return true;
+    } else {
+        return false;
+    }
+}
+
+//DOM för en (1) hund.
+function showOneDog($info){
+
+    $allDogSitter = getAllDogSitter();
+
+    //Konvertera array till string
+    $days = implode(" ",$info["days"]);
+    
+    if (checkIfURL("read") == true){
+        $div = "
+            <div class='listCard'>
+                <p>{$info['first_name']}</p>
+                <p>{$info['location']}</p>
+                <p>{$days}</p>
+                <p>{$info['cost']}</p>
+                <img src='' alt='Profil picture'>
+                <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
+            </div>
+         ";
+    }
+    return $div;
 }
 
 function validUser($data, $email, $password) {
@@ -74,7 +106,7 @@ function validUser($data, $email, $password) {
             if (isset($user["id_owner"])) {
                 // Spara user id i session
                  $_SESSION["loggedInAsDogOwner"] = $user["id_owner"];
-             } 
+            } 
 
             return true;
         } 

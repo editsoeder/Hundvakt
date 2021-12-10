@@ -21,7 +21,7 @@ if (isset($_GET["error"])) {
 <html>
     <head>
         <meta charset="utf-8">
-    	<link rel="stylesheet" href="css/style.css">
+    	<link rel="stylesheet" href="../style.css">
 	    <title>Logga In</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
