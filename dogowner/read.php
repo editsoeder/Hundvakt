@@ -18,21 +18,13 @@ require_once "../section/header.php";
 <div id="wrapper-dog"></div>
 <div id="wrapper-contact"></div>
 <div id="wrapper-owner"></div>
-<button class="button" id="change-settings">Ändra Uppgifter</button>
-<button class="button" id="delete-account">Radera Konto</button>
+<form action="/update.php" method="POST">
+<button type="submit" class="button" id="change-settings">Ändra Uppgifter</button>
+</form>
+<form action="/delete.php" method="POST">
+<button type="submit" class="button" id="delete-account">Radera Konto</button>
+</form>
 
-<script>
-document.querySelector(".change-settings").addEventlistner('click', function(){
-    <?php
-    header("Location: update.php");
-    ?>
-})
-document.querySelector(".delete-account").addEventlistner('click', function(){
-    <?php
-    header("Location: delete.php");
-    ?>
-})
-</script>
 </body>
 
 <?php
