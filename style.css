@@ -169,14 +169,20 @@ body {
     text-align: center;
     font-size: 50px;
     margin: 20px;
-    /* align-self: end; */
+    display: flex;
     grid-column: 3;
     grid-row: 1;
+    align-items: center;
+    justify-content: center;
 }
 
 .form {
     grid-column: 3;
     grid-row: 2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 input {
@@ -191,7 +197,11 @@ button {
     margin: 10px;
     border-radius: 100%;
     background-color: var(--white);
-    margin-left: 60px;
+}
+
+button:hover {
+    background-color: var(--blue);
+    cursor: pointer;
 }
 
 footer {
