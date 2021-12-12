@@ -1,7 +1,8 @@
 <?php 
 error_reporting(-1);
 session_start();
-require_once "../section/header.php";
+require_once "functions.php";
+require_once "section/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +17,24 @@ require_once "../section/header.php";
     <nav>
         <a href="sign-out.php">Sign out</a> 
     </nav>
+
+    <h1>Min Profil</h1>
+    <div id="wrapper-dog"></div>
+    <div id="wrapper-contact"></div>
+    <div id="wrapper-owner"></div>
+
+    <form action="/update.php" method="POST">
+        <button type="submit" class="button" id="change-settings">Ändra Uppgifter</button>
+    </form>
+
+    <form action="/delete.php" method="POST">
+        <button type="submit" class="button" id="delete-account">Radera Konto</button>
+    </form>
 </body>
 
 <?php
-require_once "../section/footer.php";
-require_once "../functions.php";
+require_once "section/footer.php";
+
 
 $data = json_decode(file_get_contents("dogowners.json"), true);
 

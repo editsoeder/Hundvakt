@@ -54,12 +54,22 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogSitter(){
-    $json = file_get_contents("dogsitter.json");
+    $json = file_get_contents("dogsitter/dogsitter.json");
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
 
     return $allDogSitter;
+}
+
+//Hämta alla dogowner från DB
+function getAllDogOwner(){
+    $json = file_get_contents("dogowner/dogowners.json");
+    $data = json_decode($json, true);
+
+    $allDogOwner = $data;
+
+    return $allDogOwner;
 }
 
 //kollar efter särskild URL.
@@ -71,10 +81,8 @@ function checkIfURL($stringInURL){
     }
 }
 
-//DOM för en (1) hund.
-function showOneDog($info){
-
-    $allDogSitter = getAllDogSitter();
+//dogsitter/read.php
+function showDogSitter($info){
 
     //Konvertera array till string
     $days = implode(" ",$info["days"]);
@@ -88,6 +96,27 @@ function showOneDog($info){
                 <p>{$info['cost']}</p>
                 <img src='' alt='Profil picture'>
                 <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
+            </div>
+         ";
+    }
+    return $div;
+}
+
+//dogowner/read.php
+function showDogs($dogOwner, $dog){
+
+    //Konvertera array till string
+    $days = implode(" ",$dogOwner["days"]);
+    
+    if (checkIfURL("read") == true){
+        $div = "
+            <div class='listCard'>
+                <p>{$dog['dogName']}</p>
+                <p>{$dogOwner['location']}</p>
+                <p>{$days}</p>
+                <p>{$dogOwner['cost']}</p>
+                <img src='' alt='dog picture'>
+                <a href='read.php?id={$dogOwner['id_owner']}'>Läs mer</a>
             </div>
          ";
     }

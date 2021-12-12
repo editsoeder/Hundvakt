@@ -1,25 +1,20 @@
-<html>
+
 <head>
-    <meta charset="utf-8">
     <title>Lista på alla hundvakter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    
 </head>
 
 <?php 
 error_reporting(-1);
 session_start();
-require_once "../section/header.php";
-require_once "../functions.php";
-require_once "../section/footer.php";
+require_once "section/header.php";
+require_once "functions.php";
 
 $allDogSitter = getAllDogSitter();
-foreach ($allDogSitter as $dogSitter) {
-        $DS = $dogSitter;
+// foreach ($allDogSitter as $dogSitter) {
+//         $DS = $dogSitter;
         
-}
+// }
 ?>
 
 <body>
@@ -47,9 +42,6 @@ foreach ($allDogSitter as $dogSitter) {
 <?php
 
 
-$days = implode(" ",$DS["days"]);
-$areas = implode(" ",$DS["areas"]);
-
 //Om inloggad! FIXA SEN
 // Om "id" finns i url
 if (isset($_GET["id"])) {
@@ -60,6 +52,9 @@ if (isset($_GET["id"])) {
             $foundDogSitter = $dogSitter; 
         } 
     }
+
+    $days = implode(" ",$foundDogSitter["days"]);
+    $areas = implode(" ",$foundDogSitter["areas"]);
 
     //Konvertera array till string
     $days = implode(" ",$foundDogSitter["days"]);
@@ -102,29 +97,8 @@ if (isset($_GET["id"])) {
 
         <input type="submit" value="Filtrera"><br>
     </form>';
-    $f = '
-    <form style="text-align:center;" method="get" action="read.php">
-        <select name="days" id="days" >
-        <option value="Måndag">Måndag</option>
-        <option value="Tisdag">Tisdag</option>
-        <option value="Onsdag">Onsdag</option>
-        <option value="Torsdag">Torsdag</option>
-        <option value="Fredag">Fredag</option>
-        </select>
 
-        <input type="submit" value="Filtrera"><br>
-    </form>';
     echo $filter;
-    echo $f;
-
-
-    if (isset($_GET["days"])) {
-        echo $_GET["days"];
-    }
-
-    // if (!isset($_GET["days"])) {
-        
-    // }
     
 
     $title = '
@@ -143,7 +117,7 @@ if (isset($_GET["id"])) {
     echo $title;
 
     foreach($allDogSitter as $dogSitter){
-        echo showOneDog($dogSitter);
+        echo showDogSitter($dogSitter);
     }
 }
 
@@ -161,3 +135,7 @@ if (isset($_GET["id"])) {
 ?>
 </body>
 </html>
+
+<?php 
+require_once "section/footer.php";
+?>
