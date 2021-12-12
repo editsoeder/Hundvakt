@@ -156,12 +156,27 @@ body {
 }
 
 .logIn {
-    display: flex;
-    align-content: center;
+    display: grid;
     justify-content: center;
     font-family: 'Indie Flower', cursive;
-    /* flex-direction: column; */
-    /* height: 100vh; */
+    height: 59%;
+    background-color: var(--green);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.logInText {
+    text-align: center;
+    font-size: 50px;
+    margin: 20px;
+    /* align-self: end; */
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.form {
+    grid-column: 3;
+    grid-row: 2;
 }
 
 input {
@@ -171,9 +186,12 @@ input {
 }
 
 button {
-    height: 40px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     margin: 10px;
+    border-radius: 100%;
+    background-color: var(--white);
+    margin-left: 60px;
 }
 
 footer {
@@ -196,7 +214,7 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    z-index: 1;
 }
 
 nav {
@@ -207,8 +225,48 @@ nav {
     width: 100%;
     background-color: var(--green);
     text-decoration: none;
-  }
-  nav > a {
-    flex-grow: 1;
-    text-align: center;
-  }
+}
+
+nav > a {
+flex-grow: 1;
+text-align: center;
+}
+
+
+.ajax-loader {
+    position: relative;
+    bottom: 20%;
+    left: 30%;
+    transform-origin: 50% 50%;
+    transform: rotate(30deg) translate(-50%, 0%);
+    font-size: 40px;
+    width: 1em;
+    height: 2em;
+    color: #d31145;
+}
+
+.paw {
+    width: 2em;
+    height: 2em;
+    opacity: 1;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.icon {
+    fill: var(--blue);
+}
+
+.paw:nth-child(odd) {
+    transform: rotate(-10deg);
+}
+
+.paw:nth-child(even) {
+    transform: rotate(10deg) translate(125%, 0);
+}
+
+	
+
