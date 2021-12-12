@@ -33,6 +33,8 @@ $priceHour = [
     ">150" 
 ];
 
+
+
 // Skicka ut JSON till en anvĂ¤ndare
 function send($data, $statusCode = 200) {
     header("Content-Type: application/json");

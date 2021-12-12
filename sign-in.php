@@ -35,11 +35,6 @@ if (isset($_POST["email"], $_POST["password"])) {
 
     foreach ($dogOwner as $user) {
 
-        if ($user["email"] === $email) {
-            header("Location: sign-in.php?error=3");
-            exit();
-        }
-
         if ($user["email"] === $email && $user["password"] === $password) {
             if (isset($user["id_owner"])) {
 
@@ -53,14 +48,14 @@ if (isset($_POST["email"], $_POST["password"])) {
                 exit();
             } 
         }
-    }
 
-    foreach ($dogSitter as $sitter) {
-
-        if ($sitter["email"] === $email) {
+        elseif ($user["email"] === $email) {
             header("Location: sign-in.php?error=3");
             exit();
         }
+    }
+
+    foreach ($dogSitter as $sitter) {
 
         if ($sitter["email"] === $email && $sitter["password"] === $password) {
             if (isset($sitter["id_sitter"])) {
@@ -74,6 +69,11 @@ if (isset($_POST["email"], $_POST["password"])) {
                 header("Location: dogsitter/profile.php");
                 exit();
             } 
+        }
+
+        elseif ($sitter["email"] === $email) {
+            header("Location: sign-in.php?error=3");
+            exit();
         }
     }
 
