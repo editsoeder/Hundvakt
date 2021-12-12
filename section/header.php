@@ -26,15 +26,15 @@ error_reporting(-1);
             echo '<nav>
             <a href="/dogowner/profile.php" >Hundvakter</a>
             <a href/dogownerread.php" >Profil</a>
-            <a href="/dogowner/sign-out.php" >Logga Ut</a>
-</nav>';
-        if(isset($_SESSION["loggedInAsDogSitter"])){
+            <a href="../sign-out.php" >Logga Ut</a>
+            </nav>';
+        }
+        if (isset($_SESSION["loggedInAsDogSitter"])){
             echo '<nav>
             <a href="/dogsitter/profile.php" >Hundar</a>
             <a href="/dogsitter/read.php" >Profil</a>
-            <a href="/dogsitter/sign-out.php" >Logga Ut</a>
-</nav>';  
-        }
+            <a href="../sign-out.php" >Logga Ut</a>
+            </nav>';  
         } else {
             echo '<nav></nav>';
         }

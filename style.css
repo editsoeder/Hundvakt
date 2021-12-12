@@ -21,7 +21,6 @@ body {
 
 .homePage {
     background-color: var(--blue);
-    /* height: 100vh; */
     font-family: var(--font-title);
 }
 
@@ -156,11 +155,13 @@ body {
     padding: 20px;
 }
 
-.form {
+.logIn {
     display: flex;
     align-content: center;
     justify-content: center;
-    font-family: 'Indie Flower', cursive;;
+    font-family: 'Indie Flower', cursive;
+    /* flex-direction: column; */
+    /* height: 100vh; */
 }
 
 input {

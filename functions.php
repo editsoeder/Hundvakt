@@ -123,35 +123,6 @@ function showDogs($dogOwner, $dog){
     return $div;
 }
 
-function validUser($data, $email, $password) {
-    foreach ($data as $user) {
-        if ($user["email"] === $email && $user["password"] === $password) {
-
-            if (isset($user["id_sitter"])) {
-               // Spara user id i session
-                $_SESSION["loggedInAsDogSitter"] = $user["id_sitter"];
-            }
-
-            if (isset($user["id_owner"])) {
-                // Spara user id i session
-                 $_SESSION["loggedInAsDogOwner"] = $user["id_owner"];
-            } 
-
-            return true;
-        } 
-    }
-    return false;
-}
-
-//Kolla om email finns i DB
-function validEmail($data, $email){
-    foreach ($data as $user) {
-        if ($user["email"] === $email) {
-            return true;
-        }
-    }
-    return false;
-}
 
 //Skapar checkboxarna som kan användas i de olika formulären, denna gäller områden i malmö
 function createAreaBoxes() {
