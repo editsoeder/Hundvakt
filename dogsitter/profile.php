@@ -1,7 +1,7 @@
 <?php 
 error_reporting(-1);
 session_start();
-require_once "section/header.php";
+require_once "../section/header.php";
 ?>
 <head>
 
@@ -13,8 +13,8 @@ require_once "section/header.php";
 </body>
 
 <?php
-require_once "section/footer.php";
-require_once "functions.php";
+require_once "../section/footer.php";
+require_once "../functions.php";
 
 // $data = json_decode(file_get_contents("dogsitter.json"), true);
 

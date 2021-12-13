@@ -1,8 +1,8 @@
 <?php 
 error_reporting(-1);
 session_start();
-require_once "functions.php";
-require_once "section/header.php";
+require_once "../functions.php";
+require_once "../section/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ require_once "section/header.php";
     <div id="wrapper-contact"></div>
     <div id="wrapper-owner"></div>
 
-    <form action="/update.php" method="POST">
+    <form action="/dogowner/update.php" method="POST">
         <button type="submit" class="button" id="change-settings">Ändra Uppgifter</button>
     </form>
 
@@ -30,7 +30,7 @@ require_once "section/header.php";
 </body>
 
 <?php
-require_once "section/footer.php";
+require_once "../section/footer.php";
 
 
 // $data = json_decode(file_get_contents("dogowners.json"), true);
