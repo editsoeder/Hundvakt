@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         send(["Message" => "User created"], 200) ;
         exit();
 } else{ //Om metoden inte är POST
-    send(["message"=>"Wrong Method"], 405);
+    // send(["message"=>"Wrong Method"], 405);
     exit();
 }
 

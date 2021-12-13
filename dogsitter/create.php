@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         exit();
 
 } else{
-    send(["message"=>"Wrong Method"], 405);
+    // send(["message"=>"Wrong Method"], 405);
     exit();
  
 }
