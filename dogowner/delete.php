@@ -1,6 +1,5 @@
 <?php
 
-require_once "../functions.php";
 error_reporting(-1);
 
 //Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
