@@ -6,21 +6,18 @@
         "email": "clara@test.com",
         "password": "dogsrock1",
         "cost": 200,
-        "location": "Södra Innerstaden",
-
+        "location": "S\u00f6dra Innerstaden",
         "areas": [
-            "Malmö Centrum", 
-            "Södra Innerstaden", 
-            "Västra Innerstaden"
-        ], 
-
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
         "days": [
-            "Måndag", 
-            "Tisdag", 
+            "M\u00e5ndag",
+            "Tisdag",
             "Onsdag"
         ],
         "extra_info": "I love big dogs"
-    
     },
     {
         "id_sitter": 2,
@@ -31,42 +28,37 @@
         "cost": 210,
         "location": "Fosie",
         "areas": [
-            "Kirseberg", 
-            "Hyllie", 
+            "Kirseberg",
+            "Hyllie",
             "Fosie"
-        ], 
-
+        ],
         "days": [
-            "Torsdag", 
-            "Fredag", 
-            "Lördag", 
-            "Söndag"
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "Dogs are the best"
-    
     },
     {
         "id_sitter": 3,
         "first_name": "Edit",
-        "last_name": "Söderqvist",
+        "last_name": "S\u00f6derqvist",
         "email": "edit@test.com",
         "password": "doglover123",
         "cost": 250,
         "location": "Oxie",
         "areas": [
-            "Malmö Centrum", 
-            "Oxie", 
+            "Malm\u00f6 Centrum",
+            "Oxie",
             "Hyllie"
-        ], 
-
+        ],
         "days": [
-            "Lördag", 
-            "Söndag"
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "I love to cook for my dogs"
-    
     },
-    
     {
         "id_sitter": 4,
         "first_name": "Erik",
@@ -76,41 +68,36 @@
         "cost": 180,
         "location": "Kirseberg",
         "areas": [
-            "Kirseberg", 
-            "Södra Innerstaden", 
+            "Kirseberg",
+            "S\u00f6dra Innerstaden",
             "Limhamn-Bunkeflo"
-        ], 
-
+        ],
         "days": [
-            "Måndag", 
-            "Torsdag", 
-            "Söndag"
+            "M\u00e5ndag",
+            "Torsdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "Big dogs are scary!"
-    
     },
-
     {
         "id_sitter": 5,
         "first_name": "Sebastian",
-        "last_name": "Bengtegård",
+        "last_name": "Bengteg\u00e5rd",
         "email": "sebastian@test.com",
         "password": "huskeylover2",
         "cost": 180,
         "location": "Fosie",
         "areas": [
-            "Fosie", 
-            "Rosengård", 
+            "Fosie",
+            "Roseng\u00e5rd",
             "Limhamn-Bunkeflo"
-        ], 
-
+        ],
         "days": [
-            "Tisdag", 
-            "Torsdag", 
+            "Tisdag",
+            "Torsdag",
             "Fredag"
         ],
         "extra_info": "My dream is to have 10 dogs"
-    
     },
     {
         "id_sitter": 6,
@@ -118,18 +105,18 @@
         "last_name": "Klasson",
         "email": "jonna@gmail.com",
         "password": "hejhopp",
-        "location": "Södra Innerstaden",
+        "location": "S\u00f6dra Innerstaden",
         "cost": "70",
         "days": [
             "Fredag",
-            "Lördag",
-            "Söndag"
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "areas": [
             "Husie",
             "Kirseberg"
         ],
-        "extraInfo": "Gillar bara att hundvakta små hundar"
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
     },
     {
         "id_sitter": 7,
@@ -137,18 +124,18 @@
         "last_name": "Klasson",
         "email": "jonna@gmail.com",
         "password": "qdfq",
-        "location": "Södra Innerstaden",
+        "location": "S\u00f6dra Innerstaden",
         "cost": "70",
         "days": [
             "Fredag",
-            "Lördag",
-            "Söndag"
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "areas": [
             "Husie",
             "Kirseberg"
         ],
-        "extraInfo": "Gillar bara att hundvakta små hundar"
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
     },
     {
         "id_sitter": 8,
@@ -168,7 +155,7 @@
             "Limhamn-Bunkeflo",
             "Oxie"
         ],
-        "extraInfo": "äldre dam i mina bästa år, gillar att gå på långa promenader i solskenet"
+        "extraInfo": "\u00e4ldre dam i mina b\u00e4sta \u00e5r, gillar att g\u00e5 p\u00e5 l\u00e5nga promenader i solskenet"
     },
     {
         "id_sitter": 9,
