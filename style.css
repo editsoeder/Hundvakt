@@ -227,16 +227,29 @@ footer {
 nav {
     display: flex;
     color: var(--white);
-    font-family: var(--font-paragraph);
     height: 30px;
     width: 100%;
     background-color: var(--green);
-    text-decoration: none;
+    padding: 4vh;
 }
 
 nav > a {
 flex-grow: 1;
 text-align: center;
+font-family: var(--font-title);
+text-decoration: none;
+display: flex;
+color: var(--white);
+height: 30px;
+width: 100%;
+background-color: var(--green);
+justify-content: center;
+align-items: center;
+font-size: 6vh;
+transition: all .5s;
+}
+nav > a:hover{
+    color: var(--orange);
 }
 
 
