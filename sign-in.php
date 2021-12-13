@@ -44,7 +44,7 @@ if (isset($_POST["email"], $_POST["password"])) {
                 // Representerar att användare är inloggad
                 $_SESSION["loggedIn"] = true;
 
-                header("Location: dogowner/profile.php");
+                header("Location: ../dogowner/profile.php");
                 exit();
             } 
         }

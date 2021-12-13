@@ -1,10 +1,11 @@
 <?php 
 error_reporting(-1);
+
 session_start();
 require_once "../functions.php";
 require_once "../section/header.php";
-?>
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,9 +29,9 @@ require_once "../section/header.php";
         <button type="submit" class="button" id="delete-account">Radera Konto</button>
     </form>
 </body>
-
 <?php
 require_once "../section/footer.php";
+
 
 
 // $data = json_decode(file_get_contents("dogowners.json"), true);
@@ -64,3 +65,5 @@ require_once "../section/footer.php";
 //     header("Location: sign-in.php?error=2");
 //         exit();
 // } 
+?>
+
