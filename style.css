@@ -216,11 +216,8 @@ footer {
 
 #header-image{
     background-image: url("/Images/banner-2.jpg");
-
-    /* Set a specific height */
     height: 200px;
     width: 100vw;
-    /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -278,5 +275,54 @@ svg {
     transform: rotate(10deg) translate(125%, 0);
 }
 
-	
+#wrapper-dog{
+    height: 30vh;
+    width: 30vw;
+    background-color: var(--blue);
+    border-radius: 20px;
+    position: relative;
+    left: 58vw;
+    top: 6vh;
+}
+#wrapper-contact{
+    height: 20vh;
+    width: 20vw;
+    background-color: var(--pink);
+    border-radius: 20px;
+    position: relative;
+    left: 64vw;
+    top: 30vh;
+}
 
+#wrapper-owner{
+    height: 30vh;
+    width: 30vw;
+    background-color: var(--yellow);
+    border-radius: 20px;
+    position: relative;
+    left: 10vw;
+    top: -44vh;
+}
+ #wrapper-profile > h1{
+    color: var(--orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+ }
+ 
+ /* #wrapper-profile{
+
+ } */
+
+ #change-settings-button{
+    position: relative;
+    left: 85vw;
+    top: 14vh;
+ }
+
+ #delete-account-button{
+    position: relative;
+    left: 78vw;
+    top: -5vh;
+ }

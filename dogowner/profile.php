@@ -15,18 +15,18 @@ require_once "../section/header.php";
 </head>
 
 <body>
-
+<div id="wrapper-profile">
     <h1>Min Profil</h1>
     <div id="wrapper-dog"></div>
     <div id="wrapper-contact"></div>
     <div id="wrapper-owner"></div>
-
+</div>
     <form action="/dogowner/update.php" method="POST">
-        <button type="submit" class="button" id="change-settings">Ändra Uppgifter</button>
+        <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
     <form action="delete.php" method="POST">
-        <button type="submit" class="button" id="delete-account">Radera Konto</button>
+        <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
     </form>
 </body>
 <?php
