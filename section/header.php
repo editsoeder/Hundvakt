@@ -1,5 +1,5 @@
 <?php
-require_once "../functions.php";
+// require_once "../functions.php";
 error_reporting(-1);
         //Om personen är inloggad så kommer nav visa alla länkar annars bara de tre väsentliga
 ?>
