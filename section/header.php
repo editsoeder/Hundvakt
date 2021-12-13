@@ -1,18 +1,21 @@
 <?php
+
 // require_once "../functions.php";
+
 error_reporting(-1);
         //Om personen är inloggad så kommer nav visa alla länkar annars bara de tre väsentliga
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
-    <title>Document</title>
 </head>
+
 
 <body>
     <main>
@@ -25,15 +28,15 @@ error_reporting(-1);
             echo '<nav>
             <a href="/dogowner/profile.php" >Hundvakter</a>
             <a href/dogownerread.php" >Profil</a>
-            <a href="/dogowner/sign-out.php" >Logga Ut</a>
-</nav>';
-        if(isset($_SESSION["loggedInAsDogSitter"])){
+            <a href="../sign-out.php" >Logga Ut</a>
+            </nav>';
+        }
+        if (isset($_SESSION["loggedInAsDogSitter"])){
             echo '<nav>
             <a href="/dogsitter/profile.php" >Hundar</a>
             <a href="/dogsitter/read.php" >Profil</a>
-            <a href="/dogsitter/sign-out.php" >Logga Ut</a>
-</nav>';  
-        }
+            <a href="../sign-out.php" >Logga Ut</a>
+            </nav>';  
         } else {
             echo '<nav></nav>';
         }

@@ -33,6 +33,8 @@ $priceHour = [
     ">150" 
 ];
 
+
+
 // Skicka ut JSON till en anvĂ¤ndare
 function send($data, $statusCode = 200) {
     header("Content-Type: application/json");
@@ -53,8 +55,8 @@ function saveJson($filename, $data) {
 }
 
 //Hämta alla dogsitter från DB
-function getAllDogsDB(){
-    $json = file_get_contents("../dogsitter/dogsitter.json");
+function getAllDogSitter(){
+    $json = file_get_contents("dogsitter/dogsitter.json");
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
@@ -62,35 +64,67 @@ function getAllDogsDB(){
     return $allDogSitter;
 }
 
-function validUser($data, $email, $password) {
-    foreach ($data as $user) {
-        if ($user["email"] === $email && $user["password"] === $password) {
+//Hämta alla dogowner från DB
+function getAllDogOwner(){
+    $json = file_get_contents("dogowner/dogowners.json");
+    $data = json_decode($json, true);
 
-            if (isset($user["id_sitter"])) {
-               // Spara user id i session
-                $_SESSION["loggedInAsDogSitter"] = $user["id_sitter"];
-            }
+    $allDogOwner = $data;
 
-            if (isset($user["id_owner"])) {
-                // Spara user id i session
-                 $_SESSION["loggedInAsDogOwner"] = $user["id_owner"];
-             } 
-
-            return true;
-        } 
-    }
-    return false;
+    return $allDogOwner;
 }
 
-//Kolla om email finns i DB
-function validEmail($data, $email){
-    foreach ($data as $user) {
-        if ($user["email"] === $email) {
-            return true;
-        }
+//kollar efter särskild URL.
+function checkIfURL($stringInURL){
+    if (strpos($_SERVER['REQUEST_URI'], "$stringInURL") !== false){
+    return true;
+    } else {
+        return false;
     }
-    return false;
 }
+
+//dogsitter/read.php
+function showDogSitter($info){
+
+    //Konvertera array till string
+    $days = implode(" ",$info["days"]);
+    
+    if (checkIfURL("read") == true){
+        $div = "
+            <div class='listCard'>
+                <p>{$info['first_name']}</p>
+                <p>{$info['location']}</p>
+                <p>{$days}</p>
+                <p>{$info['cost']}</p>
+                <img src='' alt='Profil picture'>
+                <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
+            </div>
+         ";
+    }
+    return $div;
+}
+
+//dogowner/read.php
+function showDogs($dogOwner, $dog){
+
+    //Konvertera array till string
+    $days = implode(" ",$dogOwner["days"]);
+    
+    if (checkIfURL("read") == true){
+        $div = "
+            <div class='listCard'>
+                <p>{$dog['dogName']}</p>
+                <p>{$dogOwner['location']}</p>
+                <p>{$days}</p>
+                <p>{$dogOwner['cost']}</p>
+                <img src='' alt='dog picture'>
+                <a href='read.php?id={$dogOwner['id_owner']}'>Läs mer</a>
+            </div>
+         ";
+    }
+    return $div;
+}
+
 
 //Skapar checkboxarna som kan användas i de olika formulären, denna gäller områden i malmö
 function createAreaBoxes() {
