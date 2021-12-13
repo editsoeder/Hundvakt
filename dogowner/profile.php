@@ -2,6 +2,7 @@
 error_reporting(-1);
 session_start();
 require_once "functions.php";
+include "section/header.php";
 ?>
 
 <!DOCTYPE html>

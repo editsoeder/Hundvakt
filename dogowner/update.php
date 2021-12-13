@@ -1,5 +1,5 @@
 <?php 
-require_once "../functions.php";
+require_once "functions.php";
 
 // Ladda in vår JSON data från vår fil
 $dogOwner = loadJson("dogowners.json");
