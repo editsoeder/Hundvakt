@@ -1,26 +1,10 @@
-<head>
-    <title>Lista på alla hundar</title>
-    
-</head>
-
 <?php 
 error_reporting(-1);
 session_start();
-require_once "functions.php";
-require_once 'section/header.php';
+require_once __DIR__ . "/../functions.php";
+require_once __DIR__ . '/../section/header.php';
 
 $allDogOwner = getAllDogOwner();
-
-?>
-
-
-<body>
-
-
-
-
-<?php
-
 
 //Om inloggad! FIXA SEN
 // Om "id" finns i url
@@ -113,13 +97,7 @@ $days = implode(" ",$dogOwner["days"]);
     //     header("Location: sign-out.php");
     // }
 
-?>
-</body>
-</html>
 
-
-<?php
-require_once "section/footer.php";
-
+require_once __DIR__ . "/../section/footer.php";
 
 ?>

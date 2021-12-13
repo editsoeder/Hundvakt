@@ -1,2 +1,4 @@
 
-<footer>©2021 DOG-GO</footer></html>
+<footer>©2021 DOG-GO</footer>
+</body>
+</html>
