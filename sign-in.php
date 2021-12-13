@@ -1,7 +1,7 @@
 <?php 
 error_reporting(-1);
 session_start(); 
-require_once "section/header.php";
+// require_once "section/header.php";
 require_once "functions.php";
 
 // Kontrollera om "error" finns i vår URL
@@ -44,7 +44,7 @@ if (isset($_POST["email"], $_POST["password"])) {
                 // Representerar att användare är inloggad
                 $_SESSION["loggedIn"] = true;
 
-                header("Location: dogowner/profile.php");
+                header("Location: ../dogowner/profile.php");
                 exit();
             } 
         }
@@ -81,7 +81,8 @@ if (isset($_POST["email"], $_POST["password"])) {
     exit();
 } 
 ?>
-
+<?php require_once "section/header.php";
+?> 
 
     <head>
 

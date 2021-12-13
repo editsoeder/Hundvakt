@@ -223,7 +223,4 @@ function addEntry ($filename, $entry) {
     $data = loadJSON($filename);
     array_push($data, $entry);
     saveJson($filename, $data);
-}
-
-?> 
-
+}?>

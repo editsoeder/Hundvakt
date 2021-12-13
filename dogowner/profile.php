@@ -1,10 +1,11 @@
 <?php 
 error_reporting(-1);
-session_start();
-require_once "functions.php";
-include "section/header.php";
-?>
 
+session_start();
+require_once "../functions.php";
+require_once "../section/header.php";
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +21,7 @@ include "section/header.php";
     <div id="wrapper-contact"></div>
     <div id="wrapper-owner"></div>
 
-    <form action="update.php" method="POST">
+    <form action="/dogowner/update.php" method="POST">
         <button type="submit" class="button" id="change-settings">Ändra Uppgifter</button>
     </form>
 
@@ -28,8 +29,8 @@ include "section/header.php";
         <button type="submit" class="button" id="delete-account">Radera Konto</button>
     </form>
 </body>
-
 <?php
-require_once "section/footer.php";
+require_once "../section/footer.php";
+
 
 
