@@ -230,7 +230,8 @@ nav {
     height: 30px;
     width: 100%;
     background-color: var(--green);
-    padding: 4vh;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 nav > a {
