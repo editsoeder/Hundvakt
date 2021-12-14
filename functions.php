@@ -64,7 +64,7 @@ function getAllDogSitter(){
 
 //Hämta alla dogowner från DB
 function getAllDogOwner(){
-    $json = file_get_contents("dogowner/dogowners.json");
+    $json = file_get_contents("../dogowner/dogowners.json");
     $data = json_decode($json, true);
 
     $allDogOwner = $data;
