@@ -1,9 +1,8 @@
 <?php 
 error_reporting(-1);
-
 session_start();
-require_once "../functions.php";
-require_once "../section/header.php";
+require_once __DIR__ . "/../functions.php";
+require_once __DIR__ . "/../section/header.php";
 
 $ownerInfo = idInfoOwner($_SESSION["loggedInAsDogOwner"]);
 $ownerName = $ownerInfo["first_name"] . " " . $ownerInfo["last_name"];
@@ -57,7 +56,7 @@ $ownerEmail = $ownerInfo["email"];
     </form>
 </body>
 <?php
-require_once "../section/footer.php";
+require_once __DIR__ . "/../section/footer.php";
 ?>
 
 

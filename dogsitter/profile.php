@@ -1,9 +1,8 @@
 <?php 
 error_reporting(-1);
-
 session_start();
-require_once "../functions.php";
-require_once "../section/header.php";
+require_once __DIR__ . "/../functions.php";
+require_once __DIR__ . "/../section/header.php";
 
 $sitterInfo = idInfoSitter($_SESSION["loggedInAsDogSitter"]);
 $sitterName = $sitterInfo["first_name"] . " " . $sitterInfo["last_name"];
@@ -16,15 +15,8 @@ $sitterExtra = $sitterInfo["extra_info"];
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../style.css">
-    <title>Profile</title>
-</head>
 
-<body>
+
 <div id="wrapper-profile">
     <h1>Välkommen <?php echo $sitterName ?>!</h1>
     <div id="profile-image"></div>
@@ -49,7 +41,7 @@ $sitterExtra = $sitterInfo["extra_info"];
     <form action="delete.php" method="POST">
         <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
     </form>
-</body>
+
 <?php
-require_once "../section/footer.php";
+require_once __DIR__ . "/../section/footer.php";
 ?>

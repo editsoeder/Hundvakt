@@ -1,6 +1,6 @@
 <?php 
 
-require_once "../functions.php";
+require_once __DIR__ . "/../functions.php";
 
 // Ladda in vår JSON data från vår fil
 $dogSitter = loadJson("dogsitter.json");
@@ -206,16 +206,17 @@ if ($method === "PATCH") {
 
                 //om days är = 0 tecken
                 if (strlen($requestData["days"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "days",
-                                    "message" => "`days` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
+                    echo "`days` has to be more then 0 characters";
+                    // send([
+                    //     "code" => 401,
+                    //     "message" => "Bad request, invalid format",
+                    //     "errors" => [
+                    //             [
+                    //                 "field" => "days",
+                    //                 "message" => "`days` has to be more then 0 characters"
+                    //             ]
+                    //     ]
+                    // ]); 
                 }
 
                 if (in_array($requestData["days"], $user["days"])) {
@@ -247,7 +248,7 @@ if ($method === "PATCH") {
     }
 
     saveJson("dogsitter.json", $dogSitter);
-    send($foundUser);
+    // send($foundUser);
 }
 
 ?>

@@ -1,62 +1,51 @@
 <?php
+error_reporting(-1);
 session_start(); 
-require_once "../section/header.php";
-include "../functions.php";
+require_once __DIR__ . "/../section/header.php";
+require_once __DIR__ . "/../functions.php";
 
 ?>
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    	<link rel="stylesheet" href="../style.css">
-	    <title>Skapa konto</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div id="welcomemessage"> 
-            <h2> Vad kul att du vill bli hundvakt!</h2>  
-            <p> Vänligen fyll i fälten nedan. </p>
+<div id="welcomemessage"> 
+    <h2> Vad kul att du vill bli hundvakt!</h2>  
+    <p> Vänligen fyll i fälten nedan. </p>
+</div> 
+<div class="form">
+    <h2>Skapa konto</h2>
+    <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
+        <div id="dogsitter"> 
+            <input type="text" name="firstName" placeholder="Förnamn"><br>
+            <input type="text" name="lastName" placeholder="Efternamn"><br>
+            <input type="email" name="email" placeholder="E-postadress"><br>
+            <input type="password" name="password" placeholder="Lösenord"><br>
+
+            <?php 
+            createLocationList();
+            createCostList();
+            ?>                 
+            <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
         </div> 
-        <div class="form">
-            <h2>Skapa konto</h2>
-            <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
-                <div id="dogsitter"> 
-                    <input type="text" name="firstName" placeholder="Förnamn"><br>
-                    <input type="text" name="lastName" placeholder="Efternamn"><br>
-                    <input type="email" name="email" placeholder="E-postadress"><br>
-                    <input type="password" name="password" placeholder="Lösenord"><br>
 
-                    <?php 
-                    createLocationList();
-                    createCostList();
-                    ?>                 
-                    <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
-                </div> 
+        <div id="areaBox">
+            <?php
+            createAreaBoxes();
+            ?> 
+        </div> 
 
-                <div id="areaBox">
-                    <?php
-                    createAreaBoxes();
-                    ?> 
-                </div> 
+        <div id="dayBox"> 
+            <h2> Kan hundvakta dessa dagar: </h2> 
+            <?php 
+            createDayBoxes();
+            ?> 
+        </div> 
+        <div id="uploadImage"> 
+            <h2> Ladda upp en profilbild </h2> 
+            <input type="file" name="imageToUpload" id="fileToUpload">
+        </div> 
+        <button type="submit">Skapa konto</button> 
+    </form>
+</div>
 
-                <div id="dayBox"> 
-                    <h2> Kan hundvakta dessa dagar: </h2> 
-                    <?php 
-                    createDayBoxes();
-                    ?> 
-                </div> 
-                <div id="uploadImage"> 
-                    <h2> Ladda upp en profilbild </h2> 
-                    <input type="file" name="imageToUpload" id="fileToUpload">
-                </div> 
-                <button type="submit">Skapa konto</button> 
-            </form>
-        </div>
-    </body>
-</html>
 
 
 <?php
@@ -74,22 +63,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "areas" => $_POST["areas"],
         "extraInfo" => $_POST["extraInfo"],
-        "image" => $_POST["imageToUpload"]
+        
     ];    
-        if(is_null($newEntry) ){
-            send(["message" => "Bad Request"], 400);
-            exit();
-        }
+        // if(is_null($newEntry) ){
+        //     send(["message" => "Bad Request"], 400);
+        //     exit();
+        // }
         
         addEntry("dogsitter.json", $newEntry);
-        send(["Message" => "User created"], 200) ;
-        exit();
+        echo "User created";
+        // send(["Message" => "User created"], 200) ;
+        // exit();
 
-} else{
-    // send(["message"=>"Wrong Method"], 405);
-    exit();
+// } 
+// else{
+//     // send(["message"=>"Wrong Method"], 405);
+//     exit();
  
 }
-require_once "../section/footer.php";
+require_once __DIR__ . "/../section/footer.php";
 
 ?> 

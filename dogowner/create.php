@@ -1,7 +1,7 @@
 <?php
 session_start(); 
-require_once "../section/header.php";
-include "../functions.php";
+require_once __DIR__ . "/../section/header.php";
+require_once __DIR__ . "/../functions.php";
 
 ?>
 
@@ -42,21 +42,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 }
 
 
-require_once "../section/footer.php";
+require_once __DIR__ . "/../section/footer.php";
 
 ?> 
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    	<link rel="stylesheet" href="../style.css">
-	    <title>Skapa konto</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    </head>
-    <body>
+
         <div id="welcomemessage"> 
             <h2> Vad kul att du söker hundvakt!</h2>  
             <p> Vänligen fyll i fälten nedan. </p>
@@ -92,5 +82,4 @@ require_once "../section/footer.php";
                 <button type="submit">Skapa konto</button> 
             </form>
         </div>
-    </body>
-</html>
+
