@@ -131,8 +131,8 @@ if (isset($_GET["id"])) {
     //  if(!isset($_SESSION["loggedInAsDogSitter"])) {
     //     header("Location: sign-out.php");
     // }
-
 ?>
+    <script src="read.js"></script>
 </body>
 </html>
 
