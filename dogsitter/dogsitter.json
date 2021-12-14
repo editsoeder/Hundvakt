@@ -252,5 +252,24 @@
             "Hyllie"
         ],
         "extraInfo": "Har stor erfarenhet av hundpassning"
+    },
+    {
+        "id_sitter": 14,
+        "first_name": "Jenny",
+        "last_name": "Alfredsson",
+        "email": "jenny@jennydogsitter.se",
+        "password": "abracadabra",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Hyllie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Gillar promenader runt stranden",
+        "image": null
     }
 ]

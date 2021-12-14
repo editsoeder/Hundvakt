@@ -22,7 +22,7 @@ include "../functions.php";
         </div> 
         <div class="form">
             <h2>Skapa konto</h2>
-            <form class="createAccount" action="create.php" method="POST">
+            <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
                 <div id="dogsitter"> 
                     <input type="text" name="firstName" placeholder="Förnamn"><br>
                     <input type="text" name="lastName" placeholder="Efternamn"><br>
@@ -48,6 +48,10 @@ include "../functions.php";
                     createDayBoxes();
                     ?> 
                 </div> 
+                <div id="uploadImage"> 
+                    <h2> Ladda upp en profilbild </h2> 
+                    <input type="file" name="imageToUpload" id="fileToUpload">
+                </div> 
                 <button type="submit">Skapa konto</button> 
             </form>
         </div>
@@ -69,7 +73,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "cost" => $_POST["Timkostnad"],
         "days" => $_POST["days"],
         "areas" => $_POST["areas"],
-        "extraInfo" => $_POST["extraInfo"]
+        "extraInfo" => $_POST["extraInfo"],
+        "image" => $_POST["imageToUpload"]
     ];    
         if(is_null($newEntry) ){
             send(["message" => "Bad Request"], 400);
