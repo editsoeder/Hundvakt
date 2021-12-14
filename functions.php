@@ -133,7 +133,16 @@ function idInfoSitter($id){
         }
     }
 }
-
+function idInfoOwner($id){
+    $json = file_get_contents("dogowners.json");
+    $data = json_decode($json, true);
+    $allOwners = $data;
+    foreach($allOwners as $owner){
+        if($owner["id_owner"] == $id){
+            return $owner;
+        }
+    }
+}
 
 //Skapar checkboxarna som kan användas i de olika formulären, denna gäller områden i malmö
 function createAreaBoxes() {

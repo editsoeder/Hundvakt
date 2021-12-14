@@ -27,6 +27,7 @@ $sitterExtra = $sitterInfo["extra_info"];
 <body>
 <div id="wrapper-profile">
     <h1>Välkommen <?php echo $sitterName ?>!</h1>
+    <div id="profile-image"></div>
     <div id="wrapper-info">
     <p>Jag befinner mig: <?php echo $sitterLocation ?> </p>
     <p>Jag passar hundar i: <?php echo $sitterArea?> </p>
@@ -34,8 +35,8 @@ $sitterExtra = $sitterInfo["extra_info"];
     <p>Min timlön är: <?php echo $sitterCost?> kr/tim </p>
     </div>
     <div id="wrapper-contact">
-        <p> <?php echo $sitterName ?> </p>
-        <p> <?php echo $sitterEmail ?> </p>
+        <p>Hej! Mitt namn är <?php echo $sitterName ?> </p>
+        <p>Du når mig på: <?php echo $sitterEmail ?> </p>
     </div>
     <div id="wrapper-extra_info">
     <p>Bra att veta om mig är:<?php echo $sitterExtra?> </p> 
