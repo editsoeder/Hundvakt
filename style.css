@@ -289,14 +289,15 @@ svg {
     transform: rotate(10deg) translate(125%, 0);
 }
 
-#wrapper-dog{
-    height: 30vh;
-    width: 30vw;
+#wrapper-dog, #wrapper-info{
+    height: 35vh;
+    width: 40vw;
     background-color: var(--blue);
     border-radius: 20px;
     position: relative;
-    left: 58vw;
-    top: 6vh;
+    left: 16vw;
+    top: 5vh;
+    
 }
 #wrapper-contact{
     height: 20vh;
@@ -308,14 +309,14 @@ svg {
     top: 30vh;
 }
 
-#wrapper-owner{
-    height: 30vh;
+#wrapper-owner, #wrapper-extra_info{
+    height: 20vh;
     width: 30vw;
     background-color: var(--yellow);
     border-radius: 20px;
     position: relative;
-    left: 10vw;
-    top: -44vh;
+    left: 61vw;
+    top: -25vh;
 }
  #wrapper-profile > h1{
     color: var(--orange);

@@ -54,7 +54,7 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogSitter(){
-    $json = file_get_contents("dogsitter/dogsitter.json");
+    $json = file_get_contents("./dogsitter/dogsitter.json");
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
@@ -121,6 +121,17 @@ function showDogs($dogOwner, $dog){
          ";
     }
     return $div;
+}
+
+function idInfoSitter($id){
+    $json = file_get_contents("dogsitter.json");
+    $data = json_decode($json, true);
+    $allSitters = $data;
+    foreach($allSitters as $sitter){
+        if($sitter["id_sitter"] == $id){
+            return $sitter;
+        }
+    }
 }
 
 

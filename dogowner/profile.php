@@ -31,6 +31,7 @@ require_once "../section/header.php";
 </body>
 <?php
 require_once "../section/footer.php";
+?>
 
 
 

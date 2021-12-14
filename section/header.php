@@ -30,7 +30,7 @@
             <a href="../sign-out.php" >Logga Ut</a>
             </nav>';  
         } else {
-            // echo '<nav></nav>';
+           
         }
 ?>
 </main>
