@@ -34,12 +34,12 @@ $sitterExtra = $sitterInfo["extra_info"];
     <p>Bra att veta om mig är:<?php echo $sitterExtra?> </p> 
     </div>
 </div>
-    <form action="/dogowner/update.php" method="POST">
+    <form action="update.php" method="PATCH">
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php" method="POST">
-        <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
+    <form action="delete.php?id=<?php$_SESSION["loggedInAsDogSitter"]?>" method="GET">
+        <button type="submit" class="button" id="delete-account-button ">Radera Konto</button>
     </form>
 
 <?php

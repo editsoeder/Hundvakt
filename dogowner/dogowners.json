@@ -77,7 +77,7 @@
         ],
         "dog": {
             "dogName": "Janne",
-            "race": "Husky",
+            "breed": "Husky",
             "gender": "Hane",
             "extraInfo": "Allergisk mot fisk"
         }
@@ -96,7 +96,7 @@
         ],
         "dog": {
             "dogName": "Hasse",
-            "race": "Terrier",
+            "breed": "Terrier",
             "gender": "Hane",
             "extraInfo": "Bits"
         }
@@ -115,7 +115,7 @@
         ],
         "dog": {
             "dogName": "Pelle",
-            "race": "Labradoodle",
+            "breed": "Labradoodle",
             "gender": "Hane",
             "extraInfo": "Sover mycket"
         }
@@ -134,7 +134,7 @@
         ],
         "dog": {
             "dogName": "Milly",
-            "race": "Chihuahua",
+            "breed": "Chihuahua",
             "gender": "Hona",
             "extraInfo": "Liten men stark"
         }
@@ -153,7 +153,7 @@
         ],
         "dog": {
             "dogName": "Allie",
-            "race": "Husky",
+            "breed": "Husky",
             "gender": "Hona",
             "extraInfo": "Springer ofta bort"
         }
@@ -173,7 +173,7 @@
         ],
         "dog": {
             "dogName": "Laban",
-            "race": "Pudel",
+            "breed": "Pudel",
             "gender": "Hane",
             "extraInfo": "Bits"
         }
@@ -192,7 +192,7 @@
         ],
         "dog": {
             "dogName": "eagae",
-            "race": "aegg",
+            "breed": "aegg",
             "gender": "Hane",
             "extraInfo": "aegae"
         }
@@ -211,9 +211,28 @@
         ],
         "dog": {
             "dogName": "aegae",
-            "race": "geagae",
+            "breed": "geagae",
             "gender": "Hona",
             "extraInfo": "aegae"
+        }
+    },
+    {
+        "id_owner": 12,
+        "first_name": "Jennifer",
+        "last_name": "Klasson",
+        "email": "hej@hej.se",
+        "password": "abc123",
+        "location": "Kirseberg",
+        "cost": 70,
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "dog": {
+            "dogName": "Putte",
+            "breed": "Poodle",
+            "gender": "Male",
+            "extraInfo": "H\u00e4rlig kille i sina b\u00e4sta \u00e5r"
         }
     }
 ]
