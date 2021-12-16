@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "dog" => [
         "dogName" => $_POST["dogName"],
-        "race" => $_POST["breed"],
+        "breed" => $_POST["breed"],
         "gender" => $_POST["gender"],
         "extraInfo" => $_POST["extraInfo"]
         ]

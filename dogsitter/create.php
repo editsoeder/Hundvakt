@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 // else{
 //     // send(["message"=>"Wrong Method"], 405);
 //     exit();
- 
+
 }
 require_once __DIR__ . "/../section/footer.php";
 
