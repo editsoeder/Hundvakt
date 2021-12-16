@@ -255,21 +255,20 @@
     },
     {
         "id_sitter": 14,
-        "first_name": "Jenny",
-        "last_name": "Alfredsson",
-        "email": "jenny@jennydogsitter.se",
-        "password": "abracadabra",
-        "location": "Oxie",
-        "cost": "80",
+        "first_name": "Jennifer",
+        "last_name": "Klasson",
+        "email": "hej@hej.se",
+        "password": "abc123",
+        "location": "Kirseberg",
+        "cost": 70,
         "days": [
-            "Onsdag",
-            "Torsdag"
+            "Tisdag",
+            "Onsdag"
         ],
         "areas": [
-            "Hyllie",
-            "Kirseberg"
+            "Limhamn-Bunkeflo",
+            "Hyllie"
         ],
-        "extraInfo": "Gillar promenader runt stranden",
-        "image": null
+        "extraInfo": "H\u00e4rlig tjej i sina b\u00e4sta \u00e5r"
     }
 ]

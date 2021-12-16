@@ -180,44 +180,6 @@
     },
     {
         "id_owner": 10,
-        "first_name": "lfhaeil",
-        "last_name": "haeigh",
-        "email": "agoae@gieahgpia",
-        "password": "eapihgipq",
-        "location": "Oxie",
-        "cost": "70",
-        "days": [
-            "Onsdag",
-            "Torsdag"
-        ],
-        "dog": {
-            "dogName": "eagae",
-            "breed": "aegg",
-            "gender": "Hane",
-            "extraInfo": "aegae"
-        }
-    },
-    {
-        "id_owner": 11,
-        "first_name": "sgae",
-        "last_name": "eagaeg",
-        "email": "aegae@gojepgp",
-        "password": "aegae",
-        "location": "Husie",
-        "cost": "90",
-        "days": [
-            "Onsdag",
-            "Torsdag"
-        ],
-        "dog": {
-            "dogName": "aegae",
-            "breed": "geagae",
-            "gender": "Hona",
-            "extraInfo": "aegae"
-        }
-    },
-    {
-        "id_owner": 12,
         "first_name": "Jennifer",
         "last_name": "Klasson",
         "email": "hej@hej.se",

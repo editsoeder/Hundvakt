@@ -20,9 +20,27 @@ require_once "../functions.php";
                     "gender" => $userInput["dog"]["gender"],
                     "extraInfo" => $userInput["dog"]["extraInfo"]
                 ]
-            ];    
+            ];
+        if (empty($entry["first_name"]) || empty($entry["last_name"]) || empty($entry["email"]) || empty($entry["password"]) || empty($entry["location"]) || empty($entry["cost"]) || empty($entry["days"]) || empty($entry["dog"]["dogName"])|| empty($entry["dog"]["breed"]) || empty($entry["dog"]["gender"]) || empty($entry["dog"]["extraInfo"])) {
+            send(["message" => "You need to fill in all fields"], 400) ;
+            exit();
+        }
+
+        if(strlen($entry["password"]) < 4) {
+            send(["message" => "Password needs to be at least 4 characters"], 400) ;
+            exit();
+        }
+
         addEntry("../dogowner/dogowners.json", $entry);
-        send(["Message" => "Dowowner created"], 200) ;
+        send(["message" => "Dowowner created"], 200) ;
         exit();
-            }
-        }?>
+        } else {
+            send(["message"=>"Wrong content-type"], 400);
+            exit();
+        }
+    } else {
+        send(["message"=>"Wrong Method"], 405);
+        exit();
+    }
+
+    ?>
