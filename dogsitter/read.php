@@ -98,7 +98,7 @@ if (isset($_GET["id"])) {
         <input type="submit" value="Filtrera"><br>
     </form>';
 
-    echo $filter;
+    // echo $filter;
     
 
     $title = '
@@ -133,6 +133,9 @@ if (isset($_GET["id"])) {
     // }
 
 ?>
+
+
+<script src="read.js"></script>
 </body>
 </html>
 

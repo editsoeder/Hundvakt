@@ -4,6 +4,7 @@ session_start();
 require_once __DIR__ . "/../functions.php";
 require_once __DIR__ . "/../section/header.php";
 
+$loggedInID = $_SESSION["loggedInAsDogSitter"];
 $sitterInfo = idInfoSitter($_SESSION["loggedInAsDogSitter"]);
 $sitterName = $sitterInfo["first_name"] . " " . $sitterInfo["last_name"];
 $sitterCost = $sitterInfo["cost"];
@@ -38,7 +39,7 @@ $sitterExtra = $sitterInfo["extra_info"];
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php?id=<?php$_SESSION["loggedInAsDogSitter"]?>" method="GET">
+    <form action="delete.php?id=" method="GET">
         <button type="submit" class="button" id="delete-account-button ">Radera Konto</button>
     </form>
 
