@@ -7,6 +7,7 @@
     --yellow: #FED749;
     --orange: #F08C67;
     --turquoise: #8FCAAE;
+    --black: #212121;
 
     --font-title: Indie Flower;
     --font-paragraph: Rounded Mplus 1c;
@@ -293,39 +294,61 @@ svg {
     height: 35vh;
     width: 40vw;
     background-color: var(--blue);
-    border-radius: 20px;
+    border-radius: 40px;
     position: relative;
-    left: 16vw;
-    top: 5vh;
+    left: 12vw;
+    top: -37vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     
 }
 #wrapper-contact{
-    height: 20vh;
-    width: 20vw;
+    height: 25vh;
+    width: 25vw;
     background-color: var(--pink);
-    border-radius: 20px;
+    border-radius: 40px;
     position: relative;
-    left: 64vw;
+    left: 36vw;
     top: 30vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 #wrapper-owner, #wrapper-extra_info{
-    height: 20vh;
+    height: 45vh;
     width: 30vw;
     background-color: var(--yellow);
-    border-radius: 20px;
+    border-radius: 40px;
     position: relative;
     left: 61vw;
-    top: -25vh;
+    top: -35vh;
+    display: flex;
+    justify-content: center;
+  
+    flex-wrap: wrap;
 }
  #wrapper-profile > h1{
     color: var(--orange);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--font-title);
     
  }
  
+ #wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
+     color: var(--black);
+     font-size: 2vh;
+     font-family: var(--font-paragraph);
+     margin-left: 4px;
+     margin-right: 4px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+ }
  /* #wrapper-profile{
 
  } */
@@ -369,3 +392,24 @@ svg {
 /* slut på createAs */
 
 /* create dogsitter */
+
+ #profile-image{
+     height: 200px;
+     width: 200px;
+     border: 10px solid var(--green);
+     border-radius: 50%;
+     position: relative;
+    top: 6vh;
+    left: 68vw;
+ }
+
+ #profile-image-dog{
+    height: 200px;
+    width: 200px;
+    border: 10px solid var(--yellow);
+    border-radius: 50%;
+    position: relative;
+    top: -9vh;
+    left: 78vw; 
+ }
+
