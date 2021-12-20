@@ -29,24 +29,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         ]
     ];    
         if(is_null($newEntry) ){
-            send(["message" => "Bad Request"], 400);
+            echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+            exit();
+        }
+        
+        if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["extraInfo"])) {
+            echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
             exit();
         }
 
+        if(strlen($newEntry["password"]) < 4) {
+            echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+            exit();
+        }
+
+        if (in_array($newEntry["email"], $data)) {
+            echo "<p class 'feedbackMessage'> E-postadressen används redan för en annan hundägare </p>";
+        }
+        //vill skapa en if om email redan är registrerad för hundägare, skicka felmeddelande "Denna e-postadress används redan för en hundägare" typ
+
         addEntry("dogowners.json", $newEntry);
-        // send(["Message" => "User created"], 200) ;
-        exit();
-} else{ //Om metoden inte är POST
-    // send(["message"=>"Wrong Method"], 405);
-    // exit();
-}
-
-
-require_once __DIR__ . "/../section/footer.php";
+        echo "<p class 'feedbackMessage'> Användare skapad, nu kan du logga in </p>";
+} 
 
 ?> 
-
-
         <div id="welcomemessage"> 
             <h2> Vad kul att du söker hundvakt!</h2>  
             <p> Vänligen fyll i fälten nedan. </p>
@@ -83,3 +89,6 @@ require_once __DIR__ . "/../section/footer.php";
             </form>
         </div>
 
+<?php 
+require_once __DIR__ . "/../section/footer.php";
+?> 
