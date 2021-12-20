@@ -196,5 +196,61 @@
             "gender": "Male",
             "extraInfo": "H\u00e4rlig kille i sina b\u00e4sta \u00e5r"
         }
+    },
+    {
+        "id_owner": 11,
+        "first_name": "Test",
+        "last_name": "Test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag"
+        ],
+        "dog": {
+            "dogName": "Test",
+            "breed": "test",
+            "gender": "Hane",
+            "extraInfo": "test"
+        }
+    },
+    {
+        "id_owner": 12,
+        "first_name": "test",
+        "last_name": "test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag"
+        ],
+        "dog": {
+            "dogName": "test",
+            "breed": "test",
+            "gender": "Hona",
+            "extraInfo": "test"
+        }
+    },
+    {
+        "id_owner": 13,
+        "first_name": "test",
+        "last_name": "test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "Roseng\u00e5rd",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag"
+        ],
+        "dog": {
+            "dogName": "test",
+            "breed": "test",
+            "gender": "Hona",
+            "extraInfo": "test"
+        }
     }
 ]

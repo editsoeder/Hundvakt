@@ -341,3 +341,31 @@ svg {
     left: 78vw;
     top: -5vh;
  }
+
+/* createAS */ 
+#createAsWrapper {
+    height: 60vh;
+    width: 100vw;
+    background-color: #BDD68A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-title);
+    font-size: 25px;
+}
+
+#contentWrapper {
+    display: grid;
+    grid-template-rows: 30% 70%;
+    padding: 5vh;
+}
+
+#buttonsDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* slut på createAs */
+
+/* create dogsitter */

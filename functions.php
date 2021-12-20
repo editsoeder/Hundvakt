@@ -234,19 +234,4 @@ function addEntry ($filename, $entry) {
     saveJson($filename, $data);
 }
 
-// function checkAllFields($fields, $entry) {
-//     //Check if all the fields needed are submitted
-//     $entryKeys = array_keys($entry);
-//     $result = array_diff($fields, $entryKeys);
-
-//     return $result; 
-// }
-
-// function allFieldsSet( $entry ) {
-//     foreach( $entry as $field ){
-//         if ( $field == "" ){
-//             return false;
-//         }
-//     }
-//     return true;
-// }?>
+?>

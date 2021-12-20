@@ -270,5 +270,59 @@
             "Hyllie"
         ],
         "extraInfo": "H\u00e4rlig tjej i sina b\u00e4sta \u00e5r"
+    },
+    {
+        "id_sitter": 15,
+        "first_name": "J\u00c3\u00b6rgen",
+        "last_name": "Emanuelsson",
+        "email": "jorgen.e@gmail.com",
+        "password": "hejhopp123",
+        "location": "Roseng\u00e5rd",
+        "cost": "70",
+        "days": [
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Kan jobba under natten"
+    },
+    {
+        "id_sitter": 16,
+        "first_name": "Johanna",
+        "last_name": "Kung",
+        "email": "hannapanna123@gmail.com",
+        "password": "123abc",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
+        "days": [
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "id_sitter": 17,
+        "first_name": "Test",
+        "last_name": "Test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "V\u00e4stra Innerstaden",
+        "cost": "60",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Test"
     }
 ]

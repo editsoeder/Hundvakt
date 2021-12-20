@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
     $newEntry = [ 
         "id_sitter" => getMaxID($data, "id_sitter") + 1,
-        "first_name" => utf8_encode($_POST["firstName"]),
+        "first_name" => $_POST["firstName"],
         "last_name" => $_POST["lastName"],
         "email" => $_POST["email"],
         "password" => $_POST["password"],
@@ -65,20 +65,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "extraInfo" => $_POST["extraInfo"],
         
     ];    
-        // if(is_null($newEntry) ){
-        //     send(["message" => "Bad Request"], 400);
-        //     exit();
-        // }
-        
-        addEntry("dogsitter.json", $newEntry);
-        echo "User created";
-        // send(["Message" => "User created"], 200) ;
-        // exit();
+        if(is_null($newEntry) ){
+            echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+            exit();
+        }
 
-// } 
-// else{
-//     // send(["message"=>"Wrong Method"], 405);
-//     exit();
+        if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["areas"])|| empty($newEntry["extraInfo"])) {
+            echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+            exit();
+        }
+
+        if(strlen($newEntry["password"]) < 4) {
+            echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+            exit();       
+        }
+
+        //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
+
+        addEntry("dogsitter.json", $newEntry);
+        echo "<p class 'feedbackMessage'> Användare skapad! Nu kan du logga in</p>";
 
 }
 require_once __DIR__ . "/../section/footer.php";
