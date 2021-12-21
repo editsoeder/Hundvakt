@@ -31,7 +31,28 @@ $priceHour = [
     ">150" 
 ];
 
+function validUser($users, $email, $password) {
+    foreach ($users as $user) {
+        if ($user["email"] === $email && $user["password"] === $password) {
 
+            // Spara user id i session
+            $_SESSION["id"] = $user["id"];
+
+            return true;
+        } 
+    }
+    return false;
+}
+
+//Kolla om email finns i DB
+function validEmail($users, $email){
+    foreach ($users as $user) {
+        if ($user["email"] === $email) {
+            return true;
+        }
+    }
+    return false;
+}
 
 // Skicka ut JSON till en anvĂ¤ndare
 function send($data, $statusCode = 200) {
