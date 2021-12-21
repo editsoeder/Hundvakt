@@ -38,5 +38,5 @@
 </html>
 
 <?php 
-require_once "section/footer.php";
+require_once __DIR__ . "/../section/footer.php";
 ?>

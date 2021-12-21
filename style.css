@@ -262,6 +262,51 @@ nav > a:hover{
     color: var(--orange);
 }
 
+#filter {
+    height: 80px;
+    /* background-color: blueviolet;
+    position: relative;
+    display: inline-block; */
+}
+
+.dropbtn {
+    height: 50px;
+    width: 150px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+.dropbtn:hover{
+    background-color: var(--blue);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width: 150px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content > a:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.show {display: block;}
+
 /* hundtass (logga in) */
 .ajax-loader {
     position: relative;

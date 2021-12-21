@@ -1,44 +1,30 @@
-{/* <div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-  <div id="myDropdown" class="dropdown-content"> */}
-    {/* <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> */}
-    {/* <a href="#about">About</a>
-    <a href="#base">Base</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
-</div>; */}
+fetch("dogsitter.json")
+.then(response => response.json())
+.then(json => console.log(json));
+
+let button = document.createElement("button");
+let dropdownContent = document.createElement("div");
+button.className = "dropbtn";
+button.innerHTML = "Sortera efter";
+dropdownContent.className = "dropdown-content";
+dropdownContent.id = "myDropdown";
+dropdownContent.innerHTML = " <a id='high'>Högst först</a> <a id ='low'>Lägst först</a> ";
+
+document.getElementById("filter").append(button, dropdownContent);
+button.addEventListener('mouseover', function(){
+  document.getElementById("myDropdown").classList.toggle("show");
+});
 
 
-// function myFunction() {
-//   document.getElementById("myDropdown").classList.toggle("show");
-// }
+document.getElementById("high").addEventListener("click", function () {
+  //Sortera högst pris först
+  // array.sort((a,b) => a.release > b.release);
+  // json.sort((a,b) => a.release > b.release);
+})
 
-// function filterFunction() {
-//   var input, filter, ul, li, a, i;
-//   input = document.getElementById("myInput");
-//   filter = input.value.toUpperCase();
-//   let div = document.getElementById("myDropdown");
-//   let a = div.getElementsByTagName("a");
-//   for (i = 0; i < a.length; i++) {
-//     txtValue = a[i].textContent || a[i].innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       a[i].style.display = "";
-//     } else {
-//       a[i].style.display = "none";
-//     }
-//   }
-// }
+document.getElementById("low").addEventListener("click", function () {
+  //Sortera lägst pris först
+  
+})
 
 
-function hello() {
-  let a = document.createElement("div");
-  a.innerHTML = "HEJ HEJ HEJ";
-    return a;
-}
-
-document.body.append(hello());
-// console.log("HEJDÅ");

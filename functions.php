@@ -75,7 +75,7 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogSitter(){
-    $json = file_get_contents("../dogsitter/dogsitter.json"); //Byt TILL DIR GREJJEN
+    $json = file_get_contents(__DIR__ . "../dogsitter/dogsitter.json"); //Byt TILL DIR GREJJEN
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
