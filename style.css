@@ -169,12 +169,16 @@ body {
 .logInText {
     text-align: center;
     font-size: 50px;
-    margin: 20px;
     display: flex;
     grid-column: 3;
     grid-row: 1;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.error {
+    font-size: 35px;
 }
 
 .form {
@@ -184,6 +188,10 @@ body {
     justify-content: center;
     display: flex;
     flex-direction: column;
+}
+
+.form > input:first-child {
+    margin: 0px;
 }
 
 input {
@@ -254,7 +262,7 @@ nav > a:hover{
     color: var(--orange);
 }
 
-
+/* hundtass (logga in) */
 .ajax-loader {
     position: relative;
     bottom: 20%;
@@ -264,7 +272,6 @@ nav > a:hover{
     font-size: 40px;
     width: 1em;
     height: 2em;
-    color: #d31145;
 }
 
 .paw {
@@ -289,6 +296,7 @@ svg {
 .paw:nth-child(even) {
     transform: rotate(10deg) translate(125%, 0);
 }
+/* hundtass (logga in) */
 
 #wrapper-dog, #wrapper-info{
     height: 35vh;

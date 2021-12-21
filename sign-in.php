@@ -4,20 +4,6 @@ session_start();
 // require_once "section/header.php";
 require_once "functions.php";
 
-// Kontrollera om "error" finns i vår URL
-if (isset($_GET["error"])) {
-    $error = $_GET["error"];
-
-    // Felmeddelande
-    if ($error == 1) {
-        echo '<p class="error">Fill in all fields please</p>';
-    } elseif ($error == 3) {
-        echo '<p class="error">Wrong password </p>';
-    } elseif ($error == 2) {
-        echo '<p class="error">User does not exist </p>';
-    }
-}
-
 $dogSitter = json_decode(file_get_contents("dogsitter/dogsitter.json"), true);
 $dogOwner = json_decode(file_get_contents("dogowner/dogowners.json"), true);
 
@@ -108,7 +94,24 @@ if (isset($_POST["email"], $_POST["password"])) {
         <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
         <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
         </div>
-            <div class="logInText">Logga in</div>
+            <div class="logInText">
+                <?php // Kontrollera om "error" finns i vår URL
+                if (isset($_GET["error"])) {
+                    $error = $_GET["error"];
+
+                    // Felmeddelande
+                    if ($error == 1) {
+                        echo '<p class="error">Alla fält måste vara ifyllda, testa igen.</p>';
+                    } elseif ($error == 3) {
+                        echo '<p class="error">Fel lösenord, testa igen.</p>';
+                    } elseif ($error == 2) {
+                        echo '<p class="error">Användaren finns inte, testa igen.</p>';
+                    }
+                } else {
+                    echo '<p>Logga in</p>';
+                } ?> 
+            </div>
+            
 
             <form class="form" action="sign-in.php" method="POST">
                 <input type="email" name="email" placeholder="Email"><br>
