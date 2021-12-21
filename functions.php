@@ -54,7 +54,7 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogSitter(){
-    $json = file_get_contents("./dogsitter/dogsitter.json");
+    $json = file_get_contents("../dogsitter/dogsitter.json"); //Byt TILL DIR GREJJEN
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
@@ -175,7 +175,7 @@ function createAreaBoxes() {
 //Skapar checkboxarna som kan användas i formulären, denna gäller dagar i veckan
 function createDayBoxes() {
 ?> 
-    <div id="dayWrapper">  
+    <div class="dayWrapper">  
         <input type="checkbox" id="Monday" name="days[]" value="Måndag">
         <label for="Monday"> Måndag </label><br>
         <input type="checkbox" id="Tuesday" name="days[]" value="Tisdag">

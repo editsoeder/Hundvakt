@@ -6,12 +6,11 @@ require_once __DIR__ . "/../functions.php";
 
 ?>
 
-<div id="welcomemessage"> 
+<div class="welcomemessage"> 
     <h2> Vad kul att du vill bli hundvakt!</h2>  
     <p> Vänligen fyll i fälten nedan. </p>
 </div> 
 <div class="form">
-    <h2>Skapa konto</h2>
     <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
         <div id="dogsitter"> 
             <input type="text" name="firstName" placeholder="Förnamn"><br>
