@@ -391,19 +391,18 @@ svg {
 
 /* slut på createAs */
 
-/* create dogsitter */
 
- #profile-image{
-     height: 200px;
-     width: 200px;
-     border: 10px solid var(--green);
-     border-radius: 50%;
-     position: relative;
+#profile-image{
+    height: 200px;
+    width: 200px;
+    border: 10px solid var(--green);
+    border-radius: 50%;
+    position: relative;
     top: 6vh;
     left: 68vw;
- }
+}
 
- #profile-image-dog{
+#profile-image-dog{
     height: 200px;
     width: 200px;
     border: 10px solid var(--yellow);
@@ -411,5 +410,38 @@ svg {
     position: relative;
     top: -9vh;
     left: 78vw; 
- }
+}
 
+#createDogowner {
+    font-family: var(--font-title);
+    display: flex;
+}
+
+.welcomeMessage {
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeMessage > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#dogDiv {
+    background-color: var(--green);
+    height: 60vh;
+    width: 60vh;
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1vh solid #F7C0B4;
+}
+#dogDiv > #genderDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+} 
