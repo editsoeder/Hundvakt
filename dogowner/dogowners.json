@@ -252,5 +252,25 @@
             "gender": "Hona",
             "extraInfo": "test"
         }
+    },
+    {
+        "id_owner": 14,
+        "first_name": "Jennifer",
+        "last_name": "Andersson",
+        "email": "jennypenny123@gmail.com",
+        "password": "hundartoppen",
+        "location": "Oxie",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Fredag"
+        ],
+        "dog": {
+            "dogName": "Olof",
+            "breed": "Husky",
+            "gender": "Hane",
+            "extraInfo": "Sn\u00e4ll men bits ibland"
+        }
     }
 ]
