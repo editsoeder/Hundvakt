@@ -10,9 +10,9 @@ require_once __DIR__ . "/../functions.php";
 
 $allDogSitter = getAllDogSitter();
 
-
 //Om inloggad
 if(isset($_SESSION["loggedInAsDogSitter"])) {
+
     //  Om "id" finns i url
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
@@ -74,9 +74,9 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
         echo $filter; 
         echo $title;
 
-        foreach($allDogSitter as $dogSitter){
-            echo showDogSitter($dogSitter);
-        }
+        // foreach($allDogSitter as $dogSitter){
+        //     echo showDogSitter($dogSitter);
+        // }
     }
 }
 

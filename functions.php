@@ -103,25 +103,20 @@ function checkIfURL($stringInURL){
 }
 
 //dogsitter/read.php
-function showDogSitter($info){
+// function showDogSitter($info){
 
-    //Konvertera array till string
-    $days = implode(" ",$info["days"]);
+//     //Konvertera array till string
+//     $days = implode(" ",$info["days"]);
     
-    if (checkIfURL("read") == true){
-        $div = "
-            <div class='listCard'>
-                <p>{$info['first_name']}</p>
-                <p>{$info['location']}</p>
-                <p>{$days}</p>
-                <p>{$info['cost']}</p>
-                <img src='' alt='Profil picture'>
-                <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
-            </div>
-         ";
-    }
-    return $div;
-}
+//     if (checkIfURL("read") == true){
+//         $div = "
+        
+//                 <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
+            
+//          ";
+//     }
+//     return $div;
+// }
 
 //dogowner/read.php
 function showDogs($dogOwner, $dog){
