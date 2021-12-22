@@ -59,15 +59,13 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
 
         $title = '
         <div class="dogSitter"> 
-            <div class="list">
                 <div class="listTitle"> 
                     <div id="listName"> Namn</div>
                     <div id="listName"> Placering</div>
                     <div id="listName"> Dagar</div>
                     <div id="listName"> Timlön</div>
                 </div>
-            
-            </div>
+                <div class="list"></div>
         </div>
         ';
 
@@ -76,14 +74,14 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
     }
 }
 
-    // Ej inloggad 
-     elseif(!isset($_SESSION["loggedInAsDogSitter"])) {
-        header("Location: sign-out.php");
-    }
+// Ej inloggad 
+    elseif(!isset($_SESSION["loggedInAsDogSitter"])) {
+    header("Location: sign-out.php");
+}
 
 ?>
 
-<script src="read.js"></script>
+<script src="hej.js"></script>
 
 <?php 
 require_once __DIR__ . "/../section/footer.php";

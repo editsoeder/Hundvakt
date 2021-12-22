@@ -85,7 +85,7 @@ function getAllDogSitter(){
 
 //Hämta alla dogowner från DB
 function getAllDogOwner(){
-    $json = file_get_contents("../dogowner/dogowners.json");
+    $json = file_get_contents(__DIR__ . "../dogowner/dogowners.json");
     $data = json_decode($json, true);
 
     $allDogOwner = $data;
@@ -100,28 +100,6 @@ function checkIfURL($stringInURL){
     } else {
         return false;
     }
-}
-
-
-//dogowner/read.php
-function showDogs($dogOwner, $dog){
-
-    //Konvertera array till string
-    $days = implode(" ",$dogOwner["days"]);
-    
-    if (checkIfURL("read") == true){
-        $div = "
-            <div class='listCard'>
-                <p>{$dog['dogName']}</p>
-                <p>{$dogOwner['location']}</p>
-                <p>{$days}</p>
-                <p>{$dogOwner['cost']}</p>
-                <img src='' alt='dog picture'>
-                <a href='read.php?id={$dogOwner['id_owner']}'>Läs mer</a>
-            </div>
-         ";
-    }
-    return $div;
 }
 
 function idInfoSitter($id){

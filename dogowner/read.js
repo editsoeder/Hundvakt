@@ -1,6 +1,6 @@
 "use strict";
 
-fetch("../dogowner/dogowners.json")
+fetch("../dogsitter/dogsitter.json")
 .then(response => response.json())
 .then(json => data(json));
 
@@ -48,26 +48,24 @@ function data(json) {
     document.querySelector(".list").innerHTML = "";
 
     for (let i = 0; i < array.length; i++) {
-        let dog = array[i].dog;
-
-        let listcards = document.createElement("div");
-        let image = document.createElement("img");
-        let name = document.createElement("p");
-        let areas = document.createElement("p");
-        let days = document.createElement("p");
-        let cost = document.createElement("p");
-        let a = document.createElement("a");
-        listcards.append(name, areas, days, cost, image, a);
-        document.querySelector(".list").append(listcards);
-        name.innerHTML = dog.dogName;
-        areas.innerHTML = array[i].location;
-        days.innerHTML = array[i].days;
-        cost.innerHTML = array[i].cost;
-        image.src = "../Images/dogs.jpg";
-        image.width = 100;
-        image.height = 100;
-        a.innerHTML = "Läs mer";
-        a.href = "read.php?id=" + array[i].id_sitter;
+      let listcards = document.createElement("div");
+      let image = document.createElement("img");
+      let name = document.createElement("p");
+      let areas = document.createElement("p");
+      let days = document.createElement("p");
+      let cost = document.createElement("p");
+      let a = document.createElement("a");
+      listcards.append(name, areas, days, cost, image, a);
+      document.querySelector(".list").append(listcards);
+      name.innerHTML = array[i].first_name;
+      areas.innerHTML = array[i].location;
+      days.innerHTML = array[i].days;
+      cost.innerHTML = array[i].cost;
+      image.src = "../Images/dogs.jpg";
+      image.width = 100;
+      image.height = 100;
+      a.innerHTML = "Läs mer";
+      a.href = "read.php?id=" + array[i].id_sitter;
     }
   }
 

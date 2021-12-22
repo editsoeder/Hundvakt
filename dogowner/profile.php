@@ -18,15 +18,9 @@ $ownerEmail = $ownerInfo["email"];
 //    $dogs = $dog["dogName"];
 // }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../style.css">
-    <title>Profile</title>
-</head>
 
-<body>
+<title>Profile</title>
+
 <div id="wrapper-profile">
     <h1>Välkommen <?php echo $ownerName ?>!</h1>
     <div id="profile-image"></div>
@@ -54,7 +48,7 @@ $ownerEmail = $ownerInfo["email"];
     <form action="delete.php" method="POST">
         <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
     </form>
-</body>
+
 <?php
 require_once __DIR__ . "/../section/footer.php";
 ?>
