@@ -102,21 +102,6 @@ function checkIfURL($stringInURL){
     }
 }
 
-//dogsitter/read.php
-// function showDogSitter($info){
-
-//     //Konvertera array till string
-//     $days = implode(" ",$info["days"]);
-    
-//     if (checkIfURL("read") == true){
-//         $div = "
-        
-//                 <a href='read.php?id={$info['id_sitter']}'>Läs mer</a>
-            
-//          ";
-//     }
-//     return $div;
-// }
 
 //dogowner/read.php
 function showDogs($dogOwner, $dog){

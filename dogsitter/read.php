@@ -73,10 +73,6 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
 
         echo $filter; 
         echo $title;
-
-        // foreach($allDogSitter as $dogSitter){
-        //     echo showDogSitter($dogSitter);
-        // }
     }
 }
 
