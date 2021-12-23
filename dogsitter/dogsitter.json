@@ -324,5 +324,60 @@
             "Hyllie"
         ],
         "extraInfo": "Test"
+    },
+    {
+        "id_sitter": 18,
+        "first_name": "Jenny",
+        "last_name": "Svensson",
+        "email": "jenny@gmail.com",
+        "password": "hejhej",
+        "location": "Oxie",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie"
+        ],
+        "extraInfo": "Go o gla"
+    },
+    {
+        "id_sitter": 19,
+        "first_name": "Hanna",
+        "last_name": "Svensson",
+        "email": "hanna@dogwatch.se",
+        "password": "ilovedogs",
+        "location": "Oxie",
+        "cost": "60",
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie"
+        ],
+        "extraInfo": "Glad och sn\u00e4ll"
+    },
+    {
+        "id_sitter": 20,
+        "first_name": "test",
+        "last_name": "test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "60",
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "test",
+        "image": "d1aac1b1ee33e02af26ee0fe673798dc833c3a13"
     }
 ]
