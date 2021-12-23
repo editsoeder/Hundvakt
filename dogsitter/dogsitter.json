@@ -363,21 +363,23 @@
     },
     {
         "id_sitter": 20,
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.se",
-        "password": "test",
-        "location": "S\u00f6dra Innerstaden",
-        "cost": "60",
+        "first_name": "Klara",
+        "last_name": "Andersson",
+        "email": "klaraandersson@gmail.com",
+        "password": "klaraf\u00e4rdigag\u00e5",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
         "days": [
-            "Tisdag",
-            "Onsdag"
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
         ],
         "areas": [
-            "Husie",
-            "Hyllie"
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
         ],
-        "extraInfo": "test",
-        "image": "d1aac1b1ee33e02af26ee0fe673798dc833c3a13"
+        "extraInfo": "Allergisk mot hundar, kan bara hundvakta allergiv\u00e4nliga hundar",
+        "image": "20cbcbb24f66b8b74d36173008e0eca9b84e7236.jpeg"
     }
 ]
