@@ -37,11 +37,9 @@ require_once __DIR__ . "/../functions.php";
             createDayBoxes();
             ?> 
         </div> 
-        <div id="uploadImage"> 
-            <h2> Ladda upp en profilbild </h2> 
-            <input type="file" name="imageToUpload" id="fileToUpload">
-        </div> 
-        <button type="submit">Skapa konto</button> 
+        <h2> Ladda upp en profilbild </h2> 
+        <input type="file" name="imageToUpload">
+        <button type="submit"> Skapa konto </button> 
     </form>
 </div>
 
@@ -50,6 +48,26 @@ require_once __DIR__ . "/../functions.php";
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogsitter.json");
+    //Kolla att de skickat med en bildfil och generera ett unikt 
+    //namn för bilden
+    if (isset($_FILES["imageToUpload"])) {
+        $file = $_FILES["imageToUpload"];
+        $filename = $file["name"];
+        $tempname = $file["tmp_name"];
+        $uniqueFilename = sha1(time().$filename);
+        $size = $file["size"];
+
+        if ($size > 4 * 1000 * 1000) {
+            echo "Filen får inte vara större än 4mb";
+            exit();
+        }
+
+        //Hämta filinformation & kolla vilken filtyp det är
+        $info = pathinfo($filename);
+        $extension = strtolower($info["extension"]);
+        //Spara bilden med unikt namn i mappen "userImages"
+        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+    }
 
     $newEntry = [ 
         "id_sitter" => getMaxID($data, "id_sitter") + 1,
@@ -62,6 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "areas" => $_POST["areas"],
         "extraInfo" => $_POST["extraInfo"],
+        "image" => $uniqueFilename //spara unika namnet på bilden som sökväg
         
     ];    
         if(is_null($newEntry) ){
@@ -78,6 +97,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
             echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
             exit();       
         }
+
+
 
         //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
 
