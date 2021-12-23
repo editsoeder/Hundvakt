@@ -57,17 +57,26 @@ function data(json) {
         let days = document.createElement("p");
         let cost = document.createElement("p");
         let a = document.createElement("a");
-        listcards.append(name, areas, days, cost, image, a);
-        document.querySelector(".list").append(listcards);
+    
+        for (let ii = 0; ii < array[i].days.length; ii++) {
+          let day = document.createElement("div");
+          day.innerHTML = array[i].days[ii];
+          days.append(day);
+        }        
+
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
-        days.innerHTML = array[i].days;
+        
         cost.innerHTML = array[i].cost;
         image.src = "../Images/dogs.jpg";
         image.width = 100;
         image.height = 100;
         a.innerHTML = "Läs mer";
         a.href = "read.php?id=" + array[i].id_sitter;
+
+        
+        listcards.append(name, areas, days, cost, image, a);
+        document.querySelector(".list").append(listcards);
     }
   }
 

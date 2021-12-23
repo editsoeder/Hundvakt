@@ -263,18 +263,99 @@ nav > a:hover{
 }
 
 #filter {
-    height: 80px;
-    /* background-color: blueviolet;
-    position: relative;
-    display: inline-block; */
+    height: 110px;
+    display: flex;
+    width: 100%;
+    background-color: var(--turquoise);
 }
 
 .dropbtn {
     height: 50px;
-    width: 150px;
+    width: 100px;
     border-radius: 0px;
     cursor: pointer;
     margin-bottom: 0px;
+    flex-grow: 1;
+    text-align: center;
+    font-family: var(--font-title);
+    text-decoration: none;
+    display: flex;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: all .5s; 
+    margin: 30px;
+}
+
+.listTitle {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
+}
+
+.listTitle > div {
+    height: 10px;
+    width: 100px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: var(--font-title);
+    text-decoration: none;
+    flex-direction: row;
+    display: flex;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: all .5s; 
+    margin: 30px;
+}
+
+.dogsitter {
+    background-color: var(--turquoise);
+}
+
+/* .list {
+    display: grid;
+} */
+
+.list > div  {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
+    height: 130px;
+    background-color: var(--white);
+    margin: 10px;
+}
+
+.list > div > p {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.list > div > a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.list > div > img {
+    border-radius: 100px;
+    padding-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list > div > a:hover {
+    color: var(--orange);
 }
 
 .dropbtn:hover{
