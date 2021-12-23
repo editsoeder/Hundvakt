@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "areas" => $_POST["areas"],
         "extraInfo" => $_POST["extraInfo"],
-        "image" => $uniqueFilename //spara unika namnet på bilden som sökväg
+        "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
         
     ];    
         if(is_null($newEntry) ){
