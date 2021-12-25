@@ -1,16 +1,26 @@
 <?php
 session_start(); 
-require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
+?> 
 
-?>
-    <div class="welcomemessage"> 
-        <h2> Vad kul att du söker hundvakt!</h2>  
-        <p> Vänligen fyll i fälten nedan. </p>
-    </div> 
-    <div class="form">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <?php require_once __DIR__ . "/../section/header.php"; ?>
+    <title>Skapa konto hundägare</title>
+</head>
+<body>
+    <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
+            <div class="welcomemessage"> 
+                <h2> Vad kul att du söker hundvakt!</h2>  
+                <p> Vänligen fyll i fälten nedan. </p>
+            </div> 
             <div id="dogowner"> 
+                <h2> Uppgiter om mig </h2>
                 <input type="text" name="firstName" placeholder="Förnamn"><br>
                 <input type="text" name="lastName" placeholder="Efternamn"><br>
                 <input type="email" name="email" placeholder="E-postadress"><br>
@@ -20,27 +30,41 @@ require_once __DIR__ . "/../functions.php";
                 createLocationList();
                 createCostList();
                 ?> 
+            </div> 
+            
+            <div id="dogDays">
                 <h2> Behov av hundvakt dessa dagar: </h2>
                 <?php 
                 createDayBoxes();
                 ?>
             </div> 
+            
             <div id="dogDiv"> 
-                <h2> Hunden: </2> 
+                <h2> Information om hunden: </h2> <br>
                 <input type="text" name="dogName" placeholder="Namn"><br>
-                <input type="text" name="breed" placeholder="Ras"><br>
-                <input type="checkbox" id="Monday" name="gender" value="Hona">
-                <label for="Hona"> Hona </label><br>
-                <input type="checkbox" id="Hane" name="gender" value="Hane">
-                <label for="Hane"> Hane </label><br>
-                <input type="text" name="extraInfo" placeholder="Bra att veta om hunden:">
+                <input type="text" name="breed" placeholder="Ras"><br>                
+                <input type="text" name="extraInfo" class="extraInfo" placeholder="Bra att veta om hunden:">
+                <div id="genderDiv"> 
+                    <input type="checkbox" id="Monday" name="gender" value="Hona">
+                    <label for="Hona"> Hona </label><br>
+                    <input type="checkbox" id="Hane" name="gender" value="Hane">
+                    <label for="Hane"> Hane </label><br>                
+                </div>
             </div> 
-
-            <p> Ladda upp bild på hunden </p> 
-            <input type="file" name="dogImage">
-            <button type="submit">Skapa konto</button> 
+            <div id="dogPic"> 
+                <div class="fakePic"> </div> 
+                <h2> Ladda upp bild på hunden </h2> 
+                <input type="file" name="dogImage">
+            </div>                 
+            <button type="submit" id="buttonDogowner">Skapa konto</button>
         </form>
     </div>
+    
+    <?php 
+    require_once __DIR__ . "/../section/footer.php";
+    ?>
+</body>
+</html>
 
 <?php 
 // //samlar användardatan från formuläret in i $newEntry och använder 
@@ -110,5 +134,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         echo "<p class 'feedbackMessage'> Användare skapad, nu kan du logga in </p>";
 } 
 
-require_once __DIR__ . "/../section/footer.php";
 ?>

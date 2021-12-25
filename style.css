@@ -468,7 +468,7 @@ svg {
 
 /* createAS */ 
 #createAsWrapper {
-    height: 60vh;
+    height: 100vh;
     width: 100vw;
     background-color: #BDD68A;
     display: flex;
@@ -513,36 +513,151 @@ svg {
     left: 78vw; 
 }
 
+
+/* create DogOwner */
 #createDogowner {
     font-family: var(--font-title);
     display: flex;
 }
 
-.welcomeMessage {
+.welcomemessage {
     display: grid;
     grid-auto-rows: auto;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1 / 3;
+    margin-bottom: 20vh; 
 }
-.welcomeMessage > p {
+
+.welcomemessage > p {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#dogDiv {
-    background-color: var(--green);
-    height: 60vh;
-    width: 60vh;
-    border-radius: 100%;
+
+
+.createAccount {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 1fr 1fr;    
+    font-family: var(--font-title);
+    width: 80vw;
+}
+
+.formWrapper {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--pink);
+}
+
+#dogDays {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+}
+#dogowner {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+}
+
+#dogPic {
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1vh solid #F7C0B4;
+    grid-column: 2 / 3;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    height: 80vh;
+    border-top: 8px solid var(--orange);
+    border-right: 8px solid var(--orange);
+    border-bottom: 8px solid var(--orange);
 }
-#dogDiv > #genderDiv {
+
+.fakePic {
+    height: 15vh;
+    width: 15vh;
+    background-image: url(Images/dog-head.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+#buttonDogowner {
+    position: relative;
+    left: 70vw;
+    background-color: var(--green);
+    transition: ease-in-out 0.5s;
+}
+
+#buttonDogowner:hover {
+    background-color: var(--blue);
+    height: 12vh;
+    width: 12vh;
+}
+
+#dogDiv {
+    background-color: var(--white);
     display: flex;
+    flex-direction: column;
+    grid-row: 3;
+    grid-column: 1 / 2;
     justify-content: center;
     align-items: center;
-    width: 15vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    height: 80vh;
+    padding-left: 15vh;
+    border-top: 8px solid var(--orange);
+    border-left: 8px solid var(--orange);
+    border-bottom: 8px solid var(--orange);
+}
+
+#dogDiv > #genderDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 18vw;
+    grid-column: 1;
 } 
+
+.extraInfo {
+    height: 20vh;
+}
+
+/* create DogSitter */ 
+#dogsitter {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#areaBox {
+    background-color: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dayBox { 
+    background-color: var(--orange);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}

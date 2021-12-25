@@ -1,49 +1,62 @@
 <?php
 error_reporting(-1);
 session_start(); 
-require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <?php require_once __DIR__ . "/../section/header2.php"; ?>
+    <title>Skapa konto hundvakt</title>
+</head>
+<body>
+    <div class="formWrapper">
+        <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
+            <div class="welcomemessage"> 
+                <h2> Vad kul att du vill bli hundvakt!</h2>  
+                <p> Vänligen fyll i fälten nedan. </p>
+            </div> 
+            <div id="dogsitter"> 
+                <input type="text" name="firstName" placeholder="Förnamn"><br>
+                <input type="text" name="lastName" placeholder="Efternamn"><br>
+                <input type="email" name="email" placeholder="E-postadress"><br>
+                <input type="password" name="password" placeholder="Lösenord"><br>     
+                <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
+                
+                <?php 
+                createLocationList();
+                createCostList();
+                ?>          
+            </div> 
 
-<div class="welcomemessage"> 
-    <h2> Vad kul att du vill bli hundvakt!</h2>  
-    <p> Vänligen fyll i fälten nedan. </p>
-</div> 
-<div class="form">
-    <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
-        <div id="dogsitter"> 
-            <input type="text" name="firstName" placeholder="Förnamn"><br>
-            <input type="text" name="lastName" placeholder="Efternamn"><br>
-            <input type="email" name="email" placeholder="E-postadress"><br>
-            <input type="password" name="password" placeholder="Lösenord"><br>
+            
+            <div id="areaBox">
+                <?php
+                createAreaBoxes();
+                ?> 
+            </div> 
 
-            <?php 
-            createLocationList();
-            createCostList();
-            ?>                 
-            <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br> <br>
-        </div> 
+            <div id="dayBox"> 
+                <h2> Kan hundvakta dessa dagar: </h2> 
+                <?php 
+                createDayBoxes();
+                ?> 
+            </div> 
+            <h2> Ladda upp en profilbild </h2> 
+            <input type="file" name="imageToUpload">
+            <button type="submit"> Skapa konto </button> 
+        </form>
+    </div>
 
-        <div id="areaBox">
-            <?php
-            createAreaBoxes();
-            ?> 
-        </div> 
-
-        <div id="dayBox"> 
-            <h2> Kan hundvakta dessa dagar: </h2> 
-            <?php 
-            createDayBoxes();
-            ?> 
-        </div> 
-        <h2> Ladda upp en profilbild </h2> 
-        <input type="file" name="imageToUpload">
-        <button type="submit"> Skapa konto </button> 
-    </form>
-</div>
-
-
+<?php 
+    require_once __DIR__ . "/../section/footer.php";
+?> 
+</body>
+</html>
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
@@ -106,6 +119,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         echo "<p class 'feedbackMessage'> Användare skapad! Nu kan du logga in</p>";
 
 }
-require_once __DIR__ . "/../section/footer.php";
 
 ?> 
