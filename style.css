@@ -162,6 +162,12 @@ body {
     align-content: left;
 }
 
+.bold {
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+}
+
 .bold > p {
     display: flex;
     margin: 0px;
@@ -194,11 +200,6 @@ body {
 
 .three > .bold {
     justify-content: center;
-}
-
-.bold {
-    font-weight: bolder;
-    display: flex;
 }
 
 .partOne {

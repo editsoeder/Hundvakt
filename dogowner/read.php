@@ -22,29 +22,33 @@ if(isset($_SESSION["loggedInAsDogOwner"])) {
         $days = implode(", ",$foundDogSitter["days"]);
         $areas = implode(", ",$foundDogSitter["areas"]);
 
+        $src = '/Images/dogs.jpg';
+        // $src = '/Images/puppy.jpg';
+    
         //Mer info
         if (isset($foundDogSitter)) { 
 
             $div = "
+            <img id='profileDog' src='$src' alt='Profil picture'>
             <div class='one'>
-                <img src='' alt='Profil picture'>
-                <p>{$foundDogSitter['first_name']}</p>
-                <p>Tillgänglig i områden: {$areas}</p>
-                <p>Tillgänglig dagar: {$days}</p>
-                <p>Timkostnad: {$foundDogSitter['cost']}</p>
+                <div class='dogName'>{$foundDogSitter['first_name']}</div>
+                <div class='bold'>Tillgänglig i områden: <p>{$areas}</p></div>
+                <div class='bold'>Tillgänglig dagar: <p>{$days}</p></div>
+                <div class='bold'>Timkostnad: <p>{$foundDogSitter['cost']}</p></div>
             </div>
 
             <div class='two'>
-                <p>Kontaktas via:</p>
+                <p class='bold'>Kontaktas via:</p>
                 <p>{$foundDogSitter['email']}</p>
             </div>
 
             <div class='three'>
-                <p>Bra att veta:</p>
+                <p class='bold'>Bra att veta:</p>
                 <p>{$foundDogSitter['extra_info']}</p>
             </div>
             ";
-            echo $div;
+            $content = "<div class='content'> $div</div>";
+            echo $content;
         } 
 
     } elseif (!isset($_GET["id"])) {
