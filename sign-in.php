@@ -2,7 +2,7 @@
 error_reporting(-1);
 session_start(); 
 // require_once "section/header.php";
-require_once "functions.php";
+require_once __DIR__ . "/functions.php";
 
 $dogSitter = json_decode(file_get_contents("dogsitter/dogsitter.json"), true);
 $dogOwner = json_decode(file_get_contents("dogowner/dogowners.json"), true);
@@ -115,4 +115,4 @@ if (isset($_POST["email"], $_POST["password"])) {
                 <button>Logga in</button> 
             </form>
         </div>
-<?php require_once "section/footer.php"; ?>
+<?php require_once __DIR__ . "/section/footer.php"; ?>

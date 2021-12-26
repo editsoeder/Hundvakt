@@ -1,6 +1,4 @@
-
-
-<title>Lista på alla hundvakter</title>
+<title>Alla hundar</title>
 
 <?php 
 error_reporting(-1);
@@ -81,7 +79,7 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
 
 ?>
 
-<script src="hej.js"></script>
+<script src="read.js"></script>
 
 <?php 
 require_once __DIR__ . "/../section/footer.php";
