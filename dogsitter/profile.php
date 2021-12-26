@@ -12,15 +12,16 @@ $sitterArea = implode(" ", $sitterInfo["areas"]);
 $sitterDays = implode(" ", $sitterInfo["days"]);
 $sitterLocation = $sitterInfo["location"];
 $sitterEmail = $sitterInfo["email"];
-$sitterExtra = $sitterInfo["extra_info"];
-
-
+$sitterExtra = $sitterInfo["extraInfo"];
+$sitterImg = $sitterInfo['image'];
 ?>
 
 
 <div id="wrapper-profile">
     <h1>Välkommen <?php echo $sitterName ?>!</h1>
-    <div id="profile-image"></div>
+    <div id="profile-image">
+        <img src="userImages/$sitterImg"
+    </div>
     <div id="wrapper-info">
     <p>Jag befinner mig: <?php echo $sitterLocation ?> </p>
     <p>Jag passar hundar i: <?php echo $sitterArea?> </p>

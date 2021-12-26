@@ -12,7 +12,7 @@ $sitterArea = implode(" ", $sitterInfo["areas"]);
 $sitterDays = implode(" ", $sitterInfo["days"]);
 $sitterLocation = $sitterInfo["location"];
 $sitterEmail = $sitterInfo["email"];
-$sitterExtra = $sitterInfo["extra_info"];
+$sitterExtra = $sitterInfo["extraInfo"];
 $sitterPassword = $sitterInfo["password"];
 ?>
 <!DOCTYPE html>

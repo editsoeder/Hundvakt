@@ -13,7 +13,6 @@ $ownerLocation = $ownerInfo["location"];
 $ownerCost = $ownerInfo["cost"];
 $ownerDogInfo = $ownerInfo["dog"];
 $ownerEmail = $ownerInfo["email"];
-
 // foreach($ownerInfo["dog"] as $dogs){
 //    $dogs = $dog["dogName"];
 // }

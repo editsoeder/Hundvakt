@@ -588,17 +588,16 @@ svg {
 /* hundtass (logga in) */
 
 #wrapper-dog, #wrapper-info{
-    height: 35vh;
+    height: 54vh;
     width: 40vw;
     background-color: var(--blue);
     border-radius: 40px;
-    position: relative;
-    left: 12vw;
-    top: -37vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
+    left: -61vw;
     
 }
 #wrapper-contact{
@@ -606,12 +605,13 @@ svg {
     width: 25vw;
     background-color: var(--pink);
     border-radius: 40px;
-    position: relative;
-    left: 36vw;
-    top: 30vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    left: -4vh;
+    
+    
 }
 
 #wrapper-owner, #wrapper-extra_info{
@@ -619,12 +619,11 @@ svg {
     width: 30vw;
     background-color: var(--yellow);
     border-radius: 40px;
-    position: relative;
-    left: 61vw;
-    top: -35vh;
     display: flex;
     justify-content: center;
-  
+    position: relative;
+    right: 32vw;
+    top: -14vh;
     flex-wrap: wrap;
 }
  #wrapper-profile > h1{
@@ -646,21 +645,22 @@ svg {
     justify-content: center;
     align-items: center;
  }
- /* #wrapper-profile{
 
- } */
+ #profile-image{
 
- #change-settings-button{
+    height: 200px;
+    width: 200px;
+    border: 10px solid var(--green);
+    border-radius: 50%;
     position: relative;
-    left: 85vw;
-    top: 14vh;
+    left: 71vw;
+
+ }
+ #wrapper-profile{
+     
  }
 
- #delete-account-button{
-    position: relative;
-    left: 78vw;
-    top: -5vh;
- }
+
 
 /* createAS */ 
 #createAsWrapper {
@@ -687,26 +687,11 @@ svg {
 }
 
 /* slut på createAs */
-
-
 #profile-image{
     height: 200px;
     width: 200px;
     border: 10px solid var(--green);
     border-radius: 50%;
-    position: relative;
-    top: 6vh;
-    left: 68vw;
-}
-
-#profile-image-dog{
-    height: 200px;
-    width: 200px;
-    border: 10px solid var(--yellow);
-    border-radius: 50%;
-    position: relative;
-    top: -9vh;
-    left: 78vw; 
 }
 
 
