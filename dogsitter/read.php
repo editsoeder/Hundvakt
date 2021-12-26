@@ -6,7 +6,7 @@ session_start();
 require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
 
-$allDogSitter = getAllDogSitter();
+$allDogOwner = getAllDogOwner();
 
 //Om inloggad
 if(isset($_SESSION["loggedInAsDogSitter"])) {
@@ -15,48 +15,55 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
 
-        foreach($allDogSitter as $dogSitter){
-            if ($dogSitter["id_sitter"] == $id) {
-                $foundDogSitter = $dogSitter; 
+       foreach($allDogOwner as $dogOwner){
+            if ($dogOwner["id_owner"] == $id) {
+                $foundDogOwner = $dogOwner; 
+                $dog = $dogOwner["dog"];
             } 
         }
 
-        $days = implode(" ",$foundDogSitter["days"]);
-        $areas = implode(" ",$foundDogSitter["areas"]);
+        $src = '/Images/dogs.jpg';
+        // $src = '/Images/puppy.jpg';
+
 
         //Konvertera array till string
-        $days = implode(" ",$foundDogSitter["days"]);
-        $areas = implode(" ",$foundDogSitter["areas"]);
+        $days = implode(", ",$foundDogOwner["days"]);
 
-        if (isset($foundDogSitter)) { 
+        if (isset($foundDogOwner)) { 
             $div = "
+            <img id='profileDog' src='$src' alt='Dog profil picture'>
             <div class='one'>
-                <img src='' alt='Profil picture'>
-                <p>{$foundDogSitter['first_name']}</p>
-                <p>Tillgänglig i områden: {$areas}</p>
-                <p>Tillgänglig dagar: {$days}</p>
-                <p>Timkostnad: {$foundDogSitter['cost']}</p>
+                <div class='dogName'>{$dog['dogName']}</div>
+                <div class='bold'>Ras: <p>{$dog['breed']}</p> </div>
+                <div class='bold'>Kön: <p>{$dog['gender']}</p></div>
+                <div class='bold'>Timkostnad: <p>{$foundDogOwner['cost']}</p></div>
+                <div class='bold'>Placering: <p>{$foundDogOwner['location']}</p></div>
+                <div class='bold'>Behöver hjälp: <p>{$days}</p></div>
+
             </div>
 
             <div class='two'>
-                <p>Kontaktas via:</p>
-                <p>{$foundDogSitter['email']}</p>
+                <p class='bold'>Kontaktas via:</p>
+                <p>{$foundDogOwner['email']}</p>
             </div>
 
             <div class='three'>
-                <p>Bra att veta:</p>
-                <p>{$foundDogSitter['extra_info']}</p>
+                <p class='bold'>Bra att veta:</p>
+                <p>{$dog['extra']}</p>
             </div>
             ";
-            echo $div;
+
+            $content = "<div class='content'> $div</div>";
+            echo $content;
+            
         } 
 
     } elseif (!isset($_GET["id"])) {
 
-        $filter = '<div id="filter"></div>'; 
+        $filter = '<div id="filterSitter"></div>'; 
 
         $title = '
-        <div class="dogSitter"> 
+        <div class="dogOwner"> 
                 <div class="listTitle"> 
                     <div id="listName"> Namn</div>
                     <div id="listName"> Placering</div>
@@ -84,3 +91,7 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
 <?php 
 require_once __DIR__ . "/../section/footer.php";
 ?>
+
+
+
+

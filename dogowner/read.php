@@ -4,8 +4,7 @@ session_start();
 require_once __DIR__ . "/../functions.php";
 require_once __DIR__ . "/../section/header.php";
 
-
-$allDogOwner = getAllDogOwner();
+$allDogSitter = getAllDogSitter();
 
 //Inloggad
 if(isset($_SESSION["loggedInAsDogOwner"])) {
@@ -14,61 +13,59 @@ if(isset($_SESSION["loggedInAsDogOwner"])) {
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
 
-        foreach($allDogOwner as $dogOwner){
-            if ($dogOwner["id_owner"] == $id) {
-                $foundDogOwner = $dogOwner; 
-                $dog = $dogOwner["dog"];
+        foreach($allDogSitter as $dogSitter){
+            if ($dogSitter["id_sitter"] == $id) {
+                $foundDogSitter = $dogSitter; 
             } 
         }
 
-    $days = implode(" ",$dogOwner["days"]);
+        $days = implode(", ",$foundDogSitter["days"]);
+        $areas = implode(", ",$foundDogSitter["areas"]);
 
-    //Mer info
-    if (isset($foundDogOwner)) { 
-        $div = "
-        <div class='one'>
-            <img src='' alt='Profil picture'>
-            <p>{$dog['dogName']}</p>
-            <p>Ras:{$dog['breed']}</p>
-            <p>Kön:{$dog['gender']}</p>
-            <p>Timkostnad: {$dogOwner['cost']}</p>
-            <p>Placering: {$dogOwner['location']}</p>
-            <p>Behöver hjälp: {$days}</p>
+        //Mer info
+        if (isset($foundDogSitter)) { 
 
-        </div>
-
-        <div class='two'>
-            <p>Kontaktas via:</p>
-            <p>{$foundDogOwner['email']}</p>
-        </div>
-
-        <div class='three'>
-            <p>Bra att veta:</p>
-            <p>{$dog['extra']}</p>
-        </div>
-        ";
-        echo $div;
-    } 
-
-} elseif (!isset($_GET["id"])) {
-
-    $filter = '<div id="filter"></div>'; 
-
-    $title = '
-    <div class="dogSitter"> 
-            <div class="listTitle"> 
-                <div id="listName"> Namn</div>
-                <div id="listName"> Placering</div>
-                <div id="listName"> Dagar</div>
-                <div id="listName"> Timlön</div>
+            $div = "
+            <div class='one'>
+                <img src='' alt='Profil picture'>
+                <p>{$foundDogSitter['first_name']}</p>
+                <p>Tillgänglig i områden: {$areas}</p>
+                <p>Tillgänglig dagar: {$days}</p>
+                <p>Timkostnad: {$foundDogSitter['cost']}</p>
             </div>
-            <div class="list"></div>
-    </div>
-    ';
 
-    echo $filter; 
-    echo $title;
-    }
+            <div class='two'>
+                <p>Kontaktas via:</p>
+                <p>{$foundDogSitter['email']}</p>
+            </div>
+
+            <div class='three'>
+                <p>Bra att veta:</p>
+                <p>{$foundDogSitter['extra_info']}</p>
+            </div>
+            ";
+            echo $div;
+        } 
+
+    } elseif (!isset($_GET["id"])) {
+
+        $filter = '<div id="filterOwner"></div>'; 
+
+        $title = '
+        <div class="dogSitter"> 
+                <div class="listTitle"> 
+                    <div id="listName"> Namn</div>
+                    <div id="listName"> Placering</div>
+                    <div id="listName"> Dagar</div>
+                    <div id="listName"> Timlön</div>
+                </div>
+                <div class="list"></div>
+        </div>
+        ';
+
+        echo $filter; 
+        echo $title;
+        }
 }
 
 // Ej inloggad 

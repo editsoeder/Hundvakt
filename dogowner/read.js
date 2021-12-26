@@ -6,7 +6,7 @@ fetch("../dogsitter/dogsitter.json")
 
 let buttonOne = document.createElement("button");
 let dropdownContentOne = document.createElement("div");
-buttonOne.className = "dropbtn";
+buttonOne.className = "dropbtnOwner";
 buttonOne.innerHTML = "Sortera efter pris";
 dropdownContentOne.className = "dropdown-content";
 dropdownContentOne.id = "myDropdown";
@@ -14,7 +14,7 @@ dropdownContentOne.innerHTML = " <a id='high'>Högst först</a> <a id ='low'>Lä
 
 let buttonTwo = document.createElement("button");
 let dropdownContentTwo = document.createElement("div");
-buttonTwo.className = "dropbtn";
+buttonTwo.className = "dropbtnOwner";
 buttonTwo.innerHTML = "Sortera efter dagar";
 dropdownContentTwo.className = "dropContent";
 dropdownContentTwo.id = "drop";
@@ -22,13 +22,13 @@ dropdownContentTwo.innerHTML = " <a id='monday'>Måndag</a> <a id ='tuesday'>Tis
 
 let buttonThree = document.createElement("button");
 let dropdownContentThree = document.createElement("div");
-buttonThree.className = "dropbtn";
+buttonThree.className = "dropbtnOwner";
 buttonThree.innerHTML = "Sortera efter område";
 dropdownContentThree.className = "downContent";
 dropdownContentThree.id = "down";
 dropdownContentThree.innerHTML = " <a id='fosie'>Fosie</a> <a id='hyllie'>Hyllie</a> <a id='husie'>Husie</a> <a id='kirseberg'>Kirseberg</a> <a id='limhamn'>Limhamn-Bunkeflo</a> <a id='malmo'>Malmö Centrum</a> <a id='oxie'>Oxie</a> <a id='rosengard'>Rosengård</a> <a id='sodra'>Södra Innerstad</a> <a id='vastra'>Västra Innerstad</a> ";
 
-document.getElementById("filter").append(buttonOne, dropdownContentOne, buttonTwo, dropdownContentTwo, buttonThree, dropdownContentThree);
+document.getElementById("filterOwner").append(buttonOne, dropdownContentOne, buttonTwo, dropdownContentTwo, buttonThree, dropdownContentThree);
 
 buttonOne.addEventListener('click', function(){
   document.getElementById("myDropdown").classList.toggle("show");
@@ -55,17 +55,24 @@ function data(json) {
       let days = document.createElement("p");
       let cost = document.createElement("p");
       let a = document.createElement("a");
-      listcards.append(name, areas, days, cost, image, a);
-      document.querySelector(".list").append(listcards);
+
+      for (let ii = 0; ii < array[i].days.length; ii++) {
+        let day = document.createElement("div");
+        day.innerHTML = array[i].days[ii];
+        days.append(day);
+      }  
+
       name.innerHTML = array[i].first_name;
       areas.innerHTML = array[i].location;
-      days.innerHTML = array[i].days;
       cost.innerHTML = array[i].cost;
       image.src = "../Images/dogs.jpg";
       image.width = 100;
       image.height = 100;
       a.innerHTML = "Läs mer";
       a.href = "read.php?id=" + array[i].id_sitter;
+
+      listcards.append(name, areas, days, cost, image, a);
+      document.querySelector(".list").append(listcards);
     }
   }
 

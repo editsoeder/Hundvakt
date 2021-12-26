@@ -28,7 +28,7 @@ dropdownContentThree.className = "downContent";
 dropdownContentThree.id = "down";
 dropdownContentThree.innerHTML = " <a id='fosie'>Fosie</a> <a id='hyllie'>Hyllie</a> <a id='husie'>Husie</a> <a id='kirseberg'>Kirseberg</a> <a id='limhamn'>Limhamn-Bunkeflo</a> <a id='malmo'>Malmö Centrum</a> <a id='oxie'>Oxie</a> <a id='rosengard'>Rosengård</a> <a id='sodra'>Södra Innerstad</a> <a id='vastra'>Västra Innerstad</a> ";
 
-document.getElementById("filter").append(buttonOne, dropdownContentOne, buttonTwo, dropdownContentTwo, buttonThree, dropdownContentThree);
+document.getElementById("filterSitter").append(buttonOne, dropdownContentOne, buttonTwo, dropdownContentTwo, buttonThree, dropdownContentThree);
 
 buttonOne.addEventListener('click', function(){
   document.getElementById("myDropdown").classList.toggle("show");
@@ -66,13 +66,12 @@ function data(json) {
 
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
-        
         cost.innerHTML = array[i].cost;
         image.src = "../Images/dogs.jpg";
         image.width = 100;
         image.height = 100;
         a.innerHTML = "Läs mer";
-        a.href = "read.php?id=" + array[i].id_sitter;
+        a.href = "read.php?id=" + array[i].id_owner;
 
         
         listcards.append(name, areas, days, cost, image, a);
