@@ -23,32 +23,74 @@ $sitterPassword = $sitterInfo["password"];
     <title>Update your page</title>
 </head>
 <body>
-<h1>Här kan du ändra din profil!</h1>
+<h1 class="h2-update" >Här kan du ändra din profil!</h1>
 <div class="form">
-    <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
+    <form class="createAccountUpdate" action="create.php" method="POST" enctype="multipart/form-data">
         <div id="dogsitter"> 
-            <p class="input-text">Förnamn</p><input type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
-            <p class="input-text">Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
-            <p class="input-text">Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
-            <p class="input-text">Nytt Lösenord</p><input type="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"<br>
-            <p class="input-text">Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
-            <p class="input-text">Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
-            <div id="areaBox">
+            <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
+            <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
+            <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
+            <p>Nytt Lösenord</p><input type="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"<br>
+            <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
+            <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
+            <div id="areaBoxUpdate">
             <?php
-            createAreaBoxes();
+            createAreaBoxesUpdate();
             ?> 
         </div> 
 
-        <div id="dayBox"> 
-            <h2> Dagar jag kan vakta </h2> 
+        <div id="dayBoxUpdate"> 
+            <h2 class="h2-update"> Dagar jag kan vakta </h2> 
             <?php 
-            createDayBoxes();
+            createDayBoxesUpdate();
             ?> 
         </div> 
-        <div id="uploadImage"> 
-            <h2> Ladda upp en ny profilbild </h2> 
+        <div id="uploadImageUpdate"> 
+            <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
             <input type="file" name="imageToUpload" id="fileToUpload">
         </div> 
+        <button class="button">Updatera!</button>
         </div> 
 </body>
 </html>
+
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON("dogsitter.json");
+
+$updateProfile = [ 
+    "first_name" => $_POST["firstName"],
+    "last_name" => $_POST["lastName"],
+    "email" => $_POST["email"],
+    "password" => $_POST["password"],
+    "location" => $_POST["Placering"],
+    "cost" => $_POST["Timkostnad"],
+    "days" => $_POST["days"],
+    "areas" => $_POST["areas"],
+    "extraInfo" => $_POST["extraInfo"],
+    "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
+    
+];    
+    if(is_null($updateProfile ) ){
+        echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+        exit();
+    }
+
+    if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
+        echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+        exit();
+    }
+
+    if(strlen($updateProfile ["password"]) < 4) {
+        echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+        exit();       
+    }
+
+
+
+    //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
+
+    updateProfileSitter("dogsitter.json", $updateProfile);
+    echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
+   }
+?>

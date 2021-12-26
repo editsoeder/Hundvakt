@@ -280,7 +280,6 @@ body {
 
 input {
     height: 40px;
-    width: 200px;
     margin: 10px;
 }
 
@@ -837,9 +836,9 @@ svg {
 #dogsitter {
     background-color: var(--white);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 
 #areaBox {
@@ -857,4 +856,40 @@ svg {
     align-items: center;
     justify-content: center;
     width: 50vw;
+}
+/*Update.php*/
+#dayBoxUpdate { 
+    background-color: var(--pink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+}
+
+#areaBoxUpdate {
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.createAccountUpdate{    
+    font-family: var(--font-title);
+    width: 50vw;
+    background-color: var(--white);
+}
+.input-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2-update{
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: center;
+    align-items: centers;
 }
