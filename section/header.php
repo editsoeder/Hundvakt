@@ -19,7 +19,7 @@
         if (isset($_SESSION["loggedInAsDogOwner"])) {
             echo '<nav>
             <a href="/dogowner/read.php" >Hundvakter</a>
-            <a href/dogowner/profile.php" >Profil</a>
+            <a href="/dogowner/profile.php" >Profil</a>
             <a href="../sign-out.php" >Logga Ut</a>
             </nav>';
         }

@@ -18,7 +18,7 @@ buttonTwo.className = "dropbtn";
 buttonTwo.innerHTML = "Sortera efter dagar";
 dropdownContentTwo.className = "dropContent";
 dropdownContentTwo.id = "drop";
-dropdownContentTwo.innerHTML = " <a id='monday'>Måndag</a> <a id ='tuesday'>Tisdag</a> <a id ='wednesday'>onsdag</a> <a id ='thursday'>Torsdag</a> <a id ='friday'>Fredag</a> <a id ='saturday'>Lördag</a> <a id ='sunday'>Söndag</a>";
+dropdownContentTwo.innerHTML = " <a id='monday'>Måndag</a> <a id ='tuesday'>Tisdag</a> <a id ='wednesday'>Onsdag</a> <a id ='thursday'>Torsdag</a> <a id ='friday'>Fredag</a> <a id ='saturday'>Lördag</a> <a id ='sunday'>Söndag</a>";
 
 let buttonThree = document.createElement("button");
 let dropdownContentThree = document.createElement("div");
