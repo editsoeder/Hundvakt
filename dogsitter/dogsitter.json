@@ -381,5 +381,26 @@
         ],
         "extraInfo": "Allergisk mot hundar, kan bara hundvakta allergiv\u00e4nliga hundar",
         "image": "20cbcbb24f66b8b74d36173008e0eca9b84e7236.jpeg"
+    },
+    {
+        "id_sitter": 21,
+        "first_name": "Vilma",
+        "last_name": "Bosen",
+        "email": "vilma@test.se",
+        "password": "hund123",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "200",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Gillar inte katter",
+        "image": "8cd9dacea1ff684e054b36796e61826c5463e7d8.png"
     }
 ]

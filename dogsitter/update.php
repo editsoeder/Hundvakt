@@ -1,254 +1,104 @@
-<?php 
-
+<?php
+error_reporting(-1);
+session_start();
+require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
+$loggedInID = $_SESSION["loggedInAsDogSitter"];
+$sitterInfo = idInfoSitter($_SESSION["loggedInAsDogSitter"]);
+$sitterFirstName = $sitterInfo["first_name"];
+$sitterLastName = $sitterInfo["last_name"];
+$sitterCost = $sitterInfo["cost"];
+$sitterArea = implode(" ", $sitterInfo["areas"]);
+$sitterDays = implode(" ", $sitterInfo["days"]);
+$sitterLocation = $sitterInfo["location"];
+$sitterEmail = $sitterInfo["email"];
+$sitterExtra = $sitterInfo["extraInfo"];
+$sitterPassword = $sitterInfo["password"];
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update your page</title>
+</head>
+<body>
+<h1 class="h2-update" >Här kan du ändra din profil!</h1>
+<div class="form">
+    <form class="createAccountUpdate" action="create.php" method="POST" enctype="multipart/form-data">
+        <div id="dogsitter"> 
+            <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
+            <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
+            <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
+            <p>Nytt Lösenord</p><input type="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"<br>
+            <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
+            <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
+            <div id="areaBoxUpdate">
+            <?php
+            createAreaBoxesUpdate();
+            ?> 
+        </div> 
 
-// Ladda in vår JSON data från vår fil
-$dogSitter = loadJson("dogsitter.json");
+        <div id="dayBoxUpdate"> 
+            <h2 class="h2-update"> Dagar jag kan vakta </h2> 
+            <?php 
+            createDayBoxesUpdate();
+            ?> 
+        </div> 
+        <div id="uploadImageUpdate"> 
+            <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
+            <input type="file" name="imageToUpload" id="fileToUpload">
+        </div> 
+        <button class="button">Updatera!</button>
+        </div> 
+</body>
+</html>
 
-// Vilken HTTP metod vi tog emot
-$method = $_SERVER["REQUEST_METHOD"];
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON("dogsitter.json");
 
-// Hämta ut det som skickades till vår server
-$data = file_get_contents("php://input");
-$requestData = json_decode($data, true);
-
-if ($method != "PATCH") {
-    send(
-        ["message" => "Method not allowed. Only 'PATCH' works."],
-        405
-    );
+$updateProfile = [ 
+    "first_name" => $_POST["firstName"],
+    "last_name" => $_POST["lastName"],
+    "email" => $_POST["email"],
+    "password" => $_POST["password"],
+    "location" => $_POST["Placering"],
+    "cost" => $_POST["Timkostnad"],
+    "days" => $_POST["days"],
+    "areas" => $_POST["areas"],
+    "extraInfo" => $_POST["extraInfo"],
+    "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
+    
+];  
+foreach($data as $user){
+    if($loggedInID === $user["id"]){
+       $user = $updateProfile;
+    }
 }
+$json = json_encode($data);
+file_put_contents("../dogsitter.json", $json);
 
-if ($method === "PATCH") {
-
-    // Kontrollera att vi har den datan vi behöver
-    if (!isset($requestData["id_sitter"])) {
-        send(
-            [
-                "code" => 3,
-                "message" => "Missing `id` of request body"
-            ],
-            400
-        );
+    if(is_null($updateProfile ) ){
+        echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+        exit();
     }
 
-    $id = $requestData["id_sitter"];
-    $found = false;
-    $foundUser = null;
-
-    foreach ($dogSitter as $index => $user) {
-
-        //Om ID som skickas med finns i users.json
-        if ($user["id_sitter"] == $id) {
-            $found = true;
-
-            if (isset($requestData["first_name"])) {
-
-                //om firstname är = 0 tecken
-                if (strlen($requestData["first_name"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "first_name",
-                                    "message" => "`first_name` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["first_name"] = $requestData["first_name"];
-            }
-
-            if (isset($requestData["last_name"])) {
-
-                //om last_name är = 0 tecken
-                if (strlen($requestData["last_name"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "last_name",
-                                    "message" => "`last_name` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["last_name"] = $requestData["last_name"];
-            }
-
-            if (isset($requestData["email"])) {
-
-                //om email är = 0 tecken
-                if (strlen($requestData["email"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "email",
-                                    "message" => "`email` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["email"] = $requestData["email"];
-            }
-
-            if (isset($requestData["password"])) {
-
-                //om password är = 0 tecken
-                if (strlen($requestData["password"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "password",
-                                    "message" => "`password` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["password"] = $requestData["password"];
-            }
-
-            if (isset($requestData["cost"])) {
-
-                //om cost är = 0 tecken
-                if (strlen($requestData["cost"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "cost",
-                                    "message" => "`cost` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["cost"] = $requestData["cost"];
-            }
-
-            if (isset($requestData["location"])) {
-
-                //om location är = 0 tecken
-                if (strlen($requestData["location"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "location",
-                                    "message" => "`location` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["location"] = $requestData["location"];
-            }
-
-            if (isset($requestData["extra_info"])) {
-
-                //om extra_info är = 0 tecken
-                if (strlen($requestData["extra_info"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "extra_info",
-                                    "message" => "`extra_info` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["extra_info"] = $requestData["extra_info"];
-            }
-
-            if (isset($requestData["areas"])) {
-
-                //om areas är = 0 tecken
-                if (strlen($requestData["areas"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "areas",
-                                    "message" => "`areas` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                if (in_array($requestData["areas"], $user["areas"])) {
-                    $key = array_search($requestData["areas"], $user["areas"]);
-                    array_splice($user["areas"], $key);
-
-                } else {
-                    array_push($user["areas"], $requestData["areas"]);
-                    array_push($dogSitter, $user["areas"]);
-                } 
-
-            }
-
-            if (isset($requestData["days"])) {
-
-                //om days är = 0 tecken
-                if (strlen($requestData["days"]) == 0) {
-                    echo "`days` has to be more then 0 characters";
-                    // send([
-                    //     "code" => 401,
-                    //     "message" => "Bad request, invalid format",
-                    //     "errors" => [
-                    //             [
-                    //                 "field" => "days",
-                    //                 "message" => "`days` has to be more then 0 characters"
-                    //             ]
-                    //     ]
-                    // ]); 
-                }
-
-                if (in_array($requestData["days"], $user["days"])) {
-                    $key = array_search($requestData["days"], $user["days"]);
-                    array_splice($user["days"], $key);
-
-                } else {
-                    array_push($user["days"], $requestData["days"]);
-                    array_push($dogSitter, $user["days"]);
-                } 
-
-            }
-
-            // Uppdatera vår array
-            $dogSitter[$index] = $user;
-            $foundUser = $user;
-            break;
-        }
+    if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
+        echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+        exit();
     }
 
-    if ($found === false) {
-        send(
-            [
-                "code" => 5,
-                "message" => "The users by `id` does not exist"
-            ],
-            404
-        );
+    if(strlen($updateProfile ["password"]) < 4) {
+        echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+        exit();       
     }
 
-    saveJson("dogsitter.json", $dogSitter);
-    // send($foundUser);
-}
 
+
+   
+
+    updateProfileSitter("../dogsitter.json", $updateProfile);
+    echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
+   }
 ?>

@@ -2,102 +2,82 @@
 error_reporting(-1);
 session_start();
 require_once __DIR__ . "/../functions.php";
-require_once __DIR__ . '/../section/header.php';
+require_once __DIR__ . "/../section/header.php";
 
-$allDogOwner = getAllDogOwner();
+$allDogSitter = getAllDogSitter();
 
-//Om inloggad! FIXA SEN
-// Om "id" finns i url
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+//Inloggad
+if(isset($_SESSION["loggedInAsDogOwner"])) {
+          
+    // Om "id" finns i url
+    if (isset($_GET["id"])) {
+        $id = $_GET["id"];
 
-    foreach($allDogOwner as $dogOwner){
-        if ($dogOwner["id_owner"] == $id) {
-            $foundDogOwner = $dogOwner; 
-            $dog = $dogOwner["dog"];
-        } 
-    }
+        foreach($allDogSitter as $dogSitter){
+            if ($dogSitter["id_sitter"] == $id) {
+                $foundDogSitter = $dogSitter; 
+            } 
+        }
 
-$days = implode(" ",$dogOwner["days"]);
+        $days = implode(", ",$foundDogSitter["days"]);
+        $areas = implode(", ",$foundDogSitter["areas"]);
 
-//Mer info
-    if (isset($foundDogOwner)) { 
-        $div = "
-        <div class='one'>
-            <img src='' alt='Profil picture'>
-            <p>{$dog['dogName']}</p>
-            <p>Ras:{$dog['breed']}</p>
-            <p>Kön:{$dog['gender']}</p>
-            <p>Timkostnad: {$dogOwner['cost']}</p>
-            <p>Placering: {$dogOwner['location']}</p>
-            <p>Behöver hjälp: {$days}</p>
-
-        </div>
-
-        <div class='two'>
-            <p>Kontaktas via:</p>
-            <p>{$foundDogOwner['email']}</p>
-        </div>
-
-        <div class='three'>
-            <p>Bra att veta:</p>
-            <p>{$dog['extra']}</p>
-        </div>
-        ";
-        echo $div;
-    } 
-
-} elseif (!isset($_GET["id"])) {
-
-    $filter = '
-    <form style="text-align:center;" method="get" action="read.php">
-        <select name="days" multiple="multiple" id="days" >
-        <option value="Måndag">Måndag</option>
-        <option value="Tisdag">Tisdag</option>
-        <option value="Onsdag">Onsdag</option>
-        <option value="Torsdag">Torsdag</option>
-        <option value="Fredag">Fredag</option>
-        </select>
-
-        <input type="submit" value="Filtrera"><br>
-    </form>';
-    // echo $filter;
-
-
-    $title = '
-    <div class="dogSitter"> 
-        <div class="list">
-            <div class="listTitle"> 
-                <div id="listName"> Namn</div>
-                <div id="listName"> Placering</div>
-                <div id="listName"> Dagar</div>
-                <div id="listName"> Timlön</div>
-            </div>
-        
-        </div>
-    </div>
-    ';
-    echo $title;
-
-    foreach($allDogOwner as $dogOwner){
-        $ownersDog = $dogOwner["dog"];
-        echo showDogs($dogOwner, $ownersDog);
-    }
+        $src = '/Images/dogs.jpg';
+        // $src = '/Images/puppy.jpg';
     
+        //Mer info
+        if (isset($foundDogSitter)) { 
+
+            $div = "
+            <img id='profileDog' src='$src' alt='Profil picture'>
+            <div class='one'>
+                <div class='dogName'>{$foundDogSitter['first_name']}</div>
+                <div class='bold'>Tillgänglig i områden: <p>{$areas}</p></div>
+                <div class='bold'>Tillgänglig dagar: <p>{$days}</p></div>
+                <div class='bold'>Timkostnad: <p>{$foundDogSitter['cost']}</p></div>
+            </div>
+
+            <div class='two'>
+                <p class='bold'>Kontaktas via:</p>
+                <p>{$foundDogSitter['email']}</p>
+            </div>
+
+            <div class='three'>
+                <p class='bold'>Bra att veta:</p>
+                <p>{$foundDogSitter['extra_info']}</p>
+            </div>
+            ";
+            $content = "<div class='content'> $div</div>";
+            echo $content;
+        } 
+
+    } elseif (!isset($_GET["id"])) {
+
+        $filter = '<div id="filterOwner"></div>'; 
+
+        $title = '
+        <div class="dogSitter"> 
+                <div class="listTitle"> 
+                    <div id="listName"> Namn</div>
+                    <div id="listName"> Placering</div>
+                    <div id="listName"> Dagar</div>
+                    <div id="listName"> Timlön</div>
+                </div>
+                <div class="list"></div>
+        </div>
+        ';
+
+        echo $filter; 
+        echo $title;
+        }
 }
 
-//FIXA SEN
-    //Inloggad
-    // if(isset($_SESSION["loggedInAsDogSitter"])) {
- 
-    // }
+// Ej inloggad 
+elseif(!isset($_SESSION["loggedInAsDogOwner"])) {
+    header("Location: sign-out.php");
+}?>
 
-    // Ej inloggad 
-    //  if(!isset($_SESSION["loggedInAsDogSitter"])) {
-    //     header("Location: sign-out.php");
-    // }
+<script src="read.js"></script>
 
+<?php require_once __DIR__ . "/../section/footer.php"; ?>
 
-require_once __DIR__ . "/../section/footer.php";
-
-?>
