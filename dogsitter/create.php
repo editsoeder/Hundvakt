@@ -21,11 +21,12 @@ require_once __DIR__ . "/../functions.php";
                 <p> Vänligen fyll i fälten nedan. </p>
             </div> 
             <div id="dogsitter"> 
+                <h2> Uppgifter om mig: </h2>
                 <input type="text" name="firstName" placeholder="Förnamn"><br>
                 <input type="text" name="lastName" placeholder="Efternamn"><br>
                 <input type="email" name="email" placeholder="E-postadress"><br>
                 <input type="password" name="password" placeholder="Lösenord"><br>     
-                <input type="text" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
+                <input type="text" class="extraInfo" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
                 
                 <?php 
                 createLocationList();
@@ -41,14 +42,18 @@ require_once __DIR__ . "/../functions.php";
             </div> 
 
             <div id="dayBox"> 
-                <h2> Kan hundvakta dessa dagar: </h2> 
+                <h2 class="areasText"> Kan hundvakta dessa dagar: </h2> 
                 <?php 
                 createDayBoxes();
                 ?> 
             </div> 
-            <h2> Ladda upp en profilbild </h2> 
-            <input type="file" name="imageToUpload">
-            <button type="submit"> Skapa konto </button> 
+
+            <div id="profilePicDiv"> 
+                <div id="actualPicture"> </div>
+                <h2> Ladda upp en profilbild </h2> 
+                <input type="file" name="imageToUpload">
+            </div>
+            <button class="createButton" type="submit"> Skapa konto </button> 
         </form>
     </div>
 
