@@ -17,7 +17,6 @@
 
 body {
     margin: 0px;
-    height: 100vh;
 }
 
 .homePage {
@@ -598,19 +597,20 @@ svg {
 }
 /* hundtass (logga in) */
 
+/* Min Profil Sida*/
+
 #wrapper-dog, #wrapper-info{
-    height: 54vh;
-    width: 40vw;
     background-color: var(--blue);
     border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
-    left: 30vw;
-    top: 21vh;
-    font-size: 10vh;
+    grid-area: 3 / 1 / 3 / 3;
+    margin: 6vh;
+}
+
+#wrapper-dog > p , #wrapper-info > p{
     
 }
 #wrapper-contact{
@@ -643,6 +643,8 @@ svg {
     justify-content: center;
     align-items: center;
     font-family: var(--font-title);
+    grid-area: 1/1/2/3;
+    font-size: 8vh;
     
  }
  
@@ -659,17 +661,25 @@ svg {
 
  #profile-image{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 2 / 1 / 3 / 3;
+
+ }
+
+ img{
     height: 200px;
     width: 200px;
     border: 10px solid var(--green);
     border-radius: 50%;
-    position: relative;
-    left: 42vw;
-    top: 13vh;
-
+    /* background-image: url(/images/); */
+    background-repeat: no-repeat;
  }
  #wrapper-profile{
-     
+     display: grid;
+     grid-template-columns: 50% 50%;
+     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
  }
 
 
