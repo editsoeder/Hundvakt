@@ -20,7 +20,7 @@ $sitterImg = $sitterInfo['image'];
 <div id="wrapper-profile">
     <h1>Välkommen <?php echo $sitterName ?>!</h1>
     <div id="profile-image">
-        <img src="userImages/$sitterImg"
+        <img src="userImages/$sitterImg">
     </div>
     <div id="wrapper-info">
     <p>Jag befinner mig: <?php echo $sitterLocation ?> </p>

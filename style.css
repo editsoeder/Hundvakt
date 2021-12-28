@@ -597,7 +597,9 @@ svg {
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    left: -61vw;
+    left: 30vw;
+    top: 21vh;
+    font-size: 10vh;
     
 }
 #wrapper-contact{
@@ -653,7 +655,8 @@ svg {
     border: 10px solid var(--green);
     border-radius: 50%;
     position: relative;
-    left: 71vw;
+    left: 42vw;
+    top: 13vh;
 
  }
  #wrapper-profile{
@@ -687,12 +690,7 @@ svg {
 }
 
 /* slut på createAs */
-#profile-image{
-    height: 200px;
-    width: 200px;
-    border: 10px solid var(--green);
-    border-radius: 50%;
-}
+
 
 
 /* create DogOwner */

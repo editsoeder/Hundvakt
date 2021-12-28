@@ -70,7 +70,15 @@ $updateProfile = [
     "extraInfo" => $_POST["extraInfo"],
     "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
     
-];    
+];  
+foreach($data as $user){
+    if($loggedInID === $user["id"]){
+       $user = $updateProfile;
+    }
+}
+$json = json_encode($data);
+file_put_contents("../dogsitter.json", $json);
+
     if(is_null($updateProfile ) ){
         echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
         exit();
@@ -88,9 +96,9 @@ $updateProfile = [
 
 
 
-    //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
+   
 
-    updateProfileSitter("dogsitter.json", $updateProfile);
+    updateProfileSitter("../dogsitter.json", $updateProfile);
     echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
    }
 ?>
