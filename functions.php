@@ -147,7 +147,7 @@ function idInfoOwner($id){
 //Skapar checkboxarna som kan användas i de olika formulären, denna gäller områden i malmö
 function createAreaBoxes() {
 ?>  <div class="areaWrapper"> 
-        <h2> Tillgänglig i områden </h2> 
+        <h2 class="areasText"> Tillgänglig i områden: </h2> 
         <input type="checkbox" id="Fosie" name="areas[]" value="Fosie">
         <label for="Fosie"> Fosie </label><br>
         <input type="checkbox" id="Husie" name="areas[]" value="Husie">
