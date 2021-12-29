@@ -90,6 +90,10 @@ if (isset($_POST["email"], $_POST["password"])) {
         <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
 
         </div>
+
+           
+            <div class="back"><button class="backToHome">Hem</button ></div>
+        
             <div class="logInText">
                 <?php // Kontrollera om "error" finns i vår URL
                 if (isset($_GET["error"])) {
@@ -114,5 +118,9 @@ if (isset($_POST["email"], $_POST["password"])) {
                 <input class="logInInput" type="password" name="password" placeholder="Lösenord"><br>
                 <button>Logga in</button> 
             </form>
+
+            <script src="sign-in.js"></script>
         </div>
+        
+
 <?php require_once __DIR__ . "/section/footer.php"; ?>

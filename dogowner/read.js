@@ -50,6 +50,7 @@ function data(json) {
     for (let i = 0; i < array.length; i++) {
       let listcards = document.createElement("div");
       let image = document.createElement("img");
+      image.id = "listImage";
       let name = document.createElement("p");
       let areas = document.createElement("p");
       let days = document.createElement("p");
@@ -66,9 +67,6 @@ function data(json) {
       areas.innerHTML = array[i].location;
       cost.innerHTML = array[i].cost;
       image.src = "/userImages/" + array[i].images;
-
-      image.width = 100;
-      image.height = 100;
       a.innerHTML = "Läs mer";
       a.href = "read.php?id=" + array[i].id_sitter;
 
