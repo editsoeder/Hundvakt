@@ -46,13 +46,13 @@ require_once __DIR__ . "/../functions.php";
         <div id="wrapper-extra_info">
             <p>Bra att veta om mig är:<?php echo $sitterExtra?> </p> 
         </div>
+        <form action="update.php" method="PATCH">
+            <button type="submit" id="change-settings-button">Ändra Uppgifter</button>
+        </form>
+    
+        <button type="submit" id="delete-account-button">Radera Konto</button>
     </div>
 
-    <form action="update.php" method="PATCH">
-        <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
-    </form>
-
-    <button type="submit" class="deleteBtn" id="delete-account-button ">Radera Konto</button>
     
     <script src="profile.js"></script>
 

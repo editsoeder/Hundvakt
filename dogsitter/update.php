@@ -91,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
     }
 
-$updateProfile = [ 
+$updateProfile = [
     "id_sitter" => $loggedInID,
     "first_name" => $_POST["firstName"],
     "last_name" => $_POST["lastName"],
@@ -103,8 +103,8 @@ $updateProfile = [
     "areas" => $_POST["areas"],
     "extraInfo" => $_POST["extraInfo"],
     "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
-    
-];  
+]  
+;  
 foreach($data as $user){
     if($loggedInID === $user["id_sitter"]){
        $user = $updateProfile;
