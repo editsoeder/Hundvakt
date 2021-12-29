@@ -28,7 +28,7 @@ $sitterPassword = $sitterInfo["password"];
     <h1 class="h2-update" >Här kan du ändra din profil!</h1>
     <div class="form">
         <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
-            <div id="dogsitter"> 
+            <div id="dogsitter-form"> 
                 <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
                 <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
                 <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
@@ -114,18 +114,22 @@ $json = json_encode($data);
 file_put_contents("dogsitter.json", $json);
 
     if(is_null($updateProfile ) ){
-        echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+        echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
         exit();
     }
 
     if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
-        echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+        echo "<p class 'feedbackMessageUpdate'> Alla fält måste vara ifyllda, försök igen </p>";
         exit();
     }
 
     if(strlen($updateProfile ["password"]) < 4) {
-        echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+        echo "<p class 'feedbackMessageUpdate'> Lösenord måste vara minst 4 tecken långt </p>";
         exit();       
+    }
+    if ($size > 4 * 1000 * 1000) {
+        echo "Filen får inte vara större än 4mb";
+        exit();
     }
 
 
@@ -134,6 +138,6 @@ file_put_contents("dogsitter.json", $json);
 
     // updateUser("dogsitter.json", $updateProfile);
     // updateProfileSitter("../dogsitter.json", $updateProfile);
-    echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
+    echo "<p class 'feedbackMessageUpdate'> Profil Uppdaterad!</p>";
    }
 ?>
