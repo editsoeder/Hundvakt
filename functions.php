@@ -303,4 +303,10 @@ function addEntry ($filename, $entry) {
     saveJson($filename, $data);
 }
 
+//Uppdatera user
+function updateUser ($filename, $entry) {
+    $data = loadJSON($filename);
+    array_push($data, $entry);
+    saveJson($filename, $data);
+}
 ?>
