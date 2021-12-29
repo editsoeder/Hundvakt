@@ -54,19 +54,13 @@ require_once __DIR__ . "/../functions.php";
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php" method="POST">
-        <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
-    </form>
-    
-    <?php
-    require_once __DIR__ . "/../section/footer.php";
-    ?>  
-</body>
-</html>
 
+    <button type="submit" class="deleteBtn" id="delete-account-button">Radera Konto</button>
 
-
-
+    <script src="profile.js"></script>
+<?php
+require_once __DIR__ . "/../section/footer.php";
+?>
 
 
 

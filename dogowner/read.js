@@ -65,7 +65,6 @@ function data(json) {
       name.innerHTML = array[i].first_name;
       areas.innerHTML = array[i].location;
       cost.innerHTML = array[i].cost;
-      // image.src = array[i].image;
       image.src = "/userImages/" + array[i].images;
 
       image.width = 100;
