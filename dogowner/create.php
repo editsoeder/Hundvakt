@@ -20,7 +20,7 @@ require_once __DIR__ . "/../functions.php";
                 <p> Vänligen fyll i fälten nedan. </p>
             </div> 
             <div id="dogowner"> 
-                <h2> Uppgiter om mig </h2>
+                <h2> Uppgiter om mig: </h2>
                 <input type="text" name="firstName" placeholder="Förnamn"><br>
                 <input type="text" name="lastName" placeholder="Efternamn"><br>
                 <input type="email" name="email" placeholder="E-postadress"><br>
@@ -33,7 +33,7 @@ require_once __DIR__ . "/../functions.php";
             </div> 
             
             <div id="dogDays">
-                <h2> Behov av hundvakt dessa dagar: </h2>
+                <h2> Behov av hundvakt: </h2>
                 <?php 
                 createDayBoxes();
                 ?>
@@ -47,16 +47,16 @@ require_once __DIR__ . "/../functions.php";
                 <div id="genderDiv"> 
                     <input type="checkbox" id="Monday" name="gender" value="Hona">
                     <label for="Hona"> Hona </label><br>
-                    <input type="checkbox" id="Hane" name="gender" value="Hane">
+                    <input type="checkbox"  name="gender" value="Hane">
                     <label for="Hane"> Hane </label><br>                
                 </div>
             </div> 
-            <div id="dogPic"> 
-                <div class="fakePic"> </div> 
-                <h2> Ladda upp bild på hunden </h2> 
+            <div id="dogPicDiv"> 
+                <div class="dogPic"> </div> 
+                <h2> Ladda upp bild på din hund </h2> 
                 <input type="file" name="dogImage">
             </div>                 
-            <button type="submit" id="buttonDogowner">Skapa konto</button>
+            <button class="createButton" type="submit">Skapa konto</button>
         </form>
     </div>
     
