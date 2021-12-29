@@ -1021,5 +1021,33 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     font-family: var(--font-title);
     display: flex;
     justify-content: center;
-    align-items: centers;
+    align-items: center;
+}
+#uploadImageUpdate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#update-button{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: var(--turquoise);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+    font-family: var(--font-paragraph);
+}
+#update-button:hover{
+    background-color: var(--blue);
+    color: var(--white);
+}
+#update-button-wrapper{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

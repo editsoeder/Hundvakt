@@ -38,8 +38,11 @@ $sitterPassword = $sitterInfo["password"];
                 <div id="areaBoxUpdate">
                     <?php
                     createAreaBoxesUpdate();
-                    createLocationList();
                     ?> 
+                    <h2 class="h2-update"> Min Placering </h2> 
+                    <?php
+                    createLocationList();
+                    ?>
                 </div>
             </div> 
 
@@ -53,7 +56,9 @@ $sitterPassword = $sitterInfo["password"];
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
                 <input type="file" name="imageToUpload" id="fileToUpload">
             </div> 
-            <button class="button">Updatera!</button>
+            <div id=update-button-wrapper>
+                <button id="update-button">Updatera!</button>
+            </div>
         </form>
     </div> 
 
