@@ -9,9 +9,10 @@ require_once __DIR__ . "/../functions.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <?php require_once __DIR__ . "/../section/header.php"; ?>
-    <title>Skapa konto hundägare</title>
-</head>
+    <title>Skapa konto hundägare</title>    
+    <?php require_once __DIR__ . "/../section/header2.php"; ?>
+
+<!-- </head> stängs i header.php -->
 <body>
     <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
