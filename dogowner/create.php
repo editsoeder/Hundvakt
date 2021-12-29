@@ -21,11 +21,11 @@ require_once __DIR__ . "/../functions.php";
                 <p> Vänligen fyll i fälten nedan. </p>
             </div> 
             <div id="dogowner"> 
-                <h2> Uppgiter om mig: </h2>
-                <input type="text" name="firstName" placeholder="Förnamn"><br>
-                <input type="text" name="lastName" placeholder="Efternamn"><br>
-                <input type="email" name="email" placeholder="E-postadress"><br>
-                <input type="password" name="password" placeholder="Lösenord"><br>
+                <h2 class="areasText"> Uppgiter om mig: </h2>
+                <input type="text" name="firstName" class="createDetails" placeholder="Förnamn"><br>
+                <input type="text" name="lastName" class="createDetails" placeholder="Efternamn"><br>
+                <input type="email" name="email" class="createDetails" placeholder="E-postadress"><br>
+                <input type="password" name="password" class="createDetails" placeholder="Lösenord"><br>
 
                 <?php 
                 createLocationList();
@@ -34,7 +34,7 @@ require_once __DIR__ . "/../functions.php";
             </div> 
             
             <div id="dogDays">
-                <h2> Behov av hundvakt: </h2>
+                <h2 class="areasText"> Behov av hundvakt: </h2>
                 <?php 
                 createDayBoxes();
                 ?>
@@ -42,13 +42,13 @@ require_once __DIR__ . "/../functions.php";
             
             <div id="dogDiv"> 
                 <h2> Information om hunden: </h2> <br>
-                <input type="text" name="dogName" placeholder="Namn"><br>
-                <input type="text" name="breed" placeholder="Ras"><br>                
+                <input type="text" name="dogName" class="createDetails" placeholder="Namn"><br>
+                <input type="text" name="breed" class="createDetails" placeholder="Ras"><br>                
                 <input type="text" name="extraInfo" class="extraInfo" placeholder="Bra att veta om hunden:">
                 <div id="genderDiv"> 
-                    <input type="checkbox" id="Monday" name="gender" value="Hona">
+                    <input type="checkbox" class="genderCheckbox" name="gender" value="Hona">
                     <label for="Hona"> Hona </label><br>
-                    <input type="checkbox"  name="gender" value="Hane">
+                    <input type="checkbox" class="genderCheckbox"  name="gender" value="Hane">
                     <label for="Hane"> Hane </label><br>                
                 </div>
             </div> 

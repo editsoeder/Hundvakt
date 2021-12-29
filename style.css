@@ -797,7 +797,7 @@ svg {
 
 #dogDays {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     background-color: var(--white);
     border-top-right-radius: 5%;
@@ -881,7 +881,7 @@ svg {
 .extraInfo {
     height: 20vh;
     width: 200px;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
 } 
 
 /* create DogSitter */ 
@@ -944,6 +944,11 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     height: 4vh;
 } */
 
+.genderCheckbox {
+    width: 4vh;
+    height: 4vh;
+}
+
 .areaCheckbox {
     width: 4vh;
     height: 4vh;
@@ -959,7 +964,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 .createDetails {
     margin-top: 0px;
     width: 200px;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
 }
 
 .areasText {
@@ -969,7 +974,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 }
 
 .dayWrapper {
-    margin-left: 10vh;    
+    margin-left: 6vw;    
 }
 
 #createDayBox { 
