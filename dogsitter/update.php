@@ -1,7 +1,6 @@
 <?php
 error_reporting(-1);
 session_start();
-require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
 $loggedInID = $_SESSION["loggedInAsDogSitter"];
 $sitterInfo = idInfoSitter($_SESSION["loggedInAsDogSitter"]);
@@ -20,8 +19,11 @@ $sitterPassword = $sitterInfo["password"];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update your page</title>
-</head>
+    <title>Ändra uppgifter</title>
+    <?php 
+    require_once __DIR__ . "/../section/header2.php";
+    ?> 
+<!-- </head> stängs i header.php -->
 <body>
 <h1 class="h2-update" >Här kan du ändra din profil!</h1>
 <div class="form">
