@@ -44,7 +44,7 @@ if(isset($_SESSION["loggedInAsDogOwner"])) {
 
             <div class='three'>
                 <p class='bold'>Bra att veta:</p>
-                <p>{$foundDogSitter['extra_info']}</p>
+                <p>{$foundDogSitter['extraInfo']}</p>
             </div>
             ";
             $content = "<div class='content'> $div</div>";
@@ -74,7 +74,7 @@ if(isset($_SESSION["loggedInAsDogOwner"])) {
 
 // Ej inloggad 
 elseif(!isset($_SESSION["loggedInAsDogOwner"])) {
-    header("Location: sign-out.php");
+    // header("Location: sign-out.php");
 }?>
 
 <script src="read.js"></script>

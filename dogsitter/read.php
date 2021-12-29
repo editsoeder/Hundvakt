@@ -1,12 +1,12 @@
-<title>Alla hundar</title>
 
 <?php 
 error_reporting(-1);
-session_start();
+// session_start();
 require_once __DIR__ . "/../section/header.php";
 require_once __DIR__ . "/../functions.php";
 
 $allDogOwner = getAllDogOwner();
+// <title>Alla hundar</title>
 
 //Om inloggad
 if(isset($_SESSION["loggedInAsDogSitter"])) {
@@ -81,7 +81,7 @@ if(isset($_SESSION["loggedInAsDogSitter"])) {
 
 // Ej inloggad 
     elseif(!isset($_SESSION["loggedInAsDogSitter"])) {
-    header("Location: sign-out.php");
+    // header("Location: sign-out.php");
 }
 
 ?>
