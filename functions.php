@@ -75,7 +75,7 @@ function saveJson($filename, $data) {
 
 //Hämta alla dogsitter från DB
 function getAllDogSitter(){
-    $json = file_get_contents(__DIR__ . "../dogsitter/dogsitter.json"); //Byt TILL DIR GREJJEN
+    $json = file_get_contents(__DIR__ . "/dogsitter/dogsitter.json"); //Byt TILL DIR GREJJEN
     $data = json_decode($json, true);
 
     $allDogSitter = $data;
@@ -85,7 +85,7 @@ function getAllDogSitter(){
 
 //Hämta alla dogowner från DB
 function getAllDogOwner(){
-    $json = file_get_contents(__DIR__ . "../dogowner/dogowners.json");
+    $json = file_get_contents(__DIR__ . "/dogowner/dogowners.json");
     $data = json_decode($json, true);
 
     $allDogOwner = $data;
@@ -103,7 +103,7 @@ function checkIfURL($stringInURL){
 }
 
 function idInfoSitter($id){
-    $json = file_get_contents( __DIR__ . "../dogsitter/dogsitter.json");
+    $json = file_get_contents( __DIR__ . "/dogsitter/dogsitter.json");
     $data = json_decode($json, true);
     $allSitters = $data;
     foreach($allSitters as $sitter){
@@ -113,7 +113,7 @@ function idInfoSitter($id){
     }
 }
 function idInfoOwner($id){
-    $json = file_get_contents( __DIR__ . "../dogowner/dogowners.json");
+    $json = file_get_contents( __DIR__ . "/dogowner/dogowners.json");
     $data = json_decode($json, true);
     $allOwners = $data;
     foreach($allOwners as $owner){
