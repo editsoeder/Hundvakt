@@ -21,11 +21,11 @@ require_once __DIR__ . "/../functions.php";
                 <p> Vänligen fyll i fälten nedan. </p>
             </div> 
             <div id="dogowner"> 
-                <h2> Uppgiter om mig: </h2>
-                <input type="text" name="firstName" placeholder="Förnamn"><br>
-                <input type="text" name="lastName" placeholder="Efternamn"><br>
-                <input type="email" name="email" placeholder="E-postadress"><br>
-                <input type="password" name="password" placeholder="Lösenord"><br>
+                <h2 class="areasText"> Uppgiter om mig: </h2>
+                <input type="text" name="firstName" class="createDetails" placeholder="Förnamn"><br>
+                <input type="text" name="lastName" class="createDetails" placeholder="Efternamn"><br>
+                <input type="email" name="email" class="createDetails" placeholder="E-postadress"><br>
+                <input type="password" name="password" class="createDetails" placeholder="Lösenord"><br>
 
                 <?php 
                 createLocationList();
@@ -34,7 +34,7 @@ require_once __DIR__ . "/../functions.php";
             </div> 
             
             <div id="dogDays">
-                <h2> Behov av hundvakt: </h2>
+                <h2 class="areasText"> Behov av hundvakt: </h2>
                 <?php 
                 createDayBoxes();
                 ?>
@@ -42,13 +42,13 @@ require_once __DIR__ . "/../functions.php";
             
             <div id="dogDiv"> 
                 <h2> Information om hunden: </h2> <br>
-                <input type="text" name="dogName" placeholder="Namn"><br>
-                <input type="text" name="breed" placeholder="Ras"><br>                
+                <input type="text" name="dogName" class="createDetails" placeholder="Namn"><br>
+                <input type="text" name="breed" class="createDetails" placeholder="Ras"><br>                
                 <input type="text" name="extraInfo" class="extraInfo" placeholder="Bra att veta om hunden:">
                 <div id="genderDiv"> 
-                    <input type="checkbox" id="Monday" name="gender" value="Hona">
+                    <input type="checkbox" class="genderCheckbox" name="gender" value="Hona">
                     <label for="Hona"> Hona </label><br>
-                    <input type="checkbox"  name="gender" value="Hane">
+                    <input type="checkbox" class="genderCheckbox"  name="gender" value="Hane">
                     <label for="Hane"> Hane </label><br>                
                 </div>
             </div> 
@@ -90,7 +90,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //Hämta filinformation & kolla vilken filtyp det är
         $info = pathinfo($filename);
         $extension = strtolower($info["extension"]);
-        $workingImage;
         //Spara bilden med unikt namn i mappen "userImages"
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
     }
@@ -114,33 +113,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     ];    
         if(is_null($newEntry) ){
             echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
-            $notNullEntry;
             exit();
         }
         
         if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
             echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
-            $validEntry;
             exit();
         }
 
         if(strlen($newEntry["password"]) < 4) {
             echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
-            $validPassword;
             exit();
         }
 
         if (in_array($newEntry["email"], $data)) {
             echo "<p class 'feedbackMessage'> E-postadressen används redan för en annan hundägare </p>";
-            $validEmail;
             exit();
         }
         //vill skapa en if om email redan är registrerad för hundägare, skicka felmeddelande "Denna e-postadress används redan för en hundägare" typ
 
         addEntry("dogowners.json", $newEntry);
-
-        // if(isset($workingImage, ))
-        echo "<p class 'feedbackMessage'> Användare skapad, nu kan du logga in <button class='logInButton'> Logga in </p>";
+        echo "<p class 'feedbackMessage'> Användare skapad! Nu kan du logga in </p>";
+        exit();
 } 
 
 ?>

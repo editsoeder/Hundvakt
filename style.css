@@ -30,6 +30,28 @@ body {
     margin: 10px;
 }
 
+.back {
+    grid-column: 5;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+.backToHome {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    background-color: var(--orange);
+    font-size: 30px;
+    font-family: var(--font-title);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+}
+
+.backToHome:hover {
+    background-color: var(--pink);
+}
+
 .homePagebuttonOne {
     height: var(--home-btn);
     width: var(--home-btn);
@@ -361,6 +383,15 @@ nav > a:hover{
     color: var(--orange);
 }
 
+/* read.php/read.js */
+#listImage {
+    border-radius: 100px;
+    margin: 15px;
+    height: 100px;
+    width: 100px;
+    border: 0px;
+}
+
 #filterOwner {
     height: 110px;
     display: flex;
@@ -424,6 +455,14 @@ nav > a:hover{
     transition: all .5s; 
 }
 
+.dogSitter {
+    background-color: var(--orange);
+}
+
+.dogOwner {
+    background-color: var(--turquoise);
+}
+
 .listTitle {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
@@ -446,14 +485,6 @@ nav > a:hover{
     font-size: 25px;
     transition: all .5s; 
     margin: 30px;
-}
-
-.dogSitter {
-    background-color: var(--orange);
-}
-
-.dogOwner {
-    background-color: var(--turquoise);
 }
 
 .list > div  {
@@ -481,11 +512,6 @@ nav > a:hover{
     align-items: center;
     justify-content: center;
     font-size: 20px;
-}
-
-.list > div > img {
-    border-radius: 100px;
-    margin: 15px;
 }
 
 .list > div > a:hover {
@@ -566,8 +592,11 @@ nav > a:hover{
 }
 
 .show {display: block;}
+/* read.php/read.js */
 
 /* hundtass (logga in) */
+
+
 .ajax-loader {
     position: relative;
     bottom: 20%;
@@ -797,7 +826,7 @@ svg {
 
 #dogDays {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     background-color: var(--white);
     border-top-right-radius: 5%;
@@ -881,7 +910,7 @@ svg {
 .extraInfo {
     height: 20vh;
     width: 200px;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
 } 
 
 /* create DogSitter */ 
@@ -944,6 +973,11 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     height: 4vh;
 } */
 
+.genderCheckbox {
+    width: 4vh;
+    height: 4vh;
+}
+
 .areaCheckbox {
     width: 4vh;
     height: 4vh;
@@ -959,7 +993,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 .createDetails {
     margin-top: 0px;
     width: 200px;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
 }
 
 .areasText {
@@ -969,7 +1003,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 }
 
 .dayWrapper {
-    margin-left: 10vh;    
+    margin-left: 6vw;    
 }
 
 #createDayBox { 
