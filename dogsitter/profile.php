@@ -40,9 +40,9 @@ $sitterImg = $sitterInfo['image'];
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php?id=" method="GET">
-        <button type="submit" class="button" id="delete-account-button ">Radera Konto</button>
-    </form>
+    <button type="submit" class="deleteBtn" id="delete-account-button ">Radera Konto</button>
+    
+    <script src="profile.js"></script>
 
 <?php
 require_once __DIR__ . "/../section/footer.php";

@@ -4,6 +4,7 @@ session_start();
 require_once __DIR__ . "/../functions.php";
 require_once __DIR__ . "/../section/header.php";
 
+$id =$_SESSION["loggedInAsDogOwner"];
 $ownerInfo = idInfoOwner($_SESSION["loggedInAsDogOwner"]);
 $ownerName = $ownerInfo["first_name"] . " " . $ownerInfo["last_name"];
 $ownerLocation = $ownerInfo["location"];
@@ -44,10 +45,10 @@ $ownerEmail = $ownerInfo["email"];
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php" method="DELETE">
-        <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
-    </form>
 
+    <button type="submit" class="deleteBtn" id="delete-account-button">Radera Konto</button>
+
+    <script src="profile.js"></script>
 <?php
 require_once __DIR__ . "/../section/footer.php";
 ?>

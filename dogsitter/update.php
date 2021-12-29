@@ -96,8 +96,6 @@ file_put_contents("../dogsitter.json", $json);
 
 
 
-   
-
     updateProfileSitter("../dogsitter.json", $updateProfile);
     echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
    }

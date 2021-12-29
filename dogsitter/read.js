@@ -67,7 +67,7 @@ function data(json) {
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
         cost.innerHTML = array[i].cost;
-        image.src = "../Images/dogs.jpg";
+        image.src = "/userImages/" + array[i].images;
         image.width = 100;
         image.height = 100;
         a.innerHTML = "Läs mer";

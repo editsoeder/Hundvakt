@@ -15,7 +15,7 @@ unset($_SESSION["loggedInAsDogSitter"]);
 
 session_destroy();
 
-header("Location: sign-in.php");
+header("Location: index.php");
 
 exit();
 ?>
