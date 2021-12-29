@@ -879,7 +879,9 @@ svg {
 } 
 
 .extraInfo {
-    height: 15vh;
+    height: 20vh;
+    width: 200px;
+    margin-left: 10vh;
 } 
 
 /* create DogSitter */ 
@@ -891,12 +893,11 @@ svg {
     width: 60vw;
 }
 
-#dogsitter {
+#createDogsitter {
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     grid-column: 1;
     border-right: 5px solid var(--pink);
     border-top-left-radius: 5%;
@@ -926,7 +927,7 @@ svg {
     border: 2px solid black;
 }
 
-#areaBox {
+#createAreaBox {
     background-color: var(--white);
     grid-column: 2;
     border-top-right-radius: 5%;
@@ -934,14 +935,44 @@ svg {
     height: 105vh;
 }
 
+/* #createAreaBox > input {
+    width: 3vh;
+    height: 3vh;
+}
+input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo, input#MalmoCentrum, input#Oxie, input#Rosengard, input#SodraInnerstaden, input#VastraInnerstaden {
+    width: 4vh;
+    height: 4vh;
+} */
+
+.areaCheckbox {
+    width: 4vh;
+    height: 4vh;
+    margin-left: 6vw;
+}
+
+.eachDayBox {
+    width: 4vh;
+    height: 4vh;
+    /* margin-left: 6vw; */
+}
+
+.createDetails {
+    margin-top: 0px;
+    width: 200px;
+    margin-left: 10vh;
+}
+
 .areasText {
     display: flex;
     justify-content: center;
-    width: 50vw;
     align-items: center;
 }
 
-#dayBox { 
+.dayWrapper {
+    margin-left: 10vh;    
+}
+
+#createDayBox { 
     padding-top: 5vh;
     background-color: var(--white);
     grid-column: 1;
@@ -950,6 +981,8 @@ svg {
     border-top-left-radius: 5%;
     border-bottom-left-radius: 5%;
     height: 80vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* slut på create dogSitter */ 

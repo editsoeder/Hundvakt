@@ -10,9 +10,10 @@ require_once __DIR__ . "/../functions.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <title>Skapa konto hundvakt</title>    
     <?php require_once __DIR__ . "/../section/header2.php"; ?>
-    <title>Skapa konto hundvakt</title>
-</head>
+
+<!-- </head>  stängs i header -->
 <body>
     <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
@@ -20,28 +21,28 @@ require_once __DIR__ . "/../functions.php";
                 <h2> Vad kul att du vill bli hundvakt!</h2>  
                 <p> Vänligen fyll i fälten nedan. </p>
             </div> 
-            <div id="dogsitter"> 
-                <h2> Uppgifter om mig: </h2>
-                <input type="text" name="firstName" placeholder="Förnamn"><br>
-                <input type="text" name="lastName" placeholder="Efternamn"><br>
-                <input type="email" name="email" placeholder="E-postadress"><br>
-                <input type="password" name="password" placeholder="Lösenord"><br>     
-                <input type="text" class="extraInfo" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
+            <div id="createDogsitter"> 
+                <h2 class="areasText"> Uppgifter om mig: </h2>
+                <input type="text" name="firstName" class="createDetails" placeholder="Förnamn"><br>
+                <input type="text" name="lastName" class="createDetails" placeholder="Efternamn"><br>
+                <input type="email" name="email" class="createDetails" placeholder="E-postadress"><br>
+                <input type="password" name="password" class="createDetails" placeholder="Lösenord"><br>     
                 
                 <?php 
                 createLocationList();
                 createCostList();
-                ?>          
+                ?>                
+                <input type="text" class="extraInfo" class="createDetails" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
             </div> 
 
             
-            <div id="areaBox">
+            <div id="createAreaBox">
                 <?php
                 createAreaBoxes();
                 ?> 
             </div> 
 
-            <div id="dayBox"> 
+            <div id="createDayBox"> 
                 <h2 class="areasText"> Kan hundvakta dessa dagar: </h2> 
                 <?php 
                 createDayBoxes();

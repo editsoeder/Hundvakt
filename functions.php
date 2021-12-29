@@ -127,25 +127,25 @@ function idInfoOwner($id){
 function createAreaBoxes() {
 ?>  <div class="areaWrapper"> 
         <h2 class="areasText"> Tillgänglig i områden: </h2> 
-        <input type="checkbox" id="Fosie" name="areas[]" value="Fosie">
+        <input type="checkbox" id="Fosie" class="areaCheckbox" name="areas[]" value="Fosie">
         <label for="Fosie"> Fosie </label><br>
-        <input type="checkbox" id="Husie" name="areas[]" value="Husie">
+        <input type="checkbox" id="Husie" class="areaCheckbox" name="areas[]" value="Husie">
         <label for="Husie"> Husie </label><br>
-        <input type="checkbox" id="Hyllie" name="areas[]" value="Hyllie">
+        <input type="checkbox" id="Hyllie" class="areaCheckbox" name="areas[]" value="Hyllie">
         <label for="Hyllie"> Hyllie </label><br>
-        <input type="checkbox" id="Kirseberg" name="areas[]" value="Kirseberg">
+        <input type="checkbox" id="Kirseberg" class="areaCheckbox" name="areas[]" value="Kirseberg">
         <label for="Kirseberg"> Kirseberg </label><br>
-        <input type="checkbox" id="Limhamn-Bunkeflo" name="areas[]" value="Limhamn-Bunkeflo">
+        <input type="checkbox" id="Limhamn-Bunkeflo" class="areaCheckbox" name="areas[]" value="Limhamn-Bunkeflo">
         <label for="Limhamn-Bunkeflo"> Limhamn-Bunkeflo </label><br>
-        <input type="checkbox" id="MalmoCentrum" name="areas[]" value="Malmö Centrum">
+        <input type="checkbox" id="MalmoCentrum" class="areaCheckbox"name="areas[]" value="Malmö Centrum">
         <label for="MalmoCentrum"> Malmö Centrum </label><br>
-        <input type="checkbox" id="Oxie" name="areas[]" value="Oxie">
+        <input type="checkbox" id="Oxie" class="areaCheckbox" name="areas[]" value="Oxie">
         <label for="Oxie"> Oxie </label><br>
-        <input type="checkbox" id="Rosengard" name="areas[]" value="Rosengård">
+        <input type="checkbox" id="Rosengard" class="areaCheckbox" name="areas[]" value="Rosengård">
         <label for="Oxie"> Rosengård </label><br>
-        <input type="checkbox" id="SodraInnerstaden" name="areas[]" value="Södra Innerstaden">
+        <input type="checkbox" id="SodraInnerstaden" class="areaCheckbox" name="areas[]" value="Södra Innerstaden">
         <label for="SodraInnerstaden"> Södra Innerstaden </label><br>
-        <input type="checkbox" id="VastraInnerstaden" name="areas[]" value="Västra Innerstaden">
+        <input type="checkbox" id="VastraInnerstaden" class="areaCheckbox" name="areas[]" value="Västra Innerstaden">
         <label for="Oxie"> Västra Innerstaden </label><br>
     </div>
 <?php
@@ -155,27 +155,27 @@ function createAreaBoxes() {
 function createDayBoxes() {
 ?> 
     <div class="dayWrapper">  
-        <input type="checkbox" id="Monday" name="days[]" value="Måndag">
-        <label for="Monday"> Måndag </label>
-        <input type="checkbox" id="Tuesday" name="days[]" value="Tisdag">
-        <label for="Tuesday"> Tisdag </label>
-        <input type="checkbox" id="Wednesday" name="days[]" value="Onsdag">
-        <label for="Wednesday"> Onsdag </label>
-        <input type="checkbox" id="Thursday" name="days[]" value="Torsdag">
-        <label for="Torsdag"> Torsdag </label>
-        <input type="checkbox" id="Friday" name="days[]" value="Fredag">
-        <label for="Friday"> Fredag </label>
-        <input type="checkbox" id="Saturday" name="days[]" value="Lördag">
-        <label for="Saturday"> Lördag </label>
-        <input type="checkbox" id="Sunday" name="days[]" value="Söndag">
-        <label for="Sunday"> Söndag </label>
+        <input type="checkbox" id="Monday" class="eachDayBox" name="days[]" value="Måndag">
+        <label for="Monday"> Måndag </label> <br>
+        <input type="checkbox" id="Tuesday" class="eachDayBox" name="days[]" value="Tisdag">
+        <label for="Tuesday"> Tisdag </label> <br>
+        <input type="checkbox" id="Wednesday" class="eachDayBox" name="days[]" value="Onsdag">
+        <label for="Wednesday"> Onsdag </label> <br>
+        <input type="checkbox" id="Thursday" class="eachDayBox" name="days[]" value="Torsdag">
+        <label for="Torsdag"> Torsdag </label> <br>
+        <input type="checkbox" id="Friday" class="eachDayBox" name="days[]" value="Fredag">
+        <label for="Friday"> Fredag </label> <br>
+        <input type="checkbox" id="Saturday" class="eachDayBox" name="days[]" value="Lördag">
+        <label for="Saturday"> Lördag </label> <br>
+        <input type="checkbox" id="Sunday" class="eachDayBox" name="days[]" value="Söndag">
+        <label for="Sunday"> Söndag </label> <br>
     </div>  
 <?php
 }
 
 //Skapar listan där man kan välja vilken timkostnad man har, kan användas i formulären
 function createCostList() {
-?>  <input list="hourCost" name="Timkostnad" placeholder="Kr i timmen"><br>
+?>  <input list="hourCost" name="Timkostnad" class="createDetails" placeholder="Kr i timmen"><br>
     <datalist id="hourCost">
         <option value="<50">
         <option value="60">
@@ -188,7 +188,7 @@ function createCostList() {
 
 //Skapar listan där man kan välja var man är placerad, kan användas i formulären
 function createLocationList() {
-?>  <input list="placement" name="Placering" placeholder="Placering"><br> 
+?>  <input list="placement" name="Placering" class="createDetails" placeholder="Placering"><br> 
     <datalist id="placement">
         <option value="Fosie">
         <option value="Husie">
