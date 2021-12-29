@@ -44,7 +44,7 @@ $ownerEmail = $ownerInfo["email"];
         <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
     </form>
 
-    <form action="delete.php" method="POST">
+    <form action="delete.php" method="DELETE">
         <button type="submit" class="button" id="delete-account-button">Radera Konto</button>
     </form>
 
