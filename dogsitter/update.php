@@ -25,17 +25,18 @@ $sitterPassword = $sitterInfo["password"];
 <body>
 <h1 class="h2-update" >Här kan du ändra din profil!</h1>
 <div class="form">
-    <form class="createAccountUpdate" action="create.php" method="POST" enctype="multipart/form-data">
+    <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
         <div id="dogsitter"> 
             <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
             <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
             <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
-            <p>Nytt Lösenord</p><input type="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"<br>
+            <p>Nytt Lösenord</p><input type="password" name="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"><br>
             <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
             <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
             <div id="areaBoxUpdate">
             <?php
             createAreaBoxesUpdate();
+            createLocationList();
             ?> 
         </div> 
 
@@ -58,13 +59,33 @@ $sitterPassword = $sitterInfo["password"];
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogsitter.json");
 
+    if (isset($_FILES["imageToUpload"])) {
+        $file = $_FILES["imageToUpload"];
+        $filename = $file["name"];
+        $tempname = $file["tmp_name"];
+        $uniqueFilename = sha1(time().$filename);
+        $size = $file["size"];
+
+        if ($size > 4 * 1000 * 1000) {
+            echo "Filen får inte vara större än 4mb";
+            exit();
+        }
+
+        //Hämta filinformation & kolla vilken filtyp det är
+        $info = pathinfo($filename);
+        $extension = strtolower($info["extension"]);
+        //Spara bilden med unikt namn i mappen "userImages"
+        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+    }
+
 $updateProfile = [ 
+    "id_sitter" => $loggedInID,
     "first_name" => $_POST["firstName"],
     "last_name" => $_POST["lastName"],
     "email" => $_POST["email"],
     "password" => $_POST["password"],
     "location" => $_POST["Placering"],
-    "cost" => $_POST["Timkostnad"],
+    "cost" => $_POST["cost"],
     "days" => $_POST["days"],
     "areas" => $_POST["areas"],
     "extraInfo" => $_POST["extraInfo"],
@@ -72,12 +93,12 @@ $updateProfile = [
     
 ];  
 foreach($data as $user){
-    if($loggedInID === $user["id"]){
+    if($loggedInID === $user["id_sitter"]){
        $user = $updateProfile;
     }
 }
 $json = json_encode($data);
-file_put_contents("../dogsitter.json", $json);
+file_put_contents("dogsitter.json", $json);
 
     if(is_null($updateProfile ) ){
         echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
@@ -98,7 +119,7 @@ file_put_contents("../dogsitter.json", $json);
 
    
 
-    updateProfileSitter("../dogsitter.json", $updateProfile);
+    updateUser("dogsitter.json", $updateProfile);
     echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
    }
 ?>
