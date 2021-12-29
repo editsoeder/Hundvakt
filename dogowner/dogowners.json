@@ -12,7 +12,7 @@
             "breed": "Alaskan Malamute",
             "gender": "male",
             "image": "bild",
-            "extra": "Ernie has all the energy in the world"
+            "extraInfo": "Ernie has all the energy in the world"
         },
         "days": [
             "Tisdag",
@@ -38,7 +38,7 @@
             "breed": "Leonberger",
             "gender": "male",
             "image": "bild",
-            "extra": "I love carrots and appeles"
+            "extraInfo": "I love carrots and appeles"
         }
     },
     {
@@ -59,7 +59,7 @@
             "breed": "Chihuahua",
             "gender": "female",
             "image": "bild",
-            "extra": "She bites a lot and don't like pigions"
+            "extraInfo": "She bites a lot and don't like pigions"
         }
     },
     {

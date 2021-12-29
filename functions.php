@@ -103,7 +103,7 @@ function checkIfURL($stringInURL){
 }
 
 function idInfoSitter($id){
-    $json = file_get_contents("dogsitter.json");
+    $json = file_get_contents( __DIR__ . "../dogsitter/dogsitter.json");
     $data = json_decode($json, true);
     $allSitters = $data;
     foreach($allSitters as $sitter){
@@ -113,7 +113,7 @@ function idInfoSitter($id){
     }
 }
 function idInfoOwner($id){
-    $json = file_get_contents("dogowners.json");
+    $json = file_get_contents( __DIR__ . "../dogowner/dogowners.json");
     $data = json_decode($json, true);
     $allOwners = $data;
     foreach($allOwners as $owner){

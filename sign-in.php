@@ -110,8 +110,8 @@ if (isset($_POST["email"], $_POST["password"])) {
             
 
             <form class="form" action="sign-in.php" method="POST">
-                <input type="email" name="email" placeholder="Email"><br>
-                <input type="password" name="password" placeholder="Lösenord"><br>
+                <input class="logInInput" type="email" name="email" placeholder="Email"><br>
+                <input class="logInInput" type="password" name="password" placeholder="Lösenord"><br>
                 <button>Logga in</button> 
             </form>
         </div>

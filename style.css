@@ -24,6 +24,12 @@ body {
     font-family: var(--font-title);
 }
 
+.logInInput {
+    height: 40px;
+    width: 200px;
+    margin: 10px;
+}
+
 .homePagebuttonOne {
     height: var(--home-btn);
     width: var(--home-btn);
@@ -287,7 +293,6 @@ body {
 
 input {
     height: 40px;
-    width: 200px;
     margin: 10px;
 }
 
