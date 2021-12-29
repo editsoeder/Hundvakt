@@ -25,35 +25,41 @@ $sitterPassword = $sitterInfo["password"];
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
-<h1 class="h2-update" >Här kan du ändra din profil!</h1>
-<div class="form">
-    <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
-        <div id="dogsitter"> 
-            <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
-            <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
-            <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
-            <p>Nytt Lösenord</p><input type="password" name="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"><br>
-            <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
-            <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
-            <div id="areaBoxUpdate">
-            <?php
-            createAreaBoxesUpdate();
-            createLocationList();
-            ?> 
-        </div> 
+    <h1 class="h2-update" >Här kan du ändra din profil!</h1>
+    <div class="form">
+        <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
+            <div id="dogsitter"> 
+                <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
+                <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
+                <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
+                <p>Nytt Lösenord</p><input type="password" name="password" placeholder ="<?php echo $sitterPassword ?>"placeholder="Skriv Nytt Lösenord"><br>
+                <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
+                <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>"> <br> <br>
+                <div id="areaBoxUpdate">
+                    <?php
+                    createAreaBoxesUpdate();
+                    createLocationList();
+                    ?> 
+                </div>
+            </div> 
 
-        <div id="dayBoxUpdate"> 
-            <h2 class="h2-update"> Dagar jag kan vakta </h2> 
-            <?php 
-            createDayBoxesUpdate();
-            ?> 
-        </div> 
-        <div id="uploadImageUpdate"> 
-            <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
-            <input type="file" name="imageToUpload" id="fileToUpload">
-        </div> 
-        <button class="button">Updatera!</button>
-        </div> 
+            <div id="dayBoxUpdate"> 
+                <h2 class="h2-update"> Dagar jag kan vakta </h2> 
+                <?php 
+                createDayBoxesUpdate();
+                ?> 
+            </div> 
+            <div id="uploadImageUpdate"> 
+                <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
+                <input type="file" name="imageToUpload" id="fileToUpload">
+            </div> 
+            <button class="button">Updatera!</button>
+        </form>
+    </div> 
+
+    <?php 
+    require_once __DIR__ . "/../section/footer.php";
+    ?> 
 </body>
 </html>
 
@@ -119,7 +125,7 @@ file_put_contents("dogsitter.json", $json);
 
 
 
-   
+
 
     updateUser("dogsitter.json", $updateProfile);
     echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
