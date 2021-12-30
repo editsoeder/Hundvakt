@@ -756,13 +756,16 @@ svg {
 }
 
 #wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     font-family: var(--font-title);
+    flex-direction: column;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
  #profile-image{
@@ -817,6 +820,11 @@ background-color: var(--white);
 height: 100%;
 width: 100%;
 overflow: hidden;
+ }
+
+ #wrapper-owner >h2, #wrapper-contact >h2{
+     color: var(--white);
+     font-family: var(--font-title);
  }
 
 /* createAS */ 

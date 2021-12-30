@@ -36,7 +36,7 @@ require_once __DIR__ . "/../functions.php";
         <div id="wrapper-info">
             <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>
             <p>Jag passar hundar i:<br> <?php echo $sitterArea?> </p>
-            <p>Dagar jag kan passa: <br> <?php echo $sitterDays?> </p>
+            <p>Dagar jag kan passa:<br><?php echo $sitterDays?> </p>
             <p>Min timlön är:<br>  <?php echo $sitterCost?> kr/tim </p>
         </div>
         <div id="wrapper-contact">

@@ -56,7 +56,7 @@ require_once __DIR__ . "/../functions.php";
         <h2>Om mig</h2>
         <p>Mitt namn är: <?php echo $ownerName?> </p>
         <p>Jag bor i <?php echo $ownerLocation?> </p>
-        <p>Jag behöver hundpassning: <?php echo $ownerDays?> </p>
+        <p>Jag behöver hundpassning:<br> <?php echo $ownerDays?> </p>
         <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
         </div>
     </div>
