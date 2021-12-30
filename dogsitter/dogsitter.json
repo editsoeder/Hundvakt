@@ -28,17 +28,19 @@
         "cost": 210,
         "location": "Fosie",
         "areas": [
-            "Kirseberg",
-            "Hyllie",
+            "Kirseberg", 
+            "Hyllie", 
             "Fosie"
-        ],
+        ], 
+
         "days": [
-            "Torsdag",
-            "Fredag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
+            "Torsdag", 
+            "Fredag", 
+            "Lördag", 
+            "Söndag"
         ],
         "extra_info": "Dogs are the best"
+    
     },
     {
         "id_sitter": 3,

@@ -23,7 +23,7 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
         include_once __DIR__ . "/../section/header2.php";
     ?>
 <!-- </head> stängs istället i header.php --> 
-<body>
+<body class="readBodySitter">
     
     <?php
     require_once __DIR__ . "/../functions.php";
@@ -70,7 +70,7 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
 
                 <div class='three'>
                     <p class='bold'>Bra att veta:</p>
-                    <p>{$dog['extra']}</p>
+                    <p>{$dog['extraInfo']}</p>
                 </div>
                 ";
 

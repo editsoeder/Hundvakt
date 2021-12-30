@@ -6,6 +6,7 @@ require_once "section/header.php";
 ?> 
 <body> 
     <div id="createAsWrapper">
+        <button class="backToHomeCreateAs">Hem</button >
         <div id="contentWrapper">
             <h2> Vill du skapa konto som... </h2> 
             <div id="buttonsDiv"> 
@@ -23,6 +24,10 @@ require_once "section/header.php";
 
     document.querySelector(".dogOwnerButton").addEventListener("click", function() {
         window.location.href = "dogowner/create.php";
+    });
+
+    document.querySelector(".backToHomeCreateAs").addEventListener("click", function() {
+        window.location.href = "index.php";
     });
     </script>
 </body> 

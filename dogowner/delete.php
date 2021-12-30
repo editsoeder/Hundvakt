@@ -14,67 +14,37 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
 require_once __DIR__ . "/../functions.php";
 error_reporting(-1);
 
-//Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
-
 
 if (isset($_SESSION["loggedInAsDogOwner"])) {
-    $dogDeleteID = $_SESSION["loggedInAsDogOwner"];
+    deleteDog($_SESSION["loggedInAsDogOwner"]);
+} 
 
-    deleteDog($dogDeleteID);
+elseif (!isset($_SESSION["loggedInAsDogOwner"])) {
+    header("Location: ../sign.out.php");
+    exit();
 }
 
-//Radera hund från json filer
-function deleteDog($dogID) {
-    $data = json_decode(file_get_contents(__DIR__ . "/../dogowner/dogowners.json"), true);
-    $found = false;
 
-    foreach ($data as $key => $dogOwner) {
-        if ($dogID == $dogOwner["id_owner"]) {
+//Radera användare från json filen
+function deleteDog($ID) {
+
+    $allDogOwner = getAllDogOwner();
+
+    $found = false;
+    foreach ($allDogOwner as $key => $user) {
+        if ($ID == $user["id_owner"]) {
             $found = true;
             $index = $key;
             break;
         }
     }
+
     if ($found) {
-        $data = json_decode(file_get_contents(__DIR__ . "/../dogowner/dogowners.json"), true);
-        unset($data[$index]);
-        $json = json_encode($data, JSON_PRETTY_PRINT);
+        array_splice($allDogOwner, $index, 1);
+        $json = json_encode($allDogOwner, JSON_PRETTY_PRINT);
         file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
-    }
-    header("Location: index.php");
+        header("Location: ../sign-out.php");
+    } else {
+        echo "Gick ej att radera";
+    }    
 }
-
-
-// Ladda in vår JSON data från vår fil, i detta fallet är det $users
-$dogOwner = loadJson(__DIR__ . "/../dogowner/dogowners.json");
-
-// Vilken HTTP metod vi tog emot
-$method = $_SERVER["REQUEST_METHOD"];
-
-// Hämta ut det som skickades till vår server
-// $data = file_get_contents("php://input");
-$requestData = json_decode($data, true);
-
-
-
-    // Kontrollera att id är en siffra
-    $id = $requestData["id_owner"];
-    $found = false;
-
-   // Om id existerar
-   foreach ($dogOwner as $index => $user) {
-    if ($user["id_owner"] == $id) {
-        $found = true;
-        array_splice($dogOwner, $index, 1);
-        break;
-        }
-    }
-
-
-
-    // Uppdaterar filen
-    $dogOwnerJson =  __DIR__ . "/../dogowner/dogowners.json";
-    saveJson($dogOwnerJson, $dogOwner);
-    
-
-?>

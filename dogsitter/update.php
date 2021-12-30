@@ -39,7 +39,7 @@ $sitterPassword = $sitterInfo["password"];
     <h1 class="h2-update" >Här kan du ändra din profil!</h1>
     <div class="form">
         <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
-            <div id="dogsitter"> 
+            <div id="dogsitter-form"> 
                 <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
                 <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
                 <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>"><br>
@@ -49,8 +49,11 @@ $sitterPassword = $sitterInfo["password"];
                 <div id="areaBoxUpdate">
                     <?php
                     createAreaBoxesUpdate();
-                    createLocationList();
                     ?> 
+                    <h2 class="h2-update"> Min Placering </h2> 
+                    <?php
+                    createLocationList();
+                    ?>
                 </div>
             </div> 
 
@@ -64,7 +67,9 @@ $sitterPassword = $sitterInfo["password"];
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
                 <input type="file" name="imageToUpload" id="fileToUpload">
             </div> 
-            <button class="button">Updatera!</button>
+            <div id=update-button-wrapper>
+                <button id="update-button">Updatera!</button>
+            </div>
         </form>
     </div> 
 
@@ -97,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
     }
 
-$updateProfile = [ 
+$updateProfile = [
     "id_sitter" => $loggedInID,
     "first_name" => $_POST["firstName"],
     "last_name" => $_POST["lastName"],
@@ -109,8 +114,8 @@ $updateProfile = [
     "areas" => $_POST["areas"],
     "extraInfo" => $_POST["extraInfo"],
     "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
-    
-];  
+]  
+;  
 foreach($data as $user){
     if($loggedInID === $user["id_sitter"]){
        $user = $updateProfile;
@@ -120,25 +125,30 @@ $json = json_encode($data);
 file_put_contents("dogsitter.json", $json);
 
     if(is_null($updateProfile ) ){
-        echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+        echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
         exit();
     }
 
     if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
-        echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+        echo "<p class 'feedbackMessageUpdate'> Alla fält måste vara ifyllda, försök igen </p>";
         exit();
     }
 
     if(strlen($updateProfile ["password"]) < 4) {
-        echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+        echo "<p class 'feedbackMessageUpdate'> Lösenord måste vara minst 4 tecken långt </p>";
         exit();       
+    }
+    if ($size > 4 * 1000 * 1000) {
+        echo "Filen får inte vara större än 4mb";
+        exit();
     }
 
 
 
 
 
-    updateUser("dogsitter.json", $updateProfile);
-    echo "<p class 'feedbackMessage'> Profil Uppdaterad!</p>";
+    // updateUser("dogsitter.json", $updateProfile);
+    // updateProfileSitter("../dogsitter.json", $updateProfile);
+    echo "<p class 'feedbackMessageUpdate'> Profil Uppdaterad!</p>";
    }
 ?>

@@ -30,6 +30,73 @@ body {
     margin: 10px;
 }
 
+.createAc {
+    grid-column: 3;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.createAcBold {
+    grid-column: 3;
+    grid-row: 3;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    color: var(--orange);
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 60px;
+    text-decoration: none;
+    width: 120px;
+    justify-self: center;
+    height: 10px;
+}
+
+.createAcBold:hover {
+    color: var(--blue);
+}
+
+.back {
+    grid-column: 5;
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+}
+
+.backToHome {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    background-color: var(--white);
+    font-size: 30px;
+    font-family: var(--font-title);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+    font-family: var(--font-paragraph);
+}
+
+.backToHomeCreateAs {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    background-color: var(--white);
+    font-size: 30px;
+    font-family: var(--font-title);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+    position: absolute;
+    right: 3%;
+    top: 27%;
+    font-family: var(--font-paragraph);
+}
+
+.backToHome:hover, .backToHomeCreateAs:hover{
+    background-color: var(--orange);
+}
+
 .homePagebuttonOne {
     height: var(--home-btn);
     width: var(--home-btn);
@@ -137,12 +204,13 @@ body {
     justify-content: center;
     /* height: 70vh; */
     flex-direction: column;
+    background-color: var(--white);
 }
 
 .one {
     background-color: var(--yellow);
     border-radius: 100px;
-    min-height: 320px;
+    min-height: 360px;
     width: 400px;
     padding: 20px;
     border: 8px solid var(--orange);
@@ -188,6 +256,7 @@ body {
     padding-left: 5px;
     margin-top: 0px;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .two {
@@ -209,6 +278,7 @@ body {
     z-index: 1;
     position: relative;
     bottom: 200px;
+    max-width: 250px;
 }
 
 .three > .bold {
@@ -304,6 +374,11 @@ button {
     background-color: var(--white);
     transition: all .5s;
     box-shadow: 5px 5px 5px #212121;
+    font-family: var(--font-paragraph);
+}
+
+.logInBtn {
+    font-size: 20px;
 }
 
 button:hover {
@@ -361,163 +436,78 @@ nav > a:hover{
     color: var(--orange);
 }
 
+/* read.php/read.js */
+.dogSitter, .readBodyOwner  {
+    background-color: var(--orange);
+    font-family: var(--font-paragraph);
+}
+
+.dogOwner, .readBodySitter {
+    background-color: var(--turquoise);
+    font-family: var(--font-paragraph);
+}
+
 #filterOwner {
     height: 110px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--orange);
 }
 
 #filterSitter {
     height: 110px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     background-color: var(--turquoise);
 }
 
-.dropbtn {
+#filterSitter > div:nth-child(1) {
+    grid-column: 1;
+}
+
+#filterSitter > div:nth-child(2) {
+    grid-column: 2;
+}
+
+#filterSitter > div:nth-child(3) {
+    grid-column: 3;
+}
+
+#dropBtn {
     height: 50px;
-    width: 100px;
+    width: 28VW;
     border-radius: 0px;
     cursor: pointer;
     margin-bottom: 0px;
-    flex-grow: 1;
-    text-align: center;
     font-family: var(--font-title);
-    text-decoration: none;
-    display: flex;
     color: var(--black);
-    justify-content: center;
-    align-items: center;
     font-size: 30px;
     transition: all .5s; 
     margin: 30px;
-}
-
-.dropbtnOwner {
-    height: 50px;
-    width: 100px;
-    border-radius: 0px;
-    cursor: pointer;
     margin-bottom: 0px;
-    flex-grow: 1;
-    text-align: center;
-    font-family: var(--font-title);
-    text-decoration: none;
-    display: flex;
-    color: var(--black);
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    transition: all .5s; 
-    margin: 30px;
-    background-color: var(--orange);
 }
 
-.dropbtn:hover{
-    background-color: var(--green);
-    transition: all .5s; 
-}
-
-.dropbtnOwner:hover{
+#dropBtn:hover{
     background-color: var(--pink);
     transition: all .5s; 
 }
 
-.listTitle {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
-}
-
-.listTitle > div {
-    height: 10px;
-    width: 100px;
-    border-radius: 0px;
-    cursor: pointer;
-    margin-bottom: 0px;
-    text-align: center;
-    font-family: var(--font-title);
-    text-decoration: none;
-    flex-direction: row;
-    display: flex;
-    color: var(--black);
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    transition: all .5s; 
-    margin: 30px;
-}
-
-.dogSitter {
-    background-color: var(--orange);
-}
-
-.dogOwner {
-    background-color: var(--turquoise);
-}
-
-.list > div  {
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
-    height: 130px;
-    background-color: var(--white);
-    margin: 10px;
-}
-
-.list > div > p {
-    flex-grow: 1;
-    text-align: left;
-    padding-left: 40px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    font-size: 20px;
-}
-
-.list > div > a {
-    color: black;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.list > div > img {
-    border-radius: 100px;
-    margin: 15px;
-}
-
-.list > div > a:hover {
-    color: var(--orange);
-    transition: all .5s; 
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
+#dropOne, #dropTwo, #dropThree {
+    margin-left: 30px;
+    width: 27.8vw;
     background-color: #f6f6f6;
-    width: 150px;
     overflow: auto;
     border: 1px solid #ddd;
     z-index: 1;
-    margin-top: 0px;
-    margin-left: 10px;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+#dropOne > a, #dropTwo > a, #dropThree > a {
+    font-size: 20px;
+} 
 
-.dropdown-content > a:hover {
-    background-color: var(--blue);
-    cursor: pointer;
-}
-
-.dropContent {
+.dropDownContent {
     display: none;
     position: absolute;
     background-color: #f6f6f6;
@@ -527,6 +517,30 @@ nav > a:hover{
     z-index: 1;
     margin-top: 0px;
     margin-left: 60px;
+}
+
+.dropDownContent a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropDownContent > a:hover {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+
+.dropContent {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    /* width: 150px; */
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    /* margin-top: 0px;
+    margin-left: 60px; */
 }
 
 .dropContent a {
@@ -567,7 +581,84 @@ nav > a:hover{
 
 .show {display: block;}
 
+.listTitle {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
+}
+
+#listImage {
+    border-radius: 100px;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border: 2px solid;
+    /* height: 75%;
+    width: 30%; */
+}
+
+.listTitle > div {
+    height: 10px;
+    width: 100px;
+    border-radius: 0px;
+    cursor: pointer;
+    margin-bottom: 0px;
+    text-align: center;
+    font-family: var(--font-title);
+    text-decoration: none;
+    flex-direction: row;
+    display: flex;
+    color: var(--black);
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: all .5s; 
+    margin: 30px;
+    margin-bottom: 0px;
+}
+
+.list > div  {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
+    height: 130px;
+    background-color: var(--white);
+    margin: 30px;
+    border: 2px solid;
+}
+
+.list > div:last-child {
+    margin-bottom: 50px;
+}
+
+.list > div > p {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 40px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.list > div > a {
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    width: 70px;
+    height: 10px;
+    align-self: center;
+}
+
+.list > div > a:hover {
+    color: var(--orange);
+    transition: all .5s; 
+}
+/* read.php/read.js */
+
 /* hundtass (logga in) */
+
+
 .ajax-loader {
     position: relative;
     bottom: 20%;
@@ -606,50 +697,53 @@ svg {
 /* Min Profil Sida*/
 
 #wrapper-dog, #wrapper-info{
-    background-color: var(--blue);
-    border-radius: 50px;
-    display: flex;
+    isplay: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    grid-area: 3 / 1 / 3 / 3;
+    flex-direction: column;
     margin: 6vh;
     border: 2vh solid var(--yellow);
-
-}
-
-#wrapper-dog > p , #wrapper-info > p{
+    position: relative;
+    left: 316px;
+    top: -15px;
+    height: 391px;
+    border-radius: 50px;
+    background-color: var(--blue);
     font-family: var(--font-title);
+    font-size: 20px;
     color: var(--white);
-    font-size: 3vw;
+    width: 50%;
 }
+
 #wrapper-contact{
     background-color: var(--pink);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    grid-area: 3 / 3 / 3 / 2;
     align-items: center;
-    color: var(--white);
-    font-family: var(--font-title);
-    height: 300px;
-    width: 300px;
-    
-    
-}
+    height: 220px;
+    width: 220px;
+    position: relative;
+    left: 200px;
+    top: -386px;
+    flex-direction: column;
+    border: 10px solid var(--orange);
+    }
 
 #wrapper-owner, #wrapper-extra_info{
-    height: 45vh;
-    width: 30vw;
-    background-color: var(--yellow);
-    border-radius: 40px;
+    height: 250px;
+    width: 250px;
+    background-color: var(--green);
+    border-radius: 50%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     position: relative;
-    right: 32vw;
-    top: -14vh;
-    flex-wrap: wrap;
+    right: -234px;
+    top: -453px;
+    border: 10px solid var(--pink)
 }
 
 #wrapper-profile > h1{
@@ -658,19 +752,17 @@ svg {
     justify-content: center;
     align-items: center;
     font-family: var(--font-title);
-    grid-area: 1/1/2/3;
     font-size: 8vh;
 }
 
 #wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    color: var(--black);
-    font-size: 2vh;
-    font-family: var(--font-paragraph);
     margin-left: 4px;
     margin-right: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--white);
+    font-family: var(--font-title);
 }
 
  #profile-image{
@@ -678,8 +770,8 @@ svg {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-area: 2 / 1 / 3 / 3;
-    height: 0;
+    height: 200px;
+    width: 200px;
 
  }
 
@@ -704,9 +796,10 @@ svg {
     background-repeat: no-repeat;
  }
  #wrapper-profile{
-     display: grid;
-     grid-template-columns: 50% 50%;
-     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+background-color: var(--white);
+height: 100%;
+width: 100%;
+overflow: hidden;
  }
 
 /* createAS */ 
@@ -993,6 +1086,12 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 /* slut på create dogSitter */ 
 
 /*Update.php*/
+#dogsitter-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 #dayBoxUpdate { 
     background-color: var(--pink);
     display: flex;
@@ -1001,9 +1100,14 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     justify-content: center;
     width: 50vw;
 }
-
+.dayWrapperUpdate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vw;
+}
 #areaBoxUpdate {
-    background-color: var(--white);
+    background-color: var(--pink);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1013,7 +1117,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 .createAccountUpdate{    
     font-family: var(--font-title);
     width: 50vw;
-    background-color: var(--white);
+    background-color: var(--pink);
 }
 .input-text{
     display: flex;
@@ -1026,5 +1130,37 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     font-family: var(--font-title);
     display: flex;
     justify-content: center;
-    align-items: centers;
+    align-items: center;
+}
+#uploadImageUpdate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#update-button{
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    border-radius: 100%;
+    background-color: var(--turquoise);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+    font-family: var(--font-paragraph);
+}
+#update-button:hover{
+    background-color: var(--blue);
+    color: var(--white);
+}
+#update-button-wrapper{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.feedbackMessageUpdate{
+    font-size: 20vh;
+    font-family: var(--font-title);
 }

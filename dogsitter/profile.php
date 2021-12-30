@@ -57,15 +57,19 @@ require_once __DIR__ . "/../functions.php";
         <div id="wrapper-extra_info">
             <p>Bra att veta om mig är:<?php echo $sitterExtra?> </p> 
         </div>
+        <form action="update.php" method="PATCH">
+            <button type="submit" id="change-settings-button">Ändra Uppgifter</button>
+        </form>
+    
+        <button type="submit" id="delete-account-button">Radera Konto</button>
     </div>
 
-    <form action="update.php" method="PATCH">
-        <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
-    </form>
-
-    <form action="delete.php?id=" method="GET">
-        <button type="submit" class="button" id="delete-account-button ">Radera Konto</button>
-    </form>
+    
+    <script>
+        document.querySelector("#delete-account-button").addEventListener("click", function () {
+            window.location.href = "delete.php";
+        });
+    </script>
 
     <?php
     require_once __DIR__ . "/../section/footer.php";
