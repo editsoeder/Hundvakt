@@ -2,6 +2,7 @@
 error_reporting(-1);
 session_start();
 require_once __DIR__ . "/../functions.php";
+// require_once __DIR__ . "/../script.js";
 ?> 
 
 <!DOCTYPE html>
@@ -30,8 +31,8 @@ require_once __DIR__ . "/../functions.php";
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
-        <div id="profile-image">
-            <img src="userImages/$sitterImg">
+        <div onload="profileImg();" id="profile-image">
+            <img src="userImages/$sitterImg"><?php echo $sitterImg?>
         </div>
         <div id="wrapper-info">
             <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>

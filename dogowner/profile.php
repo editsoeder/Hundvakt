@@ -1,7 +1,6 @@
 <?php 
 error_reporting(-1);
 session_start();
-
 if (!isset($_SESSION["loggedInAsDogOwner"])) {
     if(isset($_SESSION["loggedInAsDogSitter"])) {
         header("Location: ../dogsitter/profile.php");
@@ -11,7 +10,6 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
         exit();
     }
 }
-
 require_once __DIR__ . "/../functions.php"; 
 ?> 
 
@@ -36,9 +34,7 @@ require_once __DIR__ . "/../functions.php";
     $ownerCost = $ownerInfo["cost"];
     $ownerDogInfo = $ownerInfo["dog"];
     $ownerEmail = $ownerInfo["email"];
-    // foreach($ownerInfo["dog"] as $dogs){
-    //    $dogs = $dog["dogName"];
-    // }
+    // $ownerImage = $ownerInfo["image"[4]];
     ?>
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
