@@ -1,6 +1,17 @@
 <?php 
 error_reporting(-1);
 session_start();
+
+if (!isset($_SESSION["loggedInAsDogOwner"])) {
+    if(isset($_SESSION["loggedInAsDogSitter"])) {
+        header("Location: ../dogsitter/read.php");
+        exit();
+    } else {
+        header("Location: ../sign-in.php");
+        exit();
+    }
+}
+
 ?> 
 
 <!DOCTYPE html>

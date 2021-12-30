@@ -1,5 +1,5 @@
-[
-    {
+{
+    "0": {
         "id_owner": 1,
         "first_name": "George",
         "last_name": "Charkviani",
@@ -20,7 +20,7 @@
             "Fredag"
         ]
     },
-    {
+    "1": {
         "id_owner": 2,
         "first_name": "Clara",
         "last_name": "Lund",
@@ -41,7 +41,7 @@
             "extraInfo": "I love carrots and appeles"
         }
     },
-    {
+    "2": {
         "id_owner": 3,
         "first_name": "Harry",
         "last_name": "Petersson",
@@ -62,7 +62,7 @@
             "extraInfo": "She bites a lot and don't like pigions"
         }
     },
-    {
+    "3": {
         "id_owner": 4,
         "first_name": "Knut",
         "last_name": "Larsson",
@@ -82,7 +82,7 @@
             "extraInfo": "Allergisk mot fisk"
         }
     },
-    {
+    "4": {
         "id_owner": 5,
         "first_name": "Erik",
         "last_name": "Hej",
@@ -101,7 +101,7 @@
             "extraInfo": "Bits"
         }
     },
-    {
+    "5": {
         "id_owner": 6,
         "first_name": "Erika",
         "last_name": "Eriksson",
@@ -120,7 +120,7 @@
             "extraInfo": "Sover mycket"
         }
     },
-    {
+    "6": {
         "id_owner": 7,
         "first_name": "Johnny",
         "last_name": "Stark",
@@ -139,7 +139,7 @@
             "extraInfo": "Liten men stark"
         }
     },
-    {
+    "7": {
         "id_owner": 8,
         "first_name": "Johan",
         "last_name": "Klasson",
@@ -158,7 +158,7 @@
             "extraInfo": "Springer ofta bort"
         }
     },
-    {
+    "8": {
         "id_owner": 9,
         "first_name": "Erik",
         "last_name": "Pineiro",
@@ -178,7 +178,7 @@
             "extraInfo": "Bits"
         }
     },
-    {
+    "9": {
         "id_owner": 10,
         "first_name": "Jennifer",
         "last_name": "Klasson",
@@ -197,26 +197,7 @@
             "extraInfo": "H\u00e4rlig kille i sina b\u00e4sta \u00e5r"
         }
     },
-    {
-        "id_owner": 11,
-        "first_name": "Test",
-        "last_name": "Test",
-        "email": "test@test.se",
-        "password": "test",
-        "location": "S\u00f6dra Innerstaden",
-        "cost": "90",
-        "days": [
-            "M\u00e5ndag",
-            "Tisdag"
-        ],
-        "dog": {
-            "dogName": "Test",
-            "breed": "test",
-            "gender": "Hane",
-            "extraInfo": "test"
-        }
-    },
-    {
+    "11": {
         "id_owner": 12,
         "first_name": "test",
         "last_name": "test",
@@ -234,7 +215,7 @@
             "extraInfo": "test"
         }
     },
-    {
+    "12": {
         "id_owner": 13,
         "first_name": "test",
         "last_name": "test",
@@ -253,7 +234,7 @@
             "extraInfo": "test"
         }
     },
-    {
+    "13": {
         "id_owner": 14,
         "first_name": "Jennifer",
         "last_name": "Andersson",
@@ -273,7 +254,7 @@
             "extraInfo": "Sn\u00e4ll men bits ibland"
         }
     },
-    {
+    "14": {
         "id_owner": 15,
         "first_name": "Jennifer",
         "last_name": "Sten",
@@ -295,5 +276,4 @@
             "image": "e5e3c897ddc624e715c8cd14ea7188a168e82abf.jpeg"
         }
     }
-
-]
+}

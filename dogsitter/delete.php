@@ -1,8 +1,22 @@
 <?php
-require_once __DIR__ . "/../functions.php";
+session_start();
 error_reporting(-1);
 session_start();
 
+
+require_once __DIR__ . "/../functions.php";
+
+if (!isset($_SESSION["loggedInAsDogSitter"])) {
+    if(isset($_SESSION["loggedInAsDogOwner"])) {
+        header("Location: ../dogowner/profile.php");
+        exit();
+    } else {
+        header("Location: ../sign-in.php");
+        exit();
+    }
+}
+
+//Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
 
 if (isset($_SESSION["loggedInAsDogSitter"])) {
     deleteDog($_SESSION["loggedInAsDogSitter"]);

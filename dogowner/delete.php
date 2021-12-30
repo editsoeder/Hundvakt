@@ -1,7 +1,18 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["loggedInAsDogOwner"])) {
+    if(isset($_SESSION["loggedInAsDogSitter"])) {
+        header("Location: ../dogsitter/profile.php");
+        exit();
+    } else {
+        header("Location: ../sign-in.php");
+        exit();
+    }
+}
+
 require_once __DIR__ . "/../functions.php";
 error_reporting(-1);
-session_start();
 
 
 if (isset($_SESSION["loggedInAsDogOwner"])) {
