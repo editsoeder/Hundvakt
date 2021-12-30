@@ -4,42 +4,53 @@ fetch("../dogowner/dogowners.json")
 .then(response => response.json())
 .then(json => data(json));
 
+let downOne = document.createElement("div");
+let downTwo = document.createElement("div");
+let downThree = document.createElement("div");
+
 let buttonOne = document.createElement("button");
 let dropdownContentOne = document.createElement("div");
-buttonOne.className = "dropbtn";
+buttonOne.className = "dropbtnOne";
+buttonOne.id = "dropBtn";
 buttonOne.innerHTML = "Sortera efter pris";
-dropdownContentOne.className = "dropdown-content";
-dropdownContentOne.id = "myDropdown";
+dropdownContentOne.className = "dropDownContent";
+dropdownContentOne.id = "dropOne";
 dropdownContentOne.innerHTML = " <a id='high'>Högst först</a> <a id ='low'>Lägst först</a> ";
 
 let buttonTwo = document.createElement("button");
 let dropdownContentTwo = document.createElement("div");
-buttonTwo.className = "dropbtn";
+buttonTwo.className = "dropbtnTwo";
+buttonTwo.id = "dropBtn";
 buttonTwo.innerHTML = "Sortera efter dagar";
 dropdownContentTwo.className = "dropContent";
-dropdownContentTwo.id = "drop";
+dropdownContentTwo.id = "dropTwo";
 dropdownContentTwo.innerHTML = " <a id='monday'>Måndag</a> <a id ='tuesday'>Tisdag</a> <a id ='wednesday'>Onsdag</a> <a id ='thursday'>Torsdag</a> <a id ='friday'>Fredag</a> <a id ='saturday'>Lördag</a> <a id ='sunday'>Söndag</a>";
 
 let buttonThree = document.createElement("button");
 let dropdownContentThree = document.createElement("div");
-buttonThree.className = "dropbtn";
+buttonThree.className = "dropbtnThree";
+buttonThree.id = "dropBtn";
 buttonThree.innerHTML = "Sortera efter område";
 dropdownContentThree.className = "downContent";
-dropdownContentThree.id = "down";
+dropdownContentThree.id = "dropThree";
 dropdownContentThree.innerHTML = " <a id='fosie'>Fosie</a> <a id='hyllie'>Hyllie</a> <a id='husie'>Husie</a> <a id='kirseberg'>Kirseberg</a> <a id='limhamn'>Limhamn-Bunkeflo</a> <a id='malmo'>Malmö Centrum</a> <a id='oxie'>Oxie</a> <a id='rosengard'>Rosengård</a> <a id='sodra'>Södra Innerstad</a> <a id='vastra'>Västra Innerstad</a> ";
 
-document.getElementById("filterSitter").append(buttonOne, dropdownContentOne, buttonTwo, dropdownContentTwo, buttonThree, dropdownContentThree);
+downOne.append(buttonOne, dropdownContentOne);
+downTwo.append(buttonTwo, dropdownContentTwo);
+downThree.append(buttonThree, dropdownContentThree);
+
+document.getElementById("filterSitter").append(downOne, downTwo, downThree);
 
 buttonOne.addEventListener('click', function(){
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("dropOne").classList.toggle("show");
 });
 
 buttonTwo.addEventListener('click', function(){
-  document.getElementById("drop").classList.toggle("show");
+  document.getElementById("dropTwo").classList.toggle("show");
 });
 
 buttonThree.addEventListener('click', function(){
-  document.getElementById("down").classList.toggle("show");
+  document.getElementById("dropThree").classList.toggle("show");
 });
 
 function data(json) {
@@ -68,8 +79,18 @@ function data(json) {
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
         cost.innerHTML = array[i].cost;
+
+        // const setBg = () => {
+        //   const randomColor = Math.floor(Math.random()*16777215).toString(16);
+        //   image.style.border = "5px solid" + "#" + randomColor ;
+        // }
+        // setBg();
+
         // image.src = "/userImages/" + array[i].images;
-      image.src = "/Images/dogs.jpg";
+        // image.src = "/Images/dog_banana.jpg";
+
+        image.src = "/Images/dogs.jpg";
+
         a.innerHTML = "Läs mer";
         a.href = "read.php?id=" + array[i].id_owner;
 

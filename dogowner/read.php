@@ -13,7 +13,7 @@ session_start();
         require_once __DIR__ . "/../section/header2.php";
     ?> 
 <!-- </head> stängs iställer i header.php-->
-<body>
+<body class="readBodyOwner">
     <?php
     require_once __DIR__ . "/../functions.php";
     $allDogSitter = getAllDogSitter();
