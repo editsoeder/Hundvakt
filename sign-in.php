@@ -116,8 +116,12 @@ if (isset($_POST["email"], $_POST["password"])) {
             <form class="form" action="sign-in.php" method="POST">
                 <input class="logInInput" type="email" name="email" placeholder="Email"><br>
                 <input class="logInInput" type="password" name="password" placeholder="Lösenord"><br>
-                <button>Logga in</button> 
+                <button class="logInBtn">Logga in</button> 
             </form>
+
+            <div class="createAc">Har du inget konto? </div>
+            <a href="createAs.php" class="createAcBold">Registrera dig</a>
+            
 
             <script src="sign-in.js"></script>
         </div>

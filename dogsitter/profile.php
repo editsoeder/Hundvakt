@@ -54,7 +54,11 @@ require_once __DIR__ . "/../functions.php";
     </div>
 
     
-    <script src="profile.js"></script>
+    <script>
+        document.querySelector("#delete-account-button").addEventListener("click", function () {
+            window.location.href = "delete.php";
+        });
+    </script>
 
     <?php
     require_once __DIR__ . "/../section/footer.php";

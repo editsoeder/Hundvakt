@@ -55,9 +55,14 @@ require_once __DIR__ . "/../functions.php";
     </form>
 
 
-    <button type="submit" class="deleteBtn" id="delete-account-button">Radera Konto</button>
+    <button type="submit" id="delete-account-button">Radera Konto</button>
 
-    <script src="profile.js"></script>
+    <script>
+        document.querySelector("#delete-account-button").addEventListener("click", function () {
+            window.location.href = "delete.php";
+        });
+    </script>
+    
 <?php
 require_once __DIR__ . "/../section/footer.php";
 ?>
