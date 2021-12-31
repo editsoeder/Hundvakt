@@ -309,5 +309,52 @@
         ],
         "extraInfo": "Jag har en katt hemma s\u00e5 om din hund inte fungerar med katter kan jag inte vakta hunden hemma hos mig. ",
         "image": "bc7d5a58990d3bb272b697d50308aca8d54bec98.jpeg"
+    },
+    {
+        "id_sitter": 13,
+        "first_name": "Arnold",
+        "last_name": "Jane",
+        "email": "janearnold@gmail.com",
+        "password": "password123",
+        "location": "Roseng\u00e5rd",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Torsdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Fosie",
+            "Hyllie",
+            "Kirseberg",
+            "Oxie"
+        ],
+        "extraInfo": "Jag kommer att behandla din hund som om det vore min egen, fast \u00e4nnu b\u00e4ttre! ",
+        "image": "3c1708b5fe1ad2dfb140e8babc7fc102ba31fa72.jpeg"
+    },
+    {
+        "id_sitter": 14,
+        "first_name": "Alexandro",
+        "last_name": "Bardio",
+        "email": "alexandriothatsme@live.se",
+        "password": "barden44",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "60",
+        "days": [
+            "M\u00e5ndag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Hyllie",
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Kan hundvakta flera hundar samtidigt d\u00e4rf\u00f6r \u00e4r det viktigt att din hund fungerar bra med andra hundar!",
+        "image": "c3a911a530b50ac4df17cd4349c167b9e6f0830f.jpeg"
     }
 ]
