@@ -78,7 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $size = $file["size"];
 
         if ($size > 4 * 1000 * 1000) {
-            echo "Filen får inte vara större än 4mb";
+            echo "<p class='feedbackMessage'> Filen får inte <br> vara större än 4mb </p>";
             exit();
         }
 
@@ -105,17 +105,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     ];
 
     if(is_null($newEntry) ){
-        echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+        echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
         exit();
     }
 
     if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["areas"])|| empty($newEntry["extraInfo"])) {
-        echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
         exit();
     }
 
     if(strlen($newEntry["password"]) < 4) {
-        echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+        echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
         exit();       
     }
 
@@ -125,5 +125,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     echo '<div class="feedbackDiv"> <p> Användare skapad! Nu kan du: <br> </p> <button id="toLogInButton"> logga in </button> </div>';
 }
 ?>
-
-<!-- <a href="../sign-in.php"> logga in</a> -->
