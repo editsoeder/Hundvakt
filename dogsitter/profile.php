@@ -1,18 +1,8 @@
 <?php 
 error_reporting(-1);
 session_start();
-
-if (!isset($_SESSION["loggedInAsDogSitter"])) {
-    if(isset($_SESSION["loggedInAsDogOwner"])) {
-        header("Location: ../dogowner/profile.php");
-        exit();
-    } else {
-        header("Location: ../sign-in.php");
-        exit();
-    }
-}
-
 require_once __DIR__ . "/../functions.php";
+// require_once __DIR__ . "/../script.js";
 ?> 
 
 <!DOCTYPE html>
@@ -41,13 +31,13 @@ require_once __DIR__ . "/../functions.php";
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
-        <div id="profile-image">
-            <img src="userImages/$sitterImg">
+        <div onload="profileImg();" id="profile-image">
+            <img src="userImages/$sitterImg"><?php echo $sitterImg?>
         </div>
         <div id="wrapper-info">
             <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>
             <p>Jag passar hundar i:<br> <?php echo $sitterArea?> </p>
-            <p>Dagar jag kan passa: <br> <?php echo $sitterDays?> </p>
+            <p>Dagar jag kan passa:<br><?php echo $sitterDays?> </p>
             <p>Min timlön är:<br>  <?php echo $sitterCost?> kr/tim </p>
         </div>
         <div id="wrapper-contact">
@@ -55,7 +45,7 @@ require_once __DIR__ . "/../functions.php";
             <p>Du når mig på: <?php echo $sitterEmail ?> </p>
         </div>
         <div id="wrapper-extra_info">
-            <p>Bra att veta om mig är:<?php echo $sitterExtra?> </p> 
+            <p>Bra att veta om mig är:<br><?php echo $sitterExtra?> </p> 
         </div>
         <form action="update.php" method="PATCH">
             <button type="submit" id="change-settings-button">Ändra Uppgifter</button>
@@ -65,11 +55,9 @@ require_once __DIR__ . "/../functions.php";
     </div>
 
     
-    <script>
-        document.querySelector("#delete-account-button").addEventListener("click", function () {
-            window.location.href = "delete.php";
-        });
-    </script>
+    <script >document.querySelector("#delete-account-button").addEventListener("click", function () {
+    window.location.href = "delete.php";
+    });</script>
 
     <?php
     require_once __DIR__ . "/../section/footer.php";

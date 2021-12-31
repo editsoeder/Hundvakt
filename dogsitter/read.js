@@ -90,7 +90,6 @@ function data(json) {
         // image.src = "/Images/dog_banana.jpg";
 
         image.src = "/Images/dogs.jpg";
-
         a.innerHTML = "Läs mer";
         a.href = "read.php?id=" + array[i].id_owner;
 

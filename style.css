@@ -697,15 +697,15 @@ svg {
 /* Min Profil Sida*/
 
 #wrapper-dog, #wrapper-info{
-    isplay: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 6vh;
     border: 2vh solid var(--yellow);
     position: relative;
-    left: 316px;
-    top: -15px;
+    left: 329px;
+    top: 89px;
     height: 391px;
     border-radius: 50px;
     background-color: var(--blue);
@@ -725,8 +725,8 @@ svg {
     height: 220px;
     width: 220px;
     position: relative;
-    left: 200px;
-    top: -386px;
+    left: 965px;
+    top: -462px;
     flex-direction: column;
     border: 10px solid var(--orange);
     }
@@ -741,8 +741,8 @@ svg {
     flex-direction: column;
     align-items: center;
     position: relative;
-    right: -234px;
-    top: -453px;
+    right: -239px;
+    top: -345px;
     border: 10px solid var(--pink)
 }
 
@@ -756,41 +756,61 @@ svg {
 }
 
 #wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--white);
     font-family: var(--font-title);
+    flex-direction: column;
+    margin-top: 2px;
+    margin-bottom: 2px;
 }
 
  #profile-image{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
+    border: 10px solid var(--green);
+    border-radius: 50%;
+    background-image: url(/images/);
+    background-repeat: no-repeat;
+    position: relative;
+    left: 614px;
+    top: 70px;
+    
 
  }
 
 #change-settings-button{
     position: relative;
-    left: 85vw;
-    top: 14vh;
+    left: 1114px;
+    top: -1150px;
+    background-color: var(--green);
+    color: var(--white);
+    font-family: var(--font-title);
+    transition: .5 all;
+}
+#change-settings-button:hover{
+    background-color: var(--turquoise);
 }
 
 #delete-account-button{
     position: relative;
-    left: 78vw;
-    top: -5vh;
+    left: 1163px;
+    top: -1327px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--font-title);
+    transition: .5 all;
+}
+#delete-account-button:hover{
+    background-color: var(--pink);
 }
 
  img{
-    height: 200px;
-    width: 200px;
-    border: 10px solid var(--green);
+    height: 220px;
+    width: 220px;
     border-radius: 50%;
     /* background-image: url(/images/); */
     background-repeat: no-repeat;
@@ -800,6 +820,11 @@ background-color: var(--white);
 height: 100%;
 width: 100%;
 overflow: hidden;
+ }
+
+ #wrapper-owner >h2, #wrapper-contact >h2{
+     color: var(--white);
+     font-family: var(--font-title);
  }
 
 /* createAS */ 

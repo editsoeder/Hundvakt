@@ -177,12 +177,12 @@ function createDayBoxes() {
 function createCostList() {
 ?>  <input list="hourCost" name="Timkostnad" class="createDetails" placeholder="Kr i timmen"><br>
     <datalist id="hourCost">
-        <option value="<50">
+        <option value="50">
         <option value="60">
         <option value="70">
         <option value="80">
         <option value="90">
-        <option value=">100">
+        <option value="100">
     </datalist> <?php 
 }
 
@@ -258,12 +258,12 @@ function createAreaBoxesUpdate() {
     function createCostListUpdate() {
     ?>  <input list="hourCost" name="Timkostnad" placeholder="Kr i timmen"><br>
         <datalist id="hourCost">
-            <option value="<50">
+            <option value="50">
             <option value="60">
             <option value="70">
             <option value="80">
             <option value="90">
-            <option value=">100">
+            <option value="100">
         </datalist> <?php 
     }
     
