@@ -356,5 +356,75 @@
         ],
         "extraInfo": "Kan hundvakta flera hundar samtidigt d\u00e4rf\u00f6r \u00e4r det viktigt att din hund fungerar bra med andra hundar!",
         "image": "c3a911a530b50ac4df17cd4349c167b9e6f0830f.jpeg"
+    },
+    {
+        "id_sitter": 15,
+        "first_name": "Jaqueline",
+        "last_name": "Obama",
+        "email": "jaqqi_o@yahoo.se",
+        "password": "obamamama",
+        "location": "Kirseberg",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Fredag",
+            "L\u00f6rdag"
+        ],
+        "areas": [
+            "Hyllie",
+            "Kirseberg",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Hundar \u00e4r det b\u00e4sta jag vet!",
+        "image": "bfdda13bf629bf3d6ee07904f83e4244c79ca42b.jpeg"
+    },
+    {
+        "id_sitter": 16,
+        "first_name": "Jenni",
+        "last_name": "Jakobsson",
+        "email": "jennijjj@hotmail.se",
+        "password": "dogspassion",
+        "location": "Limhamn-Bunkeflo",
+        "cost": "50",
+        "days": [
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Jag kan hundvakta i flera dagar vid behov. \u00c4lskar alla hundar men framf\u00f6r allt stora hundar. ",
+        "image": "7f3f0302c616a4da5e058eb2f8e541cd19a4fd7e.jpeg"
+    },
+    {
+        "id_sitter": 17,
+        "first_name": "Annika",
+        "last_name": "Johansson",
+        "email": "annikadoglover@hotmail.com",
+        "password": "losenord",
+        "location": "Fosie",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Kirseberg",
+            "Malm\u00f6 Centrum",
+            "Oxie",
+            "Roseng\u00e5rd"
+        ],
+        "extraInfo": "L\u00e5ng erfarenhet av hundpassning. Kan endast passa efter klockan 16. Jobbar \u00e4ven p\u00e5 ett hundpensionat.",
+        "image": "8ab031b0e517268fd498764c33dafab330cd4004.jpeg"
     }
 ]
