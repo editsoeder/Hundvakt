@@ -120,9 +120,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     }
 
     //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
-
     addEntry("dogsitter.json", $newEntry);
     // echo "<div class='feedbackDiv'> <p>Användare skapad! Nu kan du </p>  </div>";
-    echo '<p class="feedbackMessage"> Användare skapad! Nu kan du </p> <a href="../sign-in.php"> logga in</a>';
+    echo '<div class="feedbackDiv"> <p> Användare skapad! Nu kan du: <br> </p> <button id="toLogInButton"> logga in </button> </div>';
 }
 ?>
+
+<!-- <a href="../sign-in.php"> logga in</a> -->
