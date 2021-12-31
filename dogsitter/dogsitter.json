@@ -233,5 +233,81 @@
         ],
         "extraInfo": "Jag bor i Kirseberg men kan hundvakta var som helst i Malm\u00f6. Jag har l\u00e5ng erfarenhet av att vakta hundar och goda referenser. Jag har sj\u00e4lv en labrador som f\u00f6ljer med p\u00e5 promenaderna, s\u00e5 om din hund inte funkar med andra hundar \u00e4r jag inte r\u00e4tt hundvakt f\u00f6r dig och din hund. ",
         "image": "f1948c6052118c5a606e2071aa34647b29bc795a.jpeg"
+    },
+    {
+        "id_sitter": 10,
+        "first_name": "Sigfried",
+        "last_name": "Kay",
+        "email": "kaykay@gmail.com",
+        "password": "abcd4321",
+        "location": "Roseng\u00e5rd",
+        "cost": "50",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Malm\u00f6 Centrum",
+            "Roseng\u00e5rd"
+        ],
+        "extraInfo": "Pigg pension\u00e4r i sina b\u00e4sta \u00e5r s\u00f6ker en hund att g\u00e5 promenader med p\u00e5 eftermiddagen!",
+        "image": "62c08d04cc95c9a14909273121c41d339cfc46e4.jpeg"
+    },
+    {
+        "id_sitter": 11,
+        "first_name": "Manfred",
+        "last_name": "Kinnaman",
+        "email": "manfreddaman@gmail.com",
+        "password": "mannebananne",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "100",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie",
+            "Kirseberg",
+            "Oxie",
+            "Roseng\u00e5rd"
+        ],
+        "extraInfo": "Bara att h\u00f6ra av dig vid behov! Jag \u00e4r tillg\u00e4nglig n\u00e4r som helst. Har goda referenser, bara att sl\u00e4nga iv\u00e4g ett mejl och fr\u00e5ga. ",
+        "image": "7ef16bdf958df415904cdc02f87d149040502d76.jpeg"
+    },
+    {
+        "id_sitter": 12,
+        "first_name": "Annie",
+        "last_name": "Stein",
+        "email": "anniestein@gmail.com",
+        "password": "annieeee",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "80",
+        "days": [
+            "M\u00e5ndag",
+            "Onsdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Hyllie",
+            "Kirseberg",
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Jag har en katt hemma s\u00e5 om din hund inte fungerar med katter kan jag inte vakta hunden hemma hos mig. ",
+        "image": "bc7d5a58990d3bb272b697d50308aca8d54bec98.jpeg"
     }
 ]
