@@ -2,9 +2,6 @@
 session_start(); 
 require_once __DIR__ . "/../functions.php";
 
-if (!isset($_SESSION["loggedInAsDogSitter"]) & !isset($_SESSION["loggedInAsDogOwner"])) {
-    header("Location: ../sign-in.php");
-}
 
 ?> 
 
