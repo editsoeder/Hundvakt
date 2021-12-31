@@ -9,11 +9,3 @@ document.querySelector(".homePagebuttonOne").addEventListener("click", function 
 document.querySelector(".homePagebuttonThree").addEventListener("click", function () {
     window.location.href = "createAs.php";
 });
-
-const userImg = "../userImages";
-
-// function profileImg() {
-//     for (var i = 0; i < userImages.length; i++) {
-//         document.createElement(userImages[i]);
-//     }
-// }

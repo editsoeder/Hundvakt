@@ -2,7 +2,6 @@
 error_reporting(-1);
 session_start();
 require_once __DIR__ . "/../functions.php";
-// require_once __DIR__ . "/../script.js";
 ?> 
 
 <!DOCTYPE html>
@@ -26,13 +25,12 @@ require_once __DIR__ . "/../functions.php";
     $sitterLocation = $sitterInfo["location"];
     $sitterEmail = $sitterInfo["email"];
     $sitterExtra = $sitterInfo["extraInfo"];
-    $sitterImg = $sitterInfo['image'];
     ?>
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
         <div onload="profileImg();" id="profile-image">
-            <img src="userImages/$sitterImg"><?php echo $sitterImg?>
+            <img src="userImages/$sitterImg">
         </div>
         <div id="wrapper-info">
             <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>
