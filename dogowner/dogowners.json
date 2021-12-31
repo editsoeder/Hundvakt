@@ -1,220 +1,227 @@
 [
     {
         "id_owner": 1,
-        "first_name": "George",
-        "last_name": "Charkviani",
-        "email": "george@test.com",
-        "password": "doggos123",
-        "cost": ">150",
-        "location": "Malm\u00f6 Centrum",
-        "dog": {
-            "dogName": "Ernie",
-            "breed": "Alaskan Malamute",
-            "gender": "male",
-            "image": "bild",
-            "extraInfo": "Ernie has all the energy in the world"
-        },
+        "first_name": "Jennifer",
+        "last_name": "Sten",
+        "email": "jennifer@gmail.com",
+        "password": "123abc",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "100",
         "days": [
             "Tisdag",
+            "Onsdag",
             "Torsdag",
             "Fredag"
-        ]
+        ],
+        "dog": {
+            "dogName": "Love",
+            "breed": "Bulldogg",
+            "gender": "Hane",
+            "extraInfo": "Love \u00e4r en sn\u00e4ll och h\u00e4rlig hund som inte bits eller sk\u00e4ller. Han \u00e4r gatuhund fr\u00e5n b\u00f6rjan s\u00e5 han \u00e4r lite skygg f\u00f6r m\u00e4nniskor men v\u00e4njer sig snabbt. ",
+            "image": "e5e3c897ddc624e715c8cd14ea7188a168e82abf.jpeg"
+        }
     },
     {
         "id_owner": 2,
-        "first_name": "Clara",
-        "last_name": "Lund",
-        "email": "clara@test.com",
-        "password": "dogs4ever",
-        "cost": "70",
-        "location": "Malm\u00f6 Centrum",
-        "days": [
-            "Fredag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
-        ],
-        "dog": {
-            "dogName": "Alfons",
-            "breed": "Leonberger",
-            "gender": "male",
-            "image": "bild",
-            "extraInfo": "I love carrots and appeles"
-        }
-    },
-    {
-        "id_owner": 3,
-        "first_name": "Harry",
-        "last_name": "Petersson",
-        "email": "harry@test.com",
-        "password": "dogsdogs123",
+        "first_name": "George",
+        "last_name": "Charkviani",
+        "email": "georgec@gmail.com",
+        "password": "hejhopp123",
+        "location": "Oxie",
         "cost": "100",
-        "location": "Fosie",
         "days": [
             "M\u00e5ndag",
-            "Torsdag",
-            "S\u00f6ndag"
-        ],
-        "dog": {
-            "dogName": "Fluffy",
-            "breed": "Chihuahua",
-            "gender": "female",
-            "image": "bild",
-            "extraInfo": "She bites a lot and don't like pigions"
-        }
-    },
-    {
-        "id_owner": 4,
-        "first_name": "Knut",
-        "last_name": "Larsson",
-        "email": "knutteputte@gmail.com",
-        "password": "abc123",
-        "location": "Kirseberg",
-        "cost": "80",
-        "days": [
             "Tisdag",
             "Onsdag",
             "Torsdag"
         ],
         "dog": {
-            "dogName": "Janne",
+            "dogName": "Elliot",
+            "breed": "Labradoodle",
+            "gender": "Hane",
+            "extraInfo": "Allergisk mot fisk och skaldjur. Hundvakten m\u00e5ste vakta Ellliot i Oxie d\u00e4r vi bor. Han \u00e4r sn\u00e4ll och social men lite r\u00e4dd f\u00f6r stora hundar. ",
+            "image": "d869c0667e069506075abe8267f66034094ae4e5.webp"
+        }
+    },
+    {
+        "id_owner": 3,
+        "first_name": "Johan",
+        "last_name": "Classon",
+        "email": "johnnyponny@hotmail.se",
+        "password": "oxieman1337",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Tisdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "dog": {
+            "dogName": "Allie",
             "breed": "Husky",
+            "gender": "Hona",
+            "extraInfo": "Allie \u00e4r v\u00e4rldens finaste hund och beh\u00f6ver en hundvakt som gillar att g\u00e5 l\u00e5nga promenader, g\u00e4rna p\u00e5 stranden. ",
+            "image": "a11570faac2c64f7e40931a826085833361033dc.jpeg"
+        }
+    },
+    {
+        "id_owner": 4,
+        "first_name": "Agneta",
+        "last_name": "S\u00f6derstr\u00f6m",
+        "email": "agnetaochhans@live.se",
+        "password": "angetaochhans",
+        "location": "Roseng\u00e5rd",
+        "cost": "100",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag"
+        ],
+        "dog": {
+            "dogName": "Joker",
+            "breed": "Golden Retriever",
             "gender": "Hane",
             "extraInfo": "Allergisk mot fisk"
         }
     },
     {
         "id_owner": 5,
-        "first_name": "Erik",
-        "last_name": "Hej",
-        "email": "aefoae@gmail.com",
-        "password": "jeiofaneo",
-        "location": "Oxie",
-        "cost": "70",
+        "first_name": "Ardian",
+        "last_name": "Pliana",
+        "email": "ardiooo00@yahoo.com",
+        "password": "lovemydog",
+        "location": "Limhamn-Bunkeflo",
+        "cost": "60",
         "days": [
+            "M\u00e5ndag",
+            "Tisdag",
             "Onsdag",
-            "Torsdag"
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-            "dogName": "Hasse",
-            "breed": "Terrier",
-            "gender": "Hane",
-            "extraInfo": "Bits"
+            "dogName": "Yoko",
+            "breed": "Chihuahua",
+            "gender": "Hona",
+            "extraInfo": "Min lilla \u00e4lskling Yoko s\u00f6ker en hundvakt som kan ta upp henne p\u00e5 l\u00e5ngpromenad varje dag under lunchen samt ge henne mat. Vi bor i Limhamn s\u00e5 du m\u00e5ste kunna ta dig hem till oss, vi har ingen m\u00f6jlighet att l\u00e4mna henne. ",
+            "image": "4cb7381e383e9f01fea1b60e6aad9d82f7aadf9e.jpeg"
         }
     },
     {
         "id_owner": 6,
-        "first_name": "Erika",
-        "last_name": "Eriksson",
-        "email": "erika@gmail.com",
-        "password": "hejhej123",
-        "location": "Oxie",
-        "cost": "80",
+        "first_name": "Edit",
+        "last_name": "S\u00f6derqvist",
+        "email": "edde1337@gmail.com",
+        "password": "doglover123",
+        "location": "Kirseberg",
+        "cost": "60",
         "days": [
-            "Onsdag",
-            "Fredag"
+            "M\u00e5ndag",
+            "Tisdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-            "dogName": "Pelle",
-            "breed": "Labradoodle",
-            "gender": "Hane",
-            "extraInfo": "Sover mycket"
+            "dogName": "Muana",
+            "breed": "Pitbull",
+            "gender": "Hona",
+            "extraInfo": "Muana \u00e4r sn\u00e4ll men har en stark vilja. Du m\u00e5ste vara van vid pitbull-terrier eller liknande hundar. ",
+            "image": "40a9a0023adc78243321e53632f695e57f6a58d1.webp"
         }
     },
     {
         "id_owner": 7,
-        "first_name": "Johnny",
-        "last_name": "Stark",
-        "email": "johnny@johnny.se",
-        "password": "gioeagnoieq",
-        "location": "Kirseberg",
-        "cost": "70",
+        "first_name": "Liana",
+        "last_name": "Strakowski",
+        "email": "lianastrakowski@gmail.com",
+        "password": "pettsonforever",
+        "location": "Hyllie",
+        "cost": "50",
         "days": [
+            "M\u00e5ndag",
             "Tisdag",
+            "Onsdag",
+            "Torsdag",
             "Fredag"
         ],
         "dog": {
-            "dogName": "Milly",
-            "breed": "Chihuahua",
-            "gender": "Hona",
-            "extraInfo": "Liten men stark"
+            "dogName": "Pettsson",
+            "breed": "Mops",
+            "gender": "Hane",
+            "extraInfo": "Pettsson \u00e4r v\u00e4rldens sn\u00e4llaste hund och g\u00f6r inte en fluga f\u00f6rn\u00e4r. Han kan antingen h\u00e4mtas i v\u00e5rt hem i Hyllie eller l\u00e4mnas hon dig p\u00e5 morgonen. Ser g\u00e4rna att du har referenser sedan innan d\u00e5 han \u00e4r min skatt. ",
+            "image": "b01789dd882b7e944e17223d2054d32317fa3152.jpeg"
         }
     },
     {
         "id_owner": 8,
-        "first_name": "Johan",
-        "last_name": "Klasson",
-        "email": "johan123@gmail.com",
-        "password": "hejhopp",
-        "location": "Kirseberg",
-        "cost": "80",
+        "first_name": "Yolanda",
+        "last_name": "McDonald",
+        "email": "yolanda.m@live.se",
+        "password": "puppyprincess",
+        "location": "V\u00e4stra Innerstaden",
+        "cost": "90",
         "days": [
-            "Tisdag",
-            "Fredag"
+            "M\u00e5ndag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-            "dogName": "Allie",
-            "breed": "Husky",
-            "gender": "Hona",
-            "extraInfo": "Springer ofta bort"
+            "dogName": "Miracle",
+            "breed": "Tax",
+            "gender": "Hane",
+            "extraInfo": "Miracle \u00e4r gammal och svag och kr\u00e4ver korta promenader och mycket k\u00e4rlek och omtanke. \u00c4lskar att bli kliad bakom \u00f6ronen. ",
+            "image": "86adca4969ebee0aca581b5599b7f27e9796366e.jpeg"
         }
     },
     {
         "id_owner": 9,
-        "first_name": "Erik",
-        "last_name": "Pineiro",
-        "email": "erik@test.com",
-        "password": "eroik",
+        "first_name": "Sverker",
+        "last_name": "Murray",
+        "email": "sverker64@hotmail.com",
+        "password": "sverkerlovesdogs",
         "location": "Husie",
-        "cost": "70",
+        "cost": "60",
         "days": [
             "Tisdag",
             "Onsdag",
-            "Torsdag"
+            "Torsdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-            "dogName": "Laban",
-            "breed": "Pudel",
+            "dogName": "Pricken",
+            "breed": "Dalmatin",
             "gender": "Hane",
-            "extraInfo": "Bits"
+            "extraInfo": "Stor och st\u00e5tlig men har epilepsi vilket g\u00f6r att hundvakten m\u00e5ste visa stor uppm\u00e4rksamhet f\u00f6r oroande signaler. ",
+            "image": "ebf29c98ed19edb3e1828131cf6c2c22406246b7.jpeg"
         }
     },
     {
         "id_owner": 10,
-        "first_name": "Jennifer",
-        "last_name": "Klasson",
-        "email": "hej@hej.se",
-        "password": "abc123",
-        "location": "Kirseberg",
-        "cost": 70,
-        "days": [
-            "Tisdag",
-            "Onsdag"
-        ],
-        "dog": {
-            "dogName": "Putte",
-            "breed": "Poodle",
-            "gender": "Male",
-            "extraInfo": "H\u00e4rlig kille i sina b\u00e4sta \u00e5r"
-        }
-    },
-    {
-        "id_owner": 14,
-        "first_name": "Jennifer",
-        "last_name": "Andersson",
-        "email": "jennypenny123@gmail.com",
-        "password": "hundartoppen",
-        "location": "Oxie",
-        "cost": "90",
+        "first_name": "Sverrir",
+        "last_name": "Olofsson",
+        "email": "infamoussverrir@live.com",
+        "password": "banan4321",
+        "location": "Husie",
+        "cost": "70",
         "days": [
             "M\u00e5ndag",
-            "Tisdag",
-            "Fredag"
+            "Onsdag",
+            "Torsdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "dog": {
-            "dogName": "Olof",
-            "breed": "Husky",
-            "gender": "Hane",
-            "extraInfo": "Sn\u00e4ll men bits ibland"
+            "dogName": "Miranda",
+            "breed": "Pomeranian",
+            "gender": "Hona",
+            "extraInfo": "V\u00e4rldens sn\u00e4llaste hund s\u00f6ker v\u00e4rldens sn\u00e4llaste hundvakt. ",
+            "image": "9ea78210bbec8b645ad0cfed85ac030edb381bdc.jpeg"
         }
     }
 ]
