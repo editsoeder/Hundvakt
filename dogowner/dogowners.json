@@ -198,43 +198,6 @@
         }
     },
     {
-        "id_owner": 12,
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.se",
-        "password": "test",
-        "location": "Malm\u00f6 Centrum",
-        "cost": "90",
-        "days": [
-            "M\u00e5ndag"
-        ],
-        "dog": {
-            "dogName": "test",
-            "breed": "test",
-            "gender": "Hona",
-            "extraInfo": "test"
-        }
-    },
-    {
-        "id_owner": 13,
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.se",
-        "password": "test",
-        "location": "Roseng\u00e5rd",
-        "cost": "90",
-        "days": [
-            "M\u00e5ndag",
-            "Tisdag"
-        ],
-        "dog": {
-            "dogName": "test",
-            "breed": "test",
-            "gender": "Hona",
-            "extraInfo": "test"
-        }
-    },
-    {
         "id_owner": 14,
         "first_name": "Jennifer",
         "last_name": "Andersson",
@@ -252,28 +215,6 @@
             "breed": "Husky",
             "gender": "Hane",
             "extraInfo": "Sn\u00e4ll men bits ibland"
-        }
-    },
-    {
-        "id_owner": 15,
-        "first_name": "Jennifer",
-        "last_name": "Sten",
-        "email": "jennifer@gmail.com",
-        "password": "123abc",
-        "location": "S\u00f6dra Innerstaden",
-        "cost": ">100",
-        "days": [
-            "Tisdag",
-            "Onsdag",
-            "Torsdag",
-            "Fredag"
-        ],
-        "dog": {
-            "dogName": "Love",
-            "breed": "Bulldogg",
-            "gender": "Hane",
-            "extraInfo": "Love \u00e4r en sn\u00e4ll och h\u00e4rlig hund som inte bits eller sk\u00e4ller. Han \u00e4r gatuhund fr\u00e5n b\u00f6rjan s\u00e5 han \u00e4r lite skygg f\u00f6r m\u00e4nniskor men v\u00e4njer sig snabbt. ",
-            "image": "e5e3c897ddc624e715c8cd14ea7188a168e82abf.jpeg"
         }
     }
 ]

@@ -28,19 +28,17 @@
         "cost": 210,
         "location": "Fosie",
         "areas": [
-            "Kirseberg", 
-            "Hyllie", 
+            "Kirseberg",
+            "Hyllie",
             "Fosie"
-        ], 
-
+        ],
         "days": [
-            "Torsdag", 
-            "Fredag", 
-            "Lördag", 
-            "Söndag"
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "Dogs are the best"
-    
     },
     {
         "id_sitter": 3,
@@ -100,25 +98,6 @@
             "Fredag"
         ],
         "extra_info": "My dream is to have 10 dogs"
-    },
-    {
-        "id_sitter": 6,
-        "first_name": "Jonna",
-        "last_name": "Klasson",
-        "email": "jonna@gmail.com",
-        "password": "hejhopp",
-        "location": "S\u00f6dra Innerstaden",
-        "cost": "70",
-        "days": [
-            "Fredag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
-        ],
-        "areas": [
-            "Husie",
-            "Kirseberg"
-        ],
-        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
     },
     {
         "id_sitter": 7,
@@ -308,24 +287,6 @@
             "Hyllie"
         ],
         "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
-    },
-    {
-        "id_sitter": 17,
-        "first_name": "Test",
-        "last_name": "Test",
-        "email": "test@test.se",
-        "password": "test",
-        "location": "V\u00e4stra Innerstaden",
-        "cost": "60",
-        "days": [
-            "Onsdag",
-            "Torsdag"
-        ],
-        "areas": [
-            "Husie",
-            "Hyllie"
-        ],
-        "extraInfo": "Test"
     },
     {
         "id_sitter": 18,
