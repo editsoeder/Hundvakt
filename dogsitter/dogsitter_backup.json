@@ -6,21 +6,18 @@
         "email": "clara@test.com",
         "password": "dogsrock1",
         "cost": 200,
-        "location": "Södra Innerstaden",
-
+        "location": "S\u00f6dra Innerstaden",
         "areas": [
-            "Malmö Centrum", 
-            "Södra Innerstaden", 
-            "Västra Innerstaden"
-        ], 
-
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
         "days": [
-            "Måndag", 
-            "Tisdag", 
+            "M\u00e5ndag",
+            "Tisdag",
             "Onsdag"
         ],
         "extra_info": "I love big dogs"
-    
     },
     {
         "id_sitter": 2,
@@ -48,25 +45,22 @@
     {
         "id_sitter": 3,
         "first_name": "Edit",
-        "last_name": "Söderqvist",
+        "last_name": "S\u00f6derqvist",
         "email": "edit@test.com",
         "password": "doglover123",
         "cost": 250,
         "location": "Oxie",
         "areas": [
-            "Malmö Centrum", 
-            "Oxie", 
+            "Malm\u00f6 Centrum",
+            "Oxie",
             "Hyllie"
-        ], 
-
+        ],
         "days": [
-            "Lördag", 
-            "Söndag"
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "I love to cook for my dogs"
-    
     },
-    
     {
         "id_sitter": 4,
         "first_name": "Erik",
@@ -76,40 +70,339 @@
         "cost": 180,
         "location": "Kirseberg",
         "areas": [
-            "Kirseberg", 
-            "Södra Innerstaden", 
+            "Kirseberg",
+            "S\u00f6dra Innerstaden",
             "Limhamn-Bunkeflo"
-        ], 
-
+        ],
         "days": [
-            "Måndag", 
-            "Torsdag", 
-            "Söndag"
+            "M\u00e5ndag",
+            "Torsdag",
+            "S\u00f6ndag"
         ],
         "extra_info": "Big dogs are scary!"
-    
     },
-
     {
         "id_sitter": 5,
         "first_name": "Sebastian",
-        "last_name": "Bengtegård",
+        "last_name": "Bengteg\u00e5rd",
         "email": "sebastian@test.com",
         "password": "huskeylover2",
         "cost": 180,
         "location": "Fosie",
         "areas": [
-            "Fosie", 
-            "Rosengård", 
+            "Fosie",
+            "Roseng\u00e5rd",
             "Limhamn-Bunkeflo"
-        ], 
-
+        ],
         "days": [
-            "Tisdag", 
-            "Torsdag", 
+            "Tisdag",
+            "Torsdag",
             "Fredag"
         ],
         "extra_info": "My dream is to have 10 dogs"
-    
+    },
+    {
+        "id_sitter": 6,
+        "first_name": "Jonna",
+        "last_name": "Klasson",
+        "email": "jonna@gmail.com",
+        "password": "hejhopp",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "70",
+        "days": [
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Husie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "id_sitter": 7,
+        "first_name": "Jonna",
+        "last_name": "Klasson",
+        "email": "jonna@gmail.com",
+        "password": "qdfq",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "70",
+        "days": [
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Husie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "id_sitter": 8,
+        "first_name": "Ulrika",
+        "last_name": "Svensson",
+        "email": "ullis@gmail.com",
+        "password": "svampbobfyrkant",
+        "location": "Oxie",
+        "cost": "90",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Limhamn-Bunkeflo",
+            "Oxie"
+        ],
+        "extraInfo": "\u00e4ldre dam i mina b\u00e4sta \u00e5r, gillar att g\u00e5 p\u00e5 l\u00e5nga promenader i solskenet"
+    },
+    {
+        "id_sitter": 9,
+        "first_name": "Oliver",
+        "last_name": "Twist",
+        "email": "oliven1337@gmail.com",
+        "password": "wazabi",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Jag kan hoppa in med kort varsel. "
+    },
+    {
+        "id_sitter": 10,
+        "first_name": "Sandra",
+        "last_name": "Jonsson",
+        "email": "sonny123@gmail.com",
+        "password": "123abc",
+        "location": "Oxie",
+        "cost": "90",
+        "days": [
+            "Tisdag",
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie",
+            "Kirseberg"
+        ],
+        "extraInfo": "Go o gla"
+    },
+    {
+        "id_sitter": 11,
+        "first_name": "Hanna",
+        "last_name": "Olasson",
+        "email": "hannapanna123@gmail.com",
+        "password": "Blabla",
+        "location": "Kirseberg",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Kan jobba under natten"
+    },
+    {
+        "id_sitter": 12,
+        "first_name": "Jenny",
+        "last_name": "Nilsson",
+        "email": "hej@hej.se",
+        "password": "123abc",
+        "location": "Oxie",
+        "cost": "80",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Gillar bara att hundvakta stora hundar"
+    },
+    {
+        "id_sitter": 13,
+        "first_name": "Anna",
+        "last_name": "Bengtsson",
+        "email": "annapanna@gmail.com",
+        "password": "ilovedogs",
+        "location": "Limhamn-Bunkeflo",
+        "cost": ">100",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Har stor erfarenhet av hundpassning"
+    },
+    {
+        "id_sitter": 14,
+        "first_name": "Jennifer",
+        "last_name": "Klasson",
+        "email": "hej@hej.se",
+        "password": "abc123",
+        "location": "Kirseberg",
+        "cost": 70,
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Limhamn-Bunkeflo",
+            "Hyllie"
+        ],
+        "extraInfo": "H\u00e4rlig tjej i sina b\u00e4sta \u00e5r"
+    },
+    {
+        "id_sitter": 15,
+        "first_name": "J\u00c3\u00b6rgen",
+        "last_name": "Emanuelsson",
+        "email": "jorgen.e@gmail.com",
+        "password": "hejhopp123",
+        "location": "Roseng\u00e5rd",
+        "cost": "70",
+        "days": [
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Kan jobba under natten"
+    },
+    {
+        "id_sitter": 16,
+        "first_name": "Johanna",
+        "last_name": "Kung",
+        "email": "hannapanna123@gmail.com",
+        "password": "123abc",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
+        "days": [
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Gillar bara att hundvakta sm\u00e5 hundar"
+    },
+    {
+        "id_sitter": 17,
+        "first_name": "Test",
+        "last_name": "Test",
+        "email": "test@test.se",
+        "password": "test",
+        "location": "V\u00e4stra Innerstaden",
+        "cost": "60",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Husie",
+            "Hyllie"
+        ],
+        "extraInfo": "Test"
+    },
+    {
+        "id_sitter": 18,
+        "first_name": "Jenny",
+        "last_name": "Svensson",
+        "email": "jenny@gmail.com",
+        "password": "hejhej",
+        "location": "Oxie",
+        "cost": "70",
+        "days": [
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie"
+        ],
+        "extraInfo": "Go o gla"
+    },
+    {
+        "id_sitter": 19,
+        "first_name": "Hanna",
+        "last_name": "Svensson",
+        "email": "hanna@dogwatch.se",
+        "password": "ilovedogs",
+        "location": "Oxie",
+        "cost": "60",
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie"
+        ],
+        "extraInfo": "Glad och sn\u00e4ll"
+    },
+    {
+        "id_sitter": 20,
+        "first_name": "Klara",
+        "last_name": "Andersson",
+        "email": "klaraandersson@gmail.com",
+        "password": "klaraf\u00e4rdigag\u00e5",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Allergisk mot hundar, kan bara hundvakta allergiv\u00e4nliga hundar",
+        "image": "20cbcbb24f66b8b74d36173008e0eca9b84e7236.jpeg"
+    },
+    {
+        "id_sitter": 21,
+        "first_name": "Vilma",
+        "last_name": "Bosen",
+        "email": "vilma@test.se",
+        "password": "hund123",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "200",
+        "days": [
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "areas": [
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Gillar inte katter",
+        "image": "8cd9dacea1ff684e054b36796e61826c5463e7d8.png"
     }
 ]
