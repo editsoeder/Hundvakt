@@ -2,15 +2,6 @@
 error_reporting(-1);
 session_start();
 
-if (!isset($_SESSION["loggedInAsDogSitter"])) {
-    if(isset($_SESSION["loggedInAsDogOwner"])) {
-        header("Location: ../dogowner/read.php");
-        exit();
-    } else {
-        header("Location: ../sign-in.php");
-        exit();
-    }
-}
 ?> 
 
 <!DOCTYPE html>
@@ -102,7 +93,7 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
 
     // Ej inloggad 
         elseif(!isset($_SESSION["loggedInAsDogSitter"])) {
-        header("Location: sign-out.php");
+        header("Location: ../sign-out.php");
     }
 
     require_once __DIR__ . "/../section/footer.php"; ?>
@@ -110,8 +101,3 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
 </html>
 
 <script src="read.js"></script>
-
-
-
-
-

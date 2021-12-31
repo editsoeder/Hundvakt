@@ -2,15 +2,15 @@
 error_reporting(-1);
 session_start();
 
-if (!isset($_SESSION["loggedInAsDogOwner"])) {
-    if(isset($_SESSION["loggedInAsDogSitter"])) {
-        header("Location: ../dogsitter/read.php");
-        exit();
-    } else {
-        header("Location: ../sign-in.php");
-        exit();
-    }
-}
+// if (!isset($_SESSION["loggedInAsDogOwner"])) {
+//     if(isset($_SESSION["loggedInAsDogSitter"])) {
+//         header("Location: ../dogsitter/read.php");
+//         exit();
+//     } else {
+//         header("Location: ../sign-in.php");
+//         exit();
+//     }
+// }
 
 ?> 
 
@@ -97,7 +97,7 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
 
     // Ej inloggad 
     elseif(!isset($_SESSION["loggedInAsDogOwner"])) {
-        // header("Location: sign-out.php");
+        header("Location: ../sign-out.php");
     }
     
     require_once __DIR__ . "/../section/footer.php"; ?>
@@ -107,5 +107,3 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
 
 
 <script src="read.js"></script>
-
-
