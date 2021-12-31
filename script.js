@@ -12,8 +12,8 @@ document.querySelector(".homePagebuttonThree").addEventListener("click", functio
 
 const userImg = "../userImages";
 
-function profileImg() {
-    for (var i = 0; i < userImages.length; i++) {
-        document.createElement(userImages[i]);
-    }
-}
+// function profileImg() {
+//     for (var i = 0; i < userImages.length; i++) {
+//         document.createElement(userImages[i]);
+//     }
+// }
