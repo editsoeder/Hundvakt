@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $size = $file["size"];
 
         if ($size > 4 * 1000 * 1000) {
-            "<p class 'feedbackMessage'> Filen får inte vara större än 4mb </p>";
+            "<p class='feedbackMessage'> Filen får inte vara större än 4mb </p>";
             exit();
         }
 
@@ -114,22 +114,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         ]
     ];    
         if(is_null($newEntry) ){
-            echo "<p class 'feedbackMessage'> Något gick fel, försök igen </p>";
+            echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
             exit();
         }
         
         if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
-            echo "<p class 'feedbackMessage'> Alla fält måste vara ifyllda, försök igen </p>";
+            echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
             exit();
         }
 
         if(strlen($newEntry["password"]) < 4) {
-            echo "<p class 'feedbackMessage'> Lösenord måste vara minst 4 tecken långt </p>";
+            echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
             exit();
         }
 
         if (in_array($newEntry["email"], $data)) {
-            echo "<p class 'feedbackMessage'> E-postadressen används redan för en annan hundägare </p>";
+            echo "<p class='feedbackMessage'> E-postadressen används redan <br> för en annan hundägare </p>";
             exit();
         }
         //vill skapa en if om email redan är registrerad för hundägare, skicka felmeddelande "Denna e-postadress används redan för en hundägare" typ
