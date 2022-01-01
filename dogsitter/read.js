@@ -41,15 +41,18 @@ downThree.append(buttonThree, dropdownContentThree);
 
 document.getElementById("filterSitter").append(downOne, downTwo, downThree);
 
-buttonOne.addEventListener('click', function(){
+buttonOne.addEventListener('click', function() {
+  this.classList.toggle("active");
   document.getElementById("dropOne").classList.toggle("show");
 });
 
-buttonTwo.addEventListener('click', function(){
+buttonTwo.addEventListener('click', function() {
+  this.classList.toggle("active");
   document.getElementById("dropTwo").classList.toggle("show");
 });
 
-buttonThree.addEventListener('click', function(){
+buttonThree.addEventListener('click', function() {
+  this.classList.toggle("active");
   document.getElementById("dropThree").classList.toggle("show");
 });
 

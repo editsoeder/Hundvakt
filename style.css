@@ -595,6 +595,8 @@ nav > a:hover{
 
 .show {display: block;}
 
+.active {background-color: var(--pink);}
+
 .listTitle {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;

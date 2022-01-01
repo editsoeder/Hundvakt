@@ -42,14 +42,17 @@ downThree.append(buttonThree, dropdownContentThree);
 document.getElementById("filterOwner").append(downOne, downTwo, downThree);
 
 buttonOne.addEventListener('click', function(){
+  this.classList.toggle("active");
   document.getElementById("dropOne").classList.toggle("show");
 });
 
 buttonTwo.addEventListener('click', function(){
+  this.classList.toggle("active");
   document.getElementById("dropTwo").classList.toggle("show");
 });
 
 buttonThree.addEventListener('click', function(){
+  this.classList.toggle("active");
   document.getElementById("dropThree").classList.toggle("show");
 });
 
