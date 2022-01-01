@@ -254,9 +254,10 @@ body {
     margin: 0px;
     font-weight: normal;
     padding-left: 5px;
-    margin-top: 0px;
+    margin-top: 10px;
     font-size: 20px;
     margin-bottom: 20px;
+    max-width: 200px;
 }
 
 .two {
@@ -266,8 +267,16 @@ body {
     border: 8px solid var(--pink);
     z-index: 1;
     position: relative;
-    left: 250px;
+    left: 270px;
     bottom: 15vh;
+}
+
+.two > p:first-child {
+    margin-bottom: 0px;
+}
+
+.two > p:last-child {
+    margin-top: 10px;
 }
 
 .three {
@@ -283,6 +292,12 @@ body {
 
 .three > .bold {
     justify-content: center;
+    margin-bottom: 0px;
+}
+
+.three > p:last-child {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 .partOne {
@@ -393,7 +408,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 #header-image{
@@ -583,17 +597,17 @@ nav > a:hover{
 
 .listTitle {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-bottom: 20px;
 }
 
 #listImage {
     border-radius: 100px;
-    margin: 10px;
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     border: 2px solid;
-    /* height: 75%;
-    width: 30%; */
+    align-self: center;
+    margin: 30px;
 }
 
 .listTitle > div {
@@ -612,14 +626,15 @@ nav > a:hover{
     align-items: center;
     font-size: 25px;
     transition: all .5s; 
-    margin: 30px;
     margin-bottom: 0px;
+    margin-top: 30px;
+    margin-left: 60px;
 }
 
 .list > div  {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr 2fr 2fr 1fr;
-    height: 130px;
+    /* height: 130px; */
     background-color: var(--white);
     margin: 30px;
     border: 2px solid;
@@ -657,8 +672,6 @@ nav > a:hover{
 /* read.php/read.js */
 
 /* hundtass (logga in) */
-
-
 .ajax-loader {
     position: relative;
     bottom: 20%;

@@ -58,6 +58,10 @@ function data(json) {
   function cards(array) {
     document.querySelector(".list").innerHTML = "";
 
+    if (array.length == 0) {
+      alert("Finns inga hundvakter utefter ditt önskemål");
+    } 
+
     for (let i = 0; i < array.length; i++) {
       let listcards = document.createElement("div");
       let image = document.createElement("img");
@@ -77,7 +81,7 @@ function data(json) {
       name.innerHTML = array[i].first_name;
       areas.innerHTML = array[i].location;
       cost.innerHTML = array[i].cost;
-      image.src = "/userImages/" + array[i].images;
+      image.src = "../userImages/" + array[i].image;
       a.innerHTML = "Läs mer";
       a.href = "read.php?id=" + array[i].id_sitter;
 
@@ -88,14 +92,14 @@ function data(json) {
 
   //Sortera högst pris först
   document.getElementById("high").addEventListener("click", function () {
-    let highest = json.sort((a,b) => a.cost < b.cost);
+    let highest = json.sort((a,b) => b.cost - a.cost);
 
     cards(highest);
   });
 
   //Sortera lägst pris först
   document.getElementById("low").addEventListener("click", function () {
-    let lowest = json.sort((a,b) => a.cost > b.cost);
+    let lowest = json.sort((a,b) => a.cost - b.cost);
 
     cards(lowest);
   });

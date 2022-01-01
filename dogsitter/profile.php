@@ -53,9 +53,15 @@ require_once __DIR__ . "/../functions.php";
     </div>
 
     
-    <script >document.querySelector("#delete-account-button").addEventListener("click", function () {
-    window.location.href = "delete.php";
-    });</script>
+    <script >
+        document.querySelector("#delete-account-button").addEventListener("click", function () {
+            if (confirm("Vill du radera konto?")) {
+                window.location.href = "delete.php";
+            } else {
+                window.location.href = "profile.php";
+            }
+        });
+    </script>
 
     <?php
     require_once __DIR__ . "/../section/footer.php";

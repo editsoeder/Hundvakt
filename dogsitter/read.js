@@ -54,11 +54,16 @@ buttonThree.addEventListener('click', function(){
 });
 
 function data(json) {
-
   function cards(array) {
     document.querySelector(".list").innerHTML = "";
 
-    for (let i = 0; i < array.length; i++) {
+    if (array.length == 0) {
+      alert("Finns inga hundar utefter ditt önskemål");
+      // window.location.href = "read.php?=error";
+    } 
+
+    else {
+      for (let i = 0; i < array.length; i++) {
         let dog = array[i].dog;
 
         let listcards = document.createElement("div");
@@ -86,29 +91,28 @@ function data(json) {
         // }
         // setBg();
 
-        // image.src = "/userImages/" + array[i].images;
-        // image.src = "/Images/dog_banana.jpg";
+        image.src = "../userImages/" + dog.image;
 
-        image.src = "/Images/dogs.jpg";
         a.innerHTML = "Läs mer";
         a.href = "read.php?id=" + array[i].id_owner;
 
         
         listcards.append(name, areas, days, cost, image, a);
         document.querySelector(".list").append(listcards);
+      }
     }
   }
 
   //Sortera högst pris först
   document.getElementById("high").addEventListener("click", function () {
-    let highest = json.sort((a,b) => a.cost < b.cost);
+    let highest = json.sort((a,b) => b.cost - a.cost);
 
     cards(highest);
   });
 
   //Sortera lägst pris först
   document.getElementById("low").addEventListener("click", function () {
-    let lowest = json.sort((a,b) => a.cost > b.cost);
+    let lowest = json.sort((a,b) => a.cost - b.cost);
 
     cards(lowest);
   });
@@ -227,9 +231,8 @@ function data(json) {
     for (let i = 0; i < json.length; i++) {
       if (json[i].location.includes("Hyllie")) {
         array.push(json[i]);
-      }
+      } 
     }
-
     cards(array);
   });
 
@@ -320,6 +323,10 @@ function data(json) {
         array.push(json[i]);
       }
     }
+
+    // if (array.length == ) {
+      
+    // }
 
     cards(array);
   });

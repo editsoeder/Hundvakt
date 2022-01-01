@@ -34,9 +34,7 @@ session_start();
                 } 
             }
 
-            $src = '/Images/dogs.jpg';
-            // $src = '/Images/puppy.jpg';
-
+            $src = '../userImages/' . $dog["image"];
 
             //Konvertera array till string
             $days = implode(", ",$foundDogOwner["days"]);
@@ -93,6 +91,8 @@ session_start();
 
     // Ej inloggad 
         elseif(!isset($_SESSION["loggedInAsDogSitter"])) {
+        header("Location: ../sign-out.php");
+    } else {
         header("Location: ../sign-out.php");
     }
 

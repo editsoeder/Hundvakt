@@ -45,8 +45,7 @@ session_start();
             $days = implode(", ",$foundDogSitter["days"]);
             $areas = implode(", ",$foundDogSitter["areas"]);
 
-            $src = '/Images/dogs.jpg';
-            // $src = '/Images/puppy.jpg';
+            $src = '../userImages/' . $foundDogSitter["image"];
         
             //Mer info
             if (isset($foundDogSitter)) { 
@@ -97,6 +96,8 @@ session_start();
 
     // Ej inloggad 
     elseif(!isset($_SESSION["loggedInAsDogOwner"])) {
+        header("Location: ../sign-out.php");
+    } else {
         header("Location: ../sign-out.php");
     }
     
