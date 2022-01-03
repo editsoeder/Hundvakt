@@ -36,26 +36,18 @@ require_once __DIR__ . "/../functions.php";
     $ownerDogInfo = $ownerInfo["dog"];
     $ownerEmail = $ownerInfo["email"];
 
-    if(isset($_SESSION["loggedInAsDogSitter"])) {
-
-        //  Om "id" finns i url
-        if (isset($_GET["id"])) {
-            $id = $_GET["id"];
-
-        foreach($allDogOwner as $dogOwner){
-                if ($dogOwner["id_owner"] == $id) {
-                    $foundDogOwner = $dogOwner; 
-                    $dog = $dogOwner["dog"];
-                } 
-            }
-            $src = '../userImages/' . $dog["image"];
-        }
+    foreach($allDogOwner as $dogOwner){
+        if ($dogOwner["id_owner"] == $_SESSION["loggedInAsDogOwner"]) {
+            $dog = $dogOwner["dog"];
+        } 
     }
-
+    $src =  $dog["image"];
     ?>
+
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
-        <img id='profile-image' src= <?php echo $src?>>
+        <!-- <img id='profile-image' alt="dog" src='../userImages/'> -->
+        <img  alt='dog' src='../userImages/<?php echo $src; ?>'>
         <div id="wrapper-dog">
         <h2>Min hund</h2><p>Namn: <?php echo $ownerDog?> </p>
         </div>
@@ -81,9 +73,9 @@ require_once __DIR__ . "/../functions.php";
     <button type="submit" id="delete-account-button">Radera Konto</button>
 
     <script>
+        document.querySelector("#profile-image").src = 
 
         document.querySelector("#delete-account-button").addEventListener("click", function () {
-
             if (confirm("Vill du radera konto?")) {
                 window.location.href = "delete.php";
             } else {
