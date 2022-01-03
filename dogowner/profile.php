@@ -25,6 +25,7 @@ require_once __DIR__ . "/../functions.php";
 <!-- </head> stängs av header.php -->
 <body>
     <?php
+    $allDogOwner = getAllDogOwner();
     $ownerInfo = idInfoOwner($_SESSION["loggedInAsDogOwner"]);
     $ownerName = $ownerInfo["first_name"] . " " . $ownerInfo["last_name"];
     $ownerLocation = $ownerInfo["location"];
@@ -34,7 +35,23 @@ require_once __DIR__ . "/../functions.php";
     $ownerCost = $ownerInfo["cost"];
     $ownerDogInfo = $ownerInfo["dog"];
     $ownerEmail = $ownerInfo["email"];
-    $src = '../userImages/' . $ownerInfo["dog"] . ["image"];
+
+    if(isset($_SESSION["loggedInAsDogSitter"])) {
+
+        //  Om "id" finns i url
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+
+        foreach($allDogOwner as $dogOwner){
+                if ($dogOwner["id_owner"] == $id) {
+                    $foundDogOwner = $dogOwner; 
+                    $dog = $dogOwner["dog"];
+                } 
+            }
+            $src = '../userImages/' . $dog["image"];
+        }
+    }
+
     ?>
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
