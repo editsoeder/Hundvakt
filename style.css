@@ -714,7 +714,7 @@ svg {
     font-family: var(--font-title);
     font-size: 20px;
     color: var(--white);
-    width: 50%;
+    width: 700px;
 }
 
 #wrapper-contact{
@@ -750,15 +750,15 @@ svg {
 
 #wrapper-profile > h1{
     color: var(--orange);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    left: 459px;
+    top: 26px;
     font-family: var(--font-title);
     font-size: 8vh;
 }
 
 #wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    margin-left: 10px;
+    margin-left: 20px;
     margin-right: 10px;
     display: flex;
     justify-content: center;
@@ -775,7 +775,6 @@ svg {
     width: 220px;
     border: 10px solid var(--green);
     border-radius: 50%;
-    background-image: url(/images/);
     background-repeat: no-repeat;
     position: relative;
     left: 614px;
@@ -814,7 +813,6 @@ svg {
     height: 220px;
     width: 220px;
     border-radius: 50%;
-    /* background-image: url(/images/); */
     background-repeat: no-repeat;
  }
  #wrapper-profile{
@@ -1140,12 +1138,6 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     align-items: center;
     justify-content: center;
 }
-
-.createAccountUpdate{    
-    font-family: var(--font-title);
-    width: 50vw;
-    background-color: var(--pink);
-}
 .input-text{
     display: flex;
     flex-direction: column;
@@ -1158,6 +1150,14 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.update-account{    
+    font-family: var(--font-title);
+    width: 50vw;
+    background-color: var(--pink);
+    border-radius: 50px;
+    border: 10px solid var(--turquoise);
 }
 #uploadImageUpdate{
     display: flex;

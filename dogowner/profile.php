@@ -34,12 +34,11 @@ require_once __DIR__ . "/../functions.php";
     $ownerCost = $ownerInfo["cost"];
     $ownerDogInfo = $ownerInfo["dog"];
     $ownerEmail = $ownerInfo["email"];
-    // $ownerImage = $ownerInfo["image"[4]];
+    $src = '../userImages/' . $ownerInfo["dog"] . ["image"];
     ?>
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
-        <div id="profile-image"></div>
-        <div id="profile-image-dog"></div>
+        <img id='profile-image' src= <?php echo $src?>>
         <div id="wrapper-dog">
         <h2>Min hund</h2><p>Namn: <?php echo $ownerDog?> </p>
         </div>

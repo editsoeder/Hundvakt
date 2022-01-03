@@ -38,7 +38,7 @@ $sitterPassword = $sitterInfo["password"];
 <body>
     <h1 class="h2-update" >Här kan du ändra din profil!</h1>
     <div class="form">
-        <form class="createAccountUpdate" action="update.php" method="POST" enctype="multipart/form-data">
+        <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
                 <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>"><br>
                 <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>"><br>
