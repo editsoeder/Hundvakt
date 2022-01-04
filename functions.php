@@ -1,35 +1,35 @@
 <?php 
-$locations = [
-    "Fosie", 
-    "Husie", 
-    "Hyllie", 
-    "Kirseberg", 
-    "Limhamn-Bunkeflo",
-    "Malmö Centrum", 
-    "Oxie", 
-    "Rosengård", 
-    "Södra Innerstaden", 
-    "Västra Innerstaden"
-];
+// $locations = [
+//     "Fosie", 
+//     "Husie", 
+//     "Hyllie", 
+//     "Kirseberg", 
+//     "Limhamn-Bunkeflo",
+//     "Malmö Centrum", 
+//     "Oxie", 
+//     "Rosengård", 
+//     "Södra Innerstaden", 
+//     "Västra Innerstaden"
+// ];
 
-$days = [
-    "Måndag", 
-    "Tisdag", 
-    "Onsdag", 
-    "Torsdag", 
-    "Fredag", 
-    "Lördag", 
-    "Söndag"
-];
+// $days = [
+//     "Måndag", 
+//     "Tisdag", 
+//     "Onsdag", 
+//     "Torsdag", 
+//     "Fredag", 
+//     "Lördag", 
+//     "Söndag"
+// ];
 
-$priceHour = [
-    "<50",
-    "70",
-    "90", 
-    "110", 
-    "130", 
-    ">150" 
-];
+// $priceHour = [
+//     "50",
+//     "70",
+//     "90", 
+//     "110", 
+//     "130", 
+//     "150" 
+// ];
 
 function validUser($users, $email, $password) {
     foreach ($users as $user) {
