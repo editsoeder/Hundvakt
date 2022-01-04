@@ -139,7 +139,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $file = $_FILES["newImageToUpload"];
 
     if (isset($file) && $file["error"] != 4) {
-        $file = $_FILES["newImageToUpload"];
         $filename = $file["name"];
         $tempname = $file["tmp_name"];
         $uniqueFilename = sha1(time().$filename);
