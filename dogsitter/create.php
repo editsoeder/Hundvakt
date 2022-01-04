@@ -16,6 +16,12 @@ require_once __DIR__ . "/../functions.php";
 
 <!-- </head>  stängs i header -->
 <body>
+    <button class="backToHomeCreate">Hem</button>
+    <script> 
+        document.querySelector(".backToHomeCreate").addEventListener("click", function() {
+            window.location.href = "../index.php";
+        });
+    </script>
     <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
             <div class="welcomemessage"> 

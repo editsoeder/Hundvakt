@@ -1015,7 +1015,7 @@ overflow: hidden;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     grid-column: 1;
     border-right: 5px solid var(--pink);
     border-top-left-radius: 5%;
@@ -1220,4 +1220,19 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.backToHomeCreate {
+    height: 80px;
+    width: 80px;
+    border-radius: 100px;
+    background-color: var(--white);
+    font-size: 30px;
+    font-family: var(--font-title);
+    transition: all .5s;
+    box-shadow: 5px 5px 5px #212121;
+    position: absolute;
+    right: 3%;
+    top: 27%;
+    font-family: var(--font-paragraph);
 }
