@@ -47,7 +47,7 @@ $sitterImage = $sitterInfo["image"];
                 <p>Lösenord</p><input type="text" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $sitterPassword ?>" minlength="4" required><br>
                 
                 <p>Timkostnad</p>
-                <input list="hourCost" name="Timkostnad" placeholder="<?php echo $sitterCost ?>" value=" <?php echo $sitterCost ?> "><br>
+                <input list="hourCost" name="Timkostnad" placeholder="<?php echo $sitterCost ?>" value="<?php echo $sitterCost?>"><br>
                 <datalist id="hourCost">
                     <option value="50">
                     <option value="60">
@@ -177,21 +177,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "image" => $imageUrl //spara unika namnet på bilden som sökväg
     ]; 
 
-// foreach($updateProfile as [$value=>$key]){
-//     $user = $data[$index];
-//     $user[$key] = $value;
-// }
-// foreach($data as $user){
-//     if($loggedInID === $user["id_sitter"]){
-//        $user = $updateProfile;
-//     }
-// }
-
-// $column = array_column($data, "id_sitter");
-// $index = array_search($loggedInID, $column);
-// $user = $data[$index];
-// $user = $updateProfile;
-
     for ($i=0; $i < count($data); $i++) { 
         $currData = $data[$i];
         $currUser = $currData["id_sitter"];
@@ -200,31 +185,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
-// foreach($data as $user){
-//     if($loggedInID === $user["id_sitter"]){
-//        $user = $updateProfile;
-//     }
-// } 
-if(is_null($updateProfile ) ){
-    echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
-    exit();
-}
-
-// if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
-//     echo "<p class 'feedbackMessageUpdate'> Alla fält måste vara ifyllda, försök igen </p>";
-//     exit();
-// }
-
-if(strlen($updateProfile ["password"]) < 8) {
-    echo "<p class 'feedbackMessageUpdate'> Lösenord måste vara minst 4 tecken långt </p>";
-    exit();       
-}
-if ($size > 4 * 1000 * 1000) {
-    echo "Filen får inte vara större än 4mb";
-    exit();
-}
-
-echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
+    echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
 
     if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
         echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
@@ -234,10 +195,5 @@ echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents("dogsitter.json", $json);
 
-
-
-
-// updateUser("dogsitter.json", $updateProfile);
-    // updateProfileSitter("../dogsitter.json", $updateProfile);
-   }
+}
 ?>
