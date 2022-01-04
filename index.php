@@ -22,7 +22,7 @@
             <div class="partTwo">
                 <div id="first">
                     <div>Vad är Dog-go?</div>
-                    <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                    <div>Dog-Go är hemsidan där hundälskare i Malmö möts. Genom vår smarta matchnings-funktion kan du som hundägare hitta hundvakter som passar just dina behov. På samma sätt kan du som vill vakta hundar scrolla bland våra många härliga hundar och hitta en hund att passa som matchar dina önskemål om timkostnad, placering och dagar. <br> <br> Vad väntar du på? Gör som många andra nöjda Malmöiter och skapa ett konto redan idag! </div>
                     <button class="homePagebuttonThree">Skapa konto</button>
                 </div>
 
