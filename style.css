@@ -8,10 +8,12 @@
     --orange: #F08C67;
     --turquoise: #8FCAAE;
     --black: #212121;
+    --purple: #CDB0E8;
 
     --font-title: Indie Flower;
     --font-paragraph: Rounded Mplus 1c;
     --home-btn: 200px;
+    
 }
 
 
@@ -748,7 +750,7 @@ svg {
 }
 
 #wrapper-profile > h1{
-    color: var(--orange);
+    color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -814,7 +816,7 @@ svg {
     background-repeat: no-repeat;
  }
  #wrapper-profile{
-background-color: var(--pink);
+background-color: var(--purple);
 height: 100%;
 width: 100%;
 overflow: hidden;

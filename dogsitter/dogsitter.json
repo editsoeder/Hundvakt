@@ -53,27 +53,13 @@
     {
         "id_sitter": 3,
         "first_name": "Oliver",
-        "last_name": "Stensson",
+        "last_name": "Johansson",
         "email": "stenen92@hotmail.com",
         "password": "password1",
-        "location": "Husie",
+        "location": "",
         "cost": "90",
-        "days": [
-            "M\u00e5ndag",
-            "Tisdag",
-            "Onsdag",
-            "Torsdag",
-            "Fredag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
-        ],
-        "areas": [
-            "Fosie",
-            "Husie",
-            "Oxie",
-            "Roseng\u00e5rd",
-            "V\u00e4stra Innerstaden"
-        ],
+        "days": null,
+        "areas": null,
         "extraInfo": "Kan hundvakta flera hundar samtidigt, och \u00e4ven ha hundar under en hel helg eller under flera dagar i str\u00e4ck. ",
         "image": "945c143570abf58529e6f22560739d24eefa88e1.jpeg"
     },
