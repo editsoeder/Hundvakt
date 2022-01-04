@@ -163,19 +163,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageUrl = $uniqueFilename.'.'.$extension;
     }
 
-$updateProfile = [
-    "id_sitter" => $loggedInID,
-    "first_name" => $_POST["firstName"],
-    "last_name" => $_POST["lastName"],
-    "email" => $_POST["email"],
-    "password" => $_POST["password"],
-    "location" => $_POST["Placering"],
-    "cost" => $_POST["Timkostnad"],
-    "days" => $_POST["days"],
-    "areas" => $_POST["areas"],
-    "extraInfo" => $_POST["extraInfo"],
-    "image" => $imageUrl //spara unika namnet på bilden som sökväg
-]; 
+    $updateProfile = [
+        "id_sitter" => $loggedInID,
+        "first_name" => $_POST["firstName"],
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "areas" => $_POST["areas"],
+        "extraInfo" => $_POST["extraInfo"],
+        "image" => $imageUrl //spara unika namnet på bilden som sökväg
+    ]; 
 
 // foreach($updateProfile as [$value=>$key]){
 //     $user = $data[$index];
@@ -192,13 +192,13 @@ $updateProfile = [
 // $user = $data[$index];
 // $user = $updateProfile;
 
-for ($i=0; $i < count($data); $i++) { 
-    $currData = $data[$i];
-    $currUser = $currData["id_sitter"];
-    if($loggedInID === $currUser){
-        $data[$i] = $updateProfile;
-     }
-}
+    for ($i=0; $i < count($data); $i++) { 
+        $currData = $data[$i];
+        $currUser = $currData["id_sitter"];
+        if($loggedInID === $currUser){
+            $data[$i] = $updateProfile;
+        }
+    }
 
 // foreach($data as $user){
 //     if($loggedInID === $user["id_sitter"]){
@@ -224,8 +224,13 @@ for ($i=0; $i < count($data); $i++) {
 //     exit();
 // }
 
-$json = json_encode($data, JSON_PRETTY_PRINT);
-file_put_contents("dogsitter.json", $json);
+    if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
+        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
+        exit();
+    }
+
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents("dogsitter.json", $json);
 
 
 
