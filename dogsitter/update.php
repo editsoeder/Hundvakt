@@ -41,35 +41,91 @@ $sitterImage = $sitterInfo["image"];
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
-                <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>" value ="<?php echo $sitterFirstName ?>">><br>
+                <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>" value ="<?php echo $sitterFirstName ?>"><br>
                 <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>" value="<?php echo $sitterLastName ?>"><br>
                 <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>" value="<?php echo $sitterEmail ?>"><br>
-                <p>Lösenord</p><input type="password" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $sitterPassword ?>" minlength="8" required><br>
-                <p>Timkostnad</p><input type="text" name="cost" placeholder="<?php echo $sitterCost ?>" value="<?php echo $sitterCost ?>"><p>kr/timm</p><br>
-                <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
-                <div id="areaBoxUpdate">
-                    <?php
-                    createAreaBoxesUpdate();
-                    ?> 
-                    <h2 class="h2-update"> Min Placering </h2> 
-                    <?php
-                    createLocationList();
-                    ?>
-                </div>
-            </div> 
+                <p>Lösenord</p><input type="text" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $sitterPassword ?>" minlength="4" required><br>
+                
+                <p>Timkostnad</p>
+                <input list="hourCost" name="Timkostnad" placeholder="<?php echo $sitterCost ?>" value=" <?php echo $sitterCost ?> "><br>
+                <datalist id="hourCost">
+                    <option value="50">
+                    <option value="60">
+                    <option value="70">
+                    <option value="80">
+                    <option value="90">
+                    <option value="100">
+                </datalist>
 
+                <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
+                <h2 class="h2-update"> Min Placering </h2> 
+                
+                <input list="placement" name="Placering" placeholder="<?php echo $sitterLocation ?>" value="<?php $sitterLocation ?>"><br> 
+                <datalist id="placement">
+                    <option value="Fosie">
+                    <option value="Husie">
+                    <option value="Hyllie">
+                    <option value="Kirseberg">
+                    <option value="Limhamn-Bunkeflo">
+                    <option value="Malmö Centrum">
+                    <option value="Oxie">
+                    <option value="Rosengård">
+                    <option value="Södra Innerstaden">
+                    <option value="Västra Innerstaden">
+                </datalist>                    
+            </div>
+
+            <div id="areaBoxUpdate">
+                <div class="areaWrapperUpdate"> 
+                    <h2 class="h2-update"> Tillgänglig i områden </h2> 
+                    <input type="checkbox" id="Fosie" name="areas[]" value="Fosie" <?php if(in_array("Fosie", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Fosie"> Fosie </label><br>
+                    <input type="checkbox" id="Husie" name="areas[]" value="Husie" <?php if(in_array("Husie", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Husie"> Husie </label><br>
+                    <input type="checkbox" id="Hyllie" name="areas[]" value="Hyllie" <?php if(in_array("Hyllie", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Hyllie"> Hyllie </label><br>
+                    <input type="checkbox" id="Kirseberg" name="areas[]" value="Kirseberg" <?php if(in_array("Kirseberg", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Kirseberg"> Kirseberg </label><br>
+                    <input type="checkbox" id="Limhamn-Bunkeflo" name="areas[]" value="Limhamn-Bunkeflo" <?php if(in_array("Limhamn-Bunkeflo", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Limhamn-Bunkeflo"> Limhamn-Bunkeflo </label><br>
+                    <input type="checkbox" id="MalmoCentrum" name="areas[]" value="Malmö Centrum" <?php if(in_array("Malmö Centrum", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="MalmoCentrum"> Malmö Centrum </label><br>
+                    <input type="checkbox" id="Oxie" name="areas[]" value="Oxie" <?php if(in_array("Oxie", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Oxie"> Oxie </label><br>
+                    <input type="checkbox" id="Rosengard" name="areas[]" value="Rosengård" <?php if(in_array("Rosengård", $sitterInfo["areas"])) { echo "checked";} ?> >
+                    <label for="Oxie"> Rosengård </label><br>
+                    <input type="checkbox" id="SodraInnerstaden" name="areas[]" value="Södra Innerstaden" <?php if(in_array("Södra Innerstaden", $sitterInfo["areas"])) { echo "checked";} ?>>
+                    <label for="SodraInnerstaden"> Södra Innerstaden </label><br>
+                    <input type="checkbox" id="VastraInnerstaden" name="areas[]" value="Västra Innerstaden" <?php if(in_array("Västra Innerstaden", $sitterInfo["areas"])) { echo "checked";} ?>>
+                    <label for="Oxie"> Västra Innerstaden </label><br>
+                </div>
+            </div>
+            
             <div id="dayBoxUpdate"> 
-                <h2 class="h2-update"> Dagar jag kan vakta </h2> 
-                <?php 
-                createDayBoxesUpdate();
-                ?> 
-            </div> 
+                <h2 class="h2-update"> Dagar jag kan vakta: </h2> 
+                <div class="dayWrapperUpdate">  
+                    <input class="input-update" type="checkbox" id="Monday" name="days[]" value="Måndag" <?php if(in_array("Måndag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Monday"> Måndag </label>
+                    <input class="input-update" type="checkbox" id="Tuesday" name="days[]" value="Tisdag" <?php if(in_array("Tisdag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Tuesday"> Tisdag </label>
+                    <input class="input-update" type="checkbox" id="Wednesday" name="days[]" value="Onsdag" <?php if(in_array("Onsdag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Wednesday"> Onsdag </label>
+                    <input class="input-update" type="checkbox" id="Thursday" name="days[]" value="Torsdag" <?php if(in_array("Torsdag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Torsdag"> Torsdag </label>
+                    <input class="input-update" type="checkbox" id="Friday" name="days[]" value="Fredag" <?php if(in_array("Fredag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Friday"> Fredag </label>
+                    <input class="input-update" type="checkbox" id="Saturday" name="days[]" value="Lördag" <?php if(in_array("Lördag", $sitterInfo["days"])) { echo "checked";} ?> >
+                    <label for="Saturday"> Lördag </label>
+                    <input class="input-update" type="checkbox" id="Sunday" name="days[]" value="Söndag" <?php if(in_array("Söndag", $sitterInfo["days"])) { echo "checked";} ?>>
+                    <label for="Sunday"> Söndag </label>
+                </div>  
+            </div>
             <div id="uploadImageUpdate"> 
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
                 <input type="file" name="newImageToUpload" id="fileToUpload">
             </div> 
             <div id=update-button-wrapper>
-                <button id="update-button">Uppdatera!</button>
+                <button id="update-button">Spara</button>
             </div>
         </form>
     </div> 
@@ -114,7 +170,7 @@ $updateProfile = [
     "email" => $_POST["email"],
     "password" => $_POST["password"],
     "location" => $_POST["Placering"],
-    "cost" => $_POST["cost"],
+    "cost" => $_POST["Timkostnad"],
     "days" => $_POST["days"],
     "areas" => $_POST["areas"],
     "extraInfo" => $_POST["extraInfo"],
