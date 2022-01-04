@@ -88,12 +88,6 @@ function data(json) {
         areas.innerHTML = array[i].location;
         cost.innerHTML = array[i].cost;
 
-        // const setBg = () => {
-        //   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-        //   image.style.border = "5px solid" + "#" + randomColor ;
-        // }
-        // setBg();
-
         image.src = "../userImages/" + dog.image;
 
         a.innerHTML = "Läs mer";

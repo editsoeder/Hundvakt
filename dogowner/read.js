@@ -67,6 +67,7 @@ function data(json) {
 
     for (let i = 0; i < array.length; i++) {
       let listcards = document.createElement("div");
+      listcards.id = "cardOwner";
       let image = document.createElement("img");
       image.id = "listImage";
       let name = document.createElement("p");
