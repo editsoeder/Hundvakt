@@ -16,6 +16,10 @@
     
 }
 
+a{
+    text-decoration: none;
+    color: var(--white);
+}
 
 body {
     margin: 0px;
@@ -1202,10 +1206,6 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.feedbackMessageUpdate{
-    font-size: 20vh;
-    font-family: var(--font-title);
 }
 
 /* .feedbackDiv {

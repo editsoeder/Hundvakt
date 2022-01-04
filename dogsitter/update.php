@@ -129,10 +129,6 @@ $sitterImage = $sitterInfo["image"];
             </div>
         </form>
     </div> 
-
-    <?php 
-    require_once __DIR__ . "/../section/footer.php";
-    ?> 
 </body>
 </html>
 
@@ -185,7 +181,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
-    echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
+    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='/profile.php'>Här!</a> </p> </div>";
 
     if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
         echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
@@ -197,3 +193,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
 }
 ?>
+<?php 
+    require_once __DIR__ . "/../section/footer.php";
+?> 
