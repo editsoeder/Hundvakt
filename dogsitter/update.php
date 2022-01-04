@@ -58,9 +58,9 @@ $sitterImage = $sitterInfo["image"];
                 </datalist>
 
                 <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
-                <h2 class="h2-update"> Min Placering </h2> 
                 
-                <input list="placement" name="Placering" placeholder="<?php echo $sitterLocation ?>" value="<?php $sitterLocation ?>"><br> 
+                <h2 class="h2-update"> Min Placering </h2> 
+                <input list="placement" name="Placering" placeholder="<?php echo $sitterLocation ?>" value="<?php echo $sitterLocation ?>"><br> 
                 <datalist id="placement">
                     <option value="Fosie">
                     <option value="Husie">
