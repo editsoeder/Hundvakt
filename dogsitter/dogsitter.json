@@ -421,5 +421,25 @@
         ],
         "extraInfo": "L\u00e5ng erfarenhet av hundpassning. Kan endast passa efter klockan 16. Jobbar \u00e4ven p\u00e5 ett hundpensionat.",
         "image": "578d13bf2fe560f7bb0e5f7b65f689d699114de5.jpeg"
+    },
+    {
+        "id_sitter": 18,
+        "first_name": "Hannes",
+        "last_name": "Johnsson",
+        "email": "hannes@test.se",
+        "password": "hundar1234",
+        "location": "Fosie",
+        "cost": "60",
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Limhamn-Bunkeflo"
+        ],
+        "extraInfo": "Jag lagar mat till mina hundar",
+        "image": "336995a60709cce86038bcb1e5e44cf1874f0ddf.jpg"
     }
 ]

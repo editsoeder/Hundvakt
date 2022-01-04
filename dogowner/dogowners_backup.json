@@ -226,5 +226,25 @@
             "extraInfo": "V\u00e4rldens sn\u00e4llaste hund s\u00f6ker v\u00e4rldens sn\u00e4llaste hundvakt. ",
             "image": "cd5f7a6a8a541a417108d2b30da718d9bea63a47.jpeg"
         }
+    },
+    {
+        "id_owner": 11,
+        "first_name": "Berit",
+        "last_name": "Bertsson",
+        "email": "berit@test.se",
+        "password": "voff123",
+        "location": "Limhamn-Bunkeflo",
+        "cost": "50",
+        "days": [
+            "M\u00e5ndag",
+            "Onsdag"
+        ],
+        "dog": {
+            "dogName": "Fluffis",
+            "breed": "Pudel",
+            "gender": "Hane",
+            "extraInfo": "Han gillar bara mig och ingen annan",
+            "image": "3123b1f57cc320803799842de3b12301b9594261.jpg"
+        }
     }
 ]

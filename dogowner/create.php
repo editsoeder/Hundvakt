@@ -141,7 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //vill skapa en if om email redan är registrerad för hundägare, skicka felmeddelande "Denna e-postadress används redan för en hundägare" typ
 
         addEntry("dogowners.json", $newEntry);
-        echo "<p class='feedbackMessage'> Användare skapad! Nu kan du logga in </p> ";
+        echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a>  </p> ";
         exit();
 } 
 
