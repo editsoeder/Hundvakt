@@ -1192,7 +1192,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     font-family: var(--font-title);
 }
 
-.feedbackDiv {
+/* .feedbackDiv {
     position: fixed;
     top: 30vh;
     left: calc(50vw - 25vh);
@@ -1207,13 +1207,13 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     border: 3px solid var(--orange);
     border-radius: 50%;
     text-align: center;
-}
+} */
 .feedbackMessage {
-    position: relative;
-    top: -259vh;
-    left: calc(50vw - 12.5vw);
-    width: 25vw;
-    height: 13vh;
+    position: absolute;
+    top: 27vh;
+    left: calc(50vw - 25vw);
+    width: 50vw;
+    height: 20vh;
     font-family: var(--font-title);
     background-color: var(--yellow);
     border: 5px solid var(--orange);

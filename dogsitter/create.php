@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $size = $file["size"];
 
         if ($size > 4 * 1000 * 1000) {
-            echo "<p class='feedbackMessage'> Filen får inte <br> vara större än 4mb </p>";
+            echo "<p class='feedbackMessage'> Filen får inte vara större än 4mb </p>";
             exit();
         }
 
@@ -127,7 +127,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
     //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
     addEntry("dogsitter.json", $newEntry);
-    // echo "<div class='feedbackDiv'> <p>Användare skapad! Nu kan du </p>  </div>";
-    echo '<div class="feedbackDiv"> <p> Användare skapad! Nu kan du: <br> </p> <button id="toLogInButton"> logga in </button> </div>';
+    echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du: <br> </p> <br> <a href='../sign-in.php'>  Logga in</a> </p> </div>";
+    exit();
 }
 ?>
