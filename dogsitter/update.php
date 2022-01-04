@@ -24,6 +24,7 @@ $sitterLocation = $sitterInfo["location"];
 $sitterEmail = $sitterInfo["email"];
 $sitterExtra = $sitterInfo["extraInfo"];
 $sitterPassword = $sitterInfo["password"];
+$sitterImage = $sitterInfo["image"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,10 +66,10 @@ $sitterPassword = $sitterInfo["password"];
             </div> 
             <div id="uploadImageUpdate"> 
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
-                <input type="file" name="imageToUpload" id="fileToUpload">
+                <input type="file" name="newImageToUpload" id="fileToUpload">
             </div> 
             <div id=update-button-wrapper>
-                <button id="update-button">Updatera!</button>
+                <button id="update-button">Uppdatera!</button>
             </div>
         </form>
     </div> 
@@ -83,8 +84,11 @@ $sitterPassword = $sitterInfo["password"];
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogsitter.json");
 
-    if (isset($_FILES["imageToUpload"])) {
-        $file = $_FILES["imageToUpload"];
+    $imageUrl = $sitterImage;
+    $file = $_FILES["newImageToUpload"];
+
+    if (isset($file) && $file["error"] != 4) {
+        $file = $_FILES["newImageToUpload"];
         $filename = $file["name"];
         $tempname = $file["tmp_name"];
         $uniqueFilename = sha1(time().$filename);
@@ -100,6 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $extension = strtolower($info["extension"]);
         //Spara bilden med unikt namn i mappen "userImages"
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+        $imageUrl = $uniqueFilename.'.'.$extension;
     }
 
 $updateProfile = [
@@ -113,7 +118,7 @@ $updateProfile = [
     "days" => $_POST["days"],
     "areas" => $_POST["areas"],
     "extraInfo" => $_POST["extraInfo"],
-    "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
+    "image" => $imageUrl //spara unika namnet på bilden som sökväg
 ]; 
 
 // foreach($updateProfile as [$value=>$key]){
@@ -126,16 +131,24 @@ $updateProfile = [
 //     }
 // }
 
-$column = array_column($data, "id_sitter");
-$index = array_search($loggedInID, $column);
-$user = $data[$index];
-$user = $updateProfile;
+// $column = array_column($data, "id_sitter");
+// $index = array_search($loggedInID, $column);
+// $user = $data[$index];
+// $user = $updateProfile;
 
-foreach($data as $user){
-    if($loggedInID === $user["id_sitter"]){
-       $user = $updateProfile;
-    }
-} 
+for ($i=0; $i < count($data); $i++) { 
+    $currData = $data[$i];
+    $currUser = $currData["id_sitter"];
+    if($loggedInID === $currUser){
+        $data[$i] = $updateProfile;
+     }
+}
+
+// foreach($data as $user){
+//     if($loggedInID === $user["id_sitter"]){
+//        $user = $updateProfile;
+//     }
+// } 
 // if(is_null($updateProfile ) ){
 //     echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
 //     exit();
@@ -163,6 +176,6 @@ file_put_contents("dogsitter.json", $json);
 
 // updateUser("dogsitter.json", $updateProfile);
     // updateProfileSitter("../dogsitter.json", $updateProfile);
-    echo "<p class 'feedbackMessageUpdate'> Profil Uppdaterad!</p>";
+    echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
    }
 ?>
