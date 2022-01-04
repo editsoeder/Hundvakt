@@ -30,7 +30,7 @@ require_once __DIR__ . "/../functions.php";
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
-        <img id='profile-image' src= <?php echo $src?>>
+        <img class='profile-image' src= <?php echo $src?>>
         <div id="wrapper-info">
             <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>
             <p>Jag passar hundar i:<br> <?php echo $sitterArea?> </p>

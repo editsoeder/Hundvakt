@@ -785,7 +785,7 @@ svg {
     margin-bottom: 2px;
 }
 
- #profile-image{
+ .profile-image{
     height: 220px;
     width: 220px;
     border: 10px solid var(--green);

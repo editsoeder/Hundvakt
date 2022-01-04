@@ -42,14 +42,22 @@ require_once __DIR__ . "/../functions.php";
         } 
     }
     $src =  $dog["image"];
+    $dogName = $dog["dogName"];
+    $dogBreed = $dog["breed"];
+    $dogGender = $dog["gender"];
+    $dogExtra = $dog["extraInfo"];
     ?>
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
         <!-- <img id='profile-image' alt="dog" src='../userImages/'> -->
-        <img  alt='dog' src='../userImages/<?php echo $src; ?>'>
+        <img class='profile-image'  alt='dog' src='../userImages/<?php echo $src; ?>'>
         <div id="wrapper-dog">
-        <h2>Min hund</h2><p>Namn: <?php echo $ownerDog?> </p>
+        <h2>Min hund</h2>
+        <p>Namn: <?php echo $dogName?> </p><br>
+        <p>Ras: <?php echo $dogBreed?> </p><br>
+        <p>Kön: <?php echo $dogGender?></p><br>
+        <p>Bra att veta: <?php echo $dogExtra?></p>
         </div>
         <div id="wrapper-contact">
         <h2>Kontaktuppgifter</h2>
