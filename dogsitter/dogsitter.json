@@ -58,8 +58,21 @@
         "password": "password1",
         "location": "",
         "cost": "90",
-        "days": null,
-        "areas": null,
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
         "extraInfo": "Kan hundvakta flera hundar samtidigt, och \u00e4ven ha hundar under en hel helg eller under flera dagar i str\u00e4ck. ",
         "image": "945c143570abf58529e6f22560739d24eefa88e1.jpeg"
     },
