@@ -206,12 +206,12 @@
     },
     {
         "id_owner": 10,
-        "first_name": "Malcolmo",
+        "first_name": "Malcolm",
         "last_name": "Olofsson",
         "email": "malcolm.x@live.com",
         "password": "banan4321",
         "location": "Malm\u00f6 Centrum",
-        "cost": " 90 ",
+        "cost": "90",
         "days": [
             "M\u00e5ndag",
             "Onsdag",
@@ -224,7 +224,7 @@
             "breed": "Pomeranian",
             "gender": "Hona",
             "extraInfo": "V\u00e4rldens sn\u00e4llaste hund s\u00f6ker v\u00e4rldens sn\u00e4llaste hundvakt. ",
-            "image": "2b8833f854e695ada17270cc21334651015fe06a.jpeg"
+            "image": "984be5b881331b7ffe2973651e70ff3a320ec363.jpeg"
         }
     },
     {

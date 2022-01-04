@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
         exit();
     }
 }
-
+error_reporting(-1);
 require_once __DIR__ . "/../functions.php";
 $loggedInID = $_SESSION["loggedInAsDogOwner"];
 $ownerInfo = idInfoOwner($_SESSION["loggedInAsDogOwner"]);
@@ -26,6 +26,7 @@ $dogName = $dogInfo["dogName"];
 $dogBreed = $dogInfo["breed"];
 $dogExtra = $dogInfo["extraInfo"];
 $dogGender = $dogInfo["gender"];
+$dogImage = $dogInfo["image"];
 
 ?>
 <!DOCTYPE html>
@@ -134,7 +135,7 @@ $dogGender = $dogInfo["gender"];
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogowners.json");
 
-    $imageUrl = $ownerImage;
+    $imageUrl = $dogImage;
     $file = $_FILES["newImageToUpload"];
 
     if (isset($file) && $file["error"] != 4) {
