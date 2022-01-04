@@ -149,24 +149,26 @@ for ($i=0; $i < count($data); $i++) {
 //        $user = $updateProfile;
 //     }
 // } 
-// if(is_null($updateProfile ) ){
-//     echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
-//     exit();
-// }
+if(is_null($updateProfile ) ){
+    echo "<p class 'feedbackMessageUpdate'> Något gick fel, försök igen </p>";
+    exit();
+}
 
 // if (empty($updateProfile ["first_name"]) || empty($updateProfile ["last_name"]) || empty($updateProfile ["email"]) || empty($updateProfile ["password"]) || empty($updateProfile ["location"]) || empty($updateProfile ["cost"]) || empty($updateProfile ["days"]) || empty($updateProfile ["areas"])|| empty($updateProfile ["extraInfo"])) {
 //     echo "<p class 'feedbackMessageUpdate'> Alla fält måste vara ifyllda, försök igen </p>";
 //     exit();
 // }
 
-// if(strlen($updateProfile ["password"]) < 4) {
-//     echo "<p class 'feedbackMessageUpdate'> Lösenord måste vara minst 4 tecken långt </p>";
-//     exit();       
-// }
-// if ($size > 4 * 1000 * 1000) {
-//     echo "Filen får inte vara större än 4mb";
-//     exit();
-// }
+if(strlen($updateProfile ["password"]) < 8) {
+    echo "<p class 'feedbackMessageUpdate'> Lösenord måste vara minst 4 tecken långt </p>";
+    exit();       
+}
+if ($size > 4 * 1000 * 1000) {
+    echo "Filen får inte vara större än 4mb";
+    exit();
+}
+
+echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
 
 $json = json_encode($data, JSON_PRETTY_PRINT);
 file_put_contents("dogsitter.json", $json);
@@ -176,6 +178,5 @@ file_put_contents("dogsitter.json", $json);
 
 // updateUser("dogsitter.json", $updateProfile);
     // updateProfileSitter("../dogsitter.json", $updateProfile);
-    echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
    }
 ?>
