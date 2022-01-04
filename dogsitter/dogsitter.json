@@ -403,21 +403,20 @@
     {
         "id_sitter": 17,
         "first_name": "Annika",
-        "last_name": "Johansson",
+        "last_name": "Johansen",
         "email": "annikadoglover@hotmail.com",
         "password": "losenord",
-        "location": "Hyllie",
-        "cost": "90",
+        "location": "Roseng\u00e5rd",
+        "cost": "70",
         "days": [
-            "Onsdag",
-            "Torsdag",
-            "Fredag"
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "areas": [
-            "Fosie",
+            "Husie",
             "Kirseberg",
-            "Malm\u00f6 Centrum",
-            "Oxie",
+            "Limhamn-Bunkeflo",
             "V\u00e4stra Innerstaden"
         ],
         "extraInfo": "L\u00e5ng erfarenhet av hundpassning. Kan endast passa efter klockan 16. Jobbar \u00e4ven p\u00e5 ett hundpensionat.",
