@@ -407,24 +407,21 @@
         "last_name": "Johansson",
         "email": "annikadoglover@hotmail.com",
         "password": "losenord",
-        "location": "Fosie",
+        "location": "Hyllie",
         "cost": "90",
         "days": [
-            "M\u00e5ndag",
-            "Tisdag",
             "Onsdag",
             "Torsdag",
             "Fredag"
         ],
         "areas": [
             "Fosie",
-            "Husie",
             "Kirseberg",
             "Malm\u00f6 Centrum",
             "Oxie",
-            "Roseng\u00e5rd"
+            "V\u00e4stra Innerstaden"
         ],
         "extraInfo": "L\u00e5ng erfarenhet av hundpassning. Kan endast passa efter klockan 16. Jobbar \u00e4ven p\u00e5 ett hundpensionat.",
-        "image": "8ab031b0e517268fd498764c33dafab330cd4004.jpeg"
+        "image": "578d13bf2fe560f7bb0e5f7b65f689d699114de5.jpeg"
     }
 ]
