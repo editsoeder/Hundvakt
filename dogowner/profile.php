@@ -62,7 +62,6 @@ require_once __DIR__ . "/../functions.php";
         <div id="wrapper-contact">
         <h2>Kontaktuppgifter</h2>
         <p>Min mail är: <?php echo $ownerEmail?> </p>
-        </div>  
         </div>
         <div id="wrapper-owner">
         <h2>Om mig</h2>
@@ -71,31 +70,30 @@ require_once __DIR__ . "/../functions.php";
         <p>Jag behöver hundpassning:<br> <?php echo $ownerDays?> </p>
         <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
         </div>
-    </div>
     
-    <button class="changeSettingsButton"> Ändra uppgifter </button> 
-
-    <button type="submit" id="delete-account-button">Radera Konto</button>
-
-    <script>
-        document.querySelector(".changeSettingsButton").addEventListener("click", function() {
-            window.location.href = "update.php";
-        });
-
-        document.querySelector("#profile-image").src = 
-
-        document.querySelector("#delete-account-button").addEventListener("click", function () {
-            if (confirm("Vill du radera konto?")) {
-                window.location.href = "delete.php";
-            } else {
-                window.location.href = "profile.php";
-            }
-        });
-    </script>
-    
-<?php
+    <button class="changeSettingsButton"> Ändra Uppgifter </button> 
+    <button type="submit" class="delete-account-button">Radera Konto</button>
+    <?php
 require_once __DIR__ . "/../section/footer.php";
 ?>
 
 
+<script >
+    
+    document.querySelector(".changeSettingsButton").addEventListener("click", function() {
+        window.location.href = "update.php";
+    });
+    
+    document.querySelector(".delete-account-button").addEventListener("click", function () {
+        if (confirm("Vill du radera konto?")) {
+            window.location.href = "delete.php";
+        } else {
+            window.location.href = "profile.php";
+        }
+    });
+    
+</script>
 
+</div>
+</body>
+</html>

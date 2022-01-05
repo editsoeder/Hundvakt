@@ -46,8 +46,7 @@ require_once __DIR__ . "/../functions.php";
         </div>
 
         <button class="changeSettingsButton"> Ändra Uppgifter </button> 
-    
-        <button type="submit" id="delete-account-button">Radera Konto</button>
+        <button type="submit" class="delete-account-button">Radera Konto</button>
     </div>
 
     
@@ -57,7 +56,7 @@ require_once __DIR__ . "/../functions.php";
             window.location.href = "update.php";
         });
         
-        document.querySelector("#delete-account-button").addEventListener("click", function () {
+        document.querySelector(".delete-account-button").addEventListener("click", function () {
             if (confirm("Vill du radera konto?")) {
                 window.location.href = "delete.php";
             } else {
