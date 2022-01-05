@@ -1,10 +1,7 @@
 <?php
 session_start(); 
 require_once __DIR__ . "/../functions.php";
-
-
 ?> 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +65,6 @@ require_once __DIR__ . "/../functions.php";
             <button class="createButton" type="submit">Skapa konto</button>
         </form>
     </div>
-    
     <?php 
     require_once __DIR__ . "/../section/footer.php";
     ?>
@@ -80,11 +76,11 @@ require_once __DIR__ . "/../functions.php";
 // //funktionen "addEntry" för att spara datan i json-filen
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogowners.json");
+    $file = $_FILES["dogImage"];
+
     //Kolla att de skickat med en bildfil och generera ett unikt 
     //namn för bilden
-
-    if (isset($_FILES["dogImage"])) {
-        $file = $_FILES["dogImage"];
+    if (isset($file) && $file["error"] != 4) {
         $filename = $file["name"];
         $tempname = $file["tmp_name"];
         $uniqueFilename = sha1(time().$filename);
@@ -98,8 +94,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //Hämta filinformation & kolla vilken filtyp det är
         $info = pathinfo($filename);
         $extension = strtolower($info["extension"]);
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+        $imageName = $uniqueFilename.'.'.$extension;
+
+    } else {
+        echo "<p class='feedbackMessage'> Ingen bild laddades upp </p>";
+        exit();    
     }
 
     $newEntry = [ 
@@ -116,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "breed" => $_POST["breed"],
         "gender" => $_POST["gender"],
         "extraInfo" => $_POST["extraInfo"],
-        "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
+        "image" => $imageName //spara unika namnet på bilden som sökväg
         ]
     ];    
         if(validEmail($data, $newEntry["email"]) == true ) {
@@ -143,11 +142,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
             echo "<p class='feedbackMessage'> E-postadressen används redan <br> för en annan hundägare </p>";
             exit();
         }
-        //vill skapa en if om email redan är registrerad för hundägare, skicka felmeddelande "Denna e-postadress används redan för en hundägare" typ
-
+        //Spara bilden med unikt namn i mappen "userImages"
+        move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
         addEntry("dogowners.json", $newEntry);
-        echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a>  </p> ";
+        echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a></p> ";
         exit();
-} 
-
+}
 ?>
