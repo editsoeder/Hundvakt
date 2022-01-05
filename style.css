@@ -96,7 +96,7 @@ body {
     position: absolute;
     right: 3%;
     top: 27%;
-    font-family: var(--font-paragraph);
+    /* font-family: var(--font-paragraph); */
 }
 
 .backToHome:hover, .backToHomeCreateAs:hover{
