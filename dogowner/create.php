@@ -58,13 +58,25 @@ require_once __DIR__ . "/../functions.php";
                 </div>
             </div> 
             <div id="dogPicDiv"> 
-                <div class="dogPic"> </div> 
+            <img id="output_image" src="../Images/dogavatar.jpeg"/>
                 <h2> Ladda upp bild på din hund </h2> 
-                <input type="file" name="dogImage">
+                <input type="file" name="dogImage" accept="image/*" onchange="preview_image(event)">
             </div>                 
             <button class="createButton" type="submit">Skapa konto</button>
         </form>
     </div>
+    <script type='text/javascript'>
+
+        function preview_image(event) {
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
     <?php 
     require_once __DIR__ . "/../section/footer.php";
     ?>

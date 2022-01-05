@@ -123,7 +123,11 @@ if (isset($_POST["email"], $_POST["password"])) {
             <a href="createAs.php" class="createAcBold">Registrera dig</a>
             
 
-            <script src="sign-in.js"></script>
+            <script>
+                document.querySelector(".backToHome").addEventListener("click", function() {
+                    window.location.href = "index.php";
+                });
+            </script>
         </div>
         
 

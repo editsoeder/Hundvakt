@@ -2,16 +2,6 @@
 error_reporting(-1);
 session_start();
 
-// if (!isset($_SESSION["loggedInAsDogOwner"])) {
-//     if(isset($_SESSION["loggedInAsDogSitter"])) {
-//         header("Location: ../dogsitter/read.php");
-//         exit();
-//     } else {
-//         header("Location: ../sign-in.php");
-//         exit();
-//     }
-// }
-
 ?> 
 
 <!DOCTYPE html>
@@ -54,13 +44,13 @@ session_start();
                 <img id='profileDog' src='$src' alt='Profil picture'>
                 <div class='one'>
                     <div class='dogName'>{$foundDogSitter['first_name']}</div>
-                    <div class='bold'>Tillgänglig i områden: <p>{$areas}</p></div>
-                    <div class='bold'>Tillgänglig dagar: <p>{$days}</p></div>
-                    <div class='bold'>Timkostnad: <p>{$foundDogSitter['cost']}</p></div>
+                    <div class='bold'>Jag passar hundar i: <p>{$areas}</p></div>
+                    <div class='bold'>Dagar jag kan passa: <p>{$days}</p></div>
+                    <div class='bold'>Min timlön är: <p>{$foundDogSitter['cost']} kr/tim</p></div>
                 </div>
 
                 <div class='two'>
-                    <p class='bold'>Kontaktas via:</p>
+                    <p class='bold'>Min mail är:</p>
                     <p>{$foundDogSitter['email']}</p>
                 </div>
 

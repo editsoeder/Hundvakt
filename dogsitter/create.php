@@ -57,13 +57,29 @@ require_once __DIR__ . "/../functions.php";
             </div> 
 
             <div id="profilePicDiv"> 
-                <div id="actualPicture"> </div>
+                <img id="output_image" src="../Images/avatar.jpeg"/>
                 <h2> Ladda upp en profilbild </h2> 
-                <input type="file" name="imageToUpload">
+                <input type="file" name="imageToUpload" accept="image/*" onchange="preview_image(event)">
             </div>
             <button class="createButton" type="submit"> Skapa konto </button> 
         </form>
+
+        
+        
     </div>
+
+    <script type='text/javascript'>
+
+        function preview_image(event) {
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 
 <?php 
     require_once __DIR__ . "/../section/footer.php";

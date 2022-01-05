@@ -84,7 +84,7 @@ function data(json) {
 
       name.innerHTML = array[i].first_name;
       areas.innerHTML = array[i].location;
-      cost.innerHTML = array[i].cost;
+      cost.innerHTML = array[i].cost + " kr/tim";
       image.src = "../userImages/" + array[i].image;
       a.innerHTML = "Läs mer";
       a.href = "read.php?id=" + array[i].id_sitter;

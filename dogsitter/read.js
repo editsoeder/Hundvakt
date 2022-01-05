@@ -62,7 +62,6 @@ function data(json) {
 
     if (array.length == 0) {
       alert("Finns inga hundar utefter ditt önskemål");
-      // window.location.href = "read.php?=error";
     } 
 
     else {
@@ -86,7 +85,7 @@ function data(json) {
 
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
-        cost.innerHTML = array[i].cost;
+        cost.innerHTML = array[i].cost + " kr/tim";
 
         image.src = "../userImages/" + dog.image;
 
