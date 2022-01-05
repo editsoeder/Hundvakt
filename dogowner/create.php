@@ -119,6 +119,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
         ]
     ];    
+        if(validEmail($data, $newEntry["email"]) == true ) {
+            echo "<p class='feedbackMessage'> E-postadressen används redan </p>";
+            exit();
+        }
+
         if(is_null($newEntry) ){
             echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
             exit();
