@@ -85,9 +85,10 @@ require_once __DIR__ . "/../functions.php";
     
     </script>
     
-<?php
-require_once __DIR__ . "/../section/footer.php";
-?>
-
+    <?php
+    require_once __DIR__ . "/../section/footer.php";
+    ?>
+</body> 
+</html>
 
 
