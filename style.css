@@ -968,7 +968,7 @@ overflow: hidden;
     height: 15vh;
     width: 15vh;
     background-color: var(--green);
-
+    font-family: var(--font-title);
 }
 
 #dogPicDiv {
