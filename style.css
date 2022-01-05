@@ -802,7 +802,7 @@ svg {
 
  }
 
-#change-settings-button{
+.changeSettingsButton{
     position: relative;
     left: 1114px;
     top: -1150px;
@@ -811,7 +811,7 @@ svg {
     font-family: var(--font-title);
     transition: .5 all;
 }
-#change-settings-button:hover{
+.changeSettingsButton:hover{
     background-color: var(--turquoise);
 }
 

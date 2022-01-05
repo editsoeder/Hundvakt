@@ -93,11 +93,11 @@ $sitterImage = $sitterInfo["image"];
                     <input type="checkbox" id="Oxie" name="areas[]" value="Oxie" <?php if(in_array("Oxie", $sitterInfo["areas"])) { echo "checked";} ?> >
                     <label for="Oxie"> Oxie </label><br>
                     <input type="checkbox" id="Rosengard" name="areas[]" value="Rosengård" <?php if(in_array("Rosengård", $sitterInfo["areas"])) { echo "checked";} ?> >
-                    <label for="Oxie"> Rosengård </label><br>
+                    <label for="Rosengard"> Rosengård </label><br>
                     <input type="checkbox" id="SodraInnerstaden" name="areas[]" value="Södra Innerstaden" <?php if(in_array("Södra Innerstaden", $sitterInfo["areas"])) { echo "checked";} ?>>
                     <label for="SodraInnerstaden"> Södra Innerstaden </label><br>
                     <input type="checkbox" id="VastraInnerstaden" name="areas[]" value="Västra Innerstaden" <?php if(in_array("Västra Innerstaden", $sitterInfo["areas"])) { echo "checked";} ?>>
-                    <label for="Oxie"> Västra Innerstaden </label><br>
+                    <label for="VastraInnerstaden"> Västra Innerstaden </label><br>
                 </div>
             </div>
             
@@ -120,13 +120,11 @@ $sitterImage = $sitterInfo["image"];
                     <label for="Sunday"> Söndag </label>
                 </div>  
             </div>
-            <div id="uploadImageUpdate"> 
+            <div class="uploadImageUpdate"> 
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
                 <input type="file" name="newImageToUpload" id="fileToUpload">
             </div> 
-            <div id=update-button-wrapper>
-                <button id="update-button">Spara</button>
-            </div>
+            <button type="submit" class="update-button">Spara</button>
         </form>
     </div> 
 </body>

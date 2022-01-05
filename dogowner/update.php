@@ -1,5 +1,7 @@
 <?php
+error_reporting(-1);
 session_start();
+
 if (!isset($_SESSION["loggedInAsDogOwner"])) {
     if(isset($_SESSION["loggedInAsDogSitter"])) {
         header("Location: ../dogsitter/update.php");
@@ -9,7 +11,7 @@ if (!isset($_SESSION["loggedInAsDogOwner"])) {
         exit();
     }
 }
-error_reporting(-1);
+
 require_once __DIR__ . "/../functions.php";
 $loggedInID = $_SESSION["loggedInAsDogOwner"];
 $ownerInfo = idInfoOwner($_SESSION["loggedInAsDogOwner"]);
@@ -97,7 +99,6 @@ $dogImage = $dogInfo["image"];
             </div>
             <div id="updateDogInfo"> 
                 <h2 class="h2-update"> Ändra information om hunden </h2> 
-                
                 <p>Hundens namn</p>
                 <input type="text" name="dogName" placeholder="<?php echo $dogName ?>" value="<?php echo $dogName ?>"> <br> <br>
                 <p>Hundens ras</p>
@@ -111,23 +112,20 @@ $dogImage = $dogInfo["image"];
                 </div>
                 <p>Bra att veta</p>
                 <input type="text" name="extraInfo" placeholder="<?php echo $dogExtra ?>" value="<?php echo $dogExtra ?>"> <br> <br>
-
-                <div id="uploadImageUpdate"> 
-                    <h2 class="h2-update"> Ladda upp en ny bild på hunden </h2> 
-                    <input type="file" name="newImageToUpload" id="fileToUpload">
-                </div> 
             </div> 
 
-            
-            <div id=update-button-wrapper>
-                <button id="update-button">Spara</button>
-            </div>
+            <div class="uploadImageUpdate"> 
+                <h2 class="h2-update"> Ladda upp en ny bild på hunden </h2> 
+                <input type="file" name="newImageToUpload" id="fileToUpload">
+            </div> 
+            <button type="submit" class="update-button">Spara</button>
         </form>
     </div> 
 
     <?php 
     require_once __DIR__ . "/../section/footer.php";
     ?> 
+
 </body>
 </html>
 

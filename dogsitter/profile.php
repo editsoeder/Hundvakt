@@ -44,15 +44,19 @@ require_once __DIR__ . "/../functions.php";
         <div id="wrapper-extra_info">
             <p>Bra att veta om mig är:<br><?php echo $sitterExtra?> </p> 
         </div>
-        <form action="update.php" method="PATCH">
-            <button type="submit" id="change-settings-button">Ändra Uppgifter</button>
-        </form>
+
+        <button class="changeSettingsButton"> Ändra Uppgifter </button> 
     
         <button type="submit" id="delete-account-button">Radera Konto</button>
     </div>
 
     
     <script >
+        
+        document.querySelector(".changeSettingsButton").addEventListener("click", function() {
+            window.location.href = "update.php";
+        });
+        
         document.querySelector("#delete-account-button").addEventListener("click", function () {
             if (confirm("Vill du radera konto?")) {
                 window.location.href = "delete.php";
@@ -60,6 +64,7 @@ require_once __DIR__ . "/../functions.php";
                 window.location.href = "profile.php";
             }
         });
+
     </script>
 
     <?php

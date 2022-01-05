@@ -72,15 +72,16 @@ require_once __DIR__ . "/../functions.php";
         <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
         </div>
     </div>
-        
-    <form action="/dogowner/update.php" method="POST">
-        <button type="submit" class="button" id="change-settings-button">Ändra Uppgifter</button>
-    </form>
-
+    
+    <button class="changeSettingsButton"> Ändra uppgifter </button> 
 
     <button type="submit" id="delete-account-button">Radera Konto</button>
 
     <script>
+        document.querySelector(".changeSettingsButton").addEventListener("click", function() {
+            window.location.href = "update.php";
+        });
+
         document.querySelector("#profile-image").src = 
 
         document.querySelector("#delete-account-button").addEventListener("click", function () {
@@ -90,7 +91,6 @@ require_once __DIR__ . "/../functions.php";
                 window.location.href = "profile.php";
             }
         });
-    
     </script>
     
 <?php
