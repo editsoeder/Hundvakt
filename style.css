@@ -366,7 +366,7 @@ body {
     font-size: 35px;
 }
 
-.form {
+.form, #updateDogInfo{
     grid-column: 3;
     grid-row: 2;
     align-items: center;
@@ -804,7 +804,7 @@ svg {
 
 .changeSettingsButton{
     position: relative;
-    left: 1114px;
+    left: 1047px;
     top: -1150px;
     background-color: var(--green);
     color: var(--white);
@@ -817,8 +817,8 @@ svg {
 
 #delete-account-button{
     position: relative;
-    left: 1163px;
-    top: -1327px;
+    left: 1006px;
+    top: -1227px;
     background-color: var(--orange);
     color: var(--white);
     font-family: var(--font-title);
@@ -1178,14 +1178,14 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     border-radius: 50px;
     border: 10px solid var(--turquoise);
 }
-#uploadImageUpdate{
+.uploadImageUpdate{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-#update-button{
+.update-button{
     height: 85px;
     width: 85px;
     margin: 10px;
@@ -1195,12 +1195,15 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     font-size: 17px;
     box-shadow: 5px 5px 5px #212121;
     font-family: var(--font-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#update-button:hover{
+.update-button:hover{
     background-color: var(--blue);
     color: var(--white);
 }
-#update-button-wrapper{
+.update-button-wrapper{
     height: 25vh;
     width: 100%;
     display: flex;

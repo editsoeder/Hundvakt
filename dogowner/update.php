@@ -45,7 +45,7 @@ $dogImage = $dogInfo["image"];
     <h1 class="h2-update" >Här kan du ändra din profil!</h1>
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
-            <div id="dogowner-form"> 
+            <div id="dogsitter-form"> 
                 <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $ownerFirstName ?>" value ="<?php echo $ownerFirstName ?>"><br>
                 <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $ownerLastName ?>" value="<?php echo $ownerLastName ?>"><br>
                 <p>Email</p><input type="email" name="email" placeholder="<?php echo $ownerEmail ?>" value="<?php echo $ownerEmail ?>"><br>
@@ -118,7 +118,9 @@ $dogImage = $dogInfo["image"];
                 <h2 class="h2-update"> Ladda upp en ny bild på hunden </h2> 
                 <input type="file" name="newImageToUpload" id="fileToUpload">
             </div> 
+            <div class="update-button-wrapper">
             <button type="submit" class="update-button">Spara</button>
+            </div>
         </form>
     </div> 
 

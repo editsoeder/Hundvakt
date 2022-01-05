@@ -124,7 +124,9 @@ $sitterImage = $sitterInfo["image"];
                 <h2 class="h2-update"> Ladda upp en ny profilbild </h2> 
                 <input type="file" name="newImageToUpload" id="fileToUpload">
             </div> 
+            <div class="update-button-wrapper">
             <button type="submit" class="update-button">Spara</button>
+            </div>
         </form>
     </div> 
 </body>
