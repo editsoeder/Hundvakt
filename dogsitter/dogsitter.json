@@ -439,5 +439,34 @@
         ],
         "extraInfo": "Jag lagar mat till mina hundar",
         "image": "336995a60709cce86038bcb1e5e44cf1874f0ddf.jpg"
+    },
+    {
+        "id_sitter": 19,
+        "first_name": "Elliot",
+        "last_name": "Wachtmeister",
+        "email": "elliott_w@live.se",
+        "password": "wachtmeistern00",
+        "location": "Kirseberg",
+        "cost": "100",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie",
+            "Kirseberg",
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "Oxie",
+            "Roseng\u00e5rd",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "\u00c4lskar alla sorters hundar! Har inga problem med att ta mig n\u00e5gonstans i Malm\u00f6. Gillar l\u00e5ngpromenader runt Pildammsparken. ",
+        "image": "c4d166ecccacaba9b468fa3314855553a3991fb8.jpeg"
     }
 ]
