@@ -415,8 +415,8 @@ footer {
 }
 
 #header-image{
-    background-image: url("/Images/banner-2.jpg");
-    height: 200px;
+    background-image: url("/Images/banner-3.png");
+    height: 226px;
     width: 100vw;
     background-position: center;
     background-repeat: no-repeat;
@@ -432,11 +432,6 @@ nav {
     background-color: var(--green);
     padding-top: 4vh;
     padding-bottom: 4vh;
-    border-style: ridge;
-    border-top: 0px;
-    border-left: 0px;
-    border-right: 0px;
-    border-width: 10px;
 }
 
 nav > a {
