@@ -42,7 +42,6 @@ require_once __DIR__ . "/../functions.php";
                 <input type="text" class="extraInfo" class="createDetails" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
             </div> 
 
-            
             <div id="createAreaBox">
                 <?php
                 createAreaBoxes();
@@ -76,10 +75,10 @@ require_once __DIR__ . "/../functions.php";
             reader.readAsDataURL(event.target.files[0]);
         }
     </script>
-
-<?php 
+    
+    <?php 
     require_once __DIR__ . "/../section/footer.php";
-?> 
+    ?> 
 </body>
 </html>
 
