@@ -1,8 +1,10 @@
 <?php
+session_start();
 error_reporting(-1);
-session_start(); 
 require_once __DIR__ . "/../functions.php";
 
+// //samlar användardatan från formuläret in i $newEntry och använder 
+// //funktionen "addEntry" för att spara datan i json-filen
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON( __DIR__ . "/../dogowner/dogowners.json");
     $file = $_FILES["dogImage"];
@@ -24,10 +26,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $info = pathinfo($filename);
         $extension = strtolower($info["extension"]);
         $imageName = $uniqueFilename.'.'.$extension;
-
-    } else {
-        header("Location: create.php?error=6");
-        exit();    
+    }
+    else {
+        $imageName = "";
     }
 
     $newEntry = [ 
@@ -47,42 +48,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "image" => $imageName //spara unika namnet på bilden som sökväg
         ]
     ];    
-        if(validEmail($data, $newEntry["email"]) == true ) {
-            header("Location: create.php?error=4");
-            exit(); 
-        }
-
-        if(is_null($newEntry) ){
-            header("Location: create.php?error=5");
-            exit();
-        }
-        
-        if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
-            header("Location: create.php?error=1");
-            exit();
-        }
-
-        if(strlen($newEntry["password"]) < 4) {
-            header("Location: create.php?error=2");
-            exit(); 
-        }
-
-        // if (in_array($newEntry["email"], $data)) {
-        //     echo "<p class='feedbackMessage'> E-postadressen används redan <br> för en annan hundägare </p>";
-        //     exit();
-        // }
-        
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-        addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
-        header("Location: ../sign-in.php?createdAccount");
+    if(validEmail($data, $newEntry["email"]) == true ) {
+        header("Location: create.php?error=4");
         exit();
     }
 
-?>
+    if(is_null($newEntry) ){
+        header("Location: create.php?error=5");
+        exit();
+    }
+    
+    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["extraInfo"])) {
+        header("Location: create.php?error=1");
+        exit();
+    }
+
+    if(empty($newEntry["image"]) ){
+        header("Location: create.php?error=6");
+        exit();
+    }
+
+    if(strlen($newEntry["password"]) < 4) {
+        header("Location: create.php?error=2");
+        exit();
+    }
+    //Spara bilden med unikt namn i mappen "userImages"
+    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
+    addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
+    header("Location: ../sign-in.php?createdAccount");
+    exit();
+}
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Skapa konto hundägare</title>    
     <?php require_once __DIR__ . "/../section/header.php"; ?>
 
@@ -180,3 +182,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     </script>
 </body>
 </html>
+
