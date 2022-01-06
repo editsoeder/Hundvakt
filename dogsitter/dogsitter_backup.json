@@ -403,7 +403,7 @@
     {
         "id_sitter": 17,
         "first_name": "Annika",
-        "last_name": "Johanzen",
+        "last_name": "Johansson",
         "email": "annikadoglover@hotmail.com",
         "password": "losenord123",
         "location": "Fosie",
@@ -414,7 +414,6 @@
         ],
         "areas": [
             "Fosie",
-            "Husie",
             "Oxie",
             "Roseng\u00e5rd",
             "S\u00f6dra Innerstaden"

@@ -142,19 +142,6 @@ function createDayBoxes() {
 <?php
 }
 
-//Skapar listan där man kan välja vilken timkostnad man har, kan användas i formulären
-function createCostList() {
-?>  <input list="hourCost" name="Timkostnad" class="createDetails" placeholder="Kr i timmen"><br>
-    <datalist id="hourCost">
-        <option value="50">
-        <option value="60">
-        <option value="70">
-        <option value="80">
-        <option value="90">
-        <option value="100">
-    </datalist> <?php 
-}
-
 function createCostListTwo() {
     ?>  <select name="costSelect" class="costSelect" placeholder="Kr i timmen">
             <option value="cost">Kr/timmen</option>
@@ -168,23 +155,6 @@ function createCostListTwo() {
 }
 
 //Skapar listan där man kan välja var man är placerad, kan användas i formulären
-function createLocationList() {
-?>  <input list="placement" name="Placering" class="createDetails" placeholder="Placering"><br> 
-    <datalist id="placement">
-        <option value="Fosie">
-        <option value="Husie">
-        <option value="Hyllie">
-        <option value="Kirseberg">
-        <option value="Limhamn-Bunkeflo">
-        <option value="Malmö Centrum">
-        <option value="Oxie">
-        <option value="Rosengård">
-        <option value="Södra Innerstaden">
-        <option value="Västra Innerstaden">
-    </datalist>
-<?php
-}
-
 function createPlacementList() { 
 ?> 
 <label for="Placering">Placering:</label>
@@ -204,6 +174,7 @@ function createPlacementList() {
 <?php
 }
 
+//Skapar listan där man kan välja vilken timkostnad man har, kan användas i formulären
 function createCostBar() {
     ?> 
     <label for="Cost">Kr/h:</label>

@@ -123,8 +123,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
                 <input type="password" name="password" class="createDetails" placeholder="Lösenord"><br>     
                 
                 <?php 
-                createLocationList();
-                createCostList();
+                createPlacementList();
+                createCostBar();
                 ?>                
                 <input type="text" class="extraInfo" class="createDetails" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
             </div> 

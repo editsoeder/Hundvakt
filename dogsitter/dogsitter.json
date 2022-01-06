@@ -406,8 +406,8 @@
         "last_name": "Johansson",
         "email": "annikadoglover@hotmail.com",
         "password": "losenord123",
-        "location": "Fosie",
-        "cost": "90",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "70",
         "days": [
             "Tisdag",
             "Onsdag"
