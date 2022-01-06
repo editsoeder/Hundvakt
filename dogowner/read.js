@@ -24,7 +24,7 @@ buttonTwo.id = "dropBtn";
 buttonTwo.innerHTML = "Sortera efter dagar";
 dropdownContentTwo.className = "dropContent";
 dropdownContentTwo.id = "dropTwo";
-dropdownContentTwo.innerHTML = " <a id='monday'>Måndag</a> <a id ='tuesday'>Tisdag</a> <a id ='wednesday'>onsdag</a> <a id ='thursday'>Torsdag</a> <a id ='friday'>Fredag</a> <a id ='saturday'>Lördag</a> <a id ='sunday'>Söndag</a>";
+dropdownContentTwo.innerHTML = "<a id='monday'>Måndag</a> <a id ='tuesday'>Tisdag</a> <a id ='wednesday'>onsdag</a> <a id ='thursday'>Torsdag</a> <a id ='friday'>Fredag</a> <a id ='saturday'>Lördag</a> <a id ='sunday'>Söndag</a>";
 
 let buttonThree = document.createElement("button");
 let dropdownContentThree = document.createElement("div");
@@ -33,7 +33,7 @@ buttonThree.id = "dropBtn";
 buttonThree.innerHTML = "Sortera efter område";
 dropdownContentThree.className = "downContent";
 dropdownContentThree.id = "dropThree";
-dropdownContentThree.innerHTML = " <a id='fosie'>Fosie</a> <a id='hyllie'>Hyllie</a> <a id='husie'>Husie</a> <a id='kirseberg'>Kirseberg</a> <a id='limhamn'>Limhamn-Bunkeflo</a> <a id='malmo'>Malmö Centrum</a> <a id='oxie'>Oxie</a> <a id='rosengard'>Rosengård</a> <a id='sodra'>Södra Innerstad</a> <a id='vastra'>Västra Innerstad</a> ";
+dropdownContentThree.innerHTML = "<a id='fosie'>Fosie</a> <a id='hyllie'>Hyllie</a> <a id='husie'>Husie</a> <a id='kirseberg'>Kirseberg</a> <a id='limhamn'>Limhamn-Bunkeflo</a> <a id='malmo'>Malmö Centrum</a> <a id='oxie'>Oxie</a> <a id='rosengard'>Rosengård</a> <a id='sodra'>Södra Innerstad</a> <a id='vastra'>Västra Innerstad</a> ";
 
 downOne.append(buttonOne, dropdownContentOne);
 downTwo.append(buttonTwo, dropdownContentTwo);
@@ -57,7 +57,6 @@ buttonThree.addEventListener('click', function(){
 });
 
 function data(json) {
-
   function cards(array) {
     document.querySelector(".list").innerHTML = "";
 
@@ -166,7 +165,6 @@ function data(json) {
     let array = [];
 
     for (let i = 0; i < json.length; i++) {
-      
       if (json[i].days.includes("Fredag")) {
         array.push(json[i]);
       } 
@@ -180,7 +178,6 @@ function data(json) {
     let array = [];
 
     for (let i = 0; i < json.length; i++) {
-      
       if (json[i].days.includes("Lördag")) {
         array.push(json[i]);
       } 
@@ -331,6 +328,5 @@ function data(json) {
 
     cards(array);
   });
-
   cards(json);
 }

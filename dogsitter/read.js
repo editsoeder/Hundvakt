@@ -86,12 +86,9 @@ function data(json) {
         name.innerHTML = dog.dogName;
         areas.innerHTML = array[i].location;
         cost.innerHTML = array[i].cost + " kr/tim";
-
         image.src = "../userImages/" + dog.image;
-
         a.innerHTML = "Läs mer";
         a.href = "read.php?id=" + array[i].id_owner;
-
         
         listcards.append(name, areas, days, cost, image, a);
         document.querySelector(".list").append(listcards);
@@ -147,7 +144,6 @@ function data(json) {
       if (json[i].days.includes("Onsdag")) {
         array.push(json[i]);
       } 
-     
     }
 
     cards(array);
@@ -171,7 +167,6 @@ function data(json) {
     let array = [];
 
     for (let i = 0; i < json.length; i++) {
-      
       if (json[i].days.includes("Fredag")) {
         array.push(json[i]);
       } 
@@ -185,7 +180,6 @@ function data(json) {
     let array = [];
 
     for (let i = 0; i < json.length; i++) {
-      
       if (json[i].days.includes("Lördag")) {
         array.push(json[i]);
       } 
@@ -319,10 +313,6 @@ function data(json) {
         array.push(json[i]);
       }
     }
-
-    // if (array.length == ) {
-      
-    // }
 
     cards(array);
   });

@@ -29,11 +29,21 @@
                 <div id="second">
                     <div class="homePageImgThree"></div> 
                 </div>
-                
             </div>
-
         </main>
-        <script src="script.js"></script>
+        <script>
+            document.querySelector(".homePagebuttonTwo").addEventListener("click", function () {
+                window.location.href = "sign-in.php";
+            });
+
+            document.querySelector(".homePagebuttonOne").addEventListener("click", function () {
+                window.location.href = "createAs.php";
+            });
+
+            document.querySelector(".homePagebuttonThree").addEventListener("click", function () {
+                window.location.href = "createAs.php";
+            });
+        </script>
     </body>
 </html>
 

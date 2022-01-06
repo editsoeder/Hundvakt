@@ -63,13 +63,9 @@ require_once __DIR__ . "/../functions.php";
             </div>
             <button class="createButton" type="submit"> Skapa konto </button> 
         </form>
-
-        
-        
     </div>
 
     <script type='text/javascript'>
-
         function preview_image(event) {
             var reader = new FileReader();
 
@@ -149,7 +145,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     //Spara bilden med unikt namn i mappen "userImages"
     move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
     addEntry(__DIR__ . "/../dogsitter/dogsitter.json", $newEntry);
-    echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du: <br> </p> <br> <a href='../sign-in.php'>  Logga in</a> </p> </div>";
+    echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du </p> <a id='messageCreate' href='../sign-in.php'>Logga in</a> </p> </div>";
     exit();
 }
 ?>

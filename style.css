@@ -388,7 +388,7 @@ input {
 button {
     height: 80px;
     width: 80px;
-    margin: 10px;
+    margin: 20px;
     border-radius: 100%;
     background-color: var(--white);
     transition: all .5s;
@@ -684,7 +684,7 @@ nav > a:hover{
 /* hundtass (logga in) */
 .ajax-loader {
     position: relative;
-    bottom: 20%;
+    /* bottom: 21%; */
     left: 30%;
     transform-origin: 50% 50%;
     transform: rotate(30deg) translate(-50%, 0%);
@@ -1254,6 +1254,14 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+#messageCreate {
+    margin-left: 2px;
+}
+
+#messageCreate:hover {
+    color: #212121;
 }
 
 .backToHomeCreate {

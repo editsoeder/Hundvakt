@@ -1,8 +1,6 @@
 <?php
 session_start();
 error_reporting(-1);
-
-
 require_once __DIR__ . "/../functions.php";
 
 if (!isset($_SESSION["loggedInAsDogSitter"])) {
@@ -15,8 +13,6 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
     }
 }
 
-//Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
-
 if (isset($_SESSION["loggedInAsDogSitter"])) {
     deleteDog($_SESSION["loggedInAsDogSitter"]);
 } 
@@ -26,10 +22,8 @@ elseif (!isset($_SESSION["loggedInAsDogSitter"])) {
     exit();
 }
 
-
 //Radera användare från json filen
 function deleteDog($ID) {
-
     $allDogSitter = getAllDogSitter();
 
     $found = false;

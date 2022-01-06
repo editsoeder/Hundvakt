@@ -87,7 +87,7 @@ require_once __DIR__ . "/../functions.php";
 // //samlar användardatan från formuläret in i $newEntry och använder 
 // //funktionen "addEntry" för att spara datan i json-filen
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON("dogowners.json");
+    $data = loadJSON( __DIR__ . "/../dogowner/dogowners.json");
     $file = $_FILES["dogImage"];
 
     //Kolla att de skickat med en bildfil och generera ett unikt 
@@ -156,7 +156,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
         //Spara bilden med unikt namn i mappen "userImages"
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-        addEntry("dogowners.json", $newEntry);
+        addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
         echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a></p> ";
         exit();
 }

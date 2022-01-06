@@ -468,22 +468,5 @@
         ],
         "extraInfo": "\u00c4lskar alla sorters hundar! Har inga problem med att ta mig n\u00e5gonstans i Malm\u00f6. Gillar l\u00e5ngpromenader runt Pildammsparken. ",
         "image": "c4d166ecccacaba9b468fa3314855553a3991fb8.jpeg"
-    },
-    {
-        "id_sitter": 20,
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.com",
-        "password": "test",
-        "location": "test",
-        "cost": "30",
-        "days": [
-            "S\u00f6ndag"
-        ],
-        "areas": [
-            "Husie"
-        ],
-        "extraInfo": "test",
-        "image": "f8f9a218475514a5f527906acef35648759a1297.jpg"
     }
 ]
