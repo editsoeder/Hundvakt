@@ -723,7 +723,7 @@ svg {
 
 /* Min Profil Sida*/
 
-#wrapper-dog{
+.wrapper-dog{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -735,6 +735,10 @@ svg {
     color: var(--white);
     width: 700px;
     align-self: center;
+}
+
+.wrapper-dog > p:last-child {
+    max-width: 400px;
 }
 
 #wrapper-info {
@@ -841,6 +845,8 @@ svg {
     max-width: 500px;
     text-align: center;
     font-size: 20px;
+    text-align: center;
+    max-width: 400px;
 }
 
 #wrapper-extra_info > p {

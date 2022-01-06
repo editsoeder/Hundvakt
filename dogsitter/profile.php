@@ -26,7 +26,7 @@ require_once __DIR__ . "/../functions.php";
     $src = '../userImages/' . $sitterInfo["image"];
     ?>
 
-    <div class="wrapper-profile">
+    <div id="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
         <img class='profile-image' src= <?php echo $src?>>
         <div id="wrapper-info">
