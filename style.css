@@ -1227,23 +1227,6 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     justify-content: center;
     align-items: center;
 }
-
-/* .feedbackDiv {
-    position: fixed;
-    top: 30vh;
-    left: calc(50vw - 25vh);
-    width: 50vh;
-    height: 50vh;
-    background-color: var(--green);
-    font-family: var(--font-title);
-    display: flex;
-    font-size: 3vh;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid var(--orange);
-    border-radius: 50%;
-    text-align: center;
-} */
 .feedbackMessage {
     font-family: var(--font-title);
     font-size: larger;
