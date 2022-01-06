@@ -439,5 +439,24 @@
         ],
         "extraInfo": "Jag lagar mat till mina hundar",
         "image": "336995a60709cce86038bcb1e5e44cf1874f0ddf.jpg"
+    },
+    {
+        "id_sitter": 19,
+        "first_name": "Hans",
+        "last_name": "Hansson",
+        "email": "hans@test.se",
+        "password": "hanshundar",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "80",
+        "days": [
+            "Tisdag",
+            "Onsdag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie"
+        ],
+        "extraInfo": "Alla heter hans",
+        "image": "1e7c7357d66039e482e0749768aa18b241e11ed5.gif"
     }
 ]
