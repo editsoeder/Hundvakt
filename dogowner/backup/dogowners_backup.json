@@ -246,5 +246,25 @@
             "extraInfo": "Han gillar bara mig och ingen annan",
             "image": "3123b1f57cc320803799842de3b12301b9594261.jpg"
         }
+    },
+    {
+        "id_owner": 12,
+        "first_name": "Hugo",
+        "last_name": "Str\u00f6m",
+        "email": "hugo@live.se",
+        "password": "voffvoff123",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "100",
+        "days": [
+            "Fredag",
+            "L\u00f6rdag"
+        ],
+        "dog": {
+            "dogName": "Fluffy",
+            "breed": "Nakenhund",
+            "gender": "Hane",
+            "extraInfo": "K\u00e4nslig mot solen",
+            "image": "8511b4cd2edf2536938d64704a7c0eb3a7d5a66c.jpg"
+        }
     }
 ]
