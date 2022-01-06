@@ -34,8 +34,6 @@ $dogImage = $dogInfo["image"];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ändra uppgifter</title>
     <?php 
     require_once __DIR__ . "/../section/header.php";
@@ -185,7 +183,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
     //Kopierar databasen till en backup-fil innan ändringen görs
     copy("dogowners.json", "dogowners_backup.json");
-    
+
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
 
