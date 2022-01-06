@@ -54,7 +54,7 @@ $sitterImage = $sitterInfo["image"];
                     <option value="100" <?php if($sitterCost == "100") { echo "selected"; }?> >100</option>
                 </select>
 
-                <p>Bra att veta</p><input type="text" id="updateFieldExtra" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
+                <p>Bra att veta</p><input type="text" class="updateFieldExtra" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
                 
                 <p> Min Placering </p> 
                 <select name="Placering" id="Placering" class="selectList">

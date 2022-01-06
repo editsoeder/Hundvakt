@@ -44,10 +44,10 @@ $dogImage = $dogInfo["image"];
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
-                <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $ownerFirstName ?>" value ="<?php echo $ownerFirstName ?>"><br>
-                <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $ownerLastName ?>" value="<?php echo $ownerLastName ?>"><br>
-                <p>Email</p><input type="email" name="email" placeholder="<?php echo $ownerEmail ?>" value="<?php echo $ownerEmail ?>"><br>
-                <p>Lösenord</p><input type="text" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $ownerPassword ?>" minlength="4" required><br>
+                <p>Förnamn</p><input class="updateFields" type="text" name="firstName" placeholder="<?php echo $ownerFirstName ?>" value ="<?php echo $ownerFirstName ?>"><br>
+                <p>Efternamn</p><input type="text" class="updateFields" name="lastName" placeholder="<?php echo $ownerLastName ?>" value="<?php echo $ownerLastName ?>"><br>
+                <p>Email</p><input type="email" class="updateFields" name="email" placeholder="<?php echo $ownerEmail ?>" value="<?php echo $ownerEmail ?>"><br>
+                <p>Lösenord</p><input type="text" class="updateFields" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $ownerPassword ?>" minlength="4" required><br>
                 
                 <p>Timkostnad</p>
                 <select name="Timkostnad" id="Cost" class="selectList">
@@ -96,9 +96,9 @@ $dogImage = $dogInfo["image"];
             <div id="updateDogInfo"> 
                 <h2 class="h2-update"> Ändra information om hunden </h2> 
                 <p>Hundens namn</p>
-                <input type="text" name="dogName" placeholder="<?php echo $dogName ?>" value="<?php echo $dogName ?>"> <br> <br>
+                <input type="text" class="updateFields" name="dogName" placeholder="<?php echo $dogName ?>" value="<?php echo $dogName ?>"> <br> <br>
                 <p>Hundens ras</p>
-                <input type="text" name="dogBreed" placeholder="<?php echo $dogBreed ?>" value="<?php echo $dogBreed ?>"> <br> <br>
+                <input type="text" name="dogBreed" class="updateFields" placeholder="<?php echo $dogBreed ?>" value="<?php echo $dogBreed ?>"> <br> <br>
                 <div id="genderDiv"> 
                     <p>Hundens kön</p>
                     <input type="checkbox" class="genderCheckbox" name="dogGender" value="Hona" <?php if(in_array("Hona", $dogInfo)) { echo "checked";} ?>>
@@ -107,7 +107,7 @@ $dogImage = $dogInfo["image"];
                     <label for="Hane"> Hane </label><br>                
                 </div>
                 <p>Bra att veta</p>
-                <input type="text" name="extraInfo" placeholder="<?php echo $dogExtra ?>" value="<?php echo $dogExtra ?>"> <br> <br>
+                <input type="text" name="extraInfo" class="updateFieldExtra" placeholder="<?php echo $dogExtra ?>" value="<?php echo $dogExtra ?>"> <br> <br>
             </div> 
 
             <div class="uploadImageUpdate"> 
