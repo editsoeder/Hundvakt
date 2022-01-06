@@ -111,7 +111,7 @@ body {
     background-color: var(--pink);
     position: relative;
     left: 66vw;
-    top: -140vh;
+    top: -1050px;
     font-size: 30px;
     font-family: var(--font-title);
     transition: all .5s;
@@ -125,7 +125,7 @@ body {
     background-color: var(--white);
     position: relative;
     left: 65vw;
-    top: -130vh;
+    top: -1150px;
     font-size: 34px;
     font-family: var(--font-title);
     transition: all .5s;
@@ -177,21 +177,22 @@ body {
     background-position: center;
     border: 10px solid var(--green);
     position: relative;
+    position: relative;
     left: -3vw;
-    top: -10vh;
+    top: 30px;
 }
 
 .homePageImgTwo {
-    height: 650px;
-    width: 650px;
+    height: 600px;
+    width: 600px;
     background-image: url(Images/woman-with-dog.jpg);
     background-size: cover;
     background-position: left;
     border-radius: 100%;
     border: 10px solid var(--orange);
     position: relative;
-    left: 21vw;
-    top: -38vh;
+    left: 331px;
+    top: -250px;
 }
 
 .homePageImgThree {
@@ -305,7 +306,7 @@ body {
 }
 
 .partOne {
-    height: 145vh;
+    height: 150vh;
 }
 
 .partOne > div:nth-child(1) {
@@ -316,6 +317,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    height: 150vh;
 }
 
 #first {
