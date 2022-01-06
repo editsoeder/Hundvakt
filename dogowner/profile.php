@@ -47,11 +47,12 @@ require_once __DIR__ . "/../functions.php";
     $dogExtra = $dog["extraInfo"];
     ?>
 
-    <div id="wrapper-profile">
+    <div class="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
         <img class='profile-image'  alt='dog' src='../userImages/<?php echo $src; ?>'>
-        <div id="wrapper-dog">
+        <div class="wrapper-dog">
             <h2>Min hund</h2>
+<<<<<<< HEAD
             <p>Namn: <?php echo $dogName?> </p><br>
             <p>Ras: <?php echo $dogBreed?> </p><br>
             <p>Kön: <?php echo $dogGender?></p><br>
@@ -62,6 +63,16 @@ require_once __DIR__ . "/../functions.php";
             <p>Kontaktuppgifter</p>
             <p>Mail:</p>
             <p><?php echo $ownerEmail?> </p>
+=======
+            <p><b>Namn:</b></p> <?php echo $dogName;?><br>
+            <p><b>Ras:</b></p> <?php echo $dogBreed;?><br>
+            <p><b>Kön:</b></p><?php echo $dogGender;?><br>
+            <p><b>Bra att veta:</b></p><?php echo $dogExtra;?>
+        </div>
+        <div class="wrapper-contact">
+            <h2>Kontaktuppgifter</h2>
+            <p>Min mail är: <?php echo $ownerEmail?> </p>
+>>>>>>> 82844ca66ca34488a2073ea75c658f588266660f
         </div>
         <div id="wrapper-owner">
             <h2>Om mig</h2>

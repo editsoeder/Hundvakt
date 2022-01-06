@@ -26,9 +26,10 @@ require_once __DIR__ . "/../functions.php";
     $src = '../userImages/' . $sitterInfo["image"];
     ?>
 
-    <div id="wrapper-profile">
+    <div class="wrapper-profile">
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
         <img class='profile-image' src= <?php echo $src?>>
+<<<<<<< HEAD
         <div id="wrapper-info">
             <p>Placering:<br> <?php echo $sitterLocation ?> </p>
             <p>Passar hundar i:<br> <?php echo $sitterArea?> </p>
@@ -42,6 +43,20 @@ require_once __DIR__ . "/../functions.php";
         </div>
         <div id="wrapper-extra_info">
             <p>Bra att veta:<br><?php echo $sitterExtra?> </p> 
+=======
+        <div class="wrapper-dog">
+            <p class="bold-text"><b>Jag finns i:</b></p><br><?php echo $sitterLocation; ?>
+            <p class="bold-text"><b>Jag passar hundar i:</b></p><br> <?php echo $sitterArea;?>
+            <p class="bold-text"><b>Dagar jag kan passa:</b></p><br><?php echo $sitterDays;?>
+            <p class="bold-text"><b>Min timlön är: </b></p><br>  <?php echo $sitterCost?> <p>kr/tim</p>
+        </div>
+        <div class="wrapper-contact">
+            <p><b>Hej! Mitt namn är</b></p><?php echo $sitterName; ?>
+            <p><b>Du når mig på:</b></p><?php echo $sitterEmail; ?>
+        </div>
+        <div id="wrapper-extra_info">
+            <p><b>Bra att veta om mig är:</b></p><br><?php echo $sitterExtra?> </p> 
+>>>>>>> 82844ca66ca34488a2073ea75c658f588266660f
         </div>
 
         <button class="changeSettingsButton"> Ändra Uppgifter </button> 
