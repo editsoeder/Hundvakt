@@ -49,7 +49,6 @@ require_once __DIR__ . "/../functions.php";
 
     
     <script >
-        
         document.querySelector(".changeSettingsButton").addEventListener("click", function() {
             window.location.href = "update.php";
         });
@@ -61,11 +60,10 @@ require_once __DIR__ . "/../functions.php";
                 window.location.href = "profile.php";
             }
         });
-
     </script>
 
-    <?php
+<?php
     require_once __DIR__ . "/../section/footer.php";
-    ?>
+?>
 </body>
 </html>

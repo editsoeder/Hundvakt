@@ -49,30 +49,29 @@ require_once __DIR__ . "/../functions.php";
 
     <div id="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
-        <!-- <img id='profile-image' alt="dog" src='../userImages/'> -->
         <img class='profile-image'  alt='dog' src='../userImages/<?php echo $src; ?>'>
         <div id="wrapper-dog">
-        <h2>Min hund</h2>
-        <p>Namn: <?php echo $dogName?> </p><br>
-        <p>Ras: <?php echo $dogBreed?> </p><br>
-        <p>Kön: <?php echo $dogGender?></p><br>
-        <p>Bra att veta: <?php echo $dogExtra?></p>
+            <h2>Min hund</h2>
+            <p>Namn: <?php echo $dogName?> </p><br>
+            <p>Ras: <?php echo $dogBreed?> </p><br>
+            <p>Kön: <?php echo $dogGender?></p><br>
+            <p>Bra att veta: <?php echo $dogExtra?></p>
         </div>
         <div id="wrapper-contact">
-        <h2>Kontaktuppgifter</h2>
-        <p>Min mail är: <?php echo $ownerEmail?> </p>
+            <h2>Kontaktuppgifter</h2>
+            <p>Min mail är: <?php echo $ownerEmail?> </p>
         </div>
         <div id="wrapper-owner">
-        <h2>Om mig</h2>
-        <p>Mitt namn är: <?php echo $ownerName?> </p>
-        <p>Jag bor i <?php echo $ownerLocation?> </p>
-        <p>Jag behöver hundpassning:<br> <?php echo $ownerDays?> </p>
-        <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
-        </div>
+            <h2>Om mig</h2>
+            <p>Mitt namn är: <?php echo $ownerName?> </p>
+            <p>Jag bor i <?php echo $ownerLocation?> </p>
+            <p>Jag behöver hundpassning:<br> <?php echo $ownerDays?> </p>
+            <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
+    </div>
     
     <button class="changeSettingsButton"> Ändra Uppgifter </button> 
     <button type="submit" class="delete-account-button">Radera Konto</button>
-    <?php
+<?php
 require_once __DIR__ . "/../section/footer.php";
 ?>
 
