@@ -33,7 +33,7 @@ $sitterImage = $sitterInfo["image"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ändra uppgifter</title>
     <?php 
-    require_once __DIR__ . "/../section/header2.php";
+    require_once __DIR__ . "/../section/header.php";
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
@@ -134,7 +134,7 @@ $sitterImage = $sitterInfo["image"];
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON("dogsitter.json");
+    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
 
     $imageUrl = $sitterImage;
     $file = $_FILES["newImageToUpload"];
@@ -181,7 +181,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
-    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='/profile.php'>Här!</a> </p> </div>";
+    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='profile.php'>Här!</a> </p> </div>";
 
     if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
         echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";

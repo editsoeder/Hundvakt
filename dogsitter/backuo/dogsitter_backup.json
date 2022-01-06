@@ -56,7 +56,7 @@
         "last_name": "Hansson",
         "email": "stenen92@hotmail.com",
         "password": "password1",
-        "location": "Fosie",
+        "location": "",
         "cost": "90",
         "days": [
             "M\u00e5ndag",
@@ -134,7 +134,7 @@
         "email": "glitterboi@gmail.com",
         "password": "glittersonni",
         "location": "S\u00f6dra Innerstaden",
-        "cost": "100",
+        "cost": "70",
         "days": [
             "M\u00e5ndag",
             "Tisdag",
@@ -403,22 +403,24 @@
     {
         "id_sitter": 17,
         "first_name": "Annika",
-        "last_name": "Johanzen",
+        "last_name": "Johansen",
         "email": "annikadoglover@hotmail.com",
         "password": "losenord",
-        "location": "Fosie",
-        "cost": "70",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "   70   ",
         "days": [
-            "Tisdag",
-            "Onsdag"
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
         ],
         "areas": [
-            "Fosie",
-            "Oxie",
-            "Roseng\u00e5rd"
+            "Husie",
+            "Kirseberg",
+            "Limhamn-Bunkeflo",
+            "V\u00e4stra Innerstaden"
         ],
         "extraInfo": "L\u00e5ng erfarenhet av hundpassning. Kan endast passa efter klockan 16. Jobbar \u00e4ven p\u00e5 ett hundpensionat.",
-        "image": "72cc4493425cce6aafcd69e5f93134a4078889f4.jpg"
+        "image": "578d13bf2fe560f7bb0e5f7b65f689d699114de5.jpeg"
     },
     {
         "id_sitter": 18,
@@ -439,51 +441,5 @@
         ],
         "extraInfo": "Jag lagar mat till mina hundar",
         "image": "336995a60709cce86038bcb1e5e44cf1874f0ddf.jpg"
-    },
-    {
-        "id_sitter": 19,
-        "first_name": "Elliot",
-        "last_name": "Wachtmeister",
-        "email": "elliott_w@live.se",
-        "password": "wachtmeistern00",
-        "location": "Kirseberg",
-        "cost": "100",
-        "days": [
-            "M\u00e5ndag",
-            "Tisdag",
-            "Onsdag",
-            "Torsdag"
-        ],
-        "areas": [
-            "Fosie",
-            "Husie",
-            "Hyllie",
-            "Kirseberg",
-            "Limhamn-Bunkeflo",
-            "Malm\u00f6 Centrum",
-            "Oxie",
-            "Roseng\u00e5rd",
-            "S\u00f6dra Innerstaden",
-            "V\u00e4stra Innerstaden"
-        ],
-        "extraInfo": "\u00c4lskar alla sorters hundar! Har inga problem med att ta mig n\u00e5gonstans i Malm\u00f6. Gillar l\u00e5ngpromenader runt Pildammsparken. ",
-        "image": "c4d166ecccacaba9b468fa3314855553a3991fb8.jpeg"
-    },
-    {
-        "id_sitter": 20,
-        "first_name": "test",
-        "last_name": "test",
-        "email": "test@test.com",
-        "password": "test",
-        "location": "test",
-        "cost": "30",
-        "days": [
-            "S\u00f6ndag"
-        ],
-        "areas": [
-            "Husie"
-        ],
-        "extraInfo": "test",
-        "image": "f8f9a218475514a5f527906acef35648759a1297.jpg"
     }
 ]

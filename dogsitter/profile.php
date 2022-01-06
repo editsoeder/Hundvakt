@@ -11,7 +11,7 @@ require_once __DIR__ . "/../functions.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Min profil</title>
     <?php
-        require_once __DIR__ . "/../section/header2.php";
+        require_once __DIR__ . "/../section/header.php";
     ?> 
 <!-- </head> head stängs i header.php -->
 <body>

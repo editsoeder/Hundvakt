@@ -38,7 +38,7 @@ $dogImage = $dogInfo["image"];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ändra uppgifter</title>
     <?php 
-    require_once __DIR__ . "/../section/header2.php";
+    require_once __DIR__ . "/../section/header.php";
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
@@ -133,7 +133,7 @@ $dogImage = $dogInfo["image"];
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON("dogowners.json");
+    $data = loadJSON(__DIR__ . "/../dogowner/dogowners.json");
 
     $imageUrl = $dogImage;
     $file = $_FILES["newImageToUpload"];
@@ -189,7 +189,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 
 // updateUser("dogsitter.json", $updateProfile);
     // updateProfileSitter("../dogsitter.json", $updateProfile);
-    echo "<p class 'feedbackMessageUpdate'> Profil uppdaterad!</p>";
+    echo "<p class='feedbackMessageUpdate'> Profil uppdaterad!</p>";
    }
 ?>
 

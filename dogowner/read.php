@@ -11,7 +11,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alla hundvakter</title>
     <?php 
-        require_once __DIR__ . "/../section/header2.php";
+        require_once __DIR__ . "/../section/header.php";
     ?> 
 <!-- </head> stängs iställer i header.php-->
 <body class="readBodyOwner">

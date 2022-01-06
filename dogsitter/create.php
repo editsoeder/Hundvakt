@@ -12,7 +12,7 @@ require_once __DIR__ . "/../functions.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Skapa konto hundvakt</title>    
-    <?php require_once __DIR__ . "/../section/header2.php"; ?>
+    <?php require_once __DIR__ . "/../section/header.php"; ?>
 
 <!-- </head>  stängs i header -->
 <body>
@@ -89,7 +89,7 @@ require_once __DIR__ . "/../functions.php";
 
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON("dogsitter.json");
+    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
     $file = $_FILES["imageToUpload"];
     //Kolla att de skickat med en bildfil och generera ett unikt 
     //namn för bilden
@@ -148,7 +148,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     }
     //Spara bilden med unikt namn i mappen "userImages"
     move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-    addEntry("dogsitter.json", $newEntry);
+    addEntry(__DIR__ . "/../dogsitter/dogsitter.json", $newEntry);
     echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du: <br> </p> <br> <a href='../sign-in.php'>  Logga in</a> </p> </div>";
     exit();
 }
