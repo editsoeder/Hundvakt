@@ -30,8 +30,9 @@ require_once "section/header.php";
         window.location.href = "index.php";
     });
     </script>
+    
+    <?php
+    require_once "section/footer.php"; 
+    ?>
 </body> 
 
-<?php
-require_once "section/footer.php"; 
-?>

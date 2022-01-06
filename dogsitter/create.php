@@ -41,21 +41,17 @@ require_once __DIR__ . "/../functions.php";
                 ?>                
                 <input type="text" class="extraInfo" class="createDetails" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
             </div> 
-
-            
             <div id="createAreaBox">
                 <?php
                 createAreaBoxes();
                 ?> 
             </div> 
-
             <div id="createDayBox"> 
                 <h2 class="areasText"> Kan hundvakta dessa dagar: </h2> 
                 <?php 
                 createDayBoxes();
                 ?> 
             </div> 
-
             <div id="profilePicDiv"> 
                 <div id="actualPicture"> </div>
                 <h2> Ladda upp en profilbild </h2> 
@@ -64,13 +60,11 @@ require_once __DIR__ . "/../functions.php";
             <button class="createButton" type="submit"> Skapa konto </button> 
         </form>
     </div>
-
 <?php 
     require_once __DIR__ . "/../section/footer.php";
 ?> 
 </body>
 </html>
-
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogsitter.json");

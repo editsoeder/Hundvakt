@@ -67,10 +67,18 @@ if (isset($_POST["email"], $_POST["password"])) {
     exit();
 } 
 ?>
-<?php require_once "section/header.php";?> 
-	    <title>Logga In</title>
 
-        <div class="logIn">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logga in</title>
+    <?php require_once "section/header.php";?> 
+
+<!-- </head> stängs i header-->
+<body>
+    <div class="logIn">
         <svg id="svg-sprite">
         <symbol id="paw" viewBox="0 0 249 209.32">
             <ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
@@ -82,49 +90,47 @@ if (isset($_POST["email"], $_POST["password"])) {
         </svg>
 
         <div class="ajax-loader">
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-        <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
+            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
         </div>
 
-           
-            <div class="back"><button class="backToHome">Hem</button ></div>
+        <div class="back"><button class="backToHome">Hem</button ></div>
         
-            <div class="logInText">
-                <?php // Kontrollera om "error" finns i vår URL
-                if (isset($_GET["error"])) {
-                    $error = $_GET["error"];
+        <div class="logInText">
+            <?php // Kontrollera om "error" finns i vår URL
+            if (isset($_GET["error"])) {
+                $error = $_GET["error"];
 
-                    // Felmeddelande
-                    if ($error == 1) {
-                        echo '<p class="error">Alla fält måste vara ifyllda, testa igen.</p>';
-                    } elseif ($error == 3) {
-                        echo '<p class="error">Fel lösenord, testa igen.</p>';
-                    } elseif ($error == 2) {
-                        echo '<p class="error">Användaren finns inte, testa igen.</p>';
-                    }
-                } else {
-                    echo '<p>Logga in</p>';
-                } ?> 
-            </div>
-            
-
-            <form class="form" action="sign-in.php" method="POST">
-                <input class="logInInput" type="email" name="email" placeholder="Email"><br>
-                <input class="logInInput" type="password" name="password" placeholder="Lösenord"><br>
-                <button class="logInBtn">Logga in</button> 
-            </form>
-
-            <div class="createAc">Har du inget konto? </div>
-            <a href="createAs.php" class="createAcBold">Registrera dig</a>
-            
-
-            <script src="sign-in.js"></script>
+                // Felmeddelande
+                if ($error == 1) {
+                    echo '<p class="error">Alla fält måste vara ifyllda, testa igen.</p>';
+                } elseif ($error == 3) {
+                    echo '<p class="error">Fel lösenord, testa igen.</p>';
+                } elseif ($error == 2) {
+                    echo '<p class="error">Användaren finns inte, testa igen.</p>';
+                }
+            } else {
+                echo '<p>Logga in</p>';
+            } ?> 
         </div>
-        
+            
 
-<?php require_once __DIR__ . "/section/footer.php"; ?>
+        <form class="form" action="sign-in.php" method="POST">
+            <input class="logInInput" type="email" name="email" placeholder="Email"><br>
+            <input class="logInInput" type="password" name="password" placeholder="Lösenord"><br>
+            <button class="logInBtn">Logga in</button> 
+        </form>
+
+        <div class="createAc">Har du inget konto? </div>
+        <a href="createAs.php" class="createAcBold">Registrera dig</a>
+        
+        <script src="sign-in.js"></script>
+    </div>
+        
+    <?php require_once __DIR__ . "/section/footer.php"; ?>
+</body>
+</html>

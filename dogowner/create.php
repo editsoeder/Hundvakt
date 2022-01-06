@@ -117,35 +117,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "extraInfo" => $_POST["extraInfo"],
         "image" => $imageName //spara unika namnet på bilden som sökväg
         ]
-    ];    
-        if(validEmail($data, $newEntry["email"]) == true ) {
-            echo "<p class='feedbackMessage'> E-postadressen används redan </p>";
-            exit();
-        }
-
-        if(is_null($newEntry) ){
-            echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
-            exit();
-        }
-        
-        if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
-            echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
-            exit();
-        }
-
-        if(strlen($newEntry["password"]) < 4) {
-            echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
-            exit();
-        }
-
-        if (in_array($newEntry["email"], $data)) {
-            echo "<p class='feedbackMessage'> E-postadressen används redan <br> för en annan hundägare </p>";
-            exit();
-        }
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-        addEntry("dogowners.json", $newEntry);
-        echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a></p> ";
+    ];
+    
+    if(validEmail($data, $newEntry["email"]) == true ) {
+        echo "<p class='feedbackMessage'> E-postadressen används redan </p>";
         exit();
+    }
+
+    if(is_null($newEntry) ){
+        echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
+        exit();
+    }
+    
+    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
+        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
+        exit();
+    }
+
+    if(strlen($newEntry["password"]) < 4) {
+        echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
+        exit();
+    }
+
+    if (in_array($newEntry["email"], $data)) {
+        echo "<p class='feedbackMessage'> E-postadressen används redan <br> för en annan hundägare </p>";
+        exit();
+    }
+    //Spara bilden med unikt namn i mappen "userImages"
+    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
+    addEntry("dogowners.json", $newEntry);
+    echo "<p class='feedbackMessage'> Användare skapad! Nu kan du <a href='../sign-in.php'>  Logga in</a></p> ";
+    exit();
 }
 ?>
