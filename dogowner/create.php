@@ -108,9 +108,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $extension = strtolower($info["extension"]);
         $imageName = $uniqueFilename.'.'.$extension;
 
-    } else {
-        echo "<p class='feedbackMessage'> Ingen bild laddades upp </p>";
-        exit();    
     }
 
     $newEntry = [ 
@@ -140,8 +137,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         exit();
     }
     
-    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["image"])|| empty($newEntry["dog"]["extraInfo"])) {
+    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["dog"]["dogName"])|| empty($newEntry["dog"]["breed"]) || empty($newEntry["dog"]["gender"]) || empty($newEntry["dog"]["extraInfo"])) {
         echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
+        exit();
+    }
+
+    if(empty($imageName) ){
+        echo "<p class='feedbackMessage'> Ingen bild laddades upp </p>";
         exit();
     }
 
