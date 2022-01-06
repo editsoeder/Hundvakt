@@ -823,7 +823,6 @@ svg {
     color: var(--white);
     font-family: var(--font-title);
     transition: .5 all;
-    font-weight: bolder;
 }
 .changeSettingsButton:hover{
     background-color: var(--turquoise);
@@ -837,7 +836,6 @@ svg {
     color: var(--white);
     font-family: var(--font-title);
     transition: .5 all;
-    font-weight: bolder;
 }
 .delete-account-button:hover{
     background-color: var(--pink);
