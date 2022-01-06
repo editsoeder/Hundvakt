@@ -367,6 +367,10 @@ body {
     font-size: 35px;
 }
 
+.errorCreate {
+    color: red;
+}
+
 .form, #updateDogInfo{
     grid-column: 3;
     grid-row: 2;
@@ -1241,14 +1245,7 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     text-align: center;
 } */
 .feedbackMessage {
-    position: absolute;
-    top: 27vh;
-    left: calc(50vw - 25vw);
-    width: 50vw;
-    height: 20vh;
     font-family: var(--font-title);
-    background-color: var(--yellow);
-    border: 5px solid var(--orange);
     font-size: larger;
     display: flex;
     justify-content: center;
@@ -1257,11 +1254,12 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 }
 
 #messageCreate {
-    margin-left: 2px;
+    margin-left: 8px;
+    font-weight: bolder;
 }
 
 #messageCreate:hover {
-    color: #212121;
+    color: var(--orange);
 }
 
 .backToHomeCreate {

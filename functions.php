@@ -155,6 +155,18 @@ function createCostList() {
     </datalist> <?php 
 }
 
+function createCostListTwo() {
+    ?>  <select name="costSelect" class="costSelect" placeholder="Kr i timmen">
+            <option value="cost">Kr/timmen</option>
+            <option value="50">50</option>
+            <option value="60">60</option>
+            <option value="70">70</option>
+            <option value="80">80</option>
+            <option value="90">90</option>
+            <option value="100">100</option>
+        </select> <?php 
+}
+
 //Skapar listan där man kan välja var man är placerad, kan användas i formulären
 function createLocationList() {
 ?>  <input list="placement" name="Placering" class="createDetails" placeholder="Placering"><br> 

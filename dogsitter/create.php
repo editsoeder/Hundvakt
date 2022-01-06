@@ -4,13 +4,74 @@ session_start();
 
 require_once __DIR__ . "/../functions.php";
 
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
+    $file = $_FILES["imageToUpload"];
+    //Kolla att de skickat med en bildfil och generera ett unikt 
+    //namn för bilden
+    if (isset($file) && $file["error"] != 4) {
+        $filename = $file["name"];
+        $tempname = $file["tmp_name"];
+        $uniqueFilename = sha1(time().$filename);
+        $size = $file["size"];
+
+        if ($size > 4 * 1000 * 1000) {
+            echo "<p class='feedbackMessage'> Filen får inte vara större än 4mb </p>";
+            exit();
+        }
+
+        //Hämta filinformation & kolla vilken filtyp det är
+        $info = pathinfo($filename);
+        $extension = strtolower($info["extension"]);
+        $imageName = $uniqueFilename.'.'.$extension;
+    } else {
+        header("Location: create.php?error=6");
+        exit(); 
+    }
+
+    $newEntry = [ 
+        "id_sitter" => getMaxID($data, "id_sitter") + 1,
+        "first_name" => $_POST["firstName"],
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "areas" => $_POST["areas"],
+        "extraInfo" => $_POST["extraInfo"],
+        "image" => $imageName //spara unika namnet på bilden som sökväg  
+    ];
+
+    if(validEmail($data, $newEntry["email"]) == true ) {
+        header("Location: create.php?error=4");
+        exit(); 
+    }
+    
+    if(is_null($newEntry) ){
+        header("Location: create.php?error=5");
+        exit();
+    }
+
+    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["areas"])|| empty($newEntry["extraInfo"])) {
+        header("Location: create.php?error=1");
+        exit();
+    }
+
+    if(strlen($newEntry["password"]) < 4) {
+        header("Location: create.php?error=2");
+        exit();       
+    }
+    //Spara bilden med unikt namn i mappen "userImages"
+    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
+    addEntry(__DIR__ . "/../dogsitter/dogsitter.json", $newEntry);
+    header("Location: create.php?success");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
     <title>Skapa konto hundvakt</title>    
     <?php require_once __DIR__ . "/../section/header.php"; ?>
 
@@ -25,8 +86,30 @@ require_once __DIR__ . "/../functions.php";
     <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
             <div class="welcomemessage"> 
-                <h2> Vad kul att du vill bli hundvakt!</h2>  
-                <p> Vänligen fyll i fälten nedan. </p>
+            <?php // Kontrollera om "error" finns i vår URL
+            if (isset($_GET["success"])) {
+                echo '<div class="feedbackMessage"> <p> Användare skapad! Nu kan du </p> <a id="messageCreate" href="../sign-in.php">logga in</a> </p> </div>';
+            } elseif (isset($_GET["error"])) {
+                $error = $_GET["error"];
+
+                // Felmeddelande
+                if ($error == 1) {
+                    echo '<p class="errorCreate">Alla fält måste vara ifyllda, testa igen.</p>';
+                } elseif ($error == 2) {
+                    echo '<p class="errorCreate">Lösenordet måste vara minst 4 tecken</p>';
+                } elseif ($error == 3) {
+                    echo '<p class="errorCreate"> Filen får inte vara större än 4mb</p>';
+                } elseif ($error == 4) {
+                    echo '<p class="errorCreate">E-postadressen används redan</p>';
+                } elseif ($error == 6) {
+                    echo '<p class="errorCreate">Ingen bild laddades upp, försök igen.</p>';
+                } elseif ($error == 5) {
+                    echo '<p class="errorCreate">Något gick fel, försök igen</p>';
+                } 
+            } else {
+                echo '<h2> Vad kul att du vill bli hundvakt!</h2> <p> Vänligen fyll i fälten nedan. </p>';
+            } 
+            ?> 
             </div> 
             <div id="createDogsitter"> 
                 <h2 class="areasText"> Uppgifter om mig: </h2>
@@ -77,75 +160,8 @@ require_once __DIR__ . "/../functions.php";
         }
     </script>
 
-<?php 
-    require_once __DIR__ . "/../section/footer.php";
-?> 
+    <?php 
+        require_once __DIR__ . "/../section/footer.php";
+    ?> 
 </body>
 </html>
-
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
-    $file = $_FILES["imageToUpload"];
-    //Kolla att de skickat med en bildfil och generera ett unikt 
-    //namn för bilden
-    if (isset($file) && $file["error"] != 4) {
-        $filename = $file["name"];
-        $tempname = $file["tmp_name"];
-        $uniqueFilename = sha1(time().$filename);
-        $size = $file["size"];
-
-        if ($size > 4 * 1000 * 1000) {
-            echo "<p class='feedbackMessage'> Filen får inte vara större än 4mb </p>";
-            exit();
-        }
-
-        //Hämta filinformation & kolla vilken filtyp det är
-        $info = pathinfo($filename);
-        $extension = strtolower($info["extension"]);
-        $imageName = $uniqueFilename.'.'.$extension;
-    } else {
-        echo "<p class='feedbackMessage'> Ingen bild laddades upp </p>";
-        exit();  
-    }
-
-    $newEntry = [ 
-        "id_sitter" => getMaxID($data, "id_sitter") + 1,
-        "first_name" => $_POST["firstName"],
-        "last_name" => $_POST["lastName"],
-        "email" => $_POST["email"],
-        "password" => $_POST["password"],
-        "location" => $_POST["Placering"],
-        "cost" => $_POST["Timkostnad"],
-        "days" => $_POST["days"],
-        "areas" => $_POST["areas"],
-        "extraInfo" => $_POST["extraInfo"],
-        "image" => $imageName //spara unika namnet på bilden som sökväg  
-    ];
-
-    if(validEmail($data, $newEntry["email"]) == true ) {
-        echo "<p class='feedbackMessage'> E-postadressen används redan </p>";
-        exit();
-    }
-    
-    if(is_null($newEntry) ){
-        echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
-        exit();
-    }
-
-    if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["areas"])|| empty($newEntry["extraInfo"])) {
-        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
-        exit();
-    }
-
-    if(strlen($newEntry["password"]) < 4) {
-        echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
-        exit();       
-    }
-    //Spara bilden med unikt namn i mappen "userImages"
-    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-    addEntry(__DIR__ . "/../dogsitter/dogsitter.json", $newEntry);
-    echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du </p> <a id='messageCreate' href='../sign-in.php'>Logga in</a> </p> </div>";
-    exit();
-}
-?>
