@@ -1296,8 +1296,9 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     text-align: center;
 }
 
-#updateFieldExtra {
+.updateFieldExtra {
     width: 200px;
     height: 100px;
     margin: 10px;
+    text-align: center;
 }
