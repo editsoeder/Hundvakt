@@ -12,6 +12,7 @@
 
     --font-title: 'Indie Flower';
     --font-paragraph: 'Raleway', sans-serif;
+    --font-paragraph-bold: 'Raleway', sans-serif;
     --home-btn: 200px;
     
 }
@@ -723,25 +724,27 @@ svg {
 
 /* Min Profil Sida*/
 
-#wrapper-dog, #wrapper-info{
+.wrapper-dog{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 6vh;
-    border: 2vh solid var(--yellow);
+    border: 10px solid var(--yellow);
     position: relative;
-    left: 329px;
+    left: calc(50% - 355px);
     top: 89px;
-    height: 391px;
+    min-height: 600px;
     border-radius: 50px;
     background-color: var(--blue);
     font-size: 20px;
     color: var(--white);
-    width: 700px;
+    max-width: 700px;
+    font-family: var(--font-paragraph-bold);
+    text-align: center;
+    padding-top: 4vh;
 }
 
-#wrapper-contact{
+.wrapper-contact{
     background-color: var(--pink);
     border-radius: 50%;
     display: flex;
@@ -751,13 +754,16 @@ svg {
     height: 220px;
     width: 220px;
     position: relative;
-    left: 965px;
-    top: -462px;
+    left: calc(50% + 250px);
+    top: -639px;
     flex-direction: column;
     border: 10px solid var(--orange);
+    font-family: var(--font-paragraph);
+    color: var(--white);
+    text-align: center;
     }
 
-#wrapper-owner, #wrapper-extra_info{
+#wrapper-extra_info{
     height: 250px;
     width: 250px;
     background-color: var(--green);
@@ -767,12 +773,33 @@ svg {
     flex-direction: column;
     align-items: center;
     position: relative;
-    right: -239px;
-    top: -345px;
-    border: 10px solid var(--pink)
+    left: calc(50% - 450px);
+    top: -318px;
+    border: 10px solid var(--pink);
+    font-family: var(--font-paragraph);
+    color: var(--white);
+    text-align: center;
 }
 
-#wrapper-profile > h1{
+#wrapper-owner{
+    height: 350px;
+    width: 350px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: calc(50% - 608px);
+    top: -263px;
+    border: 10px solid var(--pink);
+    font-family: var(--font-paragraph);
+    color: var(--white);
+    text-align: center;
+}
+
+.wrapper-profile > h1{
     color: var(--white);
     display: flex;
     justify-content: center;
@@ -781,30 +808,35 @@ svg {
     font-size: 8vh;
 }
 
-#wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    margin-left: 20px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper-profile > p, #wrapper-owner > p, #wrapper-extra_info > p, .wrapper-contact > p, .wrapper-dog > p {
     color: var(--white);
     font-family: var(--font-paragraph);
-    flex-direction: column;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    display: flex;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    padding-left: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    max-width: 350px;
+}
+#wrapper-owner > p, #wrapper-extra_info > p{
+    max-width: 200px;
 }
 
-#wrapper-dog > p {
+
+.wrapper-dog > p {
     margin-bottom: 20px;
 }
 
-#wrapper-contact > p, #wrapper-contact > h2 {
+.wrapper-contact > p, .wrapper-contact > h2 {
     text-align: center;
     margin-bottom: 5px;
 }
 
-#wrapper-dog > p:last-child {
-    max-width: 400px;
+.wrapper-dog > p:last-child {
+    max-width: 300px;
 }
 
  .profile-image{
@@ -814,15 +846,15 @@ svg {
     border-radius: 50%;
     background-repeat: no-repeat;
     position: relative;
-    left: 614px;
+    left: calc(50% - 110px);
     top: 70px;
 
  }
 
 .changeSettingsButton{
     position: relative;
-    left: 1047px;
-    top: -1150px;
+    left: calc(75% + 40px);
+    bottom: 1381px;
     background-color: var(--green);
     color: var(--white);
     font-family: var(--font-title);
@@ -834,8 +866,8 @@ svg {
 
 .delete-account-button{
     position: relative;
-    left: 1006px;
-    top: -1227px;
+    left: calc(70% + 40px);
+    bottom: 1450px;
     background-color: var(--orange);
     color: var(--white);
     font-family: var(--font-title);
@@ -851,17 +883,20 @@ svg {
     border-radius: 50%;
     background-repeat: no-repeat;
  }
- #wrapper-profile{
+ .wrapper-profile{
 background-color: var(--purple);
 height: 100%;
 width: 100%;
 overflow: hidden;
  }
 
- #wrapper-owner >h2, #wrapper-contact >h2{
+ #wrapper-owner >h2, .wrapper-contact >h2{
      color: var(--white);
-     font-family: var(--font-title);
  }
+
+ .bold-text{
+    font-size: 25px;
+}
 
 /* createAS */ 
 #createAsWrapper {
@@ -899,29 +934,6 @@ overflow: hidden;
     transition: all .5s;
     box-shadow: 10px 5px 10px #212121;
 }
-
-/* slut på createAs */
-
-
-/* #profile-image{
-    height: 200px;
-    width: 200px;
-    border: 10px solid var(--green);
-    border-radius: 50%;
-    position: relative;
-    top: 6vh;
-    left: 68vw;
-}
-
-#profile-image-dog{
-    height: 200px;
-    width: 200px;
-    border: 10px solid var(--yellow);
-    border-radius: 50%;
-    position: relative;
-    top: -9vh;
-    left: 78vw; 
-} */
 
 /* create DogOwner */
 
