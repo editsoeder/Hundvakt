@@ -1,9 +1,8 @@
 <?php
+error_reporting(-1);
 session_start(); 
 require_once __DIR__ . "/../functions.php";
 
-// //samlar användardatan från formuläret in i $newEntry och använder 
-// //funktionen "addEntry" för att spara datan i json-filen
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON( __DIR__ . "/../dogowner/dogowners.json");
     $file = $_FILES["dogImage"];
@@ -78,7 +77,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
         header("Location: create.php?success");
         exit();
-}
+    }
+    //Spara bilden med unikt namn i mappen "userImages"
+    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
+    addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
+    header("Location: create.php?success");
+    exit();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

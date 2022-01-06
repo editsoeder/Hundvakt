@@ -78,11 +78,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
 <!-- </head>  stängs i header -->
 <body>
     <button class="backToHomeCreate">Hem</button>
-    <script> 
-        document.querySelector(".backToHomeCreate").addEventListener("click", function() {
-            window.location.href = "../index.php";
-        });
-    </script>
+
     <div class="formWrapper">
         <form class="createAccount" action="create.php" method="POST" enctype="multipart/form-data">
             <div class="welcomemessage"> 
@@ -125,7 +121,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
                 <input type="text" class="extraInfo" class="createDetails" name="extraInfo" placeholder="Bra att veta om mig:"> <br>
             </div> 
 
-            
             <div id="createAreaBox">
                 <?php
                 createAreaBoxes();
@@ -148,6 +143,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         </form>
     </div>
 
+    <?php 
+        require_once __DIR__ . "/../section/footer.php";
+    ?> 
+
     <script type='text/javascript'>
         function preview_image(event) {
             var reader = new FileReader();
@@ -158,10 +157,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
             }
             reader.readAsDataURL(event.target.files[0]);
         }
+
+        document.querySelector(".backToHomeCreate").addEventListener("click", function() {
+            window.location.href = "../index.php";
+        });
     </script>
 
-    <?php 
-        require_once __DIR__ . "/../section/footer.php";
-    ?> 
 </body>
 </html>
