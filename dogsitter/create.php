@@ -25,8 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $extension = strtolower($info["extension"]);
         $imageName = $uniqueFilename.'.'.$extension;
     } else {
-        header("Location: create.php?error=6");
-        exit(); 
+        $imageName = "";
     }
 
     $newEntry = [ 
@@ -56,6 +55,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     if (empty($newEntry["first_name"]) || empty($newEntry["last_name"]) || empty($newEntry["email"]) || empty($newEntry["password"]) || empty($newEntry["location"]) || empty($newEntry["cost"]) || empty($newEntry["days"]) || empty($newEntry["areas"])|| empty($newEntry["extraInfo"])) {
         header("Location: create.php?error=1");
         exit();
+    }
+
+    if(empty($newEntry["image"])) {
+        header("Location: create.php?error=6");
+        exit();   
     }
 
     if(strlen($newEntry["password"]) < 4) {

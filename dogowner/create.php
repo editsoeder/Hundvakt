@@ -63,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         exit();
     }
 
-    if(empty($newEntry["image"]) ){
+    if(empty($newEntry["dog"]["image"]) ){
         header("Location: create.php?error=6");
         exit();
     }
@@ -72,6 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         header("Location: create.php?error=2");
         exit();
     }
+
+
     //Spara bilden med unikt namn i mappen "userImages"
     move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
     addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
