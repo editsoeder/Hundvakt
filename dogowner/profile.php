@@ -55,18 +55,18 @@ require_once __DIR__ . "/../functions.php";
             <p>Namn: <?php echo $dogName?> </p><br>
             <p>Ras: <?php echo $dogBreed?> </p><br>
             <p>Kön: <?php echo $dogGender?></p><br>
+            <p>Behöver hundpassning:<br> <?php echo $ownerDays?> </p>
             <p>Bra att veta: <?php echo $dogExtra?></p>
         </div>
-        <div id="wrapper-contact">
-            <h2>Kontaktuppgifter</h2>
-            <p>Min mail är: <?php echo $ownerEmail?> </p>
+        <div id="wrapper-contactO">
+            <p>Kontaktuppgifter</p>
+            <p>Mail:</p>
+            <p><?php echo $ownerEmail?> </p>
         </div>
         <div id="wrapper-owner">
             <h2>Om mig</h2>
-            <p>Mitt namn är: <?php echo $ownerName?> </p>
-            <p>Jag bor i <?php echo $ownerLocation?> </p>
-            <p>Jag behöver hundpassning:<br> <?php echo $ownerDays?> </p>
-            <p>Jag betalar: <?php echo $ownerCost ?> /timme </p>
+            <p>Placering: <?php echo $ownerLocation?> </p>
+            <p>Jag betalar: <?php echo $ownerCost ?> kr/tim </p>
     </div>
     
     <button class="changeSettingsButton"> Ändra Uppgifter </button> 

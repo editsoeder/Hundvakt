@@ -42,7 +42,7 @@ session_start();
                         <div class='dogName'>{$foundDogSitter['first_name']}</div>
                         <div class='bold'>Jag passar hundar i: <p>{$areas}</p></div>
                         <div class='bold'>Dagar jag kan passa: <p>{$days}</p></div>
-                        <div class='bold'>Min timlön är: <p>{$foundDogSitter['cost']} kr/tim</p></div>
+                        <div class='bold'>Timlön: <p>{$foundDogSitter['cost']} kr/tim</p></div>
                     </div>
 
                     <div class='two'>

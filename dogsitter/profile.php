@@ -30,17 +30,18 @@ require_once __DIR__ . "/../functions.php";
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
         <img class='profile-image' src= <?php echo $src?>>
         <div id="wrapper-info">
-            <p>Jag finns i:<br> <?php echo $sitterLocation ?> </p>
-            <p>Jag passar hundar i:<br> <?php echo $sitterArea?> </p>
-            <p>Dagar jag kan passa:<br><?php echo $sitterDays?> </p>
-            <p>Min timlön är:<br>  <?php echo $sitterCost?> kr/tim </p>
+            <p>Placering:<br> <?php echo $sitterLocation ?> </p>
+            <p>Passar hundar i:<br> <?php echo $sitterArea?> </p>
+            <p>Tillgänglig:<br><?php echo $sitterDays?> </p>
+            <p>Timlön:<br>  <?php echo $sitterCost?> kr/tim </p>
         </div>
         <div id="wrapper-contact">
-            <p>Hej! Mitt namn är <?php echo $sitterName ?> </p>
-            <p>Du når mig på: <?php echo $sitterEmail ?> </p>
+            <h2>Kontaktuppgifter</h2>
+            <p>Mail:</p>
+            <p><?php echo $sitterEmail ?> </p>
         </div>
         <div id="wrapper-extra_info">
-            <p>Bra att veta om mig är:<br><?php echo $sitterExtra?> </p> 
+            <p>Bra att veta:<br><?php echo $sitterExtra?> </p> 
         </div>
 
         <button class="changeSettingsButton"> Ändra Uppgifter </button> 
