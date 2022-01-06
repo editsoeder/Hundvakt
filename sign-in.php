@@ -31,7 +31,7 @@
                     exit();
                 } 
             }
-
+            //Om fel lösen
             elseif ($user["email"] === $email) {
                 header("Location: sign-in.php?error=3");
                 exit();
@@ -53,13 +53,13 @@
                     exit();
                 } 
             }
-
+            //Om fel lösen
             elseif ($sitter["email"] === $email) {
                 header("Location: sign-in.php?error=3");
                 exit();
             }
         }
-
+        //Om inget av ovan stämmer (user finns ej)
         header("Location: sign-in.php?error=2");
         exit();
     } 
@@ -95,8 +95,13 @@
         <div class="back"><button class="backToHome">Hem</button ></div>
 
         <div class="logInText">
-            <?php // Kontrollera om "error" finns i vår URL
-            if (isset($_GET["error"])) {
+            <?php 
+              if (isset($_GET["createdAccount"])) {
+                echo '<p class="error">Konto skapades! Nu kan du logga in.</p>';
+            }
+
+            // Kontrollera om "error" finns i vår URL
+            elseif (isset($_GET["error"])) {
                 $error = $_GET["error"];
 
                 // Felmeddelande

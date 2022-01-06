@@ -75,14 +75,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //Spara bilden med unikt namn i mappen "userImages"
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
         addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
-        header("Location: create.php?success");
+        header("Location: ../sign-in.php?createdAccount");
         exit();
     }
-    //Spara bilden med unikt namn i mappen "userImages"
-    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
-    addEntry( __DIR__ . "/../dogowner/dogowners.json", $newEntry);
-    header("Location: create.php?success");
-    exit();
 
 ?>
 <!DOCTYPE html>
