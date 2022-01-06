@@ -73,6 +73,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         exit();
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogowners.json", "dogowners_backup.json");
 
     //Spara bilden med unikt namn i mappen "userImages"
     move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");

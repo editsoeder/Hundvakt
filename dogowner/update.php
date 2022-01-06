@@ -183,6 +183,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogowners.json", "dogowners_backup.json");
+    
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
 

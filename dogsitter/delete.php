@@ -14,6 +14,8 @@ if (!isset($_SESSION["loggedInAsDogSitter"])) {
 }
 
 if (isset($_SESSION["loggedInAsDogSitter"])) {
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter.json", "dogsitter_backup.json");
     deleteDog($_SESSION["loggedInAsDogSitter"]);
 } 
 

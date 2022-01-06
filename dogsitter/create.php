@@ -66,6 +66,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         header("Location: create.php?error=2");
         exit();       
     }
+
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter.json", "dogsitter_backup.json");
+
     //Spara bilden med unikt namn i mappen "userImages"
     move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
     addEntry(__DIR__ . "/../dogsitter/dogsitter.json", $newEntry);

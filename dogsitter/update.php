@@ -188,9 +188,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         exit();
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter.json", "dogsitter_backup.json");
+
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . "/../dogsitter/dogsitter.json", $json);
-
 
 }
 ?>
