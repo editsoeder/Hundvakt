@@ -129,8 +129,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
                 <input type="password" name="password" class="createDetails" placeholder="Lösenord"><br>
 
                 <?php 
-                createLocationList();
-                createCostList();
+                createPlacementList();
+                createCostBar();
                 ?> 
             </div> 
             

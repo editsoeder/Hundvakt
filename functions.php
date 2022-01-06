@@ -185,6 +185,40 @@ function createLocationList() {
 <?php
 }
 
+function createPlacementList() { 
+?> 
+<label for="Placering">Placering:</label>
+    <select name="Placering" id="Placering" class="selectList">
+        <option disabled selected value> -- Välj ett alternativ -- </option>
+        <option value="Fosie">Fosie</option>
+        <option value="Husie">Husie</option>
+        <option value="Hyllie">Hyllie</option>
+        <option value="Kirseberg">Kirseberg</option>
+        <option value="Limhamn-Bunkeflo">Limhamn-Bunkeflo</option>
+        <option value="Malmö Centrum">Malmö Centrum</option>
+        <option value="Oxie">Oxie</option>
+        <option value="Rosengård">Rosengård</option>
+        <option value="Södra Innerstaden">Södra Innerstaden</option>
+        <option value="Västra Innerstaden">Västra Innerstaden</option>
+    </select>
+<?php
+}
+
+function createCostBar() {
+    ?> 
+    <label for="Cost">Kr/h:</label>
+    <select name="Timkostnad" id="Cost" class="selectList">
+        <option disabled selected value> -- Välj ett alternativ -- </option>
+        <option value="50">50</option>
+        <option value="60">60</option>
+        <option value="70">70</option>
+        <option value="80">80</option>
+        <option value="90">90</option>
+        <option value="100">100</option>
+    </select>
+    <?php
+}
+
 // Letar igenom api:n och kollar vilket det högsta 
 // ID:et är, används sedan när man skapar konto
 function getMaxID($data, $id){

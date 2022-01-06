@@ -1281,3 +1281,10 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 {
  max-width:300px;
 }
+
+.selectList {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    text-align: center;
+}

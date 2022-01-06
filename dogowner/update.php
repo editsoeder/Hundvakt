@@ -50,30 +50,28 @@ $dogImage = $dogInfo["image"];
                 <p>Lösenord</p><input type="text" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $ownerPassword ?>" minlength="4" required><br>
                 
                 <p>Timkostnad</p>
-                <input list="hourCost" name="Timkostnad" placeholder="<?php echo $ownerCost ?>"value="<?php echo $ownerCost?>"><br>
-                <datalist id="hourCost">
-                    <option value="50">
-                    <option value="60">
-                    <option value="70">
-                    <option value="80">
-                    <option value="90">
-                    <option value="100">
-                </datalist>
+                <select name="Timkostnad" id="Cost" class="selectList">
+                    <option value="50" <?php if($ownerCost == "50") { echo "selected"; }?> >50</option>
+                    <option value="60" <?php if($ownerCost == "60") { echo "selected"; }?> >60</option>
+                    <option value="70" <?php if($ownerCost == "70") { echo "selected"; }?> >70</option>
+                    <option value="80" <?php if($ownerCost == "80") { echo "selected"; }?> >80</option>
+                    <option value="90" <?php if($ownerCost == "90") { echo "selected"; }?> >90</option>
+                    <option value="100" <?php if($ownerCost == "100") { echo "selected"; }?> >100</option>
+                </select>
 
-                <h2 class="h2-update"> Min Placering </h2> 
-                <input list="placement" name="Placering" placeholder="<?php echo $ownerLocation ?>" value="<?php echo $ownerLocation ?>"><br> 
-                <datalist id="placement">
-                    <option value="Fosie">
-                    <option value="Husie">
-                    <option value="Hyllie">
-                    <option value="Kirseberg">
-                    <option value="Limhamn-Bunkeflo">
-                    <option value="Malmö Centrum">
-                    <option value="Oxie">
-                    <option value="Rosengård">
-                    <option value="Södra Innerstaden">
-                    <option value="Västra Innerstaden">
-                </datalist>                    
+                <p>Placering</p>
+                <select name="Placering" id="Placering" class="selectList">
+                    <option value="Fosie" <?php if($ownerLocation == "Fosie") { echo "selected";} ?> >Fosie</option>
+                    <option value="Husie" <?php if($ownerLocation == "Husie") { echo "selected";} ?>>Husie</option>
+                    <option value="Hyllie" <?php if($ownerLocation == "Hyllie") { echo "selected";} ?>>Hyllie</option>
+                    <option value="Kirseberg" <?php if($ownerLocation == "Kirseberg") { echo "selected";} ?>>Kirseberg</option>
+                    <option value="Limhamn-Bunkeflo" <?php if($ownerLocation == "Limhamn-Bunkeflo") { echo "selected";} ?>>Limhamn-Bunkeflo</option>
+                    <option value="Malmö Centrum" <?php if($ownerLocation == "Malmö Centrum") { echo "selected";} ?>>Malmö Centrum</option>
+                    <option value="Oxie" <?php if($ownerLocation == "Oxie") { echo "selected";} ?>>Oxie</option>
+                    <option value="Rosengård" <?php if($ownerLocation == "Rosengård") { echo "selected";} ?>>Rosengård</option>
+                    <option value="Södra Innerstaden" <?php if($ownerLocation == "Södra Innerstaden") { echo "selected";} ?>>Södra Innerstaden</option>
+                    <option value="Västra Innerstaden" <?php if($ownerLocation == "Västra Innerstaden") { echo "selected";} ?>>Västra Innerstaden</option>
+                </select>
             </div>
             
             <div id="dayBoxUpdate"> 
@@ -193,6 +191,3 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     echo "<p class='feedbackMessageUpdate'> Profil uppdaterad!</p>";
    }
 ?>
-
-
-
