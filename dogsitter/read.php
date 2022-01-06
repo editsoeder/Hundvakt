@@ -46,9 +46,9 @@ session_start();
                     <div class='dogName'>{$dog['dogName']}</div>
                     <div class='bold'>Ras: <p>{$dog['breed']}</p> </div>
                     <div class='bold'>Kön: <p>{$dog['gender']}</p></div>
-                    <div class='bold'>Timkostnad: <p>{$foundDogOwner['cost']}</p></div>
-                    <div class='bold'>Placering: <p>{$foundDogOwner['location']}</p></div>
-                    <div class='bold'>Behöver hjälp: <p>{$days}</p></div>
+                    <div class='bold'>Jag betalar: <p>{$foundDogOwner['cost']} kr/tim</p></div>
+                    <div class='bold'>Jag bor i  <p>{$foundDogOwner['location']}</p></div>
+                    <div class='bold'>Jag behöver hundpassning: <p>{$days}</p></div>
 
                 </div>
 
@@ -78,7 +78,7 @@ session_start();
                         <div id="listName"> Namn</div>
                         <div id="listName"> Placering</div>
                         <div id="listName"> Dagar</div>
-                        <div id="listName"> Timlön</div>
+                        <div id="listName"> Timlön </div>
                     </div>
                     <div class="list"></div>
             </div>

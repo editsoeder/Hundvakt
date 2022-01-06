@@ -21,6 +21,11 @@ require_once "../functions.php";
                     "extraInfo" => $userInput["dog"]["extraInfo"]
                 ]
             ];
+
+        if(validEmail($data, $entry["email"]) == true ) {
+            send(["message" => "Email adress is already used"], 400) ;
+            exit();
+        }
         if (empty($entry["first_name"]) || empty($entry["last_name"]) || empty($entry["email"]) || empty($entry["password"]) || empty($entry["location"]) || empty($entry["cost"]) || empty($entry["days"]) || empty($entry["dog"]["dogName"])|| empty($entry["dog"]["breed"]) || empty($entry["dog"]["gender"]) || empty($entry["dog"]["extraInfo"])) {
             send(["message" => "You need to fill in all fields"], 400) ;
             exit();

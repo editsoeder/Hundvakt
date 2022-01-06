@@ -125,7 +125,7 @@ body {
     position: relative;
     left: 65vw;
     top: -130vh;
-    font-size: 30px;
+    font-size: 34px;
     font-family: var(--font-title);
     transition: all .5s;
     box-shadow: 5px 5px 5px #212121;
@@ -141,8 +141,8 @@ body {
     font-family: var(--font-title);
     transition: all .5s;
     box-shadow: 5px 5px 5px #212121;
-    /* font-weight: bolder; */
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .homePagebuttonOne:hover {
@@ -330,6 +330,7 @@ body {
 #first> div:nth-child(2) {
     padding-left: 50px;
     padding-top: 20px;
+    font-size: 25px;
 }
 
 #second {
@@ -627,6 +628,10 @@ nav > a:hover{
     transition: all .5s; 
     margin-bottom: 0px;
     margin-top: 30px;
+    margin-left: 80px;
+}
+
+.listTitle > div:first-child {
     margin-left: 60px;
 }
 
@@ -783,6 +788,19 @@ svg {
     flex-direction: column;
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+#wrapper-dog > p {
+    margin-bottom: 20px;
+}
+
+#wrapper-contact > p, #wrapper-contact > h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#wrapper-dog > p:last-child {
+    max-width: 400px;
 }
 
  .profile-image{
@@ -1250,4 +1268,10 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     position: absolute;
     right: 3%;
     top: 27%;
+    margin: 20px;
+}
+
+#output_image
+{
+ max-width:300px;
 }

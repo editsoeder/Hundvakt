@@ -184,7 +184,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     }
 
     $json = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents("dogowners.json", $json);
+    file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
+
 
 // updateUser("dogsitter.json", $updateProfile);
     // updateProfileSitter("../dogsitter.json", $updateProfile);

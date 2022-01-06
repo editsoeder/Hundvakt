@@ -56,7 +56,7 @@
         "last_name": "Hansson",
         "email": "stenen92@hotmail.com",
         "password": "password1",
-        "location": "",
+        "location": "Fosie",
         "cost": "90",
         "days": [
             "M\u00e5ndag",
@@ -442,21 +442,31 @@
     },
     {
         "id_sitter": 19,
-        "first_name": "Hans",
-        "last_name": "Hansson",
-        "email": "hans@test.se",
-        "password": "hanshundar",
-        "location": "Malm\u00f6 Centrum",
-        "cost": "80",
+        "first_name": "Elliot",
+        "last_name": "Wachtmeister",
+        "email": "elliott_w@live.se",
+        "password": "wachtmeistern00",
+        "location": "Kirseberg",
+        "cost": "100",
         "days": [
+            "M\u00e5ndag",
             "Tisdag",
-            "Onsdag"
+            "Onsdag",
+            "Torsdag"
         ],
         "areas": [
             "Fosie",
-            "Husie"
+            "Husie",
+            "Hyllie",
+            "Kirseberg",
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "Oxie",
+            "Roseng\u00e5rd",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
         ],
-        "extraInfo": "Alla heter hans",
-        "image": "1e7c7357d66039e482e0749768aa18b241e11ed5.gif"
+        "extraInfo": "\u00c4lskar alla sorters hundar! Har inga problem med att ta mig n\u00e5gonstans i Malm\u00f6. Gillar l\u00e5ngpromenader runt Pildammsparken. ",
+        "image": "c4d166ecccacaba9b468fa3314855553a3991fb8.jpeg"
     }
 ]

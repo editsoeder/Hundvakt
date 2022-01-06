@@ -57,13 +57,29 @@ require_once __DIR__ . "/../functions.php";
             </div> 
 
             <div id="profilePicDiv"> 
-                <div id="actualPicture"> </div>
+                <img id="output_image" src="../Images/avatar.jpeg"/>
                 <h2> Ladda upp en profilbild </h2> 
-                <input type="file" name="imageToUpload">
+                <input type="file" name="imageToUpload" accept="image/*" onchange="preview_image(event)">
             </div>
             <button class="createButton" type="submit"> Skapa konto </button> 
         </form>
+
+        
+        
     </div>
+
+    <script type='text/javascript'>
+
+        function preview_image(event) {
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var output = document.getElementById('output_image');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 
 <?php 
     require_once __DIR__ . "/../section/footer.php";
@@ -74,10 +90,10 @@ require_once __DIR__ . "/../functions.php";
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $data = loadJSON("dogsitter.json");
+    $file = $_FILES["imageToUpload"];
     //Kolla att de skickat med en bildfil och generera ett unikt 
     //namn för bilden
-    if (isset($_FILES["imageToUpload"])) {
-        $file = $_FILES["imageToUpload"];
+    if (isset($file) && $file["error"] != 4) {
         $filename = $file["name"];
         $tempname = $file["tmp_name"];
         $uniqueFilename = sha1(time().$filename);
@@ -91,8 +107,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //Hämta filinformation & kolla vilken filtyp det är
         $info = pathinfo($filename);
         $extension = strtolower($info["extension"]);
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+        $imageName = $uniqueFilename.'.'.$extension;
+    } else {
+        echo "<p class='feedbackMessage'> Ingen bild laddades upp </p>";
+        exit();  
     }
 
     $newEntry = [ 
@@ -106,10 +124,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         "days" => $_POST["days"],
         "areas" => $_POST["areas"],
         "extraInfo" => $_POST["extraInfo"],
-        "image" => $uniqueFilename.'.'.$extension //spara unika namnet på bilden som sökväg
-        
+        "image" => $imageName //spara unika namnet på bilden som sökväg  
     ];
 
+    if(validEmail($data, $newEntry["email"]) == true ) {
+        echo "<p class='feedbackMessage'> E-postadressen används redan </p>";
+        exit();
+    }
+    
     if(is_null($newEntry) ){
         echo "<p class='feedbackMessage'> Något gick fel, <br> försök igen </p>";
         exit();
@@ -124,8 +146,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         echo "<p class='feedbackMessage'> Lösenord måste vara <br> minst 4 tecken långt </p>";
         exit();       
     }
-
-    //vill skapa en if om email redan är registrerad för hundvakt, skicka felmeddelande "Denna e-postadress används redan för en hundvakt" typ
+    //Spara bilden med unikt namn i mappen "userImages"
+    move_uploaded_file($tempname, __DIR__ . "/../userImages/$imageName");
     addEntry("dogsitter.json", $newEntry);
     echo "<div class='feedbackMessage'> <p> Användare skapad! Nu kan du: <br> </p> <br> <a href='../sign-in.php'>  Logga in</a> </p> </div>";
     exit();

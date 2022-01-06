@@ -18,6 +18,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
             "areas" => $userInput["areas"],
             "extraInfo" => $userInput["extraInfo"]
         ];
+        if(validEmail($data, $entry["email"]) == true ) {
+            send(["message" => "Email adress is already used"], 400) ;
+            exit();
+        }
 
         if (empty($entry["first_name"]) || empty($entry["last_name"]) || empty($entry["email"]) || empty($entry["password"]) || empty($entry["location"]) || empty($entry["cost"]) || empty($entry["days"]) || empty($entry["areas"])|| empty($entry["extraInfo"])) {
             send(["message" => "You need to fill in all fields"], 400) ;
