@@ -39,10 +39,10 @@ $sitterImage = $sitterInfo["image"];
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
-                <p>Förnamn</p><input class="input-text" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>" value ="<?php echo $sitterFirstName ?>"><br>
-                <p>Efternamn</p><input type="text" name="lastName" placeholder="<?php echo $sitterLastName ?>" value="<?php echo $sitterLastName ?>"><br>
-                <p>Email</p><input type="email" name="email" placeholder="<?php echo $sitterEmail ?>" value="<?php echo $sitterEmail ?>"><br>
-                <p>Lösenord</p><input type="text" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $sitterPassword ?>" minlength="4" required><br>
+                <p>Förnamn</p><input class="updateFields" type="text" name="firstName" placeholder="<?php echo $sitterFirstName ?>" value ="<?php echo $sitterFirstName ?>"><br>
+                <p>Efternamn</p><input type="text" class="updateFields" name="lastName" placeholder="<?php echo $sitterLastName ?>" value="<?php echo $sitterLastName ?>"><br>
+                <p>Email</p><input type="email" class="updateFields" name="email" placeholder="<?php echo $sitterEmail ?>" value="<?php echo $sitterEmail ?>"><br>
+                <p>Lösenord</p><input type="text" class="updateFields" name="password" placeholder="Skriv Nytt Lösenord" value="<?php echo $sitterPassword ?>" minlength="4" required><br>
                 
                 <p>Timkostnad</p>
                 <select name="Timkostnad" id="Cost" class="selectList">
@@ -54,7 +54,7 @@ $sitterImage = $sitterInfo["image"];
                     <option value="100" <?php if($sitterCost == "100") { echo "selected"; }?> >100</option>
                 </select>
 
-                <p>Bra att veta</p><input type="text" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
+                <p>Bra att veta</p><input type="text" id="updateFieldExtra" name="extraInfo" placeholder="<?php echo $sitterExtra ?>" value="<?php echo $sitterExtra ?>"> <br> <br>
                 
                 <p> Min Placering </p> 
                 <select name="Placering" id="Placering" class="selectList">
