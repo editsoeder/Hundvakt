@@ -129,9 +129,9 @@
     </div>
 
     <script>
-            document.querySelector(".backToHome").addEventListener("click", function() {
-                window.location.href = "index.php";
-            });
+        document.querySelector(".backToHome").addEventListener("click", function() {
+            window.location.href = "index.php";
+        });
     </script>        
     <?php require_once __DIR__ . "/section/footer.php"; ?>
 </body>
