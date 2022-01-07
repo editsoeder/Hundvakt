@@ -81,11 +81,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
-    if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
-        header("Location: update.php?error=2");
-        exit();
-    }
-
     //Kopierar databasen till en backup-fil innan ändringen görs
     copy("dogowners.json", "dogowners_backup.json");
 
