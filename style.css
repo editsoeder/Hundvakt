@@ -826,6 +826,8 @@ svg {
 
 .wrapper-dog > h2 {
     font-family: var(--font-title);
+    font-size: 35px;
+    margin-bottom: 0px;
 }
 
 .wrapper-dog > p:last-child {
@@ -859,6 +861,7 @@ svg {
 #wrapper-contactO > p:first-child {
     font-weight: bolder;
     font-family: var(--font-title);
+    font-size: 23px;
 }
 
 #wrapper-owner{
@@ -885,6 +888,7 @@ svg {
 #wrapper-owner > p:first-child {
     font-weight: bolder;
     font-family: var(--font-title);
+    font-size: 23px;
 }
 
 /* dogsitter */
