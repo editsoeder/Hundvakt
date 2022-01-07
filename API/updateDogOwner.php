@@ -294,6 +294,9 @@ if ($method === "PATCH") {
         );
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogowner_api.json", "dogowner_backup_api.json");
+
     saveJson("dogowner_api.json", $dogOwner);
     send($foundUser);
 

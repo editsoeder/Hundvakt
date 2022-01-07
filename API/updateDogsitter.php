@@ -246,6 +246,9 @@ if ($method === "PATCH") {
         );
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter_api.json", "dogsitter_backup_api.json");
+    
     saveJson("dogsitter_api.json", $dogSitter);
     send($foundUser);
 }

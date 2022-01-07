@@ -35,7 +35,8 @@ require_once "../functions.php";
             send(["message" => "Password needs to be at least 4 characters"], 400) ;
             exit();
         }
-
+        //Kopierar databasen till en backup-fil innan ändringen görs
+        copy("dogowner_api.json", "dogowner_backup_api.json");
         addEntry("dogowner_api.json", $entry);
         send(["message" => "Dogowner created"], 200) ;
         exit();

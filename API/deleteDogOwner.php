@@ -26,6 +26,8 @@ function deleteDog($dogID) {
         $data = json_decode(file_get_contents("dogowner_api.json"), true);
         unset($data[$index]);
         $json = json_encode($data, JSON_PRETTY_PRINT);
+        //Kopierar databasen till en backup-fil innan ändringen görs
+        copy("dogowner_api.json", "dogowner_backup_api.json");
         file_put_contents("dogowner_api.json", $json);
     }
     send(

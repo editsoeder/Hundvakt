@@ -101,6 +101,8 @@ if ($method === "DELETE") {
         );
     }
 
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter_api.json", "dogsitter_backup_api.json");
     // Uppdaterar filen
     $dogSitterJson = "dogsitter_api.json";
     saveJson($dogSitterJson, $dogSitter);
