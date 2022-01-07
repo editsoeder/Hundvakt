@@ -52,6 +52,24 @@ function getAllDogSitter(){
     return $allDogSitter;
 }
 
+function getAllDogSitterAPI(){
+    $json = file_get_contents(__DIR__ . "/API/dogsitter_api.json"); 
+    $data = json_decode($json, true);
+
+    $allDogSitter = $data;
+
+    return $allDogSitter;
+}
+
+function getAllDogOwnerAPI(){
+    $json = file_get_contents(__DIR__ . "/API/dogowner_api.json"); 
+    $data = json_decode($json, true);
+
+    $allDogOwner = $data;
+
+    return $allDogOwner;
+}
+
 //Hämta alla dogowner från DB
 function getAllDogOwner(){
     $json = file_get_contents(__DIR__ . "/dogowner/dogowners.json");

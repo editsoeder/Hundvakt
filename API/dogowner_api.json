@@ -7,13 +7,7 @@
         "password": "123abc",
         "location": "S\u00f6dra Innerstaden",
         "cost": "90",
-        "days": [
-            "M\u00e5ndag",
-            "Tisdag",
-            "Onsdag",
-            "L\u00f6rdag",
-            "S\u00f6ndag"
-        ],
+        "days": "m\u00e5ndag",
         "dog": {
             "dogName": "Love",
             "breed": "Bulldog",

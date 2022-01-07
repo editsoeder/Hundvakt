@@ -1,9 +1,9 @@
 <?php 
 
-require_once "../functions.php";
+require_once __DIR__ . "/../functions.php";
 
 // Ladda in vår JSON data från vår fil
-$dogSitter = loadJson("dogsitter_api.json");
+$dogSitter = loadJson(__DIR__ . "/../API/dogsitter_api.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -156,23 +156,23 @@ if ($method === "PATCH") {
                 $user["location"] = $requestData["location"];
             }
 
-            if (isset($requestData["extra_info"])) {
+            if (isset($requestData["extraInfo"])) {
 
                 //om extra_info är = 0 tecken
-                if (strlen($requestData["extra_info"]) == 0) {
+                if (strlen($requestData["extraInfo"]) == 0) {
                     send([
                         "code" => 401,
                         "message" => "Bad request, invalid format",
                         "errors" => [
                                 [
-                                    "field" => "extra_info",
-                                    "message" => "`extra_info` has to be more then 0 characters"
+                                    "field" => "extraInfo",
+                                    "message" => "`extraInfo` has to be more then 0 characters"
                                 ]
                         ]
                     ]); 
                 }
 
-                $user["extra_info"] = $requestData["extra_info"];
+                $user["extraInfo"] = $requestData["extraInfo"];
             }
 
             if (isset($requestData["areas"])) {
@@ -191,14 +191,16 @@ if ($method === "PATCH") {
                     ]); 
                 }
 
-                if (in_array($requestData["areas"], $user["areas"])) {
-                    $key = array_search($requestData["areas"], $user["areas"]);
-                    array_splice($user["areas"], $key);
+                // if (in_array($requestData["areas"], $user["areas"])) {
+                //     $key = array_search($requestData["areas"], $user["areas"]);
+                //     array_splice($user["areas"], $key);
 
-                } else {
-                    array_push($user["areas"], $requestData["areas"]);
-                    array_push($dogSitter, $user["areas"]);
-                } 
+                // } else {
+                //     array_push($user["areas"], $requestData["areas"]);
+                //     array_push($dogSitter, $user["areas"]);
+                // } 
+
+                $user["areas"] = $requestData["areas"];
 
             }
 
@@ -218,14 +220,16 @@ if ($method === "PATCH") {
                     ]); 
                 }
 
-                if (in_array($requestData["days"], $user["days"])) {
-                    $key = array_search($requestData["days"], $user["days"]);
-                    array_splice($user["days"], $key);
+                // if (in_array($requestData["days"], $user["days"])) {
+                //     $key = array_search($requestData["days"], $user["days"]);
+                //     array_splice($user["days"], $key);
 
-                } else {
-                    array_push($user["days"], $requestData["days"]);
-                    array_push($dogSitter, $user["days"]);
-                } 
+                // } else {
+                //     array_push($user["days"], $requestData["days"]);
+                //     array_push($dogSitter, $user["days"]);
+                // } 
+
+                $user["days"] = $requestData["days"];
 
             }
 
@@ -246,7 +250,7 @@ if ($method === "PATCH") {
         );
     }
 
-    saveJson("dogsitter_api.json", $dogSitter);
+    saveJson(__DIR__ . "/../API/dogsitter_api.json", $dogSitter);
     send($foundUser);
 }
 
