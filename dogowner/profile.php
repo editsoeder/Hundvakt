@@ -64,7 +64,7 @@ require_once __DIR__ . "/../functions.php";
             <p><?php echo $ownerEmail?> </p>
         </div>
         <div id="wrapper-owner">
-            <h2>Om mig</h2>
+            <p>Om mig</p>
             <p>Placering: <?php echo $ownerLocation?> </p>
             <p>Jag betalar: <?php echo $ownerCost ?> kr/tim </p>
     </div>

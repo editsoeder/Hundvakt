@@ -16,7 +16,14 @@
     
 }
 
-a{
+img {
+    height: 220px;
+    width: 220px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+a {
     text-decoration: none;
     color: var(--white);
 }
@@ -722,7 +729,86 @@ svg {
 /* hundtass (logga in) */
 
 /* Min Profil Sida*/
+#wrapper-profile{
+    background-color: var(--purple);
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
+.profile-image {
+    /* height: 220px;
+    width: 220px; */
+    height: 25%;
+    width: 25%;
+    border: 10px solid var(--green);
+    background-repeat: no-repeat;
+    position: relative;
+    left: 37%;
+    top: 1vh;
+}
+
+.changeSettingsButton {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    left: 1350px;
+    bottom: 180vh;
+    background-color: var(--green);
+    color: var(--white);
+    font-family: var(--font-title);
+    transition: .5 all;
+    font-size: 20px;
+}
+
+.changeSettingsButton:hover{
+    background-color: var(--turquoise);
+}
+
+.delete-account-button{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    left: 1300px;
+    bottom: 184vh;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--font-title);
+    transition: .5 all;
+    font-size: 20px;
+}
+.delete-account-button:hover{
+    background-color: var(--pink);
+}
+
+#wrapper-profile > h1{
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-title);
+    font-size: 8vh;
+    margin: 15vh;
+}
+
+#wrapper-profile > p, #wrapper-owner > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    font-family: var(--font-paragraph);
+    flex-direction: column;
+    margin-bottom: 10px;
+    max-width: 500px;
+    text-align: center;
+    font-size: 20px;
+    text-align: center;
+    max-width: 400px;
+}
+
+/* dogowner */
 .wrapper-dog{
     display: flex;
     align-items: center;
@@ -735,12 +821,73 @@ svg {
     color: var(--white);
     width: 700px;
     align-self: center;
+    font-family: var(--font-paragraph);
+}
+
+.wrapper-dog > h2 {
+    font-family: var(--font-title);
 }
 
 .wrapper-dog > p:last-child {
     max-width: 400px;
+    margin-bottom: 20px;
 }
 
+#wrapper-contactO {
+    background-color: var(--pink);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 220px;
+    width: 220px;
+    position: relative;
+    left: 63%;
+    top: -80vh;
+    flex-direction: column;
+    border: 10px solid var(--orange);
+    color: var(--white);
+    font-size: 20px;
+}
+
+#wrapper-contactO > p {
+    margin: 0px;
+    font-family: var(--font-paragraph);
+}
+
+#wrapper-contactO > p:first-child {
+    font-weight: bolder;
+    font-family: var(--font-title);
+}
+
+#wrapper-owner{
+    height: 250px;
+    width: 250px;
+    background-color: var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    right: -20%;
+    top: -50vh;
+    border: 10px solid var(--pink)
+}
+
+#wrapper-owner > p{
+    margin: 0px;
+    margin-top: 5px;
+    font-family: var(--font-paragraph);
+}
+
+#wrapper-owner > p:first-child {
+    font-weight: bolder;
+    font-family: var(--font-title);
+}
+
+/* dogsitter */
 #wrapper-info {
     display: flex;
     justify-content: center;
@@ -772,41 +919,9 @@ svg {
     border: 10px solid var(--orange);
 }
 
-#wrapper-contactO {
-    background-color: var(--pink);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 220px;
-    width: 220px;
-    position: relative;
-    left: 63%;
-    top: -80vh;
-    flex-direction: column;
-    border: 10px solid var(--orange);
+#wrapper-contact > h2{
     color: var(--white);
-    font-size: 20px;
-}
-
-#wrapper-contactO > p {
-    margin: 0px;
-}
-
-#wrapper-owner{
-    height: 250px;
-    width: 250px;
-    background-color: var(--green);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    right: -20%;
-    top: -50vh;
-    border: 10px solid var(--pink)
+    font-family: var(--font-title);
 }
 
 #wrapper-extra_info{
@@ -822,31 +937,6 @@ svg {
     right: -15%;
     top: -60vh;
     border: 10px solid var(--pink)
-}
-
-#wrapper-profile > h1{
-    color: var(--white);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--font-title);
-    font-size: 8vh;
-    margin: 15vh;
-}
-
-#wrapper-profile > p, #wrapper-owner > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    font-family: var(--font-paragraph);
-    flex-direction: column;
-    margin-bottom: 10px;
-    max-width: 500px;
-    text-align: center;
-    font-size: 20px;
-    text-align: center;
-    max-width: 400px;
 }
 
 #wrapper-extra_info > p {
@@ -867,11 +957,6 @@ svg {
     margin-bottom: 30px;
 }
 
-#wrapper-owner > p , #wrapper-owner > h2 {
-    margin: 0px;
-    margin-top: 5px;
-}
-
 #wrapper-dog > p:last-child {
     margin-bottom: 30px;
 }
@@ -885,71 +970,6 @@ svg {
 #wrapper-dog > p:last-child {
     max-width: 400px;
 }
-
- .profile-image{
-    /* height: 220px;
-    width: 220px; */
-    height: 25%;
-    width: 25%;
-    border: 10px solid var(--green);
-    /* border-radius: 50%; */
-    background-repeat: no-repeat;
-    position: relative;
-    left: 37%;
-    top: 1vh;
- }
-
-.changeSettingsButton{
-    position: relative;
-    height: 100px;
-    width: 100px;
-    left: 1350px;
-    bottom: 180vh;
-    background-color: var(--green);
-    color: var(--white);
-    font-family: var(--font-title);
-    transition: .5 all;
-    font-size: 20px;
-}
-.changeSettingsButton:hover{
-    background-color: var(--turquoise);
-}
-
-.delete-account-button{
-    height: 100px;
-    width: 100px;
-    position: relative;
-    left: 1300px;
-    bottom: 184vh;
-    background-color: var(--orange);
-    color: var(--white);
-    font-family: var(--font-title);
-    transition: .5 all;
-    font-size: 20px;
-}
-.delete-account-button:hover{
-    background-color: var(--pink);
-}
-
- img{
-    height: 220px;
-    width: 220px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
- }
- #wrapper-profile{
-    background-color: var(--purple);
-    overflow: hidden;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
- }
-
- #wrapper-owner >h2, #wrapper-contact >h2{
-     color: var(--white);
-     font-family: var(--font-title);
- }
 
 /* createAS */ 
 #createAsWrapper {
