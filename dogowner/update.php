@@ -153,11 +153,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageUrl = $uniqueFilename.'.'.$extension;
     }
 
-    if (!in_array("days", $_POST) || !in_array("gender", $_POST) ) {
-        // header("Location: profile.php?error=1"); FIXA TILL RÄTT ERROR MESSAGE
-        echo "Du måste välja minst en dag och ett kön";
-        exit();
-    }
+
 
     $updateProfile = [
         "id_owner" => $loggedInID,

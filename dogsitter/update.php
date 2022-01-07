@@ -54,13 +54,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageUrl = $uniqueFilename.'.'.$extension;
     }
 
-    if (!in_array("areas", $_POST) || !in_array("days", $_POST)) {
-        // header("Location: profile.php?error=1"); FIXA TILL RÄTT ERROR MESSAGE
-        // echo "Du måste välja minst en dag och eller ett område";
-        header("Location: update.php?error=4");
-        exit();
-    }
-
     $updateProfile = [
         "id_sitter" => $loggedInID,
         "first_name" => $_POST["firstName"],
