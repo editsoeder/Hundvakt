@@ -729,7 +729,7 @@ svg {
 /* hundtass (logga in) */
 
 /* Min Profil Sida*/
-#wrapper-profile{
+.wrapper-profile{
     background-color: var(--purple);
     overflow: hidden;
     display: flex;
@@ -739,10 +739,8 @@ svg {
 }
 
 .profile-image {
-    /* height: 220px;
-    width: 220px; */
-    height: 25%;
-    width: 25%;
+    height: 220px;
+    width: 220px;
     border: 10px solid var(--green);
     background-repeat: no-repeat;
     position: relative;
@@ -783,7 +781,7 @@ svg {
     background-color: var(--pink);
 }
 
-#wrapper-profile > h1{
+.wrapper-profile > h1{
     color: var(--white);
     display: flex;
     justify-content: center;
@@ -793,7 +791,7 @@ svg {
     margin: 15vh;
 }
 
-#wrapper-profile > p, #wrapper-owner > p, #wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
+.wrapper-profile > p, #wrapper-owner > p, .wrapper-contact > p, #wrapper-dog > p, #wrapper-info > p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -833,35 +831,6 @@ svg {
 .wrapper-dog > p:last-child {
     max-width: 400px;
     margin-bottom: 20px;
-}
-
-#wrapper-contactO {
-    background-color: var(--pink);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 220px;
-    width: 220px;
-    position: relative;
-    left: 63%;
-    top: -80vh;
-    flex-direction: column;
-    border: 10px solid var(--orange);
-    color: var(--white);
-    font-size: 20px;
-}
-
-#wrapper-contactO > p {
-    margin: 0px;
-    font-family: var(--font-paragraph);
-}
-
-#wrapper-contactO > p:first-child {
-    font-weight: bolder;
-    font-family: var(--font-title);
-    font-size: 23px;
 }
 
 #wrapper-owner{
@@ -907,7 +876,7 @@ svg {
     align-self: center;
 }
 
-#wrapper-contact {
+.wrapper-contact {
     background-color: var(--pink);
     border-radius: 50%;
     display: flex;
@@ -923,24 +892,26 @@ svg {
     border: 10px solid var(--orange);
 }
 
-#wrapper-contact > h2{
-    color: var(--white);
-    font-family: var(--font-title);
+.wrapper-contact > h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 0px;
 }
 
 #wrapper-extra_info{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     background-color: var(--green);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
-    right: -15%;
-    top: -60vh;
-    border: 10px solid var(--pink)
+    left: calc(50% - 450px);
+    top: -318px;
+    border: 10px solid var(--pink);
+    font-family: var(--font-paragraph);
+    color: var(--white);
+    text-align: center;
+    border-radius: 50%;
 }
 
 #wrapper-extra_info > p {
@@ -963,12 +934,6 @@ svg {
 
 #wrapper-dog > p:last-child {
     margin-bottom: 30px;
-}
-
-#wrapper-contact > p, #wrapper-contact > h2 {
-    text-align: center;
-    margin-bottom: 5px;
-    margin-top: 0px;
 }
 
 #wrapper-dog > p:last-child {
