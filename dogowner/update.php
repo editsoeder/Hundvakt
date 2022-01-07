@@ -1,6 +1,6 @@
 <?php
-error_reporting(-1);
 session_start();
+error_reporting(-1);
 
 if (!isset($_SESSION["loggedInAsDogOwner"])) {
     if(isset($_SESSION["loggedInAsDogSitter"])) {
@@ -53,6 +53,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         //Spara bilden med unikt namn i mappen "userImages"
         move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
         $imageUrl = $uniqueFilename.'.'.$extension;
+    }
+
+    if (!array_key_exists("dogGender", $_POST) || !array_key_exists("days", $_POST)) {
+        header("Location: update.php?error=2");
+        exit();
     }
 
     $updateProfile = [
