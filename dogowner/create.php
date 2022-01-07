@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageName = "";
     }
     
-    if (!array_key_exists("Placering", $_POST) || !array_key_exists("Timkostnad", $_POST) || !array_key_exists("gender", $_POST)) {
+    if (!array_key_exists("Placering", $_POST) || !array_key_exists("Timkostnad", $_POST) || !array_key_exists("gender", $_POST) || !array_key_exists("days", $_POST)) {
         header("Location: create.php?error=1");
         exit();
     }
