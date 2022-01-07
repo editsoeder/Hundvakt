@@ -1,6 +1,5 @@
 <?php
-
-require_once "../functions.php";
+require_once __DIR__ . "/../functions.php";
 error_reporting(-1);
 
 
@@ -36,7 +35,7 @@ function deleteDog($dogID) {
 
 
 // Ladda in vår JSON data från vår fil, i detta fallet är det $users
-$dogSitter = loadJson("dogsitter_api.json");
+$dogSitter = loadJson(__DIR__ . "/../API/dogsitter_api.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -104,7 +103,7 @@ if ($method === "DELETE") {
     //Kopierar databasen till en backup-fil innan ändringen görs
     copy("dogsitter_api.json", "dogsitter_backup_api.json");
     // Uppdaterar filen
-    $dogSitterJson = "dogsitter_api.json";
+    $dogSitterJson = __DIR__ . "/../API/dogsitter_api.json";
     saveJson($dogSitterJson, $dogSitter);
     send(
         ["You have deleted the following user" => $user],

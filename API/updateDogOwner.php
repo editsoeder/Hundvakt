@@ -1,8 +1,8 @@
 <?php 
-require_once "functions.php";
+require_once __DIR__ . "/../functions.php";
 
 // Ladda in vår JSON data från vår fil
-$dogOwner = loadJson("dogowner_api.json");
+$dogOwner = loadJson(__DIR__ . "/../API/dogowner_api.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -171,34 +171,35 @@ if ($method === "PATCH") {
                     ]); 
                 }
 
-                if (in_array($requestData["days"], $user["days"])) {
-                    $key = array_search($requestData["days"], $user["days"]);
-                    array_splice($user["days"], $key);
+                // if (in_array($requestData["days"], $user["days"])) {
+                //     $key = array_search($requestData["days"], $user["days"]);
+                //     array_splice($user["days"], $key);
 
-                } else {
-                    array_push($user["days"], $requestData["days"]);
-                    array_push($dogSitter, $user["days"]);
-                } 
+                // } else {
+                //     array_push($user["days"], $requestData["days"]);
+                //     array_push($dogSitter, $user["days"]);
+                // }
 
+                $user["days"] = $requestData["days"];
             }
 
-            if (isset($requestData["name"])) {
+            if (isset($requestData["dogName"])) {
 
                 //om name är = 0 tecken
-                if (strlen($requestData["name"]) == 0) {
+                if (strlen($requestData["dogName"]) == 0) {
                     send([
                         "code" => 401,
                         "message" => "Bad request, invalid format",
                         "errors" => [
                                 [
-                                    "field" => "name",
+                                    "field" => "dogName",
                                     "message" => "`name` has to be more then 0 characters"
                                 ]
                         ]
                     ]); 
                 }
 
-                $user["dog"]["name"] = $requestData["name"];
+                $user["dog"]["dogName"] = $requestData["dogName"];
             }
 
             if (isset($requestData["breed"])) {
@@ -239,42 +240,23 @@ if ($method === "PATCH") {
                 $user["dog"]["gender"] = $requestData["gender"];
             }
 
-            if (isset($requestData["extra"])) {
+            if (isset($requestData["extraInfo"])) {
 
                 //om extra är = 0 tecken
-                if (strlen($requestData["extra"]) == 0) {
+                if (strlen($requestData["extraInfo"]) == 0) {
                     send([
                         "code" => 401,
                         "message" => "Bad request, invalid format",
                         "errors" => [
                                 [
-                                    "field" => "extra",
+                                    "field" => "extraInfo",
                                     "message" => "`extra` has to be more then 0 characters"
                                 ]
                         ]
                     ]); 
                 }
 
-                $user["dog"]["extra"] = $requestData["extra"];
-            }
-
-            if (isset($requestData["image"])) {
-
-                //om image är = 0 tecken
-                if (strlen($requestData["image"]) == 0) {
-                    send([
-                        "code" => 401,
-                        "message" => "Bad request, invalid format",
-                        "errors" => [
-                                [
-                                    "field" => "image",
-                                    "message" => "`image` has to be more then 0 characters"
-                                ]
-                        ]
-                    ]); 
-                }
-
-                $user["dog"]["image"] = $requestData["image"];
+                $user["dog"]["extraInfo"] = $requestData["extraInfo"];
             }
 
             // Uppdatera vår array
@@ -294,10 +276,13 @@ if ($method === "PATCH") {
         );
     }
 
+
     //Kopierar databasen till en backup-fil innan ändringen görs
     copy("dogowner_api.json", "dogowner_backup_api.json");
 
-    saveJson("dogowner_api.json", $dogOwner);
+    $dogOwnerJson = __DIR__ . "/../API/dogowner_api.json";
+    saveJson($dogOwnerJson, $dogOwner);
+
     send($foundUser);
 
 }

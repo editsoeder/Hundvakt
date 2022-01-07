@@ -1,5 +1,5 @@
 <?php
-require_once "../functions.php";
+require_once __DIR__ . "/../functions.php";
 
 if($_SERVER["REQUEST_METHOD"] == "POST" ){    
     $data = loadJSON("dogsitter_api.json");
@@ -38,9 +38,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
             exit();
         }
 
+
         //Kopierar databasen till en backup-fil innan ändringen görs
         copy("dogsitter_api.json", "dogsitter_backup_api.json");
-        addEntry("dogsitter_api.json", $entry);
+
+        addEntry(__DIR__ . "/../API/dogsitter_api.json", $entry);
         send(["Message" => "User created"], 200) ;
         exit();
         } else {

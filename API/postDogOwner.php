@@ -1,8 +1,8 @@
 <?php
-require_once "../functions.php";
+require_once __DIR__ . "/../functions.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST" ){    
-        $data = loadJSON("dogowner_api.json");
+        $data = loadJSON(__DIR__ . "/../API/dogowner_api.json");
         if($_SERVER["CONTENT_TYPE"] == "application/json" ){
             $userInput = json_decode(file_get_contents("php://input"),true);
             $entry = [ 
@@ -35,9 +35,11 @@ require_once "../functions.php";
             send(["message" => "Password needs to be at least 4 characters"], 400) ;
             exit();
         }
+
         //Kopierar databasen till en backup-fil innan ändringen görs
         copy("dogowner_api.json", "dogowner_backup_api.json");
-        addEntry("dogowner_api.json", $entry);
+
+        addEntry(__DIR__ . "/../API/dogowner_api.json", $entry);
         send(["message" => "Dogowner created"], 200) ;
         exit();
         } else {
