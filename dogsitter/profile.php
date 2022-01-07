@@ -30,17 +30,20 @@ require_once __DIR__ . "/../functions.php";
         <h1>Välkommen <?php echo $sitterName ?>!</h1>
         <img class='profile-image' src= <?php echo $src?>>
         <div class="wrapper-dog">
-            <p class="bold-text"><b>Jag finns i:</b></p><br><?php echo $sitterLocation; ?>
-            <p class="bold-text"><b>Jag passar hundar i:</b></p><br> <?php echo $sitterArea;?>
-            <p class="bold-text"><b>Dagar jag kan passa:</b></p><br><?php echo $sitterDays;?>
-            <p class="bold-text"><b>Min timlön är: </b></p><br>  <?php echo $sitterCost?> <p>kr/tim</p>
+            <p class="bold-text"><b>Jag finns i:</b></p>
+            <br> <p id="margin"><?php echo $sitterLocation; ?></p>
+
+            <p class="bold-text"><b>Jag passar hundar i:</b></p><br> <p id="margin"><?php echo $sitterArea;?> </p>
+            <p class="bold-text"><b>Dagar jag kan passa:</b></p><br> <p id="margin"><?php echo $sitterDays;?> </p>
+            <p class="bold-text"><b>Min timlön är: </b></p><br>  <p id="margin"> <?php echo $sitterCost?> kr/tim</p>
         </div>
         <div class="wrapper-contact">
             <p><b>Mail:</b></p>
             <p><?php echo $sitterEmail; ?></p>
         </div>
         <div id="wrapper-extra_info">
-            <p><b>Bra att veta:</b></p><br><?php echo $sitterExtra?> </p> 
+            <p><b>Bra att veta:</b></p>
+            <p><?php echo $sitterExtra?> </p> 
         </div>
 
         <button class="changeSettingsButton"> Ändra Uppgifter </button> 
