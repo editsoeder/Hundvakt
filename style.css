@@ -993,6 +993,10 @@ svg {
     padding: 5vh;
 }
 
+#contentWrapper > h2 {
+    text-align: center;
+}
+
 #buttonsDiv {
     display: flex;
     align-items: center;
