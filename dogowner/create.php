@@ -30,8 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     else {
         $imageName = "";
     }
-
-    if (!in_array("Placering", $_POST) || !in_array("Timkostnad", $_POST) || !in_array("gender", $_POST)) {
+    
+    if (!array_key_exists("Placering", $_POST) || !array_key_exists("Timkostnad", $_POST) || !array_key_exists("gender", $_POST)) {
         header("Location: create.php?error=1");
         exit();
     }
