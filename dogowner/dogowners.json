@@ -246,25 +246,5 @@
             "extraInfo": "Han gillar bara mig och ingen annan",
             "image": "505b564232ed1283e80ac9426981d5139bed2aec.jpeg"
         }
-    },
-    {
-        "id_owner": 12,
-        "first_name": "Hugo",
-        "last_name": "Str\u00f6m",
-        "email": "hugo@live.se",
-        "password": "voffvoff123",
-        "location": "Kirseberg",
-        "cost": "90",
-        "days": [
-            "Fredag",
-            "L\u00f6rdag"
-        ],
-        "dog": {
-            "dogName": "Fluffy",
-            "breed": "Nakenhund",
-            "gender": "Hona",
-            "extraInfo": "K\u00e4nslig mot solen",
-            "image": "3123b1f57cc320803799842de3b12301b9594261.jpg"
-        }
     }
 ]
