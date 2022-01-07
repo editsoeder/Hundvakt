@@ -243,7 +243,7 @@ if ($method === "PATCH") {
     if ($found === false) {
         send(
             [
-                "code" => 5,
+                "code" => 400,
                 "message" => "The users by `id` does not exist"
             ],
             404
