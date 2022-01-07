@@ -30,6 +30,71 @@ $dogExtra = $dogInfo["extraInfo"];
 $dogGender = $dogInfo["gender"];
 $dogImage = $dogInfo["image"];
 
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON(__DIR__ . "/../dogowner/dogowners.json");
+
+    $imageUrl = $dogImage;
+    $file = $_FILES["newImageToUpload"];
+
+    if (isset($file) && $file["error"] != 4) {
+        $filename = $file["name"];
+        $tempname = $file["tmp_name"];
+        $uniqueFilename = sha1(time().$filename);
+        $size = $file["size"];
+
+        if ($size > 4 * 1000 * 1000) {
+            header("Location: update.php?error=1");
+            exit();
+        }
+
+        //Hämta filinformation & kolla vilken filtyp det är
+        $info = pathinfo($filename);
+        $extension = strtolower($info["extension"]);
+        //Spara bilden med unikt namn i mappen "userImages"
+        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+        $imageUrl = $uniqueFilename.'.'.$extension;
+    }
+
+    $updateProfile = [
+        "id_owner" => $loggedInID,
+        "first_name" => $_POST["firstName"],
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "dog" => [
+            "dogName" => $_POST["dogName"],
+            "breed" => $_POST["dogBreed"],            
+            "gender" => $_POST["dogGender"],
+            "extraInfo" => $_POST["extraInfo"],
+            "image" => $imageUrl //spara unika namnet på bilden som sökväg
+        ]
+    ]; 
+
+    for ($i=0; $i < count($data); $i++) { 
+        $currData = $data[$i];
+        $currUser = $currData["id_owner"];
+        if($loggedInID === $currUser){
+            $data[$i] = $updateProfile;
+        }
+    }
+
+    if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
+        header("Location: update.php?error=2");
+        exit();
+    }
+
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogowners.json", "dogowners_backup.json");
+
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
+
+    header("Location: update.php?error=3");
+    exit();
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +105,23 @@ $dogImage = $dogInfo["image"];
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
-    <h1 class="h2-update" >Här kan du ändra din profil!</h1>
+    <?php 
+    if (isset($_GET["error"])) {
+        $error = $_GET["error"];
+
+        // Felmeddelande
+        if ($error == 1) {
+            echo "<h1 id='h2-update'> Filen får inte vara större än 4mb</h1>";
+        } elseif ($error == 2) {
+            echo "<h1 id='h2-update'>Alla fält måste vara ifyllda, <br> försök igen</h1>";
+        } elseif ($error == 3) {
+            echo  "<h1 id='h2-update'> Profil Uppdaterad! </h1>";
+        } 
+    } else {
+        echo "<h1 id='titleUpdate'>Här kan du ändra din profil!</h1>";
+    } 
+    ?>
+
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
@@ -123,73 +204,5 @@ $dogImage = $dogInfo["image"];
     <?php 
     require_once __DIR__ . "/../section/footer.php";
     ?> 
-
 </body>
 </html>
-
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON(__DIR__ . "/../dogowner/dogowners.json");
-
-    $imageUrl = $dogImage;
-    $file = $_FILES["newImageToUpload"];
-
-    if (isset($file) && $file["error"] != 4) {
-        $filename = $file["name"];
-        $tempname = $file["tmp_name"];
-        $uniqueFilename = sha1(time().$filename);
-        $size = $file["size"];
-
-        if ($size > 4 * 1000 * 1000) {
-            echo "Filen får inte vara större än 4mb";
-            exit();
-        }
-
-        //Hämta filinformation & kolla vilken filtyp det är
-        $info = pathinfo($filename);
-        $extension = strtolower($info["extension"]);
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
-        $imageUrl = $uniqueFilename.'.'.$extension;
-    }
-
-
-
-    $updateProfile = [
-        "id_owner" => $loggedInID,
-        "first_name" => $_POST["firstName"],
-        "last_name" => $_POST["lastName"],
-        "email" => $_POST["email"],
-        "password" => $_POST["password"],
-        "location" => $_POST["Placering"],
-        "cost" => $_POST["Timkostnad"],
-        "days" => $_POST["days"],
-        "dog" => [
-            "dogName" => $_POST["dogName"],
-            "breed" => $_POST["dogBreed"],            
-            "gender" => $_POST["dogGender"],
-            "extraInfo" => $_POST["extraInfo"],
-            "image" => $imageUrl //spara unika namnet på bilden som sökväg
-        ]
-    ]; 
-
-    for ($i=0; $i < count($data); $i++) { 
-        $currData = $data[$i];
-        $currUser = $currData["id_owner"];
-        if($loggedInID === $currUser){
-            $data[$i] = $updateProfile;
-        }
-    }
-
-    //Kopierar databasen till en backup-fil innan ändringen görs
-    copy("dogowners.json", "dogowners_backup.json");
-
-    $json = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents(__DIR__ . "/../dogowner/dogowners.json", $json);
-
-
-// updateUser("dogsitter.json", $updateProfile);
-    // updateProfileSitter("../dogsitter.json", $updateProfile);
-    echo "<p class='feedbackMessageUpdate'> Profil uppdaterad!</p>";
-   }
-?>

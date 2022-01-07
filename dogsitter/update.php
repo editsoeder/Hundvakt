@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $size = $file["size"];
 
         if ($size > 4 * 1000 * 1000) {
-            echo "Filen får inte vara större än 4mb";
+            header("Location: update.php?error=1");
             exit();
         }
 
@@ -76,10 +76,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         }
     }
 
-    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='profile.php'>Här!</a> </p> </div>";
-
     if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
-        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
+        header("Location: update.php?error=2");
         exit();
     }
 
@@ -89,10 +87,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents(__DIR__ . "/../dogsitter/dogsitter.json", $json);
 
+    header("Location: update.php?error=3");
+    exit();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,26 +100,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
-        <?php if (isset($_GET["error"])) {
-                $error = $_GET["error"];
+    <?php if (isset($_GET["error"])) {
+            $error = $_GET["error"];
 
-                // Felmeddelande
-                if ($error == 1) {
-                    echo '<p class="errorCreate">Alla fält måste vara ifyllda, testa igen.</p>';
-                } elseif ($error == 2) {
-                    echo '<p class="errorCreate">Lösenordet måste vara minst 4 tecken</p>';
-                } elseif ($error == 3) {
-                    echo '<p class="errorCreate"> Filen får inte vara större än 4mb</p>';
-                } elseif ($error == 4) {
-                    echo '<h1 class="h2-update"> Du måste välja minst en dag och eller ett område </h1>';
-                } elseif ($error == 6) {
-                    echo '<p class="errorCreate">Ingen bild laddades upp, försök igen.</p>';
-                } elseif ($error == 5) {
-                    echo '<p class="errorCreate">Något gick fel, försök igen</p>';
-                } 
-            } else {
-                echo "<h1 class='h2-update' >Här kan du ändra din profil!</h1>";
-            } ?>
+            // Felmeddelande
+            if ($error == 1) {
+                echo "<h1 id='h2-update'> Filen får inte vara större än 4mb</h1>";
+            } elseif ($error == 2) {
+                echo "<h1 id='h2-update'>Alla fält måste vara ifyllda, försök igen</h1>";
+            } elseif ($error == 3) {
+                echo  "<h1 id='h2-update'> Profil Uppdaterad! </h1> ";
+            } 
+        } else {
+            echo "<h2  id='titleUpdate'>Här kan du ändra din profil!</h2>";
+        } 
+    ?>
     
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">

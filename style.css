@@ -1267,6 +1267,24 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
     align-items: center;
 }
 
+#titleUpdate {
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+#h2-update{
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: red;
+    font-size: 30px;
+}
+
 .update-account{    
     font-family: var(--font-title);
     width: 50vw;
