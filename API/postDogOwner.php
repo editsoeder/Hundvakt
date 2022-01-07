@@ -2,7 +2,7 @@
 require_once "../functions.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST" ){    
-        $data = loadJSON("dogowners_api.json");
+        $data = loadJSON("dogowner_api.json");
         if($_SERVER["CONTENT_TYPE"] == "application/json" ){
             $userInput = json_decode(file_get_contents("php://input"),true);
             $entry = [ 
@@ -36,7 +36,7 @@ require_once "../functions.php";
             exit();
         }
 
-        addEntry("dogowners_api.json", $entry);
+        addEntry("dogowner_api.json", $entry);
         send(["message" => "Dogowner created"], 200) ;
         exit();
         } else {
