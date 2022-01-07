@@ -1,6 +1,6 @@
 <?php
-error_reporting(-1);
 session_start(); 
+error_reporting(-1);
 
 require_once __DIR__ . "/../functions.php";
 
@@ -26,6 +26,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageName = $uniqueFilename.'.'.$extension;
     } else {
         $imageName = "";
+    }
+
+    if (!in_array("Placering", $_POST) || !in_array("Timkostnad", $_POST) || !in_array("areas", $_POST) || !in_array("days", $_POST)) {
+        header("Location: create.php?error=1");
+        exit();
     }
 
     $newEntry = [ 

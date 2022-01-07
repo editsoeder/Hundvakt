@@ -31,6 +31,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $imageName = "";
     }
 
+    if (!in_array("Placering", $_POST) || !in_array("Timkostnad", $_POST) || !in_array("gender", $_POST)) {
+        header("Location: create.php?error=1");
+        exit();
+    }
+
     $newEntry = [ 
         "id_owner" => getMaxID($data, "id_owner") + 1, 
         "first_name" => $_POST["firstName"],
