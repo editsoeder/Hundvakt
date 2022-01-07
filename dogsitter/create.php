@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
         $size = $file["size"];
 
         if ($size > 4 * 1000 * 1000) {
-            echo "<p class='feedbackMessage'> Filen får inte vara större än 4mb </p>";
+            header("Location: create.php?error=3");
             exit();
         }
 

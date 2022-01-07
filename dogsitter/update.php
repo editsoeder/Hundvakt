@@ -1,6 +1,6 @@
 <?php
-error_reporting(-1);
 session_start();
+error_reporting(-1);
 
 if (!isset($_SESSION["loggedInAsDogSitter"])) {
     if(isset($_SESSION["loggedInAsDogOwner"])) {
@@ -26,6 +26,80 @@ $sitterExtra = $sitterInfo["extraInfo"];
 $sitterPassword = $sitterInfo["password"];
 $sitterImage = $sitterInfo["image"];
 ?>
+
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST" ){
+    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
+
+    $imageUrl = $sitterImage;
+    $file = $_FILES["newImageToUpload"];
+
+    if (isset($file) && $file["error"] != 4) {
+        $file = $_FILES["newImageToUpload"];
+        $filename = $file["name"];
+        $tempname = $file["tmp_name"];
+        $uniqueFilename = sha1(time().$filename);
+        $size = $file["size"];
+
+        if ($size > 4 * 1000 * 1000) {
+            echo "Filen får inte vara större än 4mb";
+            exit();
+        }
+
+        //Hämta filinformation & kolla vilken filtyp det är
+        $info = pathinfo($filename);
+        $extension = strtolower($info["extension"]);
+        //Spara bilden med unikt namn i mappen "userImages"
+        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
+        $imageUrl = $uniqueFilename.'.'.$extension;
+    }
+
+    if (!in_array("areas", $_POST) || !in_array("days", $_POST)) {
+        // header("Location: profile.php?error=1"); FIXA TILL RÄTT ERROR MESSAGE
+        // echo "Du måste välja minst en dag och eller ett område";
+        header("Location: update.php?error=4");
+        exit();
+    }
+
+    $updateProfile = [
+        "id_sitter" => $loggedInID,
+        "first_name" => $_POST["firstName"],
+        "last_name" => $_POST["lastName"],
+        "email" => $_POST["email"],
+        "password" => $_POST["password"],
+        "location" => $_POST["Placering"],
+        "cost" => $_POST["Timkostnad"],
+        "days" => $_POST["days"],
+        "areas" => $_POST["areas"],
+        "extraInfo" => $_POST["extraInfo"],
+        "image" => $imageUrl //spara unika namnet på bilden som sökväg
+    ]; 
+
+    for ($i=0; $i < count($data); $i++) { 
+        $currData = $data[$i];
+        $currUser = $currData["id_sitter"];
+        if($loggedInID === $currUser){
+            $data[$i] = $updateProfile;
+        }
+    }
+
+    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='profile.php'>Här!</a> </p> </div>";
+
+    if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
+        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
+        exit();
+    }
+
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogsitter.json", "dogsitter_backup.json");
+
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+    file_put_contents(__DIR__ . "/../dogsitter/dogsitter.json", $json);
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +109,27 @@ $sitterImage = $sitterInfo["image"];
     ?> 
 <!-- </head> stängs i header.php -->
 <body>
-    <h1 class="h2-update" >Här kan du ändra din profil!</h1>
+        <?php if (isset($_GET["error"])) {
+                $error = $_GET["error"];
+
+                // Felmeddelande
+                if ($error == 1) {
+                    echo '<p class="errorCreate">Alla fält måste vara ifyllda, testa igen.</p>';
+                } elseif ($error == 2) {
+                    echo '<p class="errorCreate">Lösenordet måste vara minst 4 tecken</p>';
+                } elseif ($error == 3) {
+                    echo '<p class="errorCreate"> Filen får inte vara större än 4mb</p>';
+                } elseif ($error == 4) {
+                    echo '<h1 class="h2-update"> Du måste välja minst en dag och eller ett område </h1>';
+                } elseif ($error == 6) {
+                    echo '<p class="errorCreate">Ingen bild laddades upp, försök igen.</p>';
+                } elseif ($error == 5) {
+                    echo '<p class="errorCreate">Något gick fel, försök igen</p>';
+                } 
+            } else {
+                echo "<h1 class='h2-update' >Här kan du ändra din profil!</h1>";
+            } ?>
+    
     <div class="form">
         <form class="update-account" action="update.php" method="POST" enctype="multipart/form-data">
             <div id="dogsitter-form"> 
@@ -125,79 +219,8 @@ $sitterImage = $sitterInfo["image"];
             </div>
         </form>
     </div> 
+    <?php 
+        require_once __DIR__ . "/../section/footer.php";
+    ?> 
 </body>
 </html>
-
-<?php
-if($_SERVER["REQUEST_METHOD"] == "POST" ){
-    $data = loadJSON(__DIR__ . "/../dogsitter/dogsitter.json");
-
-    $imageUrl = $sitterImage;
-    $file = $_FILES["newImageToUpload"];
-
-    if (isset($file) && $file["error"] != 4) {
-        $file = $_FILES["newImageToUpload"];
-        $filename = $file["name"];
-        $tempname = $file["tmp_name"];
-        $uniqueFilename = sha1(time().$filename);
-        $size = $file["size"];
-
-        if ($size > 4 * 1000 * 1000) {
-            echo "Filen får inte vara större än 4mb";
-            exit();
-        }
-
-        //Hämta filinformation & kolla vilken filtyp det är
-        $info = pathinfo($filename);
-        $extension = strtolower($info["extension"]);
-        //Spara bilden med unikt namn i mappen "userImages"
-        move_uploaded_file($tempname, __DIR__ . "/../userImages/$uniqueFilename.$extension");
-        $imageUrl = $uniqueFilename.'.'.$extension;
-    }
-
-    if (!in_array("areas", $_POST) || !in_array("days", $_POST)) {
-        // header("Location: profile.php?error=1"); FIXA TILL RÄTT ERROR MESSAGE
-        echo "Du måste välja minst en dag och eller ett område";
-        exit();
-    }
-
-    $updateProfile = [
-        "id_sitter" => $loggedInID,
-        "first_name" => $_POST["firstName"],
-        "last_name" => $_POST["lastName"],
-        "email" => $_POST["email"],
-        "password" => $_POST["password"],
-        "location" => $_POST["Placering"],
-        "cost" => $_POST["Timkostnad"],
-        "days" => $_POST["days"],
-        "areas" => $_POST["areas"],
-        "extraInfo" => $_POST["extraInfo"],
-        "image" => $imageUrl //spara unika namnet på bilden som sökväg
-    ]; 
-
-    for ($i=0; $i < count($data); $i++) { 
-        $currData = $data[$i];
-        $currUser = $currData["id_sitter"];
-        if($loggedInID === $currUser){
-            $data[$i] = $updateProfile;
-        }
-    }
-
-    echo "<div class='feedbackMessage'> <p> Profil Uppdaterad! Se Din Nya Profil  </p> <a href='profile.php'>Här!</a> </p> </div>";
-
-    if (empty($updateProfile["first_name"]) || empty($updateProfile["last_name"]) || empty($updateProfile["email"]) || empty($updateProfile["password"]) || empty($updateProfile["location"]) || empty($updateProfile["cost"]) || empty($updateProfile["days"]) || empty($updateProfile["areas"])|| empty($updateProfile["extraInfo"])) {
-        echo "<p class='feedbackMessage'> Alla fält måste vara ifyllda, <br> försök igen </p>";
-        exit();
-    }
-
-    //Kopierar databasen till en backup-fil innan ändringen görs
-    copy("dogsitter.json", "dogsitter_backup.json");
-
-    $json = json_encode($data, JSON_PRETTY_PRINT);
-    file_put_contents(__DIR__ . "/../dogsitter/dogsitter.json", $json);
-
-}
-?>
-<?php 
-    require_once __DIR__ . "/../section/footer.php";
-?> 
