@@ -1,0 +1,67 @@
+[
+    {
+        "id_owner": 1,
+        "first_name": "Jennifer",
+        "last_name": "Sten",
+        "email": "jennifer@gmail.com",
+        "password": "123abc",
+        "location": "S\u00f6dra Innerstaden",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "dog": {
+            "dogName": "Love",
+            "breed": "Bulldog",
+            "gender": "Hane",
+            "extraInfo": "Love \u00e4r en sn\u00e4ll och h\u00e4rlig hund som inte bits eller sk\u00e4ller. Han \u00e4r gatuhund fr\u00e5n b\u00f6rjan s\u00e5 han \u00e4r lite skygg f\u00f6r m\u00e4nniskor men v\u00e4njer sig snabbt. "
+        }
+    },
+    {
+        "id_owner": 2,
+        "first_name": "George",
+        "last_name": "Charkviani",
+        "email": "georgec@gmail.com",
+        "password": "hejhopp123",
+        "location": "V\u00e4stra Innerstaden",
+        "cost": "60",
+        "days": [
+            "M\u00e5ndag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag"
+        ],
+        "dog": {
+            "dogName": "Elliot",
+            "breed": "Labradoodle",
+            "gender": "Hane",
+            "extraInfo": "Allergisk mot fisk och skaldjur. Hundvakten m\u00e5ste vakta Ellliot i Oxie d\u00e4r vi bor. Han \u00e4r sn\u00e4ll och social men lite r\u00e4dd f\u00f6r stora hundar."
+        }
+    },
+    {
+        "id_owner": 3,
+        "first_name": "Johan",
+        "last_name": "Classon",
+        "email": "johnnyponny@hotmail.se",
+        "password": "oxieman1337",
+        "location": "Oxie",
+        "cost": "70",
+        "days": [
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag"
+        ],
+        "dog": {
+            "dogName": "Allie",
+            "breed": "Husky",
+            "gender": "Hona",
+            "extraInfo": "Allie \u00e4r v\u00e4rldens finaste hund och beh\u00f6ver en hundvakt som gillar att g\u00e5 l\u00e5nga promenader, g\u00e4rna p\u00e5 stranden. "
+        }
+    }
+]

@@ -2,7 +2,7 @@
 require_once "functions.php";
 
 // Ladda in vår JSON data från vår fil
-$dogOwner = loadJson("dogowners.json");
+$dogOwner = loadJson("dogowner_api.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -294,7 +294,7 @@ if ($method === "PATCH") {
         );
     }
 
-    saveJson("dogowners.json", $dogOwner);
+    saveJson("dogowner_api.json", $dogOwner);
     send($foundUser);
 
 }

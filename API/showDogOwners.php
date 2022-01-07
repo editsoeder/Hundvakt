@@ -2,7 +2,6 @@
 error_reporting(-1);
 session_start();
 require_once __DIR__ . "/../functions.php";
-require_once __DIR__ . '/../section/header.php';
 
 $allDogOwner = getAllDogOwner();
 

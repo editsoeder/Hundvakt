@@ -3,8 +3,6 @@
 require_once "../functions.php";
 error_reporting(-1);
 
-//Remove länk till delete.php => <p><a href='delete.php?id={$specifikHund['id']}'>Remove</a></p>
-
 
 if (isset($_GET["id"])) {
     $dogDeleteID = $_GET["id"];
@@ -14,7 +12,7 @@ if (isset($_GET["id"])) {
 
 //Radera hund från db.json
 function deleteDog($dogID) {
-    $data = json_decode(file_get_contents("dogsitter.json"), true);
+    $data = json_decode(file_get_contents("dogsitter_api.json"), true);
     $found = false;
 
     foreach ($data as $key => $dogSitter) {
@@ -25,17 +23,20 @@ function deleteDog($dogID) {
         }
     }
     if ($found) {
-        $data = json_decode(file_get_contents("dogsitter.json"), true);
+        $data = json_decode(file_get_contents("dogsitter_api.json"), true);
         unset($data[$index]);
         $json = json_encode($data, JSON_PRETTY_PRINT);
-        file_put_contents("dogsitter.json", $json);
+        file_put_contents("dogsitter_api.json", $json);
     }
-    header("Location: index.php");
+    send(
+        ["message" => "Dogsitter deleted"],
+        200
+    );
 }
 
 
 // Ladda in vår JSON data från vår fil, i detta fallet är det $users
-$dogSitter = loadJson("dogsitter.json");
+$dogSitter = loadJson("dogsitter_api.json");
 
 // Vilken HTTP metod vi tog emot
 $method = $_SERVER["REQUEST_METHOD"];
@@ -101,7 +102,7 @@ if ($method === "DELETE") {
     }
 
     // Uppdaterar filen
-    $dogSitterJson = "dogsitter.json";
+    $dogSitterJson = "dogsitter_api.json";
     saveJson($dogSitterJson, $dogSitter);
     send(
         ["You have deleted the following user" => $user],
