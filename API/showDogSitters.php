@@ -1,9 +1,3 @@
-
-<head>
-    <title>Lista på alla hundvakter</title>
-    
-</head>
-
 <?php 
 error_reporting(-1);
 session_start();
@@ -16,9 +10,6 @@ $allDogSitter = getAllDogSitter();
         
 // }
 ?>
-
-<body>
-    <nav class="nav"></nav>
 
     <!-- <script>
         let array = '<?php  $allDogSitter; ?>';
@@ -132,10 +123,4 @@ if (isset($_GET["id"])) {
     //     header("Location: sign-out.php");
     // }
 
-?>
-</body>
-</html>
-
-<?php 
-require_once "section/footer.php";
 ?>

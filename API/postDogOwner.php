@@ -2,7 +2,7 @@
 require_once "../functions.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST" ){    
-        $data = loadJSON("../dogowner/dogowners.json");
+        $data = loadJSON("dogowners_api.json");
         if($_SERVER["CONTENT_TYPE"] == "application/json" ){
             $userInput = json_decode(file_get_contents("php://input"),true);
             $entry = [ 
@@ -36,8 +36,8 @@ require_once "../functions.php";
             exit();
         }
 
-        addEntry("../dogowner/dogowners.json", $entry);
-        send(["message" => "Dowowner created"], 200) ;
+        addEntry("dogowners_api.json", $entry);
+        send(["message" => "Dogowner created"], 200) ;
         exit();
         } else {
             send(["message"=>"Wrong content-type"], 400);

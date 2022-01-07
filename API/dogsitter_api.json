@@ -1,0 +1,100 @@
+[
+    {
+        "id_sitter": 1,
+        "first_name": "Jonna",
+        "last_name": "Claesson",
+        "email": "jonna@gmail.com",
+        "password": "hejhopp",
+        "location": "Roseng\u00e5rd",
+        "cost": "80",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Har l\u00e5ng erfarenhet av att hundvakta b\u00e5de stora och sm\u00e5 hundar. Har goda referenser p\u00e5 beg\u00e4ran. \u00c4lskar att g\u00e5 l\u00e5ngpromenader p\u00e5 stranden. "    },
+    {
+        "id_sitter": 2,
+        "first_name": "Vilma",
+        "last_name": "Abrahamsson",
+        "email": "vilma123@live.com",
+        "password": "dogsitteramazing",
+        "location": "Malm\u00f6 Centrum",
+        "cost": "90",
+        "days": [
+            "Tisdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie",
+            "Malm\u00f6 Centrum",
+            "Roseng\u00e5rd",
+            "S\u00f6dra Innerstaden"
+        ],
+        "extraInfo": "Jag \u00e4r hundallergiker s\u00e5 jag kan endast hundvakta allergiv\u00e4nliga hundar, och inga hundar som har katter i hemmet. "    },
+    {
+        "id_sitter": 3,
+        "first_name": "Oliver",
+        "last_name": "Hansson",
+        "email": "stenen92@hotmail.com",
+        "password": "password1",
+        "location": "Fosie",
+        "cost": "90",
+        "days": [
+            "M\u00e5ndag",
+            "Tisdag",
+            "Onsdag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Limhamn-Bunkeflo",
+            "Malm\u00f6 Centrum",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "Kan hundvakta flera hundar samtidigt, och \u00e4ven ha hundar under en hel helg eller under flera dagar i str\u00e4ck. "
+    },
+    {
+        "id_sitter": 4,
+        "first_name": "Johnny",
+        "last_name": "Svensson",
+        "email": "johnnyboi@live.se",
+        "password": "johnnysvensson",
+        "location": "Limhamn-Bunkeflo",
+        "cost": "80",
+        "days": [
+            "M\u00e5ndag",
+            "Torsdag",
+            "Fredag",
+            "L\u00f6rdag",
+            "S\u00f6ndag"
+        ],
+        "areas": [
+            "Fosie",
+            "Husie",
+            "Hyllie",
+            "Limhamn-Bunkeflo",
+            "Roseng\u00e5rd",
+            "S\u00f6dra Innerstaden",
+            "V\u00e4stra Innerstaden"
+        ],
+        "extraInfo": "\u00c4r pigg och glad och kan hundvakta med kort varsel! Jag \u00e4lskar hundar och har alltid haft hund i mitt liv men har inte m\u00f6jlighet att sj\u00e4lv skaffa hund just nu, d\u00e4rf\u00f6r passar jag mer \u00e4n g\u00e4rna andras hundar. "
+    }
+]
