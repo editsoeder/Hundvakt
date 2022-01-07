@@ -47,26 +47,28 @@ require_once __DIR__ . "/../functions.php";
     $dogExtra = $dog["extraInfo"];
     ?>
 
-    <div id="wrapper-profile">
+    <div class="wrapper-profile">
         <h1>Välkommen <?php echo $ownerName ?>!</h1>
         <img class='profile-image'  alt='dog' src='../userImages/<?php echo $src; ?>'>
         <div class="wrapper-dog">
             <h2>Min hund</h2>
-            <p>Namn: <?php echo $dogName?> </p><br>
-            <p>Ras: <?php echo $dogBreed?> </p><br>
-            <p>Kön: <?php echo $dogGender?></p><br>
-            <p>Behöver hundpassning: <?php echo $ownerDays?> </p>
-            <p>Bra att veta: <?php echo $dogExtra?></p>
+            <p><b>Namn:</b></p> <p id="margin"> <?php echo $dogName;?></p><br>
+            <p><b>Ras:</b></p> <p id="margin">  <?php echo $dogBreed;?></p><br>
+            <p><b>Kön:</b></p> <p id="margin"><?php echo $dogGender;?><br>
+            <p><b>Behöver hundpassning:</b></p> <p id="margin"><?php echo $ownerDays;?></p><br>
+            <p><b>Bra att veta:</b></p> <p id="margin"> <?php echo $dogExtra;?>
         </div>
-        <div id="wrapper-contactO">
-            <p>Kontaktuppgifter</p>
-            <p>Mail:</p>
-            <p><?php echo $ownerEmail?> </p>
+        <div class="wrapper-contact">
+            <h2>Kontaktuppgifter</h2>
+            <p><b>Min mail:</b></p> <?php echo $ownerEmail;?> 
         </div>
         <div id="wrapper-owner">
-            <p>Om mig</p>
-            <p>Placering: <?php echo $ownerLocation?> </p>
-            <p>Jag betalar: <?php echo $ownerCost ?> kr/tim </p>
+            <h2>Om mig</h2>
+            <p><b>Placering:</b></p>   
+            <p id="margin"><?php echo $ownerLocation?> </p> 
+            <br>
+            <p><b>Jag betalar:</b></p>
+            <p> <?php echo $ownerCost ?> /timme </p>
     </div>
     
     <button class="changeSettingsButton"> Ändra Uppgifter </button> 
