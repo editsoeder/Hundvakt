@@ -51,7 +51,7 @@ $contentType = $_SERVER["CONTENT_TYPE"];
 if ($contentType !== "application/json") {
     send(
         ["message" => "The API only accepts JSON"],
-        400
+        415
     );
 }
 
