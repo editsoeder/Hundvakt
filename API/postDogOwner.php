@@ -36,6 +36,9 @@ require_once __DIR__ . "/../functions.php";
             exit();
         }
 
+        //Kopierar databasen till en backup-fil innan ändringen görs
+        copy("dogowner_api.json", "dogowner_backup_api.json");
+
         addEntry(__DIR__ . "/../API/dogowner_api.json", $entry);
         send(["message" => "Dogowner created"], 200) ;
         exit();

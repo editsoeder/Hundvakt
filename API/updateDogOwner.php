@@ -276,8 +276,13 @@ if ($method === "PATCH") {
         );
     }
 
+
+    //Kopierar databasen till en backup-fil innan ändringen görs
+    copy("dogowner_api.json", "dogowner_backup_api.json");
+
     $dogOwnerJson = __DIR__ . "/../API/dogowner_api.json";
     saveJson($dogOwnerJson, $dogOwner);
+
     send($foundUser);
 
 }
