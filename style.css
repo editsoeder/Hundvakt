@@ -103,7 +103,6 @@ body {
     position: absolute;
     right: 3%;
     top: 27%;
-    /* font-family: var(--font-paragraph); */
 }
 
 .backToHome:hover, .backToHomeCreateAs:hover{
@@ -696,7 +695,6 @@ nav > a:hover{
 /* hundtass (logga in) */
 .ajax-loader {
     position: relative;
-    /* bottom: 21%; */
     left: 30%;
     transform-origin: 50% 50%;
     transform: rotate(30deg) translate(-50%, 0%);
@@ -1031,7 +1029,6 @@ svg {
 
 #dogDays {
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
     background-color: var(--white);
     border-top-right-radius: 5%;
@@ -1040,7 +1037,6 @@ svg {
     margin-top: 5vh;
     padding-top: 5vh;
     height: 80vh;
-
 }
 
 #dogowner {
@@ -1055,7 +1051,6 @@ svg {
     margin-top: 5vh;
     padding-top: 5vh;
     height: 80vh;
-
 }
 
 .createButton {
@@ -1078,7 +1073,6 @@ svg {
     border-top-right-radius: 5%;
     height: 80vh;
     margin-top: 5vh;
-
 }
 
 .dogPic {
@@ -1115,7 +1109,6 @@ svg {
 .extraInfo {
     height: 20vh;
     width: 200px;
-    /* margin-left: 10vh; */
 } 
 
 /* create DogSitter */ 
@@ -1169,15 +1162,6 @@ svg {
     height: 105vh;
 }
 
-/* #createAreaBox > input {
-    width: 3vh;
-    height: 3vh;
-}
-input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo, input#MalmoCentrum, input#Oxie, input#Rosengard, input#SodraInnerstaden, input#VastraInnerstaden {
-    width: 4vh;
-    height: 4vh;
-} */
-
 .genderCheckbox {
     width: 4vh;
     height: 4vh;
@@ -1192,13 +1176,11 @@ input#Fosie, input#Husie, input#Hyllie, input#Kirseberg, input#Limhamn-Bunkeflo,
 .eachDayBox {
     width: 4vh;
     height: 4vh;
-    /* margin-left: 6vw; */
 }
 
 .createDetails {
     margin-top: 0px;
     width: 200px;
-    /* margin-left: 10vh; */
 }
 
 .areasText {
